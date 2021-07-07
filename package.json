@@ -1,0 +1,57 @@
+{
+  "name": "jota-lib-react",
+  "description": "Jota Design System",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Meiuca <meiuca@meiuca.design>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meiuca/jota-lib-react",
+    "directory": "/"
+  },
+  "keywords": [
+    "design-system"
+  ],
+  "scripts": {
+    "format": "prettier --write \"(src|test)/**/*.(js|d.ts)\"",
+    "lint": "prettier --check \"(src|test)/**/*.(js|d.ts)\"",
+    "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
+    "build-storybook": "build-storybook -s public"
+  },
+  "dependencies": {
+    "@meiuca/context-element-react": "^1.0.3",
+    "@meiuca/motion-tokens": "0.4.2",
+    "html-inputtypes": "^1.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@storybook/addons": "^6.2.9",
+    "@babel/core": "^7.13.14",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/preset-react": "^7.13.13",
+    "@commitlint/config-conventional": "^12.0.1",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/node-logger": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "8.1.0",
+    "sinon": ">=4.0.0 <11.0.0",
+    "url-loader": "^4.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
