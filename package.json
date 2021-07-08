@@ -16,7 +16,8 @@
     "format": "prettier --write \"(src|test)/**/*.(js|d.ts)\"",
     "lint": "prettier --check \"(src|test)/**/*.(js|d.ts)\"",
     "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build": "webpack --env -o dist --config ./webpack.config.js"
   },
   "dependencies": {
     "@meiuca/context-element-react": "^1.0.3",
@@ -27,7 +28,6 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@storybook/addons": "^6.2.9",
     "@babel/core": "^7.13.14",
     "@babel/eslint-parser": "^7.13.10",
     "@babel/preset-react": "^7.13.13",
@@ -35,12 +35,15 @@
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
+    "@storybook/addons": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "babel-loader": "8.1.0",
     "sinon": ">=4.0.0 <11.0.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2"
   },
   "browserslist": {
     "production": [
