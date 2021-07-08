@@ -9,7 +9,10 @@ module.exports = function(_env, argv) {
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash:8].js",
-      publicPath: "/"
+      publicPath: "/",
+      library: 'jotaReact',
+      libraryTarget: 'umd',
+      filename: 'jotaReact.js',
     },
     optimization:{
       minimize: false, // <---- disables uglify.
