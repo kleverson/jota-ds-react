@@ -13,8 +13,9 @@ module.exports = function(_env, argv) {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash:8].js",
       publicPath: "/",
-      library: 'jotaReact',
-      libraryTarget: 'umd',
+      library: {
+        type: 'module'
+      },
       filename: 'jotaReact.js',
     },
     optimization:{
@@ -30,7 +31,7 @@ module.exports = function(_env, argv) {
       ]
     },
     resolve: {
-      extensions: [".js", ".jsx"]
+      extensions: [".js", ".jsx"],
     },
     plugins: [
       new webpack.DefinePlugin({

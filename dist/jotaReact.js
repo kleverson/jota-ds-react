@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["jotaReact"] = factory();
-	else
-		root["jotaReact"] = factory();
-})(self, function() {
-return /******/ var __webpack_modules__ = ({
+/******/ var __webpack_modules__ = ({
 
 /***/ 669:
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
@@ -19294,17 +19284,6 @@ if (true) {
 /******/ 	__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ }();
 /******/ 
-/******/ /* webpack/runtime/make namespace object */
-/******/ !function() {
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/ }();
-/******/ 
 /******/ /* webpack/runtime/node module decorator */
 /******/ !function() {
 /******/ 	__webpack_require__.nmd = function(module) {
@@ -19319,48 +19298,46 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "Accordion": function() { return /* reexport */ accordion; },
-  "Alert": function() { return /* reexport */ base_components_alert; },
-  "Avatar": function() { return /* reexport */ base_components_avatar; },
-  "Banner": function() { return /* reexport */ banner; },
-  "Brand": function() { return /* reexport */ brand; },
-  "Button": function() { return /* reexport */ base_components_button; },
-  "ButtonGroup": function() { return /* reexport */ button_group; },
-  "ButtonIcon": function() { return /* reexport */ button_icon; },
-  "Cardbase": function() { return /* reexport */ cardbase; },
-  "Cardimage": function() { return /* reexport */ cardimage; },
-  "Checkbox": function() { return /* reexport */ base_components_checkbox; },
-  "Header": function() { return /* reexport */ header; },
-  "HeaderEmpty": function() { return /* reexport */ header_empty; },
-  "Icon": function() { return /* reexport */ base_components_icon; },
-  "IconShape": function() { return /* reexport */ icon_shape; },
-  "InputPassword": function() { return /* reexport */ input_password; },
-  "InputRadiobutton": function() { return /* reexport */ input_radiobutton; },
-  "InputSearch": function() { return /* reexport */ input_search; },
-  "InputText": function() { return /* reexport */ input_text; },
-  "InputTextarea": function() { return /* reexport */ input_textarea; },
-  "Link": function() { return /* reexport */ base_components_link; },
-  "Menu": function() { return /* reexport */ menu; },
-  "Modal": function() { return /* reexport */ modal; },
-  "Notification": function() { return /* reexport */ notification; },
-  "OverflowMenu": function() { return /* reexport */ overflow_menu; },
-  "Select": function() { return /* reexport */ base_components_select; },
-  "Step": function() { return /* reexport */ step; },
-  "Steps": function() { return /* reexport */ steps; },
-  "Switch": function() { return /* reexport */ base_components_switch; },
-  "TabGroup": function() { return /* reexport */ tab_group; },
-  "TabItem": function() { return /* reexport */ tab_item; },
-  "TagCategory": function() { return /* reexport */ tag_category; },
-  "TagHighlight": function() { return /* reexport */ tag_highlight; },
-  "TagSelect": function() { return /* reexport */ tag_select; },
-  "Tooltip": function() { return /* reexport */ tooltip; },
-  "Typography": function() { return /* reexport */ typography; },
-  "Welcome": function() { return /* reexport */ welcome; }
+  "UQ": function() { return /* reexport */ accordion; },
+  "bZ": function() { return /* reexport */ base_components_alert; },
+  "qE": function() { return /* reexport */ base_components_avatar; },
+  "jL": function() { return /* reexport */ banner; },
+  "H2": function() { return /* reexport */ brand; },
+  "zx": function() { return /* reexport */ base_components_button; },
+  "hE": function() { return /* reexport */ button_group; },
+  "Ei": function() { return /* reexport */ button_icon; },
+  "w0": function() { return /* reexport */ cardbase; },
+  "UH": function() { return /* reexport */ cardimage; },
+  "XZ": function() { return /* reexport */ base_components_checkbox; },
+  "h4": function() { return /* reexport */ header; },
+  "$h": function() { return /* reexport */ header_empty; },
+  "JO": function() { return /* reexport */ base_components_icon; },
+  "W7": function() { return /* reexport */ icon_shape; },
+  "CM": function() { return /* reexport */ input_password; },
+  "se": function() { return /* reexport */ input_radiobutton; },
+  "Vr": function() { return /* reexport */ input_search; },
+  "oH": function() { return /* reexport */ input_text; },
+  "gj": function() { return /* reexport */ input_textarea; },
+  "rU": function() { return /* reexport */ base_components_link; },
+  "v2": function() { return /* reexport */ menu; },
+  "u_": function() { return /* reexport */ modal; },
+  "P_": function() { return /* reexport */ notification; },
+  "PQ": function() { return /* reexport */ overflow_menu; },
+  "Ph": function() { return /* reexport */ base_components_select; },
+  "h8": function() { return /* reexport */ step; },
+  "Rg": function() { return /* reexport */ steps; },
+  "rs": function() { return /* reexport */ base_components_switch; },
+  "v0": function() { return /* reexport */ tab_group; },
+  "E2": function() { return /* reexport */ tab_item; },
+  "Qu": function() { return /* reexport */ tag_category; },
+  "TT": function() { return /* reexport */ tag_highlight; },
+  "OT": function() { return /* reexport */ tag_select; },
+  "u": function() { return /* reexport */ tooltip; },
+  "ZT": function() { return /* reexport */ typography; },
+  "cI": function() { return /* reexport */ welcome; }
 });
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
@@ -26859,6 +26836,41 @@ Welcome.propTypes = {
 
 
 }();
-/******/ return __webpack_exports__;
-;
-})
+var __webpack_exports__Accordion = __webpack_exports__.UQ;
+var __webpack_exports__Alert = __webpack_exports__.bZ;
+var __webpack_exports__Avatar = __webpack_exports__.qE;
+var __webpack_exports__Banner = __webpack_exports__.jL;
+var __webpack_exports__Brand = __webpack_exports__.H2;
+var __webpack_exports__Button = __webpack_exports__.zx;
+var __webpack_exports__ButtonGroup = __webpack_exports__.hE;
+var __webpack_exports__ButtonIcon = __webpack_exports__.Ei;
+var __webpack_exports__Cardbase = __webpack_exports__.w0;
+var __webpack_exports__Cardimage = __webpack_exports__.UH;
+var __webpack_exports__Checkbox = __webpack_exports__.XZ;
+var __webpack_exports__Header = __webpack_exports__.h4;
+var __webpack_exports__HeaderEmpty = __webpack_exports__.$h;
+var __webpack_exports__Icon = __webpack_exports__.JO;
+var __webpack_exports__IconShape = __webpack_exports__.W7;
+var __webpack_exports__InputPassword = __webpack_exports__.CM;
+var __webpack_exports__InputRadiobutton = __webpack_exports__.se;
+var __webpack_exports__InputSearch = __webpack_exports__.Vr;
+var __webpack_exports__InputText = __webpack_exports__.oH;
+var __webpack_exports__InputTextarea = __webpack_exports__.gj;
+var __webpack_exports__Link = __webpack_exports__.rU;
+var __webpack_exports__Menu = __webpack_exports__.v2;
+var __webpack_exports__Modal = __webpack_exports__.u_;
+var __webpack_exports__Notification = __webpack_exports__.P_;
+var __webpack_exports__OverflowMenu = __webpack_exports__.PQ;
+var __webpack_exports__Select = __webpack_exports__.Ph;
+var __webpack_exports__Step = __webpack_exports__.h8;
+var __webpack_exports__Steps = __webpack_exports__.Rg;
+var __webpack_exports__Switch = __webpack_exports__.rs;
+var __webpack_exports__TabGroup = __webpack_exports__.v0;
+var __webpack_exports__TabItem = __webpack_exports__.E2;
+var __webpack_exports__TagCategory = __webpack_exports__.Qu;
+var __webpack_exports__TagHighlight = __webpack_exports__.TT;
+var __webpack_exports__TagSelect = __webpack_exports__.OT;
+var __webpack_exports__Tooltip = __webpack_exports__.u;
+var __webpack_exports__Typography = __webpack_exports__.ZT;
+var __webpack_exports__Welcome = __webpack_exports__.cI;
+export { __webpack_exports__Accordion as Accordion, __webpack_exports__Alert as Alert, __webpack_exports__Avatar as Avatar, __webpack_exports__Banner as Banner, __webpack_exports__Brand as Brand, __webpack_exports__Button as Button, __webpack_exports__ButtonGroup as ButtonGroup, __webpack_exports__ButtonIcon as ButtonIcon, __webpack_exports__Cardbase as Cardbase, __webpack_exports__Cardimage as Cardimage, __webpack_exports__Checkbox as Checkbox, __webpack_exports__Header as Header, __webpack_exports__HeaderEmpty as HeaderEmpty, __webpack_exports__Icon as Icon, __webpack_exports__IconShape as IconShape, __webpack_exports__InputPassword as InputPassword, __webpack_exports__InputRadiobutton as InputRadiobutton, __webpack_exports__InputSearch as InputSearch, __webpack_exports__InputText as InputText, __webpack_exports__InputTextarea as InputTextarea, __webpack_exports__Link as Link, __webpack_exports__Menu as Menu, __webpack_exports__Modal as Modal, __webpack_exports__Notification as Notification, __webpack_exports__OverflowMenu as OverflowMenu, __webpack_exports__Select as Select, __webpack_exports__Step as Step, __webpack_exports__Steps as Steps, __webpack_exports__Switch as Switch, __webpack_exports__TabGroup as TabGroup, __webpack_exports__TabItem as TabItem, __webpack_exports__TagCategory as TagCategory, __webpack_exports__TagHighlight as TagHighlight, __webpack_exports__TagSelect as TagSelect, __webpack_exports__Tooltip as Tooltip, __webpack_exports__Typography as Typography, __webpack_exports__Welcome as Welcome };
