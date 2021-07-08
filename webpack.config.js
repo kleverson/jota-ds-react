@@ -5,7 +5,7 @@ module.exports = function(_env, argv) {
   const isProduction = "production";
 
   return {
-    entry: "./src/index.js",
+    entry: "./index.js",
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash:8].js",

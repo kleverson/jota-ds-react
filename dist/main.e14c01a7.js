@@ -26759,7 +26759,7 @@ Welcome.propTypes = {
   title: (prop_types_default()).string
 };
 /* harmony default export */ var welcome = ((/* unused pure expression or super */ null && (Welcome)));
-;// CONCATENATED MODULE: ./src/index.js
+;// CONCATENATED MODULE: ./index.js
 
 
 
