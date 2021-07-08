@@ -50,7 +50,7 @@ export default {
     opacity: globalTokens.opacityLevelSemiopaque,
     sizes: {
       mobile: {
-        lineHeightSmall: globalTokens.lineHeightXxl,
+        lineHeightSmall: globalTokens.lineHeightLg,
         lineHeightLarge: globalTokens.lineHeightSm,
       },
       desktop: {
