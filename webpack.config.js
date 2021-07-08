@@ -6,12 +6,16 @@ module.exports = function(_env, argv) {
 
   return {
     entry: "./index.js",
+    experiments: {
+      outputModule: true
+    },
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash:8].js",
       publicPath: "/",
-      library: 'jotaReact',
-      libraryTarget: 'umd',
+      library: {
+        type: 'module'
+      },
       filename: 'jotaReact.js',
     },
     optimization:{
