@@ -11,19 +11,15 @@ module.exports = function(_env, argv) {
       filename: "[name].[contenthash:8].js",
       publicPath: "/"
     },
+    optimization:{
+      minimize: false, // <---- disables uglify.
+    },
     module: {
       rules: [
         {
-          test: /\.jsx?$/,
+          test: /\.(jsx|js)?$/,
           exclude: /node_modules/,
-          use: {
-            loader: "babel-loader",
-            options: {
-              cacheDirectory: true,
-              cacheCompression: false,
-              envName: isProduction ? "production" : "development"
-            }
-          }
+          loader: 'babel-loader'
         }
       ]
     },
