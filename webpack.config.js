@@ -13,9 +13,8 @@ module.exports = function(_env, argv) {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash:8].js",
       publicPath: "/",
-      library: {
-        type: 'module'
-      },
+      library: 'jotaReact',
+      libraryTarget: 'umd',
       filename: 'jotaReact.js',
     },
     optimization:{
