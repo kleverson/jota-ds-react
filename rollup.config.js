@@ -12,8 +12,9 @@ export default {
     ],
     plugins: [
         external(),
-        nodeResolve(),
-        babel(),
+        babel({
+            exclude: 'node_modules/**'
+        }),
         del({ targets: ['dist/*'] }),
     ],
     external: Object.keys(pkg.peerDependencies || {}),
