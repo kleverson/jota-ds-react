@@ -7,4 +7,5 @@ export { default as InputTextarea } from "./base-components/input-textarea/index
 export { default as Link } from "./base-components/link/index.js";
 export { default as InputRadiobutton } from "./base-components/input-radiobutton/index.js";
 export { default as Typography } from "./base-components/typography/index.js";
+export { default as Header } from "./base-components/header/index.js";
 
