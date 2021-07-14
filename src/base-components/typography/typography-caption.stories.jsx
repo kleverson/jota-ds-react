@@ -4,30 +4,30 @@ import Typography from './index.js';
 export default {
   title: 'Core components react/Typography/Caption',
   argTypes: {
-    content: {
-      control: {
-        type: 'text',
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
-    onColor: {
-      control: {
-        type: 'boolean',
+    content: {
+      name: 'Content',
+      table: {
+        category: 'Custom Inputs',
       },
     },
   },
 };
 
 export function Caption(args) {
-  return <Typography {...args}>{args.content}</Typography>;
+  return (
+    <Typography {...args} component="caption">
+      {args.content}
+    </Typography>
+  );
 }
 
 Caption.args = {
   content: 'Caption',
-  component: 'caption',
   onColor: false,
-};
-
-Caption.argTypes = {
-  variant: { table: { disable: true } },
-  component: { table: { disable: true } },
 };

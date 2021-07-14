@@ -6,106 +6,96 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: 'Core components react/Input Password',
   argTypes: {
-    error: {
-      title: 'Error',
-      description: 'Define se o input está com erro ou não',
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }      
-    },
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define se o input tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean'
-      },
       table: {
+        category: 'Modifiers',
         type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }  
-    },          
+        defaultValue: { summary: 'false' },
+      },
+    },
     disabled: {
-      title: 'Disabled',
+      name: 'Disabled',
       description: 'Define se o input está ativo ou não',
-      control: {
-        type: 'boolean',
-      },
       table: {
+        category: 'Modifiers',
         type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }      
-    },    
-    label: {
-      title: 'Label',
-      description: 'Define a label do input',
-      control: {
-        type: 'text',
+        defaultValue: { summary: 'false' },
       },
+    },
+    maxLength: {
+      name: 'Max Length',
+      description: 'Define a quantidade máxima de caracteres do input',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'Label' }
-      }      
-    }, 
+        category: 'Modifiers',
+        type: { summary: 'number' },
+        defaultValue: { summary: 16 },
+      },
+    },
+    error: {
+      name: 'Error',
+      description: 'Define se o input está com erro ou não',
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
     helperText: {
-      title: 'HelperText',
+      name: 'Helper Text',
       description: 'Define o texto da mensagem do input',
-      control: {
-        type: 'text',
-      },
       table: {
+        category: 'Custom Inputs',
         type: { summary: 'string' },
-        defaultValue: { summary: 'Helper text' }
-      }      
+        defaultValue: { summary: 'Helper text' },
+      },
     },
     placeholder: {
-      title: 'Placeholder',
+      name: 'Placeholder',
       description: 'Define o placeholder do input',
-      control: {
-        type: 'text',
-      },
       table: {
+        category: 'Custom Inputs',
         type: { summary: 'string' },
-        defaultValue: { summary: 'Insira a sua senha' }
-      }      
-    },  
-    maxLength: {
-      title: 'MaxLength',
-      description: 'Define a quantidade máxima de caracteres do input',
-      control: {
-        type: 'number',
+        defaultValue: { summary: 'Insira a sua senha' },
       },
+    },
+    label: {
+      name: 'Label',
+      description: 'Define a label do input',
       table: {
-        type: { summary: 'number' },
-        defaultValue: { summary: 100 }
-      }      
-    }
+        category: 'Custom Inputs',
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Label' },
+      },
+    },
   },
-	parameters: {
-		docs: {
-		  source: {
-			  code: `<${namespace}-input-password></${namespace}-input-password>`
-		  }
-		}
-	}
+  parameters: {
+    docs: {
+      source: {
+        // WC em código React?
+        // code: `<${namespace}-input-password></${namespace}-input-password>`
+      },
+    },
+  },
 };
 
 export function InputPassword(args) {
-  const handleChange = (value) => {
-    action(`handleChange`)({ value: value });
-  }
+  const handleChange = value => {
+    action(`handleChange`)({ value });
+  };
 
-  const handleFocus = (e) => {
+  const handleFocus = e => {
     action(`handleFocus`)({ event: e });
-  }
+  };
 
   return (
-    <InputPasswordTag {...args} handleChange={handleChange} handleFocus={handleFocus}></InputPasswordTag>
-  )
+    <InputPasswordTag
+      {...args}
+      handleChange={handleChange}
+      handleFocus={handleFocus}
+    ></InputPasswordTag>
+  );
 }
 
 InputPassword.args = {
@@ -115,5 +105,5 @@ InputPassword.args = {
   maxLength: 16,
   error: false,
   onColor: false,
-  disabled: false
-}
+  disabled: false,
+};

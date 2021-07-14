@@ -5,7 +5,7 @@ import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import Icon from '../icon/index.js';
 
-function ButtonIcon({size = "small", icon = "shapes", onColor = false, handleClick}){
+function ButtonIcon({size = "small", icon = "shapes", onColor = false, handleClick, handleBlur, handleKeyDown}){
   const _handleClick = (e) => {
     handleClick(e);
   }
@@ -18,6 +18,8 @@ function ButtonIcon({size = "small", icon = "shapes", onColor = false, handleCli
         ${namespace}-ButtonIcon--${size}
         ${onColor ? `${namespace}-ButtonIcon--onColor` : ''}
         `} onClick={_handleClick}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
       >
         <Icon size={size} icon={icon}></Icon>
       </button>

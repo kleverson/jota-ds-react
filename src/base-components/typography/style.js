@@ -1,6 +1,7 @@
 import { createGooberGetter as css } from '@meiuca/context-element-react';
 import typographyStyleType from '../../styles/types/typography/default.js';
 import { namespace } from '../../utils/setup.js';
+import { hexToRGB } from '../../utils/colors.js';
 
 export default css(typographyStyleType)`
   &.${namespace}-Typography{
@@ -91,7 +92,7 @@ export default css(typographyStyleType)`
 
     &.Paragraph{
         font-weight: ${({paragraph}) => paragraph.fontWeight};
-        opacity: ${({paragraph}) => paragraph.opacity};
+        color: ${ context => hexToRGB(context.color, context.paragraph.opacity)};
         
         &--small{
           font-size: ${({paragraph}) => paragraph.sizes.small};
@@ -122,6 +123,10 @@ export default css(typographyStyleType)`
 
     &--onColor{
       color: ${({onColor}) => onColor.color};
+
+      &.Paragraph {
+        color: ${ context => hexToRGB(context.onColor.color, context.paragraph.opacity)};
+      }
     }
   }
 `;

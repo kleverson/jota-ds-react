@@ -4,46 +4,41 @@ import Typography from './index.js';
 export default {
   title: 'Core components react/Typography/Subtitle',
   argTypes: {
-    content: {
-      control: {
-        type: 'text',
-      },
-    },
     onColor: {
-      control: {
-        type: 'boolean',
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
     size: {
+      name: 'Size',
+      table: {
+        category: 'Modifiers',
+      },
       control: {
         type: 'select',
         options: ['small', 'large'],
       },
     },
-    variant: {
-      description: 'Escolhe o elemento semântico a ser renderizado. (h1, h2, h3, h4, h5, h6)',
-      control: null,
+    content: {
+      name: 'Content',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'h1' },
-        category: 'Acessibility',
+        category: 'Custom Inputs',
       },
     },
   },
 };
 
 export function Subtitle(args) {
-  return <Typography {...args}>{args.content}</Typography>;
+  return (
+    <Typography {...args} component="subtitle">
+      {args.content}
+    </Typography>
+  );
 }
 
 Subtitle.args = {
   content: 'Subtitle',
   size: 'large',
-  component: 'subtitle',
   onColor: false,
-};
-
-Subtitle.argTypes = {
-  variant: { table: { disable: true } },
-  component: { table: { disable: true } },
 };

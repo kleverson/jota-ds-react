@@ -37,7 +37,7 @@ export default css(x)`
       ${({ motion }) => motion};
 
       &:hover,
-      &--FocusVisible {
+      &--current {
         background-color: ${({ item }) => hexToRGB(item.hover.backgroundColor, item.hover.opacity)};
       }
 
@@ -48,7 +48,7 @@ export default css(x)`
       }
 
       &:hover,
-      &.${namespace}-Menu__Item--FocusVisible {
+      &.${namespace}-Menu__Item--current {
         .${namespace}-Menu__ItemContent {
           border-top-color: transparent;
         }

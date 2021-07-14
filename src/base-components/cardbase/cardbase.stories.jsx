@@ -8,8 +8,11 @@ export default {
   name: 'Checkbox',
   argTypes: {
     onColor: {
-      title: 'Inverse',
+      name: 'On Color',
       description: 'Define o estilo inverso, com background',
+      table: {
+        category: 'Modifiers',
+      },
     },
   },
 };
@@ -20,7 +23,7 @@ export function CardBase(args) {
   }
 
   return (
-    <div style={{ maxWidth: '314px' }} className={"preview-container"}>
+    <div style={{ maxWidth: '314px' }} className={'preview-container'}>
       <CardbaseTag {...args} handleClick={handleClick}></CardbaseTag>
     </div>
   );

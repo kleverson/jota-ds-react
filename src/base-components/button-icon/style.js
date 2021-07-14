@@ -15,6 +15,10 @@ export default css(ButtonIconStyleType)`
     box-sizing: border-box;
     cursor: pointer;
 
+    &:focus-visible {
+      outline: ${({ states })  => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
+    }
+    
     &--onColor{
       color: ${({onColor}) => onColor.color};
     }

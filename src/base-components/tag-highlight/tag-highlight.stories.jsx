@@ -5,47 +5,32 @@ import { namespace } from '../../utils/setup.js';
 export default {
   title: 'Core components react/Tag Highlight',
   argTypes: {
-    label: {
-      title: 'Tag highlight',
-      description: 'Digite a label da tag highlight',
-      defaultValue: 'Tag Highlight',      
-      control: {
-        type: 'text'
-      },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '"Tag Highlight"' }
-      }  
-    },    
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define se a tag tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean'
-      },
       table: {
+        category: 'Modifiers',
         type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }  
-    }
+        defaultValue: { summary: 'false' },
+      },
+    },
+    label: {
+      name: 'Label',
+      description: 'Digite a label da tag highlight',
+      table: {
+        category: 'Custom Inputs',
+        type: { summary: 'string' },
+        defaultValue: { summary: '"Tag Highlight"' },
+      },
+    },
   },
-	parameters: {
-		docs: {
-		  source: {
-			  code: `<${namespace}-tag-highlight label="Tag label"></${namespace}-tag-highlight>`
-		  }
-		}
-	}
 };
 
 export function TagHighlight(args) {
-  return (
-    <TagHighlightTag {...args}></TagHighlightTag>
-  )
+  return <TagHighlightTag {...args}></TagHighlightTag>;
 }
 
 TagHighlight.args = {
-  label: "Tag Highlight",
-  onColor: false
-}
+  label: 'Tag Highlight',
+  onColor: false,
+};

@@ -7,24 +7,33 @@ export default {
   title: 'Core components react/Input Checkbox',
   name: 'Checkbox',
   argTypes: {
-    value: {
-      title: 'Value',
-      description: 'Define qual o nome do Checkbox',
-      control: {
-        type: 'text',
+    checked: {
+      name: 'Checked',
+      description: 'Define se o checkbox ficará marcado',
+      table: {
+        category: 'Modifiers',
       },
     },
-    checked: {
-      title: 'Checked',
-      checked: 'Define se o checkbox ficará marcado',
-    },
     disabled: {
-      title: 'Disabled',
-      checked: 'Define se o checkbox ficará desabilitado',
+      name: 'Disabled',
+      description: 'Define se o checkbox ficará desabilitado',
+      table: {
+        category: 'Modifiers',
+      },
     },
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define o estilo inverso, com background',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    value: {
+      name: 'Value',
+      description: 'Define qual o conteúdo do Checkbox',
+      table: {
+        category: 'Custom Inputs',
+      },
     },
   },
 };
@@ -34,7 +43,7 @@ export function InputCheckbox(args) {
     action('handleChange')({ checked: e });
   }
 
-  return <CheckboxTag {...args} handleChange={_handleChange}></CheckboxTag>;
+  return <CheckboxTag {...args} name="ck_name" handleChange={_handleChange}></CheckboxTag>;
 }
 
 InputCheckbox.args = {
@@ -42,5 +51,4 @@ InputCheckbox.args = {
   checked: true,
   disabled: false,
   onColor: false,
-  name: 'ck_name',
 };

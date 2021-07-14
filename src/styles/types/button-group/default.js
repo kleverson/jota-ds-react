@@ -7,7 +7,7 @@ export default {
 
   tertiary: {
     fontSize: globalTokens.fontSizeXs,
-    fontWeight: brandingTokens.fontWeightMedium,
+    fontWeight: brandingTokens.fontWeightBold,
     fontFamilyL: brandingTokens.fontFamilyHighlight,
     sidePadding: globalTokens.spacingSizeXxs,
     color: brandingTokens.neutralColorLowPure,

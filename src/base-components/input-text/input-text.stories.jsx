@@ -1,65 +1,74 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import InputTextTag from './index.js';
 import { namespace } from '../../utils/setup.js';
-import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Input Text',
   argTypes: {
-    error: {
-      control: {
-        type: 'boolean'
-      },
-    },
     onColor: {
-      control: {
-        type: 'boolean'
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
     disabled: {
-      control: {
-        type: 'boolean'
-      }
-    },
-    label: {
-      control: {
-        type: 'text'
+      name: 'Disabled',
+      table: {
+        category: 'Modifiers',
       },
     },
-    helperText: {
-      control: {
-        type: 'text'
+    showHelper: {
+      name: 'Show Helper',
+      table: {
+        category: 'Modifiers',
       },
     },
     maxLength: {
-      control: {
-        type: 'number'
+      name: 'Max Length',
+      table: {
+        category: 'Modifiers',
       },
     },
-    id: {
-      description: 'Identificador do formulário e atributo que auxilia na ordem de foco para leitores de tela',
-      control: null,
+    error: {
+      name: 'Error',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'textarea' },
-        category: 'Acessibility'
-      }
+        category: 'Modifiers',
+      },
+    },
+    label: {
+      name: 'Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    helperText: {
+      name: 'Helper Text',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    placeholder: {
+      name: 'Placeholder',
+      table: {
+        category: 'Custom Inputs',
+      },
     },
   },
 };
 
 export function InputText(args) {
-  const handleChange = (value) => {
-    action(`handleChange`)({ value: value });
-  }
+  const handleChange = value => {
+    action(`handleChange`)({ value });
+  };
 
-  const handleFocus = (e) => {
+  const handleFocus = e => {
     action(`handleFocus`)({ event: e });
-  }
+  };
 
   return (
     <InputTextTag {...args} handleChange={handleChange} handleFocus={handleFocus}></InputTextTag>
-  )
+  );
 }
 
 InputText.args = {
@@ -70,4 +79,4 @@ InputText.args = {
   error: false,
   onColor: false,
   disabled: false,
-}
+};

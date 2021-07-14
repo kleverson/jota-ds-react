@@ -1,5 +1,3 @@
-import React from 'react';
-
 if (!document.head.querySelector('#jota-icons')) {
   const iconsLink = document.createElement('link');
 
@@ -9,5 +7,3 @@ if (!document.head.querySelector('#jota-icons')) {
 
   document.head.appendChild(iconsLink);
 }
-
-

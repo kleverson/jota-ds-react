@@ -1,6 +1,6 @@
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import * as brandingTokens from '../../tokens/branding.js';
-import * as globalTokens from '../../tokens/global.js';
+import * as brandingTokens from '../../styles/tokens/branding.js';
+import * as globalTokens from '../../styles/tokens/global.js';
 
 export default {
   fontSize: globalTokens.fontSizeXs,

@@ -2,17 +2,41 @@ import React from 'react';
 import BannerTag from './index.js';
 import { namespace } from '../../utils/setup.js';
 import { action } from '@storybook/addon-actions';
+import imgBannerIlustraMobile from '../../assets/images/bannerilustramobile.png';
+import imgBannerIlustraDesktop from '../../assets/images/bannerilustradesktop.png';
 
 
-import imgBannerIlustraMobile from '../../assets/images/bannerilustramobile.png';import imgBannerIlustraDesktop from '../../assets/images/bannerilustradesktop.png';
 
 export default {
   title: 'Core components react/Banner',
   argTypes: {
-
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    bgColor: {
+      name: 'Background Color',
+      table: { category: 'Modifiers' },
+      control: 'color',
+    },
+    title: {
+      name: 'Title',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    paragraph: { name: 'Paragraph', table: { category: 'Custom Inputs' } },
+    imageAlt: {
+      name: 'Image Alt',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <>
         <style>
           {`.sb-show-main {
@@ -27,7 +51,7 @@ export default {
             }
             `}
         </style>
-        <Story/>
+        <Story />
       </>
     ),
   ],
@@ -46,14 +70,14 @@ export function Banner(args) {
         <img src={imgBannerIlustraDesktop} alt="Image of Banner" />
       </picture>
     </BannerTag>
-  )
+  );
 }
 
 Banner.args = {
-  title: "Heading Medium two lines",
-  headingVariant: 'h2',
-  paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  bgColor: "#1474FF",
+  title: 'Heading Medium two lines',
+  paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+  bgColor: '#1474FF',
+  onColor: true,
   // image: imgBannerIlustraDesktop,
-  imageAlt: "Image of banner"
-}
+  imageAlt: 'Image of banner',
+};

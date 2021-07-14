@@ -4,42 +4,49 @@ import LinkTag from './index.js';
 export default {
   title: 'Core components react/Link',
   argTypes: {
-    label: {
-      title: 'Label',
-      description: 'Digite a label do link',
-      defaultValue: 'Text Link',
-      control: {
-        type: 'text',
-      },
-    },
     disabled: {
-      title: 'Disabled',
+      name: 'Disabled',
       description: 'Define se o link está ativo ou não',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
+      table: {
+        category: 'Modifiers',
       },
     },
     onColor: {
-      title: 'Inverse',
+      name: 'On Color',
       description: 'Define se o link tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
+      table: {
+        category: 'Modifiers',
       },
     },
     icon: {
-      title: 'icon',
+      name: 'Icon',
       description: 'Define se o link tem ícone ou não',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
+      table: {
+        category: 'Modifiers',
       },
     },
     target: {
+      name: 'Target',
+      table: {
+        category: 'Modifiers',
+      },
+      options: ['New Tab', 'Same Tab'],
+      mapping: { 'New Tab': '_blank', 'Same Tab': '_self' },
       control: {
         type: 'select',
-        options: ['_blank', '_self'],
+      },
+    },
+    label: {
+      name: 'Label',
+      description: 'Digite a label do link',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    href: {
+      name: 'Link Address',
+      table: {
+        category: 'Custom Inputs',
       },
     },
   },
@@ -55,5 +62,5 @@ Link.args = {
   icon: false,
   onColor: false,
   href: '/',
-  target: '_blank',
+  target: 'New Tab',
 };

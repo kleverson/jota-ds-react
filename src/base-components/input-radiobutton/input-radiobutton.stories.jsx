@@ -8,9 +8,13 @@ export default {
   name: 'Radiobutton',
   argTypes: {
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define o estilo inverso, com background',
+      table: {
+        category: 'Modifiers',
+      },
     },
+    listData: { table: { disable: true } },
   },
 };
 
@@ -19,33 +23,33 @@ export function InputRadioButton(args) {
     action(`${namespace}Change`)({ checked: e });
   }
 
-  return <div> <RadioButtonTag {...args} handleChange={handleChange}></RadioButtonTag> </div>;
+  return (
+    <div>
+      <RadioButtonTag {...args} handleChange={handleChange}></RadioButtonTag>
+    </div>
+  );
 }
 
 InputRadioButton.args = {
   onColor: false,
   listData: [
-    { 
+    {
       label: 'Label A',
       value: 'A',
       checked: true,
       disabled: false,
     },
-    { 
+    {
       label: 'Label B',
       value: 'B',
       checked: false,
       disabled: false,
     },
-    { 
+    {
       label: 'Label C',
       value: 'C',
       checked: false,
       disabled: true,
     },
-  ]
-};
-
-InputRadioButton.argTypes = {
-  listData: { table: { disable: true } }
+  ],
 };

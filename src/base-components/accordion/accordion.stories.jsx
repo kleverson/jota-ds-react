@@ -1,12 +1,34 @@
 import React from 'react';
-import AccordionTag from './index.js';
-import { namespace } from '../../utils/setup.js';
 import { action } from '@storybook/addon-actions';
+import AccordionTag from './index.js';
 
 export default {
   title: 'Core components react/Accordion',
   argTypes: {
-
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    opened: {
+      name: 'Opened',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    label: {
+      name: 'Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    accordionContent: {
+      name: 'Accordion Content',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
   },
 };
 
@@ -16,16 +38,19 @@ export function Accordion(args) {
   }
 
   return (
-    <div style={{width: '324px'}}>
+    <div style={{ width: '324px' }}>
       <AccordionTag {...args} handleOpened={_handleOpened}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s
+        {args.accordionContent}
       </AccordionTag>
     </div>
-  )
+  );
 }
 
 Accordion.args = {
-  label: 'Heading X-Small',
+  onColor: false,
   opened: false,
-  onColor: false
-}
+  label: 'Heading X-Small',
+  accordionContent:
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has' +
+    'been the industry`s standard dummy text ever since the 1500s',
+};

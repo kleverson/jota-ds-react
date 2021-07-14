@@ -7,107 +7,90 @@ import Button from '../button/index.js';
 export default {
   title: 'Core components react/Notification',
   argTypes: {
-    title: {
-      description: 'Define o título do notification',     
-      control: {
-        type: 'text'
-      },
+    onColor: {
+      name: 'On Color',
+      description: 'Define se o notification tem a cor invertida',
       table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    title: {
+      name: 'Title',
+      description: 'Define o título do notification',
+      table: {
+        category: 'Custom Inputs',
         type: { summary: 'string' },
-        defaultValue: { summary: '"Heading Large"' }
-      }  
+        defaultValue: { summary: '"Heading Large"' },
+      },
     },
     content: {
-      description: 'Define o conteúdo do notification',     
-      control: {
-        type: 'text'
-      },
+      name: 'Content',
+      description: 'Define o conteúdo do notification',
       table: {
+        category: 'Custom Inputs',
         type: { summary: 'string' },
-        defaultValue: { summary: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet lorem tellus, non cursus leo cursus a. Aenean commodo aliquam aliquet. Vivamus tempus nulla sit amet magna rutrum"' }
-      }  
+        defaultValue: {
+          summary: 'Lorem ipsum',
+        },
+      },
     },
     buttonText: {
-      description: 'Define o texto do botão',     
-      control: {
-        type: 'text'
-      },
+      name: 'Button Text',
+      description: 'Define o texto do botão',
       table: {
+        category: 'Custom Inputs',
         type: { summary: 'string' },
-        defaultValue: { summary: '"Button Primary"' }
-      }  
-    },
-    onColor: {
-      title: 'onColor',
-      description: 'Define se o notification tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean'
+        defaultValue: { summary: '"Button Primary"' },
       },
-      table: {
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }  
     },
-		handleConfirm: {
-			description: 'Evento emitido ao clicar no Button Primary',
-      table: {
-          type: { summary: 'CustomEvent' },
-          defaultValue: { summary: 'null' },
-          category: 'Events'
-      }
-		},
-		handleClose: {
-			description: 'Evento emitido ao clicar no fechar',
-      table: {
-          type: { summary: 'CustomEvent' },
-          defaultValue: { summary: 'null' },
-          category: 'Events'
-      }
-		}    
-  },	
+  },
   parameters: {
-		docs: {
-		  source: {
-			  code: `<${namespace}-notification></${namespace}-notification>`
-		  }
-		}
-	}
+    docs: {
+      source: {
+        code: `<Notification\n  buttonText=""\n  content=""\n  handleClose={function(){}}\n  handleConfirm={function(){}}\n  title=""\n/>`,
+      },
+    },
+  },
 };
 
 export function Notification(args) {
-
   const [isOpen, setIsOpen] = useState(false);
 
-  const _handleConfirm = (e) => {
+  const _handleConfirm = e => {
     setIsOpen(false);
     action(`handleConfirm`)({ event: e });
-  }
+  };
 
-  const _handleClose = (e) => {
+  const _handleClose = e => {
     setIsOpen(false);
     action(`handleClose`)({ event: e });
-  }
+  };
 
   const _openModal = () => {
     setIsOpen(true);
-  }
+  };
 
-  return ( 
-      <div>
-        {
-          !isOpen ?
-          <Button label="Open notification" type="primary" handleClick={_openModal}></Button> :
-          ''
-        }         
-        <NotificationTag {...args} isOpen={isOpen} handleConfirm={_handleConfirm} handleClose={_handleClose}></NotificationTag>
-      </div>
-  )
+  return (
+    <div>
+      {!isOpen ? (
+        <Button label="Open notification" type="primary" handleClick={_openModal}></Button>
+      ) : null}
+      <NotificationTag
+        {...args}
+        isOpen={isOpen}
+        handleConfirm={_handleConfirm}
+        handleClose={_handleClose}
+      />
+    </div>
+  );
 }
 
 Notification.args = {
-  title: "Heading Large",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet lorem tellus, non cursus leo cursus a. Aenean commodo aliquam aliquet. Vivamus tempus nulla sit amet magna rutrum",
-  buttonText: "Button Primary",
-  onColor: false
-}
+  title: 'Heading Large',
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet lorem tellus, non cursus leo cursus a. Aenean commodo aliquam aliquet. Vivamus tempus nulla sit amet magna rutrum',
+  buttonText: 'Button Primary',
+  onColor: false,
+};

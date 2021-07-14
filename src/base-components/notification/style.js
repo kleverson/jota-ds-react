@@ -64,7 +64,7 @@ export default css(NotificationStyleType)`
       right: 0;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       width: initial;
       height: initial;
       max-width: 672px;

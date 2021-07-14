@@ -34,5 +34,4 @@ export { default as TagHighlight } from "./base-components/tag-highlight/index.j
 export { default as TagSelect } from "./base-components/tag-select/index.js";
 export { default as Tooltip } from "./base-components/tooltip/index.js";
 export { default as Typography } from "./base-components/typography/index.js";
-export { default as Welcome } from "./base-components/welcome/index.js";
 

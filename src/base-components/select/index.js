@@ -4,7 +4,6 @@ import PropTypes, { func } from 'prop-types';
 import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import Icon from '../icon/index.js';
-import useOutsideClick from '../../mixins/mouse-handler.js';
 
 function Select({
   label, 

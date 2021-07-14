@@ -1,52 +1,35 @@
 import React from 'react';
 import TagCategoryTag from './index.js';
-import { namespace } from '../../utils/setup.js';
-import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Tag Category',
   argTypes: {
-    label: {
-      title: 'Tag highlight',
-      description: 'Digite a label da tag category',
-      defaultValue: 'Tag category',      
-      control: {
-        type: 'text'
-      },
-      table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: '"Tag category"' }
-      }  
-    },    
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define se a tag tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean'
-      },
       table: {
+        category: 'Modifiers',
         type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' }
-      }  
-    }
+        defaultValue: { summary: 'false' },
+      },
+    },
+    label: {
+      name: 'Label',
+      description: 'Digite a label da tag category',
+      table: {
+        category: 'Custom Inputs',
+        type: { summary: 'string' },
+        defaultValue: { summary: '"Tag category"' },
+      },
+    },
   },
-	parameters: {
-		docs: {
-		  source: {
-			  code: `<${namespace}-tag-category label="Tag label"></${namespace}-tag-category>`
-		  }
-		}
-	}
 };
 
 export function TagCategory(args) {
-  return (
-    <TagCategoryTag {...args}></TagCategoryTag>
-  )
+  return <TagCategoryTag {...args}></TagCategoryTag>;
 }
 
 TagCategory.args = {
   label: 'Tag category',
-  onColor: false
-}
+  onColor: false,
+};

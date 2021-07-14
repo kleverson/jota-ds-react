@@ -19,7 +19,8 @@
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postinstall": "yarn build"
   },
   "dependencies": {
     "@meiuca/context-element-react": "^1.0.3",

@@ -10,12 +10,13 @@ export default css(StepsStyleType)`
 
     .${namespace}-Step {
       position: relative;
-      margin-right: ${ ({ line }) => `${(parseInt(line.left) * 2) + parseInt(line.width)}px` };
+      margin-right: ${({ line }) => `${parseInt(line.left) * 2 + parseInt(line.width)}px`};
 
       &:last-child {
         margin-right: 0px;
         
-        &:after {
+        &:after,
+        &:before {
           display: none;
         }
       }
@@ -24,19 +25,19 @@ export default css(StepsStyleType)`
       &:after {
         content: "";
         position: absolute;  
-        height: ${ ({ line }) => line.height };
-        left: ${ ({ line }) => `calc( 100% + ${parseInt(line.left)}px )` };
+        height: ${({ line }) => line.height};
+        left: ${({ line }) => `calc( 100% + ${parseInt(line.left)}px )`};
       }
       
       &:after {
-        width: ${ ({ line }) => line.width };
-        background: ${ ({ line }) => line.next.backgroundColor };
+        width: ${({ line }) => line.width};
+        background: ${({ line }) => line.next.backgroundColor};
         z-index: 1;
       }
 
       &:before {
         width: 0px;
-        background: ${ ({ line }) => line.finish.backgroundColor };
+        background: ${({ line }) => line.finish.backgroundColor};
         z-index: 2;
       }
 
@@ -66,7 +67,7 @@ export default css(StepsStyleType)`
     }
 
     to {
-      width: ${ ({ line }) => line.width };
+      width: ${({ line }) => line.width};
     }
   }
 `;

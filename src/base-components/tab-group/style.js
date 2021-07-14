@@ -7,6 +7,7 @@ export default css(TabGroupStyleType)`
 &.${namespace}-Tab-group {
   .${namespace}-Tab-group__List {
     display: flex;
+
     .${namespace}-Tab-group__Label {
       background: none;
       border: none;
@@ -15,6 +16,7 @@ export default css(TabGroupStyleType)`
       flex-direction: column;
       white-space: nowrap;
       cursor: pointer;
+      margin: 0;
 
       span{
         padding: ${ context => context.label.paddingTop } ${ context => context.label.paddingSide };

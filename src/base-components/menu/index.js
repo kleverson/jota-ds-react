@@ -10,91 +10,33 @@ import PropTypes from 'prop-types';
 import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import TagHighlight from '../tag-highlight/index.js';
-import KeyboardEventHandler from '../../mixins/keyboard-handler.js';
 
-function resetList(array) {
-  array.forEach((item, index) => {
-    if (index === 0) {
-      item.menuItemRef.current.tabIndex = 0;
-    } else {
-      item.menuItemRef.current.tabIndex = -1;
-    }
 
-    if (item.menuItemRef.haveFocus) {
-      item.menuItemRef.haveFocus = false;
-      item.menuItemRef.current.blur();
-      item.menuItemRef.setFocusVisible(false);
-    }
-  });
-}
-
-function handleFocusChange(current, target) {
-  current.menuItemRef.current.tabIndex = -1;
-  current.menuItemRef.haveFocus = false;
-  current.menuItemRef.setFocusVisible(false);
-
-  if (target) {
-    target.menuItemRef.current.tabIndex = 0;
-    target.menuItemRef.haveFocus = true;
-    target.menuItemRef.current.focus();
-    target.menuItemRef.setFocusVisible(true);
-  }
-}
-
-function keyboardHandler(item, index, array) {
-  const nextItem = array[index + 1];
-  const previousItem = array[index - 1];
-
-  return KeyboardEventHandler({
-    Enter: () => item.handleClick?.(item),
-    ArrowDown: () => handleFocusChange(item, nextItem),
-    ArrowUp: () => handleFocusChange(item, previousItem),
-    Escape: () => resetList(array),
-    Tab: () => item.menuItemRef.setFocusVisible(true),
-  });
-}
-
-function renderItemList(item, index, array) {
-  const [focusVisible, setFocusVisible] = useState(false);
-
-  item.menuItemRef.setFocusVisible = setFocusVisible;
-
+function MenuItem({item}) {
   return item.label ? (
     <li
-      key={index}
       className={classMap({
         [`${namespace}-Menu__Item`]: true,
-        [`${namespace}-Menu__Item--FocusVisible`]: focusVisible,
+        [`${namespace}-Menu__Item--current`]: item.isCurrent,
       })}
       role="none"
     >
       <div
-        ref={item.menuItemRef}
         className={`${namespace}-Menu__ItemContent`}
         aria-haspopup="false"
         aria-expanded="false"
-        tabIndex={index === 0 ? 0 : -1}
         role="menuitem"
-        onClick={() => item.handleClick?.(item)}
-        onKeyUp={keyboardHandler(item, index, array)}
+        onClick={() => item.handleClick(item)}
       >
         {item.label}
-        {item.tagLabel ? <TagHighlight label={item.tagLabel} tabIndex={-1} role="note" /> : null}
+        {item.tagLabel ? 
+          <TagHighlight label={item.tagLabel} role="note" /> : null}
       </div>
     </li>
   ) : null;
 }
 
-// eslint-disable-next-line react/prop-types
 function MenuItemList({ menuList = [], ariaLabel }) {
-  menuList.forEach((item, index) => {
-    item.menuItemRef = item.menuItemRef || { current: undefined };
-
-    if (index === 0) {
-      item.menuItemRef.haveFocus = true;
-    }
-  });
-
   return (
     <ul
       className={`${namespace}-Menu__ItemList`}
@@ -102,7 +44,10 @@ function MenuItemList({ menuList = [], ariaLabel }) {
       aria-orientation="vertical"
       aria-label={ariaLabel}
     >
-      {menuList.map(renderItemList)}
+      {
+        menuList.map((menuItem, index) => {
+          return <MenuItem item={menuItem} key={index}></MenuItem>
+        })}
     </ul>
   );
 }
@@ -126,6 +71,7 @@ Menu.propTypes = {
     PropTypes.exact({
       label: PropTypes.string.isRequired,
       tagLabel: PropTypes.string,
+      isCurrent: PropTypes.bool,
       handleClick: PropTypes.func,
       menuItemRef: PropTypes.exact({ current: PropTypes.any }),
     }),

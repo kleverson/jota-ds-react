@@ -52,7 +52,9 @@ function Modal({
       >
         <div className={`${namespace}-Modal__shape`}>
           {
-            <ButtonIcon icon="close" size="small" handleClick={_closeModal}/>
+            isCloseDisabled ?
+              null :
+              <ButtonIcon icon="close" size="small" handleClick={_closeModal}/> 
           }
           <div className={`${namespace}-Modal__content`}>
             <div className={`${namespace}-Modal__stackfix`}></div>

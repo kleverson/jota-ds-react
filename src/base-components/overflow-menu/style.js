@@ -15,6 +15,7 @@ export default css(OverflowMenuStyleType)`
       position: absolute;
       right: calc(100% - 48px);
       top: 56px;
+      z-index: 10;
     }
   }
 `;

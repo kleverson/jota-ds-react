@@ -15,7 +15,12 @@ export default {
     shadow: globalTokens.shadowLevel2Stack,
     shadowColor: brandingTokens.neutralColorHighMedium,
     shadowOpacity: globalTokens.opacityLevelSemitransparent,
-    backgroundColor: brandingTokens.neutralColorLowPure,
+    backgroundColor: brandingTokens.neutralColorLowDark,
     borderRadius: globalTokens.borderRadiusSm
+  },
+
+  onColor: {
+    backgroundColor: brandingTokens.neutralColorHighLight,
+    color: brandingTokens.neutralColorLowPure
   }
 };

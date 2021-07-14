@@ -22,10 +22,8 @@ export default css(checkboxStyleType)`
       ${context => context.motion};
     }
 
-    &:focus-visible{
-      outline-style: solid;
-      outline-color: ${({ states }) => states.focus.outlineColor};
-      outline-width: ${({ states }) => states.focus.outlineWidth};
+    &:focus-visible {
+      outline: ${({ states })  => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
     }
 
     &--disabled {
@@ -34,6 +32,8 @@ export default css(checkboxStyleType)`
     }
 
     input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
       border-radius: 0px;
       margin: 0;

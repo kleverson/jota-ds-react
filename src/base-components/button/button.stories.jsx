@@ -1,9 +1,9 @@
 import React from 'react';
 import ButtonTag from './index.js';
+import IconList from '../../utils/icon-list.js';
 
 export default {
   title: 'Core components react/Button',
-  component: ButtonTag,
   argTypes: {
     // CÓDIGO NÃO INCLUI ESCOLHA DE TAMANHO
     /* size: {
@@ -15,106 +15,53 @@ export default {
       },
     }, */
     type: {
-      title: 'Size',
+      name: 'Type',
       description: 'Define o tipo do botão',
+      table: {
+        category: 'Modifiers',
+      },
       control: {
         type: 'select',
         options: ['primary', 'secondary'],
       },
     },
     disabled: {
-      title: 'Disabled',
+      name: 'Disabled',
       description: 'Define se o botão está ativo ou não',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
+      table: {
+        category: 'Modifiers',
       },
     },
     onColor: {
-      title: 'onColor',
+      name: 'On Color',
       description: 'Define o contexto do elemento',
       defaultValue: false,
-      control: {
-        type: 'boolean',
+      table: {
+        category: 'Modifiers',
       },
     },
     iconType: {
-      title: 'Icon type',
+      name: 'Icon type',
       description: 'Selecione o ícone que deseja',
-      defaultValue: 'chevron-right',
+      table: {
+        category: 'Modifiers',
+      },
       control: {
         type: 'select',
-        options: [
-          'adjustment',
-          'arrow-down',
-          'arrow-left',
-          'arrow-right',
-          'arrow-up',
-          'block',
-          'bookmark',
-          'bullet',
-          'check',
-          'chevron-down',
-          'chevron-left',
-          'chevron-right',
-          'chevron-up',
-          'clock',
-          'close',
-          'comment',
-          'credit-card',
-          'double-check',
-          'edit',
-          'exclamation-circle',
-          'exclamation',
-          'eye-slash',
-          'eye',
-          'filter',
-          'forward',
-          'heart-filled',
-          'heart',
-          'key',
-          'lightbulb',
-          'lock',
-          'megaphone',
-          'menu',
-          'microphone-slash',
-          'microphone',
-          'minus',
-          'more-horizontal',
-          'notification-slash',
-          'notification',
-          'pause',
-          'pen',
-          'phone',
-          'play',
-          'plus',
-          'search',
-          'setting',
-          'shapes',
-          'star-filled',
-          'star-half',
-          'star',
-          'support',
-          'sync',
-          'thumbs-down',
-          'thumbs-up',
-          'timer',
-          'trash',
-          'unlock',
-          'user',
-          'volume-down',
-          'volume-off',
-          'volume-up',
-          'wallet',
-        ],
+        options: IconList,
+      },
+    },
+    icon: {
+      name: 'Use Icon',
+      table: {
+        category: 'Modifiers',
       },
     },
     label: {
-      title: 'Label',
+      name: 'Label',
       description: 'Digite a label do botão',
-      defaultValue: 'Button',
-      control: {
-        type: 'text',
+      table: {
+        category: 'Custom Inputs',
       },
     },
   },
@@ -130,5 +77,6 @@ Button.args = {
   disabled: false,
   iconType: 'comment',
   onColor: false,
-  type: 'primary'
+  type: 'primary',
+  icon: false,
 };

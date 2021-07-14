@@ -1,53 +1,68 @@
 import React from 'react';
 import BrandTag from './index.js';
-import { namespace } from '../../utils/setup.js';
-import { action } from '@storybook/addon-actions';
+import jotaSymbol from '../../assets/images/jota-symbol.svg';
+import jotaLogotype from '../../assets/images/jota-logotype.svg';
+import jotaLogotypeOnColor from '../../assets/images/jota-logotype-oncolor.svg';
 
-import jotaSymbol from '../../assets/images/jota-symbol.svg';import jotaLogotype from '../../assets/images/jota-logotype.svg';import jotaSymbolOnColor from '../../assets/images/jota-symbol-oncolor.svg';import jotaLogotypeOnColor from '../../assets/images/jota-logotype-oncolor.svg';
+
 
 export default {
   title: 'Core components react/Brand',
   argTypes: {
-    alt: {
-      control: {
-        type: "text"
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
     size: {
+      name: 'Size',
+      table: {
+        category: 'Modifiers',
+      },
       control: {
-        options: ["small", "medium", "large"],
-        type: "select"
+        options: ['small', 'medium', 'large'],
+        type: 'select',
       },
     },
     type: {
+      name: 'Type',
+      table: {
+        category: 'Modifiers',
+      },
       control: {
-        options: ["logotype", "symbol"],
-        type: "select"
+        options: ['logotype', 'symbol'],
+        type: 'select',
       },
     },
     externalUrl: {
-      control: {
-        type: "text"
+      name: 'External URL',
+      table: {
+        category: 'Custom Inputs',
       },
-    }
+    },
+    alt: { table: { disable: true } },
   },
 };
 
 export function Brand(args) {
-  const currentSource = (args.externalUrl || ((args.type === 'logotype') ? (args.onColor ? jotaLogotypeOnColor : jotaLogotype) : (args.onColor ? jotaSymbolOnColor : jotaSymbol)));
-  return (
-    <BrandTag {...args} externalUrl={currentSource}></BrandTag>
-  )
+  const currentSource =
+    args.externalUrl ||
+    (args.type === 'logotype'
+      ? args.onColor
+        ? jotaLogotypeOnColor
+        : jotaLogotype
+      : args.onColor
+      ? jotaSymbolOnColor
+      : jotaSymbol);
+
+  return <BrandTag {...args} externalUrl={currentSource}></BrandTag>;
 }
 
 Brand.args = {
-  alt: "Brand",
-  size: "medium",
-  type: "logotype",
-  externalUrl: "",
-  onColor: false
-}
-
-Brand.argTypes = {
-  alt: { table: { disable: true } }
-}
+  alt: 'Brand',
+  size: 'medium',
+  type: 'logotype',
+  externalUrl: '',
+  onColor: false,
+};

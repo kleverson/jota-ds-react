@@ -93,6 +93,12 @@ export default css(TooltipStyleType)`
       border-radius: ${({shape}) => shape.borderRadius};
       box-sizing: border-box;
       box-shadow: ${({shape}) => `${shape.shadow} ${hexToRGB(shape.shadowColor, shape.shadowOpacity)}`};
+      word-break: break-all;
+
+      &--onColor {
+        background-color: ${ ({ onColor }) => onColor.backgroundColor };
+        color: ${ ({ onColor }) => onColor.color };
+      }      
     }
 
     &:hover{

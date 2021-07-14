@@ -4,41 +4,54 @@ import InputTextareaTag from './index.js';
 export default {
   title: 'Core components react/Input Textarea',
   argTypes: {
-    label: {
-      control: {
-        type: 'text',
-      },
-    },
-    helperText: {
-      control: {
-        type: 'text',
-      },
-    },
-    showHelper: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    maxLength: {
-      control: {
-        type: 'number',
-      },
-    },
-    error: {
-      control: {
-        type: 'boolean',
-      },
-    },
     onColor: {
-      control: {
-        type: 'boolean',
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
     disabled: {
-      control: {
-        type: 'boolean',
+      name: 'Disabled',
+      table: {
+        category: 'Modifiers',
       },
-    }
+    },
+    showHelper: {
+      name: 'Show Helper',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    maxLength: {
+      name: 'Max Length',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    error: {
+      name: 'Error',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    label: {
+      name: 'Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    helperText: {
+      name: 'Helper Text',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    placeholder: {
+      name: 'Placeholder',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
   },
 };
 

@@ -1,56 +1,69 @@
 import React from 'react';
 import SelectTag from './index.js';
-import { namespace } from '../../utils/setup.js';
-import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Input Select',
   argTypes: {
-    label: {
-      control: {
-        type: 'text'
-      },
-    },
-    placeholder: {
-      control: {
-        type: 'text'
-      },
-    },
-    errorMsg: {
-      control: {
-        type: 'text'
-      },
-    },
     disabled: {
-      control: {
-        type: 'boolean',
+      name: 'Disabled',
+      table: {
+        category: 'Modifiers',
       },
     },
     error: {
-      control: {
-        type: 'boolean',
+      name: 'Error',
+      table: {
+        category: 'Modifiers',
       },
     },
     onColor: {
-      control: {
-        type: 'boolean',
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
-    }
+    },
+    optionsLength: {
+      name: 'Options Length',
+      control: { type: 'range', min: 1, max: 6 },
+      table: { category: 'Modifiers' },
+    },
+    label: {
+      name: 'Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    placeholder: {
+      name: 'Placeholder',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    errorMsg: {
+      name: 'Error Message',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
   },
 };
 
 export function InputSelect(args) {
-  return (
-    <SelectTag {...args}></SelectTag>
-  )
+  const options = [];
+
+  for (let i = 1; i <= args.optionsLength; i += 1) {
+    options.push(`item ${i}`);
+  }
+
+  return <SelectTag {...args} options={options} />;
 }
 
 InputSelect.args = {
-  label: "Select",
-  placeholder: "Select",
-  errorMsg: "Helper text",
+  label: 'Select',
+  placeholder: 'Select',
+  errorMsg: 'Helper text',
   disabled: false,
   error: false,
   onColor: false,
-  options: ['label 1', 'label 2', 'label 3']
-}
+  optionsLength: 4,
+};

@@ -5,13 +5,19 @@ import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import Typography from '../typography/index.js';
 
-function Tooltip({position = "top", body, children}){
+function Tooltip({position = "top", body, onColor, children}){
   return (
     <ContextElement contextId={`${namespace}-Tooltip`} styles={style}>
-      <span className={`${namespace}-Tooltip
-        ${namespace}-Tooltip--${position}`}>
-        <span id="tooltipDescription" className={`${namespace}-Tooltip__Content`}>
-          <Typography component="caption" onColor={true}>
+      <span className={`
+        ${namespace}-Tooltip
+        ${namespace}-Tooltip--${position}
+      `}>
+        <span id="tooltipDescription" 
+          className={`
+            ${namespace}-Tooltip__Content
+            ${onColor ? `${namespace}-Tooltip__Content--onColor` : ''}
+          `}>
+          <Typography component="caption" onColor={!onColor}>
             {body}
           </Typography>
         </span>

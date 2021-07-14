@@ -7,7 +7,7 @@ export default {
   motion: injectMotion('switch-fast'),
   borderRadius: globalTokens.borderRadiusCircular,
   color: brandingTokens.neutralColorLowPure,
-  
+
   states: {
     hover: {
       backgroundColor: brandingTokens.neutralColorLowPure,
@@ -17,7 +17,12 @@ export default {
         backgroundColor: brandingTokens.neutralColorHighPure,
         opacity: globalTokens.opacityLevelLight,
       }
-    }
+    },
+
+    focus: {
+      outlineColor: brandingTokens.highlightColorPure,
+      outlineWidth: globalTokens.borderWidthThin
+    }    
   },
 
   onColor: {
