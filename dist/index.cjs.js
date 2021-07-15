@@ -2475,6 +2475,9 @@ function OverflowMenu(_ref) {
       getCurrentMenuItem(_getCurrentMenuItem());
     }
   }, [_currentMenuIndex]);
+  React.useEffect(function () {
+    _updateMenuList(menuList);
+  }, [menuList]);
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: 'jota-OverflowMenu',
     styles: style$j

@@ -61,7 +61,11 @@ function OverflowMenu({ onColor = false, isOpen = false, menuList, toggleMenu, g
     if(getCurrentMenuItem){
       getCurrentMenuItem(_getCurrentMenuItem())
     }
-  }, [_currentMenuIndex])
+  }, [_currentMenuIndex]);
+
+  useEffect(() => {
+    _updateMenuList(menuList);
+  }, [menuList]);
 
   return (
     <ContextElement
