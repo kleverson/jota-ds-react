@@ -13,7 +13,10 @@ function OverflowMenu({ onColor = false, isOpen = false, menuList, toggleMenu, g
 
   const _toggleMenu = isOpen => {
     setOpenMenu(!isOpen);
-    toggleMenu(!isOpen);
+    
+    if(toggleMenu){
+      toggleMenu(!isOpen);
+    }
   };
 
   const _handleKeyUp = (e) => {
@@ -31,6 +34,10 @@ function OverflowMenu({ onColor = false, isOpen = false, menuList, toggleMenu, g
     if (e.code == 'ArrowUp') {
       setCurrentMenuIndex(_currentMenuIndex - 1 < 0 ? 0 : _currentMenuIndex - 1);
     }
+
+    if (e.code == 'Tab') {
+      setOpenMenu(false);
+    }
   }
 
   const _getCurrentMenuItem = () => {
@@ -42,6 +49,10 @@ function OverflowMenu({ onColor = false, isOpen = false, menuList, toggleMenu, g
       menuItem.isCurrent = index == _currentMenuIndex;
       return menuItem;
     })
+  }
+
+  const _handleBlur = (e) => {
+    setOpenMenu(false);
   }
 
   useEffect(() => {
@@ -66,7 +77,7 @@ function OverflowMenu({ onColor = false, isOpen = false, menuList, toggleMenu, g
           size="medium"
           onColor={onColor}
           handleClick={() => _toggleMenu(_isOpen)}
-          handleBlur={() => setOpenMenu(false)}
+          handleBlur={(e) => _handleBlur(e)}
           handleKeyDown={(e) => _handleKeyDown(e)}
         />
         <Menu isOpen={_isOpen} onColor={onColor} menuList={_menuList} />

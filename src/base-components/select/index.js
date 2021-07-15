@@ -62,7 +62,6 @@ function Select({
     }
   }
 
-
   const _handleTriggerKeyDown = (e) => {
     if(e.code === "Tab" && status.open){
       e.preventDefault();
@@ -76,11 +75,6 @@ function Select({
       setStatus({...status, placeholder : options[currentIndex]});
     }
   }, [currentIndex]);
-
-  useOutsideClick(selectReference, function(){
-    console.log(status, currentIndex)
-    //setStatus({...status, open : false});
-  });
 
   return (
     <ContextElement contextId={`${namespace}-Select`} styles={style}>
@@ -109,7 +103,7 @@ function Select({
           ${error ? `${namespace}-Select__trigger--error` : ''}
           `}>
             {status.placeholder}
-            <Icon icon="chevron-down"></Icon>
+            <Icon icon={status.open ? "chevron-up" : "chevron-down"}></Icon>
           </button>
           <ul className={`${namespace}-Select__option-list`} role="listbox" tabIndex="-1" aria-expanded={!!status.open}>
             {

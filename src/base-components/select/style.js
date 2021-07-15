@@ -34,8 +34,9 @@ export default css(SelectStyleType)`
       font-size: ${({ select }) => select.fontSize};
       font-weight: ${({ select }) => select.fontWeight};
       font-family: ${({ select }) => select.fontFamily};
-      margin-bottom: ${({ select }) => select.margin};
+      margin-bottom: ${({ label }) => label.marginBottom};
       line-height: ${({ select }) => select.lineHeight};
+      display: block;
       &--disabled {
         color:  ${({ disabled }) => disabled.color};
       }
@@ -48,7 +49,7 @@ export default css(SelectStyleType)`
       font-size: ${({ select }) => select.fontSize};
       text-align: left;
       padding: 0px ${({ select }) => select.padding};
-      color: ${({ input }) => input.color};
+      color: ${({ input }) => hexToRGB(input.color, input.opacity)};
       display: flex;
       align-items: center;
       min-width: 320px;
@@ -153,10 +154,17 @@ export default css(SelectStyleType)`
     }
   }
   &.${namespace}-Select--onColor{
+    
+    .${namespace}-Select__label {
+      color: ${({ onColor }) => onColor.label.color};
+      opacity: 1;
+    }
+
     span {
       color: ${({ onColor }) => onColor.color};
       opacity: ${({ disabled }) => disabled.onColorOpacity};
     }
+
     .${namespace}-Select__trigger{
       border: ${({ select }) => select.borderWidth} solid ${({ onColor }) => onColor.color} ;
       color: ${({ onColor }) => onColor.color};

@@ -19,9 +19,13 @@ export default {
     padding: globalTokens.spacingSizeXxxs,
     opacity: globalTokens.opacityLevelSemitransparent
   },
+  label: {
+    marginBottom: globalTokens.spacingSizeQuarck
+  },
   input: {
-    color: brandingTokens.neutralColorLowLight,
-    background: brandingTokens.neutralColorHighLight
+    color: brandingTokens.neutralColorLowPure,
+    background: brandingTokens.neutralColorHighLight,
+    opacity: globalTokens.opacityLevelSemiopaque
   },
   onColor: {
     color: brandingTokens.neutralColorHighPure,
@@ -30,7 +34,11 @@ export default {
     hover: brandingTokens.neutralColorHighPure,
     opacity: globalTokens.opacityLevelLight,
     background: brandingTokens.brandColorPrimaryPure,
-    errorBorder: brandingTokens.feedbackColorHelperPure
+    errorBorder: brandingTokens.feedbackColorHelperPure,
+
+    label: {
+      color: brandingTokens.neutralColorHighPure
+    }    
   },
   error :{
     spacing: globalTokens.spacingSizeQuarck,

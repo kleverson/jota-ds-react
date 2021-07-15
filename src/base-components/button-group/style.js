@@ -4,7 +4,7 @@ import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
 export default css(ButtonGroupStyleType)`
-&.${namespace}-ButtonGroup{
+&.${namespace}-ButtonGroup {
   display:flex;
   .${namespace}-ButtonGroup__button--tertiary{
     min-width: 160px;
@@ -55,6 +55,13 @@ export default css(ButtonGroupStyleType)`
     }
   }
 
+  @media (min-width: 768px) {
+    .${namespace}-ButtonGroup__button--tertiary {
+      margin-right: ${ context => context.tertiary.margin};
+      width: initial;
+    }
+  }
+  
   @media (max-width: 767px){
     margin-right: 0;
     flex-direction: column-reverse;
@@ -69,9 +76,4 @@ export default css(ButtonGroupStyleType)`
       }
     }
   }
-  @media (min-width: 768px){
-    .${namespace}-ButtonGroup__button--tertiary{
-      margin-right: ${ context => context.tertiary.margin};
-    }
-}
 `;

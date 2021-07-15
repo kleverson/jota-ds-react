@@ -6,6 +6,7 @@ var React = require('react');
 var contextElementReact = require('@meiuca/context-element-react');
 var PropTypes = require('prop-types');
 var helpers = require('@meiuca/motion-tokens/helpers');
+require('focus-visible/dist/focus-visible.min.js');
 var classMap = require('@meiuca/context-element-react/directives/class-map.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -1613,7 +1614,7 @@ var ButtonGroupStyleType = {
 };
 
 var _templateObject$p;
-var style$p = contextElementReact.createGooberGetter(ButtonGroupStyleType)(_templateObject$p || (_templateObject$p = _taggedTemplateLiteral(["\n&.", "-ButtonGroup{\n  display:flex;\n  .", "-ButtonGroup__button--tertiary{\n    min-width: 160px;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    height: ", ";\n    background-color: transparent;\n    border: 0px;\n    width: 100%;\n    padding: 0 ", ";\n    border-radius: ", ";\n     &:hover{\n      background-color: ", ";\n    } \n    &:active,\n    &:focus{\n      background-color: ", ";\n      outline-offset: 1px;\n      outline-color: ", ";\n    } \n    &[aria-disabled='true'] {\n      background-color: transparent;\n      color: ", ";\n      pointer-events: none;\n    }\n    &-onColor{\n      background-color: transparent;\n      border: 0px;\n      color: ", ";\n      width: fit-content;\n      padding: 0 ", ";\n      border-radius: ", ";\n      &:hover{\n        background-color: ", ";\n      } \n      &:active,\n      &:focus{\n        background-color: ", ";\n        outline-offset: 1px;\n        outline-color: ", ";\n      } \n      &[aria-disabled='true'] {\n        background-color: transparent;\n        color: ", ";\n        pointer-events: none;\n      }\n    }\n  }\n\n  @media (max-width: 767px){\n    margin-right: 0;\n    flex-direction: column-reverse;\n    .", "-ButtonGroup__button--tertiary{\n      margin-top: ", ";\n    }\n\n      ", "-button{\n        &::part(button){\n          width: 100%;\n        }\n      }\n    }\n  }\n  @media (min-width: 768px){\n    .", "-ButtonGroup__button--tertiary{\n      margin-right: ", ";\n    }\n}\n"])), namespace, namespace, function (context) {
+var style$p = contextElementReact.createGooberGetter(ButtonGroupStyleType)(_templateObject$p || (_templateObject$p = _taggedTemplateLiteral(["\n&.", "-ButtonGroup {\n  display:flex;\n  .", "-ButtonGroup__button--tertiary{\n    min-width: 160px;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    height: ", ";\n    background-color: transparent;\n    border: 0px;\n    width: 100%;\n    padding: 0 ", ";\n    border-radius: ", ";\n     &:hover{\n      background-color: ", ";\n    } \n    &:active,\n    &:focus{\n      background-color: ", ";\n      outline-offset: 1px;\n      outline-color: ", ";\n    } \n    &[aria-disabled='true'] {\n      background-color: transparent;\n      color: ", ";\n      pointer-events: none;\n    }\n    &-onColor{\n      background-color: transparent;\n      border: 0px;\n      color: ", ";\n      width: fit-content;\n      padding: 0 ", ";\n      border-radius: ", ";\n      &:hover{\n        background-color: ", ";\n      } \n      &:active,\n      &:focus{\n        background-color: ", ";\n        outline-offset: 1px;\n        outline-color: ", ";\n      } \n      &[aria-disabled='true'] {\n        background-color: transparent;\n        color: ", ";\n        pointer-events: none;\n      }\n    }\n  }\n\n  @media (min-width: 768px) {\n    .", "-ButtonGroup__button--tertiary {\n      margin-right: ", ";\n      width: initial;\n    }\n  }\n  \n  @media (max-width: 767px){\n    margin-right: 0;\n    flex-direction: column-reverse;\n    .", "-ButtonGroup__button--tertiary{\n      margin-top: ", ";\n    }\n\n      ", "-button{\n        &::part(button){\n          width: 100%;\n        }\n      }\n    }\n  }\n"])), namespace, namespace, function (context) {
   return context.tertiary.fontFamilyL;
 }, function (context) {
   return context.tertiary.fontSize;
@@ -1655,12 +1656,12 @@ var style$p = contextElementReact.createGooberGetter(ButtonGroupStyleType)(_temp
 }, function (_ref8) {
   var tertiary = _ref8.tertiary;
   return hexToRGB(tertiary.onColor, tertiary.disabledOpacity);
+}, namespace, function (context) {
+  return context.tertiary.margin;
 }, namespace, function (_ref9) {
   var responsive = _ref9.responsive;
   return responsive.margin;
-}, namespace, namespace, function (context) {
-  return context.tertiary.margin;
-});
+}, namespace);
 
 function ButtonGroup(_ref) {
   var _ref$tertiaryLabel = _ref.tertiaryLabel,
@@ -2210,7 +2211,7 @@ var _templateObject$i;
 /** @type {import('@meiuca/zero-builder/types/components').StyleType} */
 
 var x = MenuStyleType;
-var style$i = contextElementReact.createGooberGetter(x)(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    display: none;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      display: block;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n\n        .", "-TagHighlight {\n          min-width: 55px;\n          overflow: hidden;\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var style$i = contextElementReact.createGooberGetter(x)(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n\n        .", "-TagHighlight {\n          min-width: 55px;\n          overflow: hidden;\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var backgroundColor = _ref.backgroundColor;
   return backgroundColor;
 }, function (_ref2) {
@@ -2342,7 +2343,8 @@ function MenuItem(_ref) {
     }
   }, item.label, item.tagLabel ? /*#__PURE__*/React__default['default'].createElement(TagHighlight, {
     label: item.tagLabel,
-    role: "note"
+    role: "note",
+    tabIndex: -1
   }) : null)) : null;
 }
 
@@ -2423,7 +2425,10 @@ function OverflowMenu(_ref) {
 
   var _toggleMenu = function _toggleMenu(isOpen) {
     setOpenMenu(!isOpen);
-    toggleMenu(!isOpen);
+
+    if (toggleMenu) {
+      toggleMenu(!isOpen);
+    }
   };
 
   var _handleKeyUp = function _handleKeyUp(e) {
@@ -2441,6 +2446,10 @@ function OverflowMenu(_ref) {
     if (e.code == 'ArrowUp') {
       setCurrentMenuIndex(_currentMenuIndex - 1 < 0 ? 0 : _currentMenuIndex - 1);
     }
+
+    if (e.code == 'Tab') {
+      setOpenMenu(false);
+    }
   };
 
   var _getCurrentMenuItem = function _getCurrentMenuItem() {
@@ -2454,6 +2463,10 @@ function OverflowMenu(_ref) {
       menuItem.isCurrent = index == _currentMenuIndex;
       return menuItem;
     });
+  };
+
+  var _handleBlur = function _handleBlur(e) {
+    setOpenMenu(false);
   };
 
   React.useEffect(function () {
@@ -2478,8 +2491,8 @@ function OverflowMenu(_ref) {
     handleClick: function handleClick() {
       return _toggleMenu(_isOpen);
     },
-    handleBlur: function handleBlur() {
-      return setOpenMenu(false);
+    handleBlur: function handleBlur(e) {
+      return _handleBlur();
     },
     handleKeyDown: function handleKeyDown(e) {
       return _handleKeyDown(e);
@@ -4245,7 +4258,7 @@ var ModalStyleType = {
 };
 
 var _templateObject$a;
-var style$a = contextElementReact.createGooberGetter(ModalStyleType)(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  &.", "-Modal{\n    justify-content: center;\n    align-items: center;\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: ", ";\n\n    &--open{\n      display: flex;\n    }\n\n    .", "-ButtonIcon{\n      position: absolute;\n      top: ", ";\n      right: ", ";\n    }\n\n    .", "-Modal__shape {\n      background-color: ", ";\n      box-shadow: ", ";\n      width: 100vw;\n      height: 100vh;\n      box-sizing: border-box;\n      position: relative;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .", "-Modal__content{\n      flex: 1;\n      padding: ", ";\n    }\n\n    .", "-Modal__stackfix{\n      height: ", ";\n    }\n\n    .", "-Modal__nav{\n      display: flex;\n      justify-self: flex-end;\n      justify-content: center;\n      padding: ", ";\n      background-color: ", ";\n    }\n  }\n\n  @media screen and (min-width: 601px){\n    &.", "-Modal{\n      .", "-Modal__stackfix{\n        display: none;\n      }\n\n      .", "-Modal__nav {\n        justify-content: flex-end;\n        border-radius: ", ";\n      }\n\n      .", "-Modal__shape{\n        width: 464px;\n        height: initial;\n        min-height: 450px;\n        border-radius: ", ";\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var style$a = contextElementReact.createGooberGetter(ModalStyleType)(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  &.", "-Modal{\n    justify-content: center;\n    align-items: center;\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: ", ";\n\n    &--open{\n      display: flex;\n    }\n\n    .", "-ButtonIcon{\n      position: absolute;\n      top: ", ";\n      right: ", ";\n    }\n\n    .", "-Modal__shape {\n      background-color: ", ";\n      box-shadow: ", ";\n      width: 100vw;\n      height: 100vh;\n      box-sizing: border-box;\n      position: relative;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .", "-Modal__content{\n      flex: 1;\n      padding: ", ";\n    }\n\n    .", "-Modal__stackfix{\n      height: ", ";\n    }\n\n    .", "-Modal__nav{\n      display: flex;\n      justify-self: flex-end;\n      justify-content: center;\n      padding: ", ";\n      background-color: ", ";\n    }\n  }\n\n  @media screen and (min-width: 601px){\n    &.", "-Modal{\n      .", "-Modal__stackfix{\n        display: none;\n      }\n\n      .", "-Modal__nav {\n        justify-content: flex-end;\n        border-radius: 0px 0px ", " ", ";\n      }\n\n      .", "-Modal__shape{\n        width: 464px;\n        height: initial;\n        min-height: 450px;\n        border-radius: ", ";\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var overlay = _ref.overlay;
   return hexToRGB(overlay.backgroundColor, overlay.opacity);
 }, namespace, function (_ref2) {
@@ -4275,8 +4288,11 @@ var style$a = contextElementReact.createGooberGetter(ModalStyleType)(_templateOb
 }, namespace, namespace, namespace, function (_ref10) {
   var shape = _ref10.shape;
   return shape.borderRadius;
-}, namespace, function (_ref11) {
+}, function (_ref11) {
   var shape = _ref11.shape;
+  return shape.borderRadius;
+}, namespace, function (_ref12) {
+  var shape = _ref12.shape;
   return shape.borderRadius;
 });
 
@@ -4535,9 +4551,13 @@ var SelectStyleType = {
     padding: spacingSizeXxxs,
     opacity: opacityLevelSemitransparent
   },
+  label: {
+    marginBottom: spacingSizeQuarck
+  },
   input: {
-    color: neutralColorLowLight,
-    background: neutralColorHighLight
+    color: neutralColorLowPure,
+    background: neutralColorHighLight,
+    opacity: opacityLevelSemiopaque
   },
   onColor: {
     color: neutralColorHighPure,
@@ -4546,7 +4566,10 @@ var SelectStyleType = {
     hover: neutralColorHighPure,
     opacity: opacityLevelLight,
     background: brandColorPrimaryPure,
-    errorBorder: feedbackColorHelperPure
+    errorBorder: feedbackColorHelperPure,
+    label: {
+      color: neutralColorHighPure
+    }
   },
   error: {
     spacing: spacingSizeQuarck,
@@ -4579,7 +4602,7 @@ var SelectStyleType = {
 };
 
 var _templateObject$8;
-var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative; \n    font-family: ", "; \n    \n    &--focus{\n      border: ", " solid ", ";\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      &--disabled {\n        color:  ", ";\n      }\n    }\n    .", "-Select__trigger {\n      height: ", ";\n      background: transparent;\n      border-radius: ", ";\n      border: ", " solid ", " ;\n      font-size: ", ";\n      text-align: left;\n      padding: 0px ", ";\n      color: ", ";\n      display: flex;\n      align-items: center;\n      min-width: 320px;\n      justify-content: space-between;\n      margin-bottom: ", ";\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border:", " solid ", ";      \n      }\n      &[disabled]{\n        border: ", " solid ", ";\n        pointer-events: none;\n      }\n    }\n\n    .", "-Select__option-list{\n      opacity: 0;\n      background-color: ", ";\n      width: 100%;\n      border-radius: ", ";\n      margin-top: ", ";\n      position: absolute;\n      visibility: hidden;\n      list-style-type: none;\n      padding: 0px;\n      margin-left: 0px;\n      margin-right: 0px;\n      &[aria-expanded=true]{\n        opacity: 1;\n        visibility: visible;\n      }\n      .", "-Select__option{\n        background-color: transparent;\n        color: ", ";\n        font-size: ", ";\n        border: none;\n        width: 100%;\n        padding: 16px;\n        text-align: left;\n        box-sizing: border-box;\n        &--current,\n        &:focus,\n        &:hover{\n          background-color: ", ";\n          opacity: ", ";\n          outline: transparent;\n          &:before,\n          &:after {\n            background-color: transparent;\n          }\n        }\n        &:before{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          top: -16px;\n          position: relative;\n        }\n        &:after{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          bottom: -16px;\n          position: relative;\n        }\n        &--last{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-bottom-right-radius: 8px;\n            border-bottom-left-radius: 8px;\n          }\n        }\n        &--first{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-top-right-radius: 8px;\n            border-top-left-radius: 8px;\n          }\n        }\n      }\n    }\n  }\n  &.", "-Select--onColor{\n    span {\n      color: ", ";\n      opacity: ", ";\n    }\n    .", "-Select__trigger{\n      border: ", " solid ", " ;\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color:  ", ";\n        border: 2px solid ", ";\n        opacity: ", ";\n      }\n    }\n\n    .", "-Select__label--disabled {\n      color:  ", ";\n    }\n\n    .", "-trigger--error {\n      color: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n    }\n}\n"])), namespace, function (_ref) {
+var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative; \n    font-family: ", "; \n    \n    &--focus{\n      border: ", " solid ", ";\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n      &--disabled {\n        color:  ", ";\n      }\n    }\n    .", "-Select__trigger {\n      height: ", ";\n      background: transparent;\n      border-radius: ", ";\n      border: ", " solid ", " ;\n      font-size: ", ";\n      text-align: left;\n      padding: 0px ", ";\n      color: ", ";\n      display: flex;\n      align-items: center;\n      min-width: 320px;\n      justify-content: space-between;\n      margin-bottom: ", ";\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border:", " solid ", ";      \n      }\n      &[disabled]{\n        border: ", " solid ", ";\n        pointer-events: none;\n      }\n    }\n\n    .", "-Select__option-list{\n      opacity: 0;\n      background-color: ", ";\n      width: 100%;\n      border-radius: ", ";\n      margin-top: ", ";\n      position: absolute;\n      visibility: hidden;\n      list-style-type: none;\n      padding: 0px;\n      margin-left: 0px;\n      margin-right: 0px;\n      &[aria-expanded=true]{\n        opacity: 1;\n        visibility: visible;\n      }\n      .", "-Select__option{\n        background-color: transparent;\n        color: ", ";\n        font-size: ", ";\n        border: none;\n        width: 100%;\n        padding: 16px;\n        text-align: left;\n        box-sizing: border-box;\n        &--current,\n        &:focus,\n        &:hover{\n          background-color: ", ";\n          opacity: ", ";\n          outline: transparent;\n          &:before,\n          &:after {\n            background-color: transparent;\n          }\n        }\n        &:before{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          top: -16px;\n          position: relative;\n        }\n        &:after{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          bottom: -16px;\n          position: relative;\n        }\n        &--last{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-bottom-right-radius: 8px;\n            border-bottom-left-radius: 8px;\n          }\n        }\n        &--first{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-top-right-radius: 8px;\n            border-top-left-radius: 8px;\n          }\n        }\n      }\n    }\n  }\n  &.", "-Select--onColor{\n    \n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n    }\n\n    span {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__trigger{\n      border: ", " solid ", " ;\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color:  ", ";\n        border: 2px solid ", ";\n        opacity: ", ";\n      }\n    }\n\n    .", "-Select__label--disabled {\n      color:  ", ";\n    }\n\n    .", "-trigger--error {\n      color: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n    }\n}\n"])), namespace, function (_ref) {
   var select = _ref.select;
   return select.fontFamily;
 }, function (_ref2) {
@@ -4616,8 +4639,8 @@ var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateO
   var select = _ref12.select;
   return select.fontFamily;
 }, function (_ref13) {
-  var select = _ref13.select;
-  return select.margin;
+  var label = _ref13.label;
+  return label.marginBottom;
 }, function (_ref14) {
   var select = _ref14.select;
   return select.lineHeight;
@@ -4644,7 +4667,7 @@ var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateO
   return select.padding;
 }, function (_ref22) {
   var input = _ref22.input;
-  return input.color;
+  return hexToRGB(input.color, input.opacity);
 }, function (_ref23) {
   var select = _ref23.select;
   return select.marginBottom;
@@ -4705,18 +4728,18 @@ var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateO
 }, function (_ref42) {
   var listItem = _ref42.listItem;
   return listItem.hover;
-}, namespace, function (_ref43) {
+}, namespace, namespace, function (_ref43) {
   var onColor = _ref43.onColor;
-  return onColor.color;
+  return onColor.label.color;
 }, function (_ref44) {
-  var disabled = _ref44.disabled;
-  return disabled.onColorOpacity;
-}, namespace, function (_ref45) {
-  var select = _ref45.select;
-  return select.borderWidth;
-}, function (_ref46) {
-  var onColor = _ref46.onColor;
+  var onColor = _ref44.onColor;
   return onColor.color;
+}, function (_ref45) {
+  var disabled = _ref45.disabled;
+  return disabled.onColorOpacity;
+}, namespace, function (_ref46) {
+  var select = _ref46.select;
+  return select.borderWidth;
 }, function (_ref47) {
   var onColor = _ref47.onColor;
   return onColor.color;
@@ -4725,33 +4748,36 @@ var style$8 = contextElementReact.createGooberGetter(SelectStyleType)(_templateO
   return onColor.color;
 }, function (_ref49) {
   var onColor = _ref49.onColor;
-  return hexToRGB(onColor.hover, onColor.opacity);
+  return onColor.color;
 }, function (_ref50) {
   var onColor = _ref50.onColor;
   return hexToRGB(onColor.hover, onColor.opacity);
 }, function (_ref51) {
-  var disabled = _ref51.disabled;
-  return disabled.onColor;
+  var onColor = _ref51.onColor;
+  return hexToRGB(onColor.hover, onColor.opacity);
 }, function (_ref52) {
   var disabled = _ref52.disabled;
-  return disabled.coloronColor;
+  return disabled.onColor;
 }, function (_ref53) {
   var disabled = _ref53.disabled;
-  return disabled.onColorOpacity;
-}, namespace, function (_ref54) {
+  return disabled.coloronColor;
+}, function (_ref54) {
   var disabled = _ref54.disabled;
-  return disabled.onColor;
+  return disabled.onColorOpacity;
 }, namespace, function (_ref55) {
-  var onColor = _ref55.onColor;
-  return onColor.color;
-}, function (_ref56) {
+  var disabled = _ref55.disabled;
+  return disabled.onColor;
+}, namespace, function (_ref56) {
   var onColor = _ref56.onColor;
-  return onColor.errorBackground;
+  return onColor.color;
 }, function (_ref57) {
-  var select = _ref57.select;
-  return select.borderWidth;
+  var onColor = _ref57.onColor;
+  return onColor.errorBackground;
 }, function (_ref58) {
-  var onColor = _ref58.onColor;
+  var select = _ref58.select;
+  return select.borderWidth;
+}, function (_ref59) {
+  var onColor = _ref59.onColor;
   return onColor.errorBorder;
 });
 
@@ -4850,9 +4876,6 @@ function Select(_ref) {
       }));
     }
   }, [currentIndex]);
-  useOutsideClick(selectReference, function () {
-    console.log(status, currentIndex); //setStatus({...status, open : false});
-  });
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: "".concat(namespace, "-Select"),
     styles: style$8
@@ -4879,7 +4902,7 @@ function Select(_ref) {
     ref: optionsTriggerReference,
     className: "".concat(namespace, "-Select__trigger\n          ").concat(error ? "".concat(namespace, "-Select__trigger--error") : '', "\n          ")
   }, status.placeholder, /*#__PURE__*/React__default['default'].createElement(Icon, {
-    icon: "chevron-down"
+    icon: status.open ? "chevron-up" : "chevron-down"
   })), /*#__PURE__*/React__default['default'].createElement("ul", {
     className: "".concat(namespace, "-Select__option-list"),
     role: "listbox",

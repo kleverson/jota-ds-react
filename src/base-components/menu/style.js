@@ -8,7 +8,8 @@ const x = MenuStyleType;
 
 export default css(x)`
   &.${namespace}-Menu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
     min-width: 240px;
     background-color: ${({ backgroundColor }) => backgroundColor};
@@ -19,7 +20,8 @@ export default css(x)`
       `${boxShadowLevel} ${hexToRGB(boxShadowColor, boxShadowOpacity)}`};
 
     &--open {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
 
     .${namespace}-Menu__ItemList {

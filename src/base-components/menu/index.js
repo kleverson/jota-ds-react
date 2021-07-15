@@ -30,7 +30,7 @@ function MenuItem({item}) {
       >
         {item.label}
         {item.tagLabel ? 
-          <TagHighlight label={item.tagLabel} role="note" /> : null}
+          <TagHighlight label={item.tagLabel} role="note" tabIndex={-1}/> : null}
       </div>
     </li>
   ) : null;

@@ -62,7 +62,7 @@ export default css(ModalStyleType)`
 
       .${namespace}-Modal__nav {
         justify-content: flex-end;
-        border-radius: ${({shape}) => shape.borderRadius};
+        border-radius: 0px 0px ${({shape}) => shape.borderRadius} ${({shape}) => shape.borderRadius};
       }
 
       .${namespace}-Modal__shape{
