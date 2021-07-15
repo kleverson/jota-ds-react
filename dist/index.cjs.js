@@ -6,7 +6,6 @@ var React = require('react');
 var contextElementReact = require('@meiuca/context-element-react');
 var PropTypes = require('prop-types');
 var helpers = require('@meiuca/motion-tokens/helpers');
-require('focus-visible/dist/focus-visible.min.js');
 var classMap = require('@meiuca/context-element-react/directives/class-map.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }

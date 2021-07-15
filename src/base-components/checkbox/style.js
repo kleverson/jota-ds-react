@@ -2,7 +2,6 @@ import { createGooberGetter as css } from '@meiuca/context-element-react';
 import checkboxStyleType from '../../styles/types/checkbox/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
-import 'focus-visible/dist/focus-visible.min.js';
 
 export default css(checkboxStyleType)`
   &.${namespace}-Checkbox-label {

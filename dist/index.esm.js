@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { createGooberGetter, ContextElement } from '@meiuca/context-element-react';
 import PropTypes from 'prop-types';
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import 'focus-visible/dist/focus-visible.min.js';
 import classMap from '@meiuca/context-element-react/directives/class-map.js';
 
 function ownKeys(object, enumerableOnly) {
