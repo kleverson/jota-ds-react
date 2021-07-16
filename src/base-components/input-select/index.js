@@ -84,6 +84,7 @@ function Select({
           ${onColor ? `${namespace}-Select--onColor` : ''}
           ${keyboardFocus ? `${namespace}-Select--focus` : ''}
           ${error ? `${namespace}-Select--error` : ''}
+          ${onColor && error ? `${namespace}-Select--onColor--error` : ''}
         `}
         ref={selectReference}
         id="wrapper" onKeyUp={_handleKeyUp}>

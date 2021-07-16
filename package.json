@@ -49,6 +49,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-delete": "^2.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "html-inputtypes": "^1.0.1",
     "prop-types": "^15.7.2",
     "react-scripts": "^4.0.3",

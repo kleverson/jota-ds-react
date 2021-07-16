@@ -5,21 +5,19 @@ import { action } from '@storybook/addon-actions';
 import imgBannerIlustraMobile from '../../assets/images/bannerilustramobile.png';
 import imgBannerIlustraDesktop from '../../assets/images/bannerilustradesktop.png';
 
-
-
 export default {
   title: 'Core components react/Banner',
   argTypes: {
+    bgColor: {
+      name: 'Background Color',
+      table: { category: 'Modifiers' },
+      control: 'color',
+    },
     onColor: {
       name: 'On Color',
       table: {
         category: 'Modifiers',
       },
-    },
-    bgColor: {
-      name: 'Background Color',
-      table: { category: 'Modifiers' },
-      control: 'color',
     },
     title: {
       name: 'Title',

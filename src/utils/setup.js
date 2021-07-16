@@ -1,3 +1,5 @@
+export { version } from '../../package.json';
+
 export const namespace = 'jota';
 
-export const config = {};
+export const ds = 'Jota';

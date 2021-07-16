@@ -3,11 +3,35 @@ import AvatarTag from './index.js';
 import { namespace } from '../../utils/setup.js';
 import avatarExample from '../../assets/images/avatar-example.png';
 
-
-
 export default {
   title: 'Core components react/Avatar',
   argTypes: {
+    useImage: {
+      name: 'Image',
+      description: 'Define se o avatar terá uma imagem',
+      defaultValue: false,
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    useLocalImage: {
+      name: 'Local Image',
+      description: 'Define se a imagem do avatar será uma imagem local',
+      defaultValue: false,
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
     size: {
       name: 'Size',
       description: 'Define o tamanho do avatar',
@@ -19,20 +43,6 @@ export default {
         category: 'Modifiers',
         type: { summary: 'string' },
         defaultValue: { summary: 'small' },
-      },
-    },
-    onColor: {
-      name: 'On Color',
-      title: 'onColor',
-      description: 'Define se o avatar tem a cor invertida',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
       },
     },
     hasNotification: {
@@ -48,22 +58,10 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
-    useLocalImage: {
-      name: 'Use Local Image',
-      description: 'Define se a imagem do avatar será uma imagem local',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    useImage: {
-      name: 'Use Image',
-      description: 'Define se o avatar terá uma imagem',
+    onColor: {
+      name: 'On Color',
+      title: 'onColor',
+      description: 'Define se o avatar tem a cor invertida',
       defaultValue: false,
       control: {
         type: 'boolean',

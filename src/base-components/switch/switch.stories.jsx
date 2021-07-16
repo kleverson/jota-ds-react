@@ -5,6 +5,10 @@ import SwitchTag from './index.js';
 export default {
   title: 'Core components react/Switch',
   argTypes: {
+    checked: {
+      name: 'Selected',
+      table: { category: 'Modifiers' },
+    },
     disabled: {
       name: 'Disabled',
       description: 'Define se o botao esta desabilitado',
@@ -18,10 +22,6 @@ export default {
       table: {
         category: 'Modifiers',
       },
-    },
-    checked: {
-      name: 'Checked',
-      table: { category: 'Modifiers' },
     },
     label: {
       name: 'Label',

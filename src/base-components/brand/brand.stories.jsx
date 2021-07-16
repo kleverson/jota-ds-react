@@ -4,15 +4,17 @@ import jotaSymbol from '../../assets/images/jota-symbol.svg';
 import jotaLogotype from '../../assets/images/jota-logotype.svg';
 import jotaLogotypeOnColor from '../../assets/images/jota-logotype-oncolor.svg';
 
-
-
 export default {
   title: 'Core components react/Brand',
   argTypes: {
-    onColor: {
-      name: 'On Color',
+    type: {
+      name: 'Type',
       table: {
         category: 'Modifiers',
+      },
+      control: {
+        options: ['logotype', 'symbol'],
+        type: 'select',
       },
     },
     size: {
@@ -25,14 +27,10 @@ export default {
         type: 'select',
       },
     },
-    type: {
-      name: 'Type',
+    onColor: {
+      name: 'On Color',
       table: {
         category: 'Modifiers',
-      },
-      control: {
-        options: ['logotype', 'symbol'],
-        type: 'select',
       },
     },
     externalUrl: {
@@ -41,7 +39,6 @@ export default {
         category: 'Custom Inputs',
       },
     },
-    alt: { table: { disable: true } },
   },
 };
 
@@ -56,11 +53,10 @@ export function Brand(args) {
       ? jotaSymbolOnColor
       : jotaSymbol);
 
-  return <BrandTag {...args} externalUrl={currentSource}></BrandTag>;
+  return <BrandTag {...args} alt="Brand" externalUrl={currentSource}></BrandTag>;
 }
 
 Brand.args = {
-  alt: 'Brand',
   size: 'medium',
   type: 'logotype',
   externalUrl: '',

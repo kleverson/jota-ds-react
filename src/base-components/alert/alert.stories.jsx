@@ -23,14 +23,14 @@ export default {
         category: 'Modifiers',
       },
     },
-    text: {
-      name: 'Text',
+    title: {
+      name: 'Title',
       table: {
         category: 'Custom Inputs',
       },
     },
-    title: {
-      name: 'Title',
+    text: {
+      name: 'Paragraph',
       table: {
         category: 'Custom Inputs',
       },

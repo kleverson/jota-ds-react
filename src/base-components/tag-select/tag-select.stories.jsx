@@ -6,6 +6,24 @@ import { namespace } from '../../utils/setup.js';
 export default {
   title: 'Core components react/Tag Select',
   argTypes: {
+    active: {
+      name: 'Active',
+      description: 'Define se a tag foi clicada ou não',
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
+    disabled: {
+      name: 'Disabled',
+      description: 'Define se a tag está ativa ou não',
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
     onColor: {
       name: 'On Color',
       description: 'Define se a tag tem a cor invertida',
@@ -24,33 +42,6 @@ export default {
         defaultValue: { summary: '"Tag label"' },
       },
     },
-    disabled: {
-      name: 'Disabled',
-      description: 'Define se a tag está ativa ou não',
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-    active: {
-      name: 'Checked',
-      description: 'Define se a tag foi clicada ou não',
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
-
-    /* handleChange: {
-      description: 'Evento emitido ao clicar na tag',
-      table: {
-        type: { summary: 'CustomEvent' },
-        defaultValue: { summary: 'null' },
-        category: 'Events',
-      },
-    }, */
   },
 };
 

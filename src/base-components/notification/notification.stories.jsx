@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import NotificationTag from './index.js';
-import { namespace } from '../../utils/setup.js';
+import React from 'react';
 import { action } from '@storybook/addon-actions';
-import Button from '../button/index.js';
+import NotificationTag from './index.js';
 
 export default {
   title: 'Core components react/Notification',
   argTypes: {
+    isOpen: {
+      name: 'Open',
+      table: {
+        category: 'Modifiers',
+      },
+    },
     onColor: {
       name: 'On Color',
       description: 'Define se o notification tem a cor invertida',
@@ -37,7 +41,7 @@ export default {
       },
     },
     buttonText: {
-      name: 'Button Text',
+      name: 'Button Label',
       description: 'Define o texto do botão',
       table: {
         category: 'Custom Inputs',
@@ -49,42 +53,22 @@ export default {
   parameters: {
     docs: {
       source: {
-        code: `<Notification\n  buttonText=""\n  content=""\n  handleClose={function(){}}\n  handleConfirm={function(){}}\n  title=""\n/>`,
+        code: `<Notification\n  isOpen\n  content=""\n  handleClose={function(){}}\n  handleConfirm={function(){}}\n  title=""\n/>`,
       },
     },
   },
 };
 
 export function Notification(args) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const _handleConfirm = e => {
-    setIsOpen(false);
     action(`handleConfirm`)({ event: e });
   };
 
   const _handleClose = e => {
-    setIsOpen(false);
     action(`handleClose`)({ event: e });
   };
 
-  const _openModal = () => {
-    setIsOpen(true);
-  };
-
-  return (
-    <div>
-      {!isOpen ? (
-        <Button label="Open notification" type="primary" handleClick={_openModal}></Button>
-      ) : null}
-      <NotificationTag
-        {...args}
-        isOpen={isOpen}
-        handleConfirm={_handleConfirm}
-        handleClose={_handleClose}
-      />
-    </div>
-  );
+  return <NotificationTag {...args} handleConfirm={_handleConfirm} handleClose={_handleClose} />;
 }
 
 Notification.args = {
@@ -93,4 +77,5 @@ Notification.args = {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet lorem tellus, non cursus leo cursus a. Aenean commodo aliquam aliquet. Vivamus tempus nulla sit amet magna rutrum',
   buttonText: 'Button Primary',
   onColor: false,
+  isOpen: true,
 };

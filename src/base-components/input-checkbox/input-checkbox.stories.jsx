@@ -8,7 +8,7 @@ export default {
   name: 'Checkbox',
   argTypes: {
     checked: {
-      name: 'Checked',
+      name: 'Active',
       description: 'Define se o checkbox ficará marcado',
       table: {
         category: 'Modifiers',

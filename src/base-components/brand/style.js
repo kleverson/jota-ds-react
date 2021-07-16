@@ -8,6 +8,8 @@ export default css(BrandStyleType)`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+
 
     &.${namespace}-Brand--logotype{
       &.${namespace}-Brand--small{

@@ -5,7 +5,7 @@ export default {
   title: 'Core components react/Step',
   argTypes: {
     stepsLength: {
-      name: 'Steps Length',
+      name: 'Steps',
       control: {
         type: 'range',
         min: 2,
@@ -22,7 +22,7 @@ export default {
         min: 1,
         max: 6,
       },
-      table: { category: 'Custom Inputs' },
+      table: { category: 'Modifiers' },
     },
   },
 };

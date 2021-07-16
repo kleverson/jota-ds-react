@@ -16,16 +16,16 @@ export default {
         category: 'Modifiers',
       },
     },
+    optionsLength: {
+      name: 'Items',
+      control: { type: 'range', min: 1, max: 6 },
+      table: { category: 'Modifiers' },
+    },
     onColor: {
       name: 'On Color',
       table: {
         category: 'Modifiers',
       },
-    },
-    optionsLength: {
-      name: 'Options Length',
-      control: { type: 'range', min: 1, max: 6 },
-      table: { category: 'Modifiers' },
     },
     label: {
       name: 'Label',

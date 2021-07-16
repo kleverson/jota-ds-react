@@ -5,18 +5,6 @@ import ModalTag from './index.js';
 export default {
   title: 'Core components react/Modal',
   argTypes: {
-    firstActionLabel: {
-      name: 'Primary Label',
-      table: {
-        category: 'Custom Inputs',
-      }
-    },
-    secondActionLabel: {
-      name: 'Tertiary Label',
-      table: {
-        category: 'Custom Inputs',
-      },
-    },    
     isOpen: {
       name: 'Open',
       table: {
@@ -35,11 +23,22 @@ export default {
         category: 'Modifiers',
       },
     },
+    firstActionLabel: {
+      name: 'Primary Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    secondActionLabel: {
+      name: 'Tertiary Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
   },
 };
 
 export function Modal(args) {
-
   const handleConfirmModal = confirmed => {
     action('handleConfirmModal')(confirmed);
   };
@@ -60,7 +59,7 @@ export function Modal(args) {
         handleConfirm={handleConfirmModal}
         handleCancel={handleCancelModal}
       >
-      {/* Segundo a galera de ops não é para por conteúdo aqui, pois o visual do modal deve ser igual ao do handoff*/}
+        {/* Segundo a galera de ops não é para por conteúdo aqui, pois o visual do modal deve ser igual ao do handoff*/}
       </ModalTag>
     </>
   );
@@ -71,5 +70,5 @@ Modal.args = {
   isCloseDisabled: false,
   isDoubleAction: false,
   firstActionLabel: 'Button Primary',
-  secondActionLabel: 'Tertiary Default'
+  secondActionLabel: 'Tertiary Default',
 };

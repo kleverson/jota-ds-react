@@ -4,8 +4,6 @@ import CardimageTag from './index.js';
 import { namespace } from '../../utils/setup.js';
 import imgCardimage from '../../assets/images/cardimage.png';
 
-
-
 export default {
   title: 'Core components react/Card Image',
   name: 'Checkbox',

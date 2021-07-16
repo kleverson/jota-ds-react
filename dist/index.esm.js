@@ -1300,7 +1300,7 @@ var BrandStyleType = {
 };
 
 var _templateObject$r;
-var style$r = createGooberGetter(BrandStyleType)(_templateObject$r || (_templateObject$r = _taggedTemplateLiteral(["\n  &.", "-Brand{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    &.", "-Brand--logotype{\n      &.", "-Brand--small{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--medium{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--large{\n        width: ", ";\n        height: ", ";\n      }\n    }\n\n    &.", "-Brand--symbol{\n      &.", "-Brand--small{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--medium{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--large{\n        width: ", ";\n        height: ", ";\n      }\n    }\n\n    .", "-Brand__img{\n      max-width: 100%;\n    }\n  }\n"])), namespace, namespace, namespace, function (_ref) {
+var style$r = createGooberGetter(BrandStyleType)(_templateObject$r || (_templateObject$r = _taggedTemplateLiteral(["\n  &.", "-Brand{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-shrink: 0;\n\n\n    &.", "-Brand--logotype{\n      &.", "-Brand--small{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--medium{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--large{\n        width: ", ";\n        height: ", ";\n      }\n    }\n\n    &.", "-Brand--symbol{\n      &.", "-Brand--small{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--medium{\n        width: ", ";\n        height: ", ";\n      }\n  \n      &.", "-Brand--large{\n        width: ", ";\n        height: ", ";\n      }\n    }\n\n    .", "-Brand__img{\n      max-width: 100%;\n    }\n  }\n"])), namespace, namespace, namespace, function (_ref) {
   var logotype = _ref.logotype;
   return logotype.small.width;
 }, function (_ref2) {
@@ -1825,6 +1825,712 @@ Cardimage.propTypes = {
   children: PropTypes.element
 };
 
+var HeaderStyleType = {
+  motion: injectMotion('switch-fast'),
+  menu: {
+    padding: "".concat(spacingSizeXs, " ").concat(spacingSizeSm),
+    backgroundColor: neutralColorHighPure
+  },
+  links: {
+    marginRight: spacingSizeXs,
+    fontWeight: fontWeightRegular,
+    marginBottom: spacingSizeXs,
+    active: {
+      fontWeight: fontWeightBold
+    }
+  },
+  user: {
+    margin: spacingSizeXxxs
+  }
+};
+
+var _templateObject$m;
+var style$m = createGooberGetter(HeaderStyleType)(_templateObject$m || (_templateObject$m = _taggedTemplateLiteral(["\n  &.", "-Header{\n    position: relative;\n\n    .", "-Header__NavLinks{\n      position: absolute;\n      top: 87px;\n      display: none;\n      width: 100%;\n      left: 0;\n      padding: ", ";\n      box-sizing: border-box;\n      background-color: ", ";\n\n      &--open{\n        display: block;\n      }\n    }\n\n    .", "-Header__LinksList{\n      margin: 0px;\n      padding: 0px;\n      list-style-type: none;\n\n      .", "-Header__LinksItem{\n        margin-right: ", ";\n        margin-bottom: ", ";\n\n        &:last-child{\n          margin-right: 0px;\n          margin-bottom: 0px;\n        }\n\n        .", "-Link{\n          font-weight: ", ";\n\n          &:after{\n            opacity: 0;\n          }\n        }\n\n        &:hover{\n          .", "-Link{\n            &:after{\n              opacity: 1;\n            }\n          }\n        }\n\n        &.", "-Header__LinksItem--active{\n          pointer-events: none;\n          .", "-Link{\n            font-weight: ", ";\n          }\n        }\n      }\n    }\n\n    .", "-Header__UserInfo{\n      cursor: pointer;\n\n      .", "-Typography.Caption{\n        display: none;\n      }\n    }\n\n    .", "-Header__NavMenu{\n      margin-left: auto;\n    }\n\n    .", "-Header__UserInfo,\n    .", "-Header__NavMenu{\n      display: flex;\n      align-items: center;\n      min-width: fit-content;\n    }\n\n    .", "-Header__UserInfo{\n      margin-right: ", ";\n    }\n\n    @media screen and (min-width: 1024px){\n      .", "-Header__NavLinks{\n        position: relative;\n        top: initial;\n        display: flex;\n        padding: 0px;\n        justify-content: center;\n        align-items: center;\n      }\n\n      .", "-Header__LinksList{\n        position: relative;\n        display: flex;\n\n        .", "-Header__LinksItem{\n          margin-bottom: 0px;\n        }\n      }\n\n      .", "-Header__UserInfo{\n        .", "-Typography.Caption{\n          display: block;\n        }\n\n        .", "-Avatar{\n          margin-right: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, namespace, function (_ref) {
+  var menu = _ref.menu;
+  return menu.padding;
+}, function (_ref2) {
+  var menu = _ref2.menu;
+  return menu.backgroundColor;
+}, namespace, namespace, function (_ref3) {
+  var links = _ref3.links;
+  return links.marginRight;
+}, function (_ref4) {
+  var links = _ref4.links;
+  return links.marginBottom;
+}, namespace, function (_ref5) {
+  var links = _ref5.links;
+  return links.fontWeight;
+}, namespace, namespace, namespace, function (_ref6) {
+  var links = _ref6.links;
+  return links.active.fontWeight;
+}, namespace, namespace, namespace, namespace, namespace, namespace, function (_ref7) {
+  var user = _ref7.user;
+  return user.margin;
+}, namespace, namespace, namespace, namespace, namespace, namespace, function (_ref8) {
+  var user = _ref8.user;
+  return user.margin;
+});
+
+var HeaderEmptyStyleType = {
+  motion: injectMotion('switch-fast'),
+  height: '88px',
+  padding: "0px ".concat(spacingSizeSm),
+  paddingMobile: "0px ".concat(spacingSizeXxs),
+  backgroundColor: neutralColorHighPure,
+  border: {
+    color: neutralColorHighMedium,
+    width: borderWidthHairline
+  },
+  ghost: {
+    backgroundColor: 'transparent',
+    border: 'none'
+  }
+};
+
+var _templateObject$l;
+var style$l = createGooberGetter(HeaderEmptyStyleType)(_templateObject$l || (_templateObject$l = _taggedTemplateLiteral(["\n  &.", "-HeaderEmpty{\n    padding: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-bottom: ", ";\n    display: flex;\n    align-items: center;\n    width: 100%;\n    box-sizing: border-box;\n\n    &.", "-HeaderEmpty--ghost{\n      background-color: ", ";\n      border-bottom: ", ";\n    }\n\n    @media screen and (min-width: 1024px){\n      padding: ", ";\n\n      .", "-HeaderEmpty_ButtonContainer{\n        display: none;\n      }\n    }\n  }\n"])), namespace, function (context) {
+  return context.paddingMobile;
+}, function (context) {
+  return context.height;
+}, function (context) {
+  return context.backgroundColor;
+}, function (_ref) {
+  var border = _ref.border;
+  return "".concat(border.width, " solid ").concat(border.color);
+}, namespace, function (_ref2) {
+  var ghost = _ref2.ghost;
+  return ghost.backgroundColor;
+}, function (_ref3) {
+  var ghost = _ref3.ghost;
+  return ghost.border;
+}, function (context) {
+  return context.padding;
+}, namespace);
+
+function HeaderEmpty(_ref) {
+  var ghost = _ref.ghost,
+      logoSource = _ref.logoSource,
+      children = _ref.children,
+      toggleMainLinksMenu = _ref.toggleMainLinksMenu,
+      hasLinks = _ref.hasLinks,
+      mainMenuIsOpen = _ref.mainMenuIsOpen;
+
+  var _useState = useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      _menuIsOpen = _useState2[0],
+      setOpenMenu = _useState2[1];
+
+  var toggleMainList = function toggleMainList() {
+    setOpenMenu(!_menuIsOpen);
+    toggleMainLinksMenu();
+  };
+
+  useEffect(function () {
+    setOpenMenu(mainMenuIsOpen);
+  }, [mainMenuIsOpen]);
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-HeaderEmpty"),
+    styles: style$l
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "\n          ".concat(namespace, "-HeaderEmpty\n          ").concat(ghost ? "".concat(namespace, "-HeaderEmpty--ghost") : '', "\n        ")
+  }, hasLinks ? /*#__PURE__*/React.createElement("div", {
+    className: "".concat(namespace, "-HeaderEmpty_ButtonContainer")
+  }, /*#__PURE__*/React.createElement(ButtonIcon, {
+    icon: _menuIsOpen ? "close" : "menu",
+    size: "medium",
+    handleClick: toggleMainList
+  })) : null, /*#__PURE__*/React.createElement(Brand, {
+    alt: "Logo",
+    type: "logotype",
+    size: "medium",
+    externalUrl: logoSource
+  }), children));
+}
+
+HeaderEmpty.propTypes = {
+  ghost: PropTypes.bool,
+  logo: PropTypes.string
+};
+
+var OverflowMenuStyleType = {
+  fontSize: fontSizeXs,
+  fontWeight: fontWeightMedium,
+  motion: injectMotion('switch-fast')
+};
+
+var _templateObject$k;
+var style$k = createGooberGetter(OverflowMenuStyleType)(_templateObject$k || (_templateObject$k = _taggedTemplateLiteral(["\n  &.", "-OverflowMenu{\n    position:relative;\n    \n    .", "-Icon{\n      transform: rotate(90deg);\n    }\n\n    .", "-Menu{\n      position: absolute;\n      right: calc(100% - 48px);\n      top: 56px;\n      z-index: 10;\n    }\n  }\n"])), namespace, namespace, namespace);
+
+var MenuStyleType = /** @type {import('@meiuca/zero-builder/types/components').StyleType} */
+{
+  backgroundColor: neutralColorLowMedium,
+  borderRadius: borderRadiusSm,
+  paddingBottom: spacingSizeNano,
+  paddingTop: spacingSizeNano,
+  boxShadowColor: neutralColorLowPure,
+  boxShadowOpacity: opacityLevelLight,
+  boxShadowLevel: shadowLevel2Stack,
+  motion: injectMotion('switch-slow'),
+  item: {
+    minHeight: '58px',
+    fontFamily: fontFamilyHighlight,
+    fontWeight: fontWeightRegular,
+    fontSize: fontSizeXs,
+    color: neutralColorHighPure,
+    lineHeight: lineHeightDefault,
+    paddingLeft: spacingSizeXxs,
+    paddingRight: spacingSizeXxs,
+    borderTopWidth: '2px',
+    borderColor: neutralColorLowLight,
+    hover: {
+      backgroundColor: neutralColorLowPure,
+      opacity: opacityLevelIntense
+    }
+  }
+};
+
+var _templateObject$j;
+/** @type {import('@meiuca/zero-builder/types/components').StyleType} */
+
+var x = MenuStyleType;
+var style$j = createGooberGetter(x)(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n\n        .", "-TagHighlight {\n          min-width: 55px;\n          overflow: hidden;\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+  var backgroundColor = _ref.backgroundColor;
+  return backgroundColor;
+}, function (_ref2) {
+  var borderRadius = _ref2.borderRadius;
+  return borderRadius;
+}, function (_ref3) {
+  var paddingTop = _ref3.paddingTop;
+  return paddingTop;
+}, function (_ref4) {
+  var paddingBottom = _ref4.paddingBottom;
+  return paddingBottom;
+}, function (_ref5) {
+  var boxShadowLevel = _ref5.boxShadowLevel,
+      boxShadowColor = _ref5.boxShadowColor,
+      boxShadowOpacity = _ref5.boxShadowOpacity;
+  return "".concat(boxShadowLevel, " ").concat(hexToRGB(boxShadowColor, boxShadowOpacity));
+}, namespace, namespace, function (_ref6) {
+  var item = _ref6.item;
+  return item.minHeight;
+}, function (_ref7) {
+  var item = _ref7.item;
+  return item.paddingRight;
+}, function (_ref8) {
+  var item = _ref8.item;
+  return item.paddingLeft;
+}, function (_ref9) {
+  var motion = _ref9.motion;
+  return motion;
+}, function (_ref10) {
+  var item = _ref10.item;
+  return hexToRGB(item.hover.backgroundColor, item.hover.opacity);
+}, namespace, function (_ref11) {
+  var item = _ref11.item;
+  return "".concat(item.borderTopWidth, " solid ").concat(item.borderColor);
+}, namespace, namespace, namespace, namespace, function (_ref12) {
+  var item = _ref12.item;
+  return item.fontFamily;
+}, function (_ref13) {
+  var item = _ref13.item;
+  return item.fontWeight;
+}, function (_ref14) {
+  var item = _ref14.item;
+  return item.fontSize;
+}, function (_ref15) {
+  var item = _ref15.item;
+  return item.lineHeight;
+}, function (_ref16) {
+  var item = _ref16.item;
+  return item.color;
+}, function (_ref17) {
+  var motion = _ref17.motion;
+  return motion;
+}, namespace);
+
+var TagHighlightStyleType = {
+  backgroundColor: highlightColorPure,
+  borderRadius: borderRadiusPill,
+  borderWidth: borderRadiusNone,
+  color: neutralColorLowPure,
+  fontFamily: fontFamilyHighlight,
+  fontWeight: fontWeightMedium,
+  fontSize: fontSizeXxs,
+  lineHeight: lineHeightXs,
+  paddingLeft: spacingSizeXxxs,
+  paddingRight: spacingSizeXxxs,
+  motion: injectMotion('switch-slow')
+};
+
+var _templateObject$i;
+var style$i = createGooberGetter(TagHighlightStyleType)(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";    \n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    padding-left: ", ";\n    padding-right: ", ";\n    display: inline-flex;\n    align-items: center;\n    height: 24px;    \n  }\n"])), namespace, function (context) {
+  return context.backgroundColor;
+}, function (context) {
+  return context.borderRadius;
+}, function (context) {
+  return context.backgroundColor;
+}, function (context) {
+  return context.borderWidth;
+}, function (context) {
+  return context.color;
+}, function (context) {
+  return context.fontFamily;
+}, function (context) {
+  return context.fontWeight;
+}, function (context) {
+  return context.fontSize;
+}, function (context) {
+  return context.lineHeight;
+}, function (context) {
+  return context.paddingLeft;
+}, function (context) {
+  return context.paddingRight;
+});
+
+function TagHighlight(_ref) {
+  var _ref$label = _ref.label,
+      label = _ref$label === void 0 ? 'Tag Highlight' : _ref$label,
+      tabIndex = _ref.tabIndex,
+      role = _ref.role;
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-TagHighlight"),
+    styles: style$i
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "".concat(namespace, "-TagHighlight"),
+    tabIndex: tabIndex,
+    role: role
+  }, label));
+}
+
+TagHighlight.propTypes = {
+  label: PropTypes.string,
+  tabIndex: PropTypes.number,
+  role: PropTypes.string
+};
+
+function MenuItem(_ref) {
+  var _classMap;
+
+  var item = _ref.item;
+  return item.label ? /*#__PURE__*/React.createElement("li", {
+    className: classMap((_classMap = {}, _defineProperty(_classMap, "".concat(namespace, "-Menu__Item"), true), _defineProperty(_classMap, "".concat(namespace, "-Menu__Item--current"), item.isCurrent), _classMap)),
+    role: "none"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(namespace, "-Menu__ItemContent"),
+    "aria-haspopup": "false",
+    "aria-expanded": "false",
+    role: "menuitem",
+    onClick: function onClick() {
+      return item.handleClick(item);
+    }
+  }, item.label, item.tagLabel ? /*#__PURE__*/React.createElement(TagHighlight, {
+    label: item.tagLabel,
+    role: "note",
+    tabIndex: -1
+  }) : null)) : null;
+}
+
+function MenuItemList(_ref2) {
+  var _ref2$menuList = _ref2.menuList,
+      menuList = _ref2$menuList === void 0 ? [] : _ref2$menuList,
+      ariaLabel = _ref2.ariaLabel;
+  return /*#__PURE__*/React.createElement("ul", {
+    className: "".concat(namespace, "-Menu__ItemList"),
+    role: "menubar",
+    "aria-orientation": "vertical",
+    "aria-label": ariaLabel
+  }, menuList.map(function (menuItem, index) {
+    return /*#__PURE__*/React.createElement(MenuItem, {
+      item: menuItem,
+      key: index
+    });
+  }));
+}
+
+function Menu(_ref3) {
+  var _classMap2;
+
+  var _ref3$menuList = _ref3.menuList,
+      menuList = _ref3$menuList === void 0 ? [] : _ref3$menuList,
+      isOpen = _ref3.isOpen,
+      _ref3$ariaLabel = _ref3.ariaLabel,
+      ariaLabel = _ref3$ariaLabel === void 0 ? 'Menu' : _ref3$ariaLabel;
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-Menu"),
+    styles: style$j
+  }, /*#__PURE__*/React.createElement("nav", {
+    className: classMap((_classMap2 = {}, _defineProperty(_classMap2, "".concat(namespace, "-Menu"), true), _defineProperty(_classMap2, "".concat(namespace, "-Menu--open"), isOpen), _classMap2)),
+    "aria-label": ariaLabel
+  }, /*#__PURE__*/React.createElement(MenuItemList, {
+    menuList: menuList,
+    ariaLabel: ariaLabel
+  })));
+}
+
+Menu.propTypes = {
+  isOpen: PropTypes.bool,
+  menuList: PropTypes.arrayOf(PropTypes.exact({
+    label: PropTypes.string.isRequired,
+    tagLabel: PropTypes.string,
+    isCurrent: PropTypes.bool,
+    handleClick: PropTypes.func,
+    menuItemRef: PropTypes.exact({
+      current: PropTypes.any
+    })
+  })),
+  ariaLabel: PropTypes.string
+};
+
+function OverflowMenu(_ref) {
+  var _ref$onColor = _ref.onColor,
+      onColor = _ref$onColor === void 0 ? false : _ref$onColor,
+      _ref$isOpen = _ref.isOpen,
+      isOpen = _ref$isOpen === void 0 ? false : _ref$isOpen,
+      menuList = _ref.menuList,
+      toggleMenu = _ref.toggleMenu,
+      getCurrentMenuItem = _ref.getCurrentMenuItem;
+
+  var _useState = useState(isOpen),
+      _useState2 = _slicedToArray(_useState, 2),
+      _isOpen = _useState2[0],
+      setOpenMenu = _useState2[1];
+
+  var _useState3 = useState(-1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      _currentMenuIndex = _useState4[0],
+      setCurrentMenuIndex = _useState4[1];
+
+  var _useState5 = useState(menuList),
+      _useState6 = _slicedToArray(_useState5, 2),
+      _menuList = _useState6[0],
+      _updateMenuList = _useState6[1];
+
+  var _toggleMenu = function _toggleMenu(isOpen) {
+    setOpenMenu(!isOpen);
+
+    if (toggleMenu) {
+      toggleMenu(!isOpen);
+    }
+  };
+
+  var _handleKeyUp = function _handleKeyUp(e) {
+    if (e.code == 'Escape') {
+      setOpenMenu(false);
+    }
+  };
+
+  var _handleKeyDown = function _handleKeyDown(e) {
+    if (e.code == 'ArrowDown') {
+      setOpenMenu(true);
+      setCurrentMenuIndex(_currentMenuIndex < _menuList.length - 1 ? _currentMenuIndex + 1 : _menuList.length - 1);
+    }
+
+    if (e.code == 'ArrowUp') {
+      setCurrentMenuIndex(_currentMenuIndex - 1 < 0 ? 0 : _currentMenuIndex - 1);
+    }
+
+    if (e.code == 'Tab') {
+      setOpenMenu(false);
+    }
+  };
+
+  var _getCurrentMenuItem = function _getCurrentMenuItem() {
+    return _menuList.filter(function (item) {
+      return item.isCurrent;
+    })[0];
+  };
+
+  var _setCurrentMenuItem = function _setCurrentMenuItem(menu) {
+    return _toConsumableArray(menu).map(function (menuItem, index) {
+      menuItem.isCurrent = index == _currentMenuIndex;
+      return menuItem;
+    });
+  };
+
+  var _handleBlur = function _handleBlur(e) {
+    setOpenMenu(false);
+  };
+
+  useEffect(function () {
+    _updateMenuList(_setCurrentMenuItem(_menuList));
+
+    if (getCurrentMenuItem) {
+      getCurrentMenuItem(_getCurrentMenuItem());
+    }
+  }, [_currentMenuIndex]);
+  useEffect(function () {
+    _updateMenuList(menuList);
+  }, [menuList]);
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: 'jota-OverflowMenu',
+    styles: style$k
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "".concat(namespace, "-OverflowMenu"),
+    onKeyUp: function onKeyUp(e) {
+      return _handleKeyUp(e);
+    }
+  }, /*#__PURE__*/React.createElement(ButtonIcon, {
+    icon: !_isOpen ? "more-horizontal" : "close",
+    size: "medium",
+    onColor: onColor,
+    handleClick: function handleClick() {
+      return _toggleMenu(_isOpen);
+    },
+    handleBlur: function handleBlur(e) {
+      return _handleBlur();
+    },
+    handleKeyDown: function handleKeyDown(e) {
+      return _handleKeyDown(e);
+    }
+  }), /*#__PURE__*/React.createElement(Menu, {
+    isOpen: _isOpen,
+    onColor: onColor,
+    menuList: _menuList
+  })));
+}
+
+OverflowMenu.propTypes = {
+  menuIsOpen: PropTypes.bool,
+  onColor: PropTypes.bool,
+  menuList: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    tagLabel: PropTypes.string,
+    onClick: PropTypes.func
+  })),
+  isOpen: PropTypes.bool,
+  toggleMenu: PropTypes.func,
+  getCurrentMenuItem: PropTypes.func
+};
+
+var linkStyleType = {
+  color: neutralColorLowPure,
+  fontFamily: fontFamilyHighlight,
+  fontSize: fontSizeXs,
+  fontWeight: fontWeightMedium,
+  lineHeight: lineHeightDefault,
+  textDecoration: 'none',
+  motion: injectMotion('switch-slow'),
+  borderWidth: "".concat(borderWidthThin),
+  borderColor: "".concat(neutralColorLowPure),
+  paddingTop: spacingSizeQuarck,
+  paddingBottom: spacingSizeQuarck,
+  hover: {
+    textDecoration: 'none'
+  },
+  active: {
+    color: neutralColorLowMedium,
+    textDecoration: 'none'
+  },
+  onColor: {
+    color: neutralColorHighPure
+  },
+  focus: {
+    borderColor: highlightColorPure,
+    borderWidth: borderWidthThin,
+    color: neutralColorLowPure
+  },
+  disabled: {
+    color: neutralColorHighDark,
+    opacity: opacityLevelMedium
+  },
+  icon: {
+    marginLeft: spacingSizeQuarck,
+    hover: {
+      marginLeft: spacingSizeNano
+    }
+  }
+};
+
+var _templateObject$h;
+var style$h = createGooberGetter(linkStyleType)(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin:0;\n    padding:0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after{\n      content: \"\";\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline:0;\n      text-decoration: none;\n\n      &::after{\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n    \n    &:hover {\n      text-decoration: ", ";\n      \n      &::after{\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor:default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after{\n        width: 100%;\n      }\n    }\n\n    &--onColor{\n      color: ", ";\n\n      &::after{\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active){\n        color: ", ";\n      }\n    }\n\n    &--icon{\n      &::after{\n        display: none;\n      }\n\n      .", "-Icon{\n        margin-left: ", ";\n        transition-property: margin;\n        ", ";\n      }\n\n      &:hover{\n        .", "-Icon{\n          margin-left: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
+  return context.color;
+}, function (context) {
+  return context.fontFamily;
+}, function (context) {
+  return context.fontSize;
+}, function (context) {
+  return context.fontWeight;
+}, function (context) {
+  return context.lineHeight;
+}, function (context) {
+  return context.textDecoration;
+}, function (context) {
+  return "".concat(context.borderWidth, " solid transparent");
+}, function (context) {
+  return context.paddingTop;
+}, function (context) {
+  return context.paddingBottom;
+}, function (context) {
+  return "".concat(context.borderWidth);
+}, function (context) {
+  return "".concat(context.borderColor);
+}, function (context) {
+  return context.motion;
+}, function (_ref) {
+  var focus = _ref.focus;
+  return "".concat(focus.borderWidth, " solid ").concat(focus.borderColor);
+}, function (_ref2) {
+  var focus = _ref2.focus;
+  return focus.color;
+}, function (context) {
+  return context.motion;
+}, function (_ref3) {
+  var hover = _ref3.hover;
+  return hover.textDecoration;
+}, function (_ref4) {
+  var disabled = _ref4.disabled;
+  return disabled.opacity;
+}, function (_ref5) {
+  var onColor = _ref5.onColor;
+  return onColor.color;
+}, function (_ref6) {
+  var onColor = _ref6.onColor;
+  return onColor.color;
+}, function (_ref7) {
+  var onColor = _ref7.onColor;
+  return onColor.color;
+}, namespace, function (_ref8) {
+  var icon = _ref8.icon;
+  return icon.marginLeft;
+}, function (context) {
+  return context.motion;
+}, namespace, function (_ref9) {
+  var icon = _ref9.icon;
+  return icon.hover.marginLeft;
+});
+
+function Link(_ref) {
+  var label = _ref.label,
+      href = _ref.href,
+      target = _ref.target,
+      disabled = _ref.disabled,
+      icon = _ref.icon,
+      onColor = _ref.onColor,
+      handleClick = _ref.handleClick;
+  var refLink = useRef(null);
+
+  var _handleClick = function _handleClick(e) {
+    if (handleClick) {
+      handleClick(e);
+    }
+  };
+
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-Link"),
+    styles: style$h
+  }, /*#__PURE__*/React.createElement("a", {
+    ref: refLink,
+    href: href,
+    className: "".concat(namespace, "-Link\n        ").concat(disabled ? "".concat(namespace, "-Link--disabled") : '', "\n        ").concat(onColor ? "".concat(namespace, "-Link--onColor") : '', "\n        ").concat(icon ? "".concat(namespace, "-Link--icon") : ''),
+    target: target,
+    onClick: function onClick(e) {
+      return _handleClick(e);
+    }
+  }, label, icon ? /*#__PURE__*/React.createElement(Icon, {
+    icon: "arrow-right"
+  }) : null));
+}
+
+Link.propTypes = {
+  label: PropTypes.string,
+  href: PropTypes.string,
+  target: PropTypes.string,
+  disabled: PropTypes.bool,
+  icon: PropTypes.bool,
+  inverse: PropTypes.bool,
+  onColor: PropTypes.bool,
+  handleClick: PropTypes.func
+};
+
+function Header(_ref) {
+  var _ref$ghost = _ref.ghost,
+      ghost = _ref$ghost === void 0 ? false : _ref$ghost,
+      _ref$isLoggedIn = _ref.isLoggedIn,
+      isLoggedIn = _ref$isLoggedIn === void 0 ? false : _ref$isLoggedIn,
+      logoSource = _ref.logoSource,
+      linkList = _ref.linkList,
+      menuList = _ref.menuList,
+      avatar = _ref.avatar,
+      handleUserClick = _ref.handleUserClick;
+
+  var _useState = useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      _mainMenuIsOpen = _useState2[0],
+      toggleMainMenu = _useState2[1];
+
+  var _handleUserClick = function _handleUserClick(e) {
+    if (handleUserClick) {
+      handleUserClick(e);
+    }
+  };
+
+  var _toggleMainLinksMenu = function _toggleMainLinksMenu() {
+    toggleMainMenu(!_mainMenuIsOpen);
+  };
+
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-Header"),
+    styles: style$m
+  }, /*#__PURE__*/React.createElement("header", {
+    className: "".concat(namespace, "-Header")
+  }, /*#__PURE__*/React.createElement(HeaderEmpty, {
+    ghost: ghost,
+    logoSource: logoSource,
+    toggleMainLinksMenu: _toggleMainLinksMenu,
+    mainMenuIsOpen: _mainMenuIsOpen,
+    hasLinks: linkList ? linkList.length : false
+  }, /*#__PURE__*/React.createElement("nav", {
+    className: "".concat(namespace, "-Header__NavLinks ").concat(_mainMenuIsOpen ? "".concat(namespace, "-Header__NavLinks--open") : '')
+  }, /*#__PURE__*/React.createElement("ul", {
+    className: "".concat(namespace, "-Header__LinksList")
+  }, linkList ? linkList.map(function (link, index) {
+    return /*#__PURE__*/React.createElement("li", {
+      className: "\n                    ".concat(namespace, "-Header__LinksItem \n                    ").concat(link.currentActive ? "".concat(namespace, "-Header__LinksItem--active") : ''),
+      key: index
+    }, /*#__PURE__*/React.createElement(Link, _extends({}, link, {
+      key: index
+    })));
+  }) : null)), /*#__PURE__*/React.createElement("nav", {
+    className: "".concat(namespace, "-Header__NavMenu")
+  }, isLoggedIn ? /*#__PURE__*/React.createElement("div", {
+    className: "".concat(namespace, "-Header__UserInfo"),
+    onClick: _handleUserClick
+  }, /*#__PURE__*/React.createElement(Avatar, _extends({}, avatar, {
+    size: "medium"
+  })), /*#__PURE__*/React.createElement(Typography, {
+    component: "caption"
+  }, "Ol\xE1, ", avatar.name, "!")) : null, /*#__PURE__*/React.createElement(OverflowMenu, {
+    menuList: menuList,
+    toggleMenu: function toggleMenu() {
+      return toggleMainMenu(false);
+    }
+  })))));
+}
+
+Header.propTypes = {
+  ghost: PropTypes.bool,
+  isLoggedIn: PropTypes.bool,
+  logoSource: PropTypes.string,
+  avatar: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+    imgAlt: PropTypes.string.isRequired,
+    hasNotification: PropTypes.bool
+  }),
+  menuList: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    tagLabel: PropTypes.string,
+    onClick: PropTypes.func
+  })),
+  linkList: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    target: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
+    currentActive: PropTypes.bool
+  }))
+};
+
 var checkboxStyleType = {
   motion: injectMotion('switch-slow'),
   base: {
@@ -1895,8 +2601,8 @@ var checkboxStyleType = {
   }
 };
 
-var _templateObject$m;
-var style$m = createGooberGetter(checkboxStyleType)(_templateObject$m || (_templateObject$m = _taggedTemplateLiteral(["\n  &.", "-Checkbox-label {\n    display: inline-flex;\n    align-items: center;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    align-items: center;\n    cursor: pointer;\n    position: relative;\n    user-select: none;\n\n    &:hover {\n      color: ", ";\n      ", ";\n    }\n\n    &:focus-visible {\n      outline: ", ";\n    }\n\n    &--disabled {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    input {\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      appearance: none;\n      border-radius: 0px;\n      margin: 0;\n      width: ", ";\n      height: ", ";\n      border-width: ", ";\n      border-color: ", ";\n      margin-right: ", ";\n      border-style: solid;\n      border-radius: ", ";\n      cursor: pointer;\n      position: relative;\n      z-index: 2;\n\n      &::before {\n        position: absolute;\n        display: block;\n        border-color: ", ";\n        border-style: solid;\n        border-width: 0 1px 1px 0;\n        height: 12px;\n        width: 5px;\n        left: 3px;\n        top: -2px;\n        opacity: 0;\n        transform: rotate(45deg);\n        z-index: 3;\n        content: '';\n      }\n\n      &:hover {\n        border-color: ", ";\n        background-color: ", ";\n        ", ";\n      }\n\n      &:disabled {\n        cursor: not-allowed;\n        border-color: ", ";\n        color: ", ";\n      }\n\n      &:checked {\n        border-color: ", ";\n        background: ", ";\n        color: #fff;\n\n        &::before {\n          opacity: 1;\n        }\n\n        &:hover {\n          border-color: ", ";\n          background: ", ";\n          ", ";\n        }\n\n        &:disabled {\n          background-color: ", ";\n          border-width: ", ";\n          color: ", ";\n\n          &::before {\n            left: 5px;\n            top: -1px;\n          }\n        }\n      }\n    }\n\n    &--onColor {\n      color: ", ";\n\n      &--disabled {\n        pointer-events: none;\n        outline: none;\n\n        &:focus-visible {\n          outline: none;\n        }\n      }\n\n      &:hover {\n        color: ", ";\n      }\n\n      input {\n        border-color: ", ";\n\n        &::before {\n          border-color: ", ";\n        }\n\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n        }\n\n        &:checked {\n          border-color: ", ";\n          background: ", ";\n          &:hover {\n            border-color: ", ";\n            background: ", ";\n          }\n\n          &:disabled {\n            pointer-events: none;\n            border-color: ", ";\n            background-color: ", ";\n          }          \n        }\n\n        &:hover{\n          border-color: ", ";\n          background-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var _templateObject$g;
+var style$g = createGooberGetter(checkboxStyleType)(_templateObject$g || (_templateObject$g = _taggedTemplateLiteral(["\n  &.", "-Checkbox-label {\n    display: inline-flex;\n    align-items: center;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    align-items: center;\n    cursor: pointer;\n    position: relative;\n    user-select: none;\n\n    &:hover {\n      color: ", ";\n      ", ";\n    }\n\n    &:focus-visible {\n      outline: ", ";\n    }\n\n    &--disabled {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    input {\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      appearance: none;\n      border-radius: 0px;\n      margin: 0;\n      width: ", ";\n      height: ", ";\n      border-width: ", ";\n      border-color: ", ";\n      margin-right: ", ";\n      border-style: solid;\n      border-radius: ", ";\n      cursor: pointer;\n      position: relative;\n      z-index: 2;\n\n      &::before {\n        position: absolute;\n        display: block;\n        border-color: ", ";\n        border-style: solid;\n        border-width: 0 1px 1px 0;\n        height: 12px;\n        width: 5px;\n        left: 3px;\n        top: -2px;\n        opacity: 0;\n        transform: rotate(45deg);\n        z-index: 3;\n        content: '';\n      }\n\n      &:hover {\n        border-color: ", ";\n        background-color: ", ";\n        ", ";\n      }\n\n      &:disabled {\n        cursor: not-allowed;\n        border-color: ", ";\n        color: ", ";\n      }\n\n      &:checked {\n        border-color: ", ";\n        background: ", ";\n        color: #fff;\n\n        &::before {\n          opacity: 1;\n        }\n\n        &:hover {\n          border-color: ", ";\n          background: ", ";\n          ", ";\n        }\n\n        &:disabled {\n          background-color: ", ";\n          border-width: ", ";\n          color: ", ";\n\n          &::before {\n            left: 5px;\n            top: -1px;\n          }\n        }\n      }\n    }\n\n    &--onColor {\n      color: ", ";\n\n      &--disabled {\n        pointer-events: none;\n        outline: none;\n\n        &:focus-visible {\n          outline: none;\n        }\n      }\n\n      &:hover {\n        color: ", ";\n      }\n\n      input {\n        border-color: ", ";\n\n        &::before {\n          border-color: ", ";\n        }\n\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n        }\n\n        &:checked {\n          border-color: ", ";\n          background: ", ";\n          &:hover {\n            border-color: ", ";\n            background: ", ";\n          }\n\n          &:disabled {\n            pointer-events: none;\n            border-color: ", ";\n            background-color: ", ";\n          }          \n        }\n\n        &:hover{\n          border-color: ", ";\n          background-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var label = _ref.label;
   return label.color;
 }, function (_ref2) {
@@ -2048,7 +2754,7 @@ function Checkbox(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Checkbox"),
-    styles: style$m
+    styles: style$g
   }, /*#__PURE__*/React.createElement("label", {
     className: "\n          ".concat(namespace, "-Checkbox-label\n          ").concat(disabled ? "".concat(namespace, "-Checkbox-label--disabled") : '', "\n          ").concat(onColor ? "".concat(namespace, "-Checkbox-label--onColor") : '', "\n          ").concat(onColor && disabled ? "".concat(namespace, "-Checkbox-label--onColor--disabled") : '', "\n        "),
     htmlFor: name,
@@ -2073,642 +2779,6 @@ Checkbox.propTypes = {
   disabled: PropTypes.bool,
   onColor: PropTypes.bool,
   handleChange: PropTypes.func.isRequired
-};
-
-var HeaderStyleType = {
-  motion: injectMotion('switch-fast'),
-  links: {
-    marginRight: spacingSizeXs,
-    fontWeight: fontWeightRegular,
-    active: {
-      fontWeight: fontWeightBold
-    }
-  },
-  user: {
-    marginRight: spacingSizeXxxs
-  }
-};
-
-var _templateObject$l;
-var style$l = createGooberGetter(HeaderStyleType)(_templateObject$l || (_templateObject$l = _taggedTemplateLiteral(["\n  &.", "-Header{\n    .", "-Header__LinksList{\n      margin: 0px;\n      padding: 0px;\n      list-style-type: none;\n      display: flex;\n\n      .", "-Header__LinksItem{\n        margin-right: ", ";\n\n        &:last-child{\n          margin-right: 0px;\n        }\n\n        .", "-Link{\n          font-weight: ", ";\n\n          &:after{\n            opacity: 0;\n          }\n        }\n\n        &:hover{\n          .", "-Link{\n            &:after{\n              opacity: 1;\n            }\n          }\n        }\n\n        &.", "-Header__LinksItem--active{\n          pointer-events: none;\n          .", "-Link{\n            font-weight: ", ";\n          }\n        }\n      }\n    }\n\n    .", "-Header__UserInfo{\n      cursor: pointer;\n    }\n\n    .", "-Header__UserInfo,\n    .", "-Header__NavMenu{\n      display: flex;\n      align-items: center;\n    }\n\n    .", "-Header__UserInfo,\n    .", "-Header__UserInfo .", "-Avatar{\n      margin-right: ", ";\n    }\n  }\n"])), namespace, namespace, namespace, function (_ref) {
-  var links = _ref.links;
-  return links.marginRight;
-}, namespace, function (_ref2) {
-  var links = _ref2.links;
-  return links.fontWeight;
-}, namespace, namespace, namespace, function (_ref3) {
-  var links = _ref3.links;
-  return links.active.fontWeight;
-}, namespace, namespace, namespace, namespace, namespace, namespace, function (_ref4) {
-  var user = _ref4.user;
-  return user.marginRight;
-});
-
-var HeaderEmptyStyleType = {
-  motion: injectMotion('switch-fast'),
-  height: '88px',
-  padding: "0px ".concat(spacingSizeSm),
-  backgroundColor: neutralColorHighPure,
-  border: {
-    color: neutralColorHighMedium,
-    width: borderWidthHairline
-  },
-  ghost: {
-    backgroundColor: 'transparent',
-    border: 'none'
-  }
-};
-
-var _templateObject$k;
-var style$k = createGooberGetter(HeaderEmptyStyleType)(_templateObject$k || (_templateObject$k = _taggedTemplateLiteral(["\n  &.", "-HeaderEmpty{\n    padding: ", ";\n    height: ", ";\n    background-color: ", ";\n    border-bottom: ", ";\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n    box-sizing: border-box;\n\n    &.", "-HeaderEmpty--ghost{\n      background-color: ", ";\n      border-bottom: ", ";\n    }\n  }\n"])), namespace, function (context) {
-  return context.padding;
-}, function (context) {
-  return context.height;
-}, function (context) {
-  return context.backgroundColor;
-}, function (_ref) {
-  var border = _ref.border;
-  return "".concat(border.width, " solid ").concat(border.color);
-}, namespace, function (_ref2) {
-  var ghost = _ref2.ghost;
-  return ghost.backgroundColor;
-}, function (_ref3) {
-  var ghost = _ref3.ghost;
-  return ghost.border;
-});
-
-function HeaderEmpty(_ref) {
-  var ghost = _ref.ghost,
-      logoSource = _ref.logoSource,
-      children = _ref.children;
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-HeaderEmpty"),
-    styles: style$k
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "\n          ".concat(namespace, "-HeaderEmpty\n          ").concat(ghost ? "".concat(namespace, "-HeaderEmpty--ghost") : '', "\n        ")
-  }, /*#__PURE__*/React.createElement(Brand, {
-    alt: "Logo",
-    type: "logotype",
-    size: "medium",
-    externalUrl: logoSource
-  }), children));
-}
-
-HeaderEmpty.propTypes = {
-  ghost: PropTypes.bool,
-  logo: PropTypes.string
-};
-
-var OverflowMenuStyleType = {
-  fontSize: fontSizeXs,
-  fontWeight: fontWeightMedium,
-  motion: injectMotion('switch-fast')
-};
-
-var _templateObject$j;
-var style$j = createGooberGetter(OverflowMenuStyleType)(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-OverflowMenu{\n    position:relative;\n    \n    .", "-Icon{\n      transform: rotate(90deg);\n    }\n\n    .", "-Menu{\n      position: absolute;\n      right: calc(100% - 48px);\n      top: 56px;\n      z-index: 10;\n    }\n  }\n"])), namespace, namespace, namespace);
-
-var MenuStyleType = /** @type {import('@meiuca/zero-builder/types/components').StyleType} */
-{
-  backgroundColor: neutralColorLowMedium,
-  borderRadius: borderRadiusSm,
-  paddingBottom: spacingSizeNano,
-  paddingTop: spacingSizeNano,
-  boxShadowColor: neutralColorLowPure,
-  boxShadowOpacity: opacityLevelLight,
-  boxShadowLevel: shadowLevel2Stack,
-  motion: injectMotion('switch-slow'),
-  item: {
-    minHeight: '58px',
-    fontFamily: fontFamilyHighlight,
-    fontWeight: fontWeightRegular,
-    fontSize: fontSizeXs,
-    color: neutralColorHighPure,
-    lineHeight: lineHeightDefault,
-    paddingLeft: spacingSizeXxs,
-    paddingRight: spacingSizeXxs,
-    borderTopWidth: '2px',
-    borderColor: neutralColorLowLight,
-    hover: {
-      backgroundColor: neutralColorLowPure,
-      opacity: opacityLevelIntense
-    }
-  }
-};
-
-var _templateObject$i;
-/** @type {import('@meiuca/zero-builder/types/components').StyleType} */
-
-var x = MenuStyleType;
-var style$i = createGooberGetter(x)(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n\n        .", "-TagHighlight {\n          min-width: 55px;\n          overflow: hidden;\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
-  var backgroundColor = _ref.backgroundColor;
-  return backgroundColor;
-}, function (_ref2) {
-  var borderRadius = _ref2.borderRadius;
-  return borderRadius;
-}, function (_ref3) {
-  var paddingTop = _ref3.paddingTop;
-  return paddingTop;
-}, function (_ref4) {
-  var paddingBottom = _ref4.paddingBottom;
-  return paddingBottom;
-}, function (_ref5) {
-  var boxShadowLevel = _ref5.boxShadowLevel,
-      boxShadowColor = _ref5.boxShadowColor,
-      boxShadowOpacity = _ref5.boxShadowOpacity;
-  return "".concat(boxShadowLevel, " ").concat(hexToRGB(boxShadowColor, boxShadowOpacity));
-}, namespace, namespace, function (_ref6) {
-  var item = _ref6.item;
-  return item.minHeight;
-}, function (_ref7) {
-  var item = _ref7.item;
-  return item.paddingRight;
-}, function (_ref8) {
-  var item = _ref8.item;
-  return item.paddingLeft;
-}, function (_ref9) {
-  var motion = _ref9.motion;
-  return motion;
-}, function (_ref10) {
-  var item = _ref10.item;
-  return hexToRGB(item.hover.backgroundColor, item.hover.opacity);
-}, namespace, function (_ref11) {
-  var item = _ref11.item;
-  return "".concat(item.borderTopWidth, " solid ").concat(item.borderColor);
-}, namespace, namespace, namespace, namespace, function (_ref12) {
-  var item = _ref12.item;
-  return item.fontFamily;
-}, function (_ref13) {
-  var item = _ref13.item;
-  return item.fontWeight;
-}, function (_ref14) {
-  var item = _ref14.item;
-  return item.fontSize;
-}, function (_ref15) {
-  var item = _ref15.item;
-  return item.lineHeight;
-}, function (_ref16) {
-  var item = _ref16.item;
-  return item.color;
-}, function (_ref17) {
-  var motion = _ref17.motion;
-  return motion;
-}, namespace);
-
-var TagHighlightStyleType = {
-  backgroundColor: highlightColorPure,
-  borderRadius: borderRadiusPill,
-  borderWidth: borderRadiusNone,
-  color: neutralColorLowPure,
-  fontFamily: fontFamilyHighlight,
-  fontWeight: fontWeightMedium,
-  fontSize: fontSizeXxs,
-  lineHeight: lineHeightXs,
-  paddingLeft: spacingSizeXxxs,
-  paddingRight: spacingSizeXxxs,
-  motion: injectMotion('switch-slow')
-};
-
-var _templateObject$h;
-var style$h = createGooberGetter(TagHighlightStyleType)(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";    \n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    padding-left: ", ";\n    padding-right: ", ";\n    display: inline-flex;\n    align-items: center;\n    height: 24px;    \n  }\n"])), namespace, function (context) {
-  return context.backgroundColor;
-}, function (context) {
-  return context.borderRadius;
-}, function (context) {
-  return context.backgroundColor;
-}, function (context) {
-  return context.borderWidth;
-}, function (context) {
-  return context.color;
-}, function (context) {
-  return context.fontFamily;
-}, function (context) {
-  return context.fontWeight;
-}, function (context) {
-  return context.fontSize;
-}, function (context) {
-  return context.lineHeight;
-}, function (context) {
-  return context.paddingLeft;
-}, function (context) {
-  return context.paddingRight;
-});
-
-function TagHighlight(_ref) {
-  var _ref$label = _ref.label,
-      label = _ref$label === void 0 ? 'Tag Highlight' : _ref$label,
-      tabIndex = _ref.tabIndex,
-      role = _ref.role;
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-TagHighlight"),
-    styles: style$h
-  }, /*#__PURE__*/React.createElement("button", {
-    className: "".concat(namespace, "-TagHighlight"),
-    tabIndex: tabIndex,
-    role: role
-  }, label));
-}
-
-TagHighlight.propTypes = {
-  label: PropTypes.string,
-  tabIndex: PropTypes.number,
-  role: PropTypes.string
-};
-
-function MenuItem(_ref) {
-  var _classMap;
-
-  var item = _ref.item;
-  return item.label ? /*#__PURE__*/React.createElement("li", {
-    className: classMap((_classMap = {}, _defineProperty(_classMap, "".concat(namespace, "-Menu__Item"), true), _defineProperty(_classMap, "".concat(namespace, "-Menu__Item--current"), item.isCurrent), _classMap)),
-    role: "none"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "".concat(namespace, "-Menu__ItemContent"),
-    "aria-haspopup": "false",
-    "aria-expanded": "false",
-    role: "menuitem",
-    onClick: function onClick() {
-      return item.handleClick(item);
-    }
-  }, item.label, item.tagLabel ? /*#__PURE__*/React.createElement(TagHighlight, {
-    label: item.tagLabel,
-    role: "note",
-    tabIndex: -1
-  }) : null)) : null;
-}
-
-function MenuItemList(_ref2) {
-  var _ref2$menuList = _ref2.menuList,
-      menuList = _ref2$menuList === void 0 ? [] : _ref2$menuList,
-      ariaLabel = _ref2.ariaLabel;
-  return /*#__PURE__*/React.createElement("ul", {
-    className: "".concat(namespace, "-Menu__ItemList"),
-    role: "menubar",
-    "aria-orientation": "vertical",
-    "aria-label": ariaLabel
-  }, menuList.map(function (menuItem, index) {
-    return /*#__PURE__*/React.createElement(MenuItem, {
-      item: menuItem,
-      key: index
-    });
-  }));
-}
-
-function Menu(_ref3) {
-  var _classMap2;
-
-  var _ref3$menuList = _ref3.menuList,
-      menuList = _ref3$menuList === void 0 ? [] : _ref3$menuList,
-      isOpen = _ref3.isOpen,
-      _ref3$ariaLabel = _ref3.ariaLabel,
-      ariaLabel = _ref3$ariaLabel === void 0 ? 'Menu' : _ref3$ariaLabel;
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-Menu"),
-    styles: style$i
-  }, /*#__PURE__*/React.createElement("nav", {
-    className: classMap((_classMap2 = {}, _defineProperty(_classMap2, "".concat(namespace, "-Menu"), true), _defineProperty(_classMap2, "".concat(namespace, "-Menu--open"), isOpen), _classMap2)),
-    "aria-label": ariaLabel
-  }, /*#__PURE__*/React.createElement(MenuItemList, {
-    menuList: menuList,
-    ariaLabel: ariaLabel
-  })));
-}
-
-Menu.propTypes = {
-  isOpen: PropTypes.bool,
-  menuList: PropTypes.arrayOf(PropTypes.exact({
-    label: PropTypes.string.isRequired,
-    tagLabel: PropTypes.string,
-    isCurrent: PropTypes.bool,
-    handleClick: PropTypes.func,
-    menuItemRef: PropTypes.exact({
-      current: PropTypes.any
-    })
-  })),
-  ariaLabel: PropTypes.string
-};
-
-function OverflowMenu(_ref) {
-  var _ref$onColor = _ref.onColor,
-      onColor = _ref$onColor === void 0 ? false : _ref$onColor,
-      _ref$isOpen = _ref.isOpen,
-      isOpen = _ref$isOpen === void 0 ? false : _ref$isOpen,
-      menuList = _ref.menuList,
-      toggleMenu = _ref.toggleMenu,
-      getCurrentMenuItem = _ref.getCurrentMenuItem;
-
-  var _useState = useState(isOpen),
-      _useState2 = _slicedToArray(_useState, 2),
-      _isOpen = _useState2[0],
-      setOpenMenu = _useState2[1];
-
-  var _useState3 = useState(-1),
-      _useState4 = _slicedToArray(_useState3, 2),
-      _currentMenuIndex = _useState4[0],
-      setCurrentMenuIndex = _useState4[1];
-
-  var _useState5 = useState(menuList),
-      _useState6 = _slicedToArray(_useState5, 2),
-      _menuList = _useState6[0],
-      _updateMenuList = _useState6[1];
-
-  var _toggleMenu = function _toggleMenu(isOpen) {
-    setOpenMenu(!isOpen);
-
-    if (toggleMenu) {
-      toggleMenu(!isOpen);
-    }
-  };
-
-  var _handleKeyUp = function _handleKeyUp(e) {
-    if (e.code == 'Escape') {
-      setOpenMenu(false);
-    }
-  };
-
-  var _handleKeyDown = function _handleKeyDown(e) {
-    if (e.code == 'ArrowDown') {
-      setOpenMenu(true);
-      setCurrentMenuIndex(_currentMenuIndex < _menuList.length - 1 ? _currentMenuIndex + 1 : _menuList.length - 1);
-    }
-
-    if (e.code == 'ArrowUp') {
-      setCurrentMenuIndex(_currentMenuIndex - 1 < 0 ? 0 : _currentMenuIndex - 1);
-    }
-
-    if (e.code == 'Tab') {
-      setOpenMenu(false);
-    }
-  };
-
-  var _getCurrentMenuItem = function _getCurrentMenuItem() {
-    return _menuList.filter(function (item) {
-      return item.isCurrent;
-    })[0];
-  };
-
-  var _setCurrentMenuItem = function _setCurrentMenuItem(menu) {
-    return _toConsumableArray(menu).map(function (menuItem, index) {
-      menuItem.isCurrent = index == _currentMenuIndex;
-      return menuItem;
-    });
-  };
-
-  var _handleBlur = function _handleBlur(e) {
-    setOpenMenu(false);
-  };
-
-  useEffect(function () {
-    _updateMenuList(_setCurrentMenuItem(_menuList));
-
-    if (getCurrentMenuItem) {
-      getCurrentMenuItem(_getCurrentMenuItem());
-    }
-  }, [_currentMenuIndex]);
-  useEffect(function () {
-    _updateMenuList(menuList);
-  }, [menuList]);
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: 'jota-OverflowMenu',
-    styles: style$j
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "".concat(namespace, "-OverflowMenu"),
-    onKeyUp: function onKeyUp(e) {
-      return _handleKeyUp(e);
-    }
-  }, /*#__PURE__*/React.createElement(ButtonIcon, {
-    icon: !_isOpen ? "more-horizontal" : "close",
-    size: "medium",
-    onColor: onColor,
-    handleClick: function handleClick() {
-      return _toggleMenu(_isOpen);
-    },
-    handleBlur: function handleBlur(e) {
-      return _handleBlur();
-    },
-    handleKeyDown: function handleKeyDown(e) {
-      return _handleKeyDown(e);
-    }
-  }), /*#__PURE__*/React.createElement(Menu, {
-    isOpen: _isOpen,
-    onColor: onColor,
-    menuList: _menuList
-  })));
-}
-
-OverflowMenu.propTypes = {
-  menuIsOpen: PropTypes.bool,
-  onColor: PropTypes.bool,
-  menuList: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    tagLabel: PropTypes.string,
-    onClick: PropTypes.func
-  })),
-  isOpen: PropTypes.bool,
-  toggleMenu: PropTypes.func,
-  getCurrentMenuItem: PropTypes.func
-};
-
-var linkStyleType = {
-  color: neutralColorLowPure,
-  fontFamily: fontFamilyHighlight,
-  fontSize: fontSizeXs,
-  fontWeight: fontWeightMedium,
-  lineHeight: lineHeightDefault,
-  textDecoration: 'none',
-  motion: injectMotion('switch-slow'),
-  borderWidth: "".concat(borderWidthThin),
-  borderColor: "".concat(neutralColorLowPure),
-  paddingTop: spacingSizeQuarck,
-  paddingBottom: spacingSizeQuarck,
-  hover: {
-    textDecoration: 'none'
-  },
-  active: {
-    color: neutralColorLowMedium,
-    textDecoration: 'none'
-  },
-  onColor: {
-    color: neutralColorHighPure
-  },
-  focus: {
-    borderColor: highlightColorPure,
-    borderWidth: borderWidthThin,
-    color: neutralColorLowPure
-  },
-  disabled: {
-    color: neutralColorHighDark,
-    opacity: opacityLevelMedium
-  },
-  icon: {
-    marginLeft: spacingSizeQuarck,
-    hover: {
-      marginLeft: spacingSizeNano
-    }
-  }
-};
-
-var _templateObject$g;
-var style$g = createGooberGetter(linkStyleType)(_templateObject$g || (_templateObject$g = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin:0;\n    padding:0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after{\n      content: \"\";\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline:0;\n      text-decoration: none;\n\n      &::after{\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n    \n    &:hover {\n      text-decoration: ", ";\n      \n      &::after{\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor:default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after{\n        width: 100%;\n      }\n    }\n\n    &--onColor{\n      color: ", ";\n\n      &::after{\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active){\n        color: ", ";\n      }\n    }\n\n    &--icon{\n      &::after{\n        display: none;\n      }\n\n      .", "-Icon{\n        margin-left: ", ";\n        transition-property: margin;\n        ", ";\n      }\n\n      &:hover{\n        .", "-Icon{\n          margin-left: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
-  return context.color;
-}, function (context) {
-  return context.fontFamily;
-}, function (context) {
-  return context.fontSize;
-}, function (context) {
-  return context.fontWeight;
-}, function (context) {
-  return context.lineHeight;
-}, function (context) {
-  return context.textDecoration;
-}, function (context) {
-  return "".concat(context.borderWidth, " solid transparent");
-}, function (context) {
-  return context.paddingTop;
-}, function (context) {
-  return context.paddingBottom;
-}, function (context) {
-  return "".concat(context.borderWidth);
-}, function (context) {
-  return "".concat(context.borderColor);
-}, function (context) {
-  return context.motion;
-}, function (_ref) {
-  var focus = _ref.focus;
-  return "".concat(focus.borderWidth, " solid ").concat(focus.borderColor);
-}, function (_ref2) {
-  var focus = _ref2.focus;
-  return focus.color;
-}, function (context) {
-  return context.motion;
-}, function (_ref3) {
-  var hover = _ref3.hover;
-  return hover.textDecoration;
-}, function (_ref4) {
-  var disabled = _ref4.disabled;
-  return disabled.opacity;
-}, function (_ref5) {
-  var onColor = _ref5.onColor;
-  return onColor.color;
-}, function (_ref6) {
-  var onColor = _ref6.onColor;
-  return onColor.color;
-}, function (_ref7) {
-  var onColor = _ref7.onColor;
-  return onColor.color;
-}, namespace, function (_ref8) {
-  var icon = _ref8.icon;
-  return icon.marginLeft;
-}, function (context) {
-  return context.motion;
-}, namespace, function (_ref9) {
-  var icon = _ref9.icon;
-  return icon.hover.marginLeft;
-});
-
-function Link(_ref) {
-  var label = _ref.label,
-      href = _ref.href,
-      target = _ref.target,
-      disabled = _ref.disabled,
-      icon = _ref.icon,
-      onColor = _ref.onColor;
-  var refLink = useRef(null);
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-Link"),
-    styles: style$g
-  }, /*#__PURE__*/React.createElement("a", {
-    ref: refLink,
-    href: href,
-    className: "".concat(namespace, "-Link\n        ").concat(disabled ? "".concat(namespace, "-Link--disabled") : '', "\n        ").concat(onColor ? "".concat(namespace, "-Link--onColor") : '', "\n        ").concat(icon ? "".concat(namespace, "-Link--icon") : ''),
-    target: target
-  }, label, icon ? /*#__PURE__*/React.createElement(Icon, {
-    icon: "arrow-right"
-  }) : null));
-}
-
-Link.propTypes = {
-  label: PropTypes.string,
-  href: PropTypes.string,
-  target: PropTypes.string,
-  disabled: PropTypes.bool,
-  icon: PropTypes.bool,
-  inverse: PropTypes.bool,
-  onColor: PropTypes.bool
-};
-
-function Header(_ref) {
-  var _ref$ghost = _ref.ghost,
-      ghost = _ref$ghost === void 0 ? false : _ref$ghost,
-      _ref$isLoggedIn = _ref.isLoggedIn,
-      isLoggedIn = _ref$isLoggedIn === void 0 ? false : _ref$isLoggedIn,
-      logoSource = _ref.logoSource,
-      linkList = _ref.linkList,
-      menuList = _ref.menuList,
-      avatar = _ref.avatar,
-      handleUserClick = _ref.handleUserClick;
-
-  var _handleUserClick = function _handleUserClick(e) {
-    if (handleUserClick) {
-      handleUserClick(e);
-    }
-  };
-
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-Header"),
-    styles: style$l
-  }, /*#__PURE__*/React.createElement("header", {
-    className: "".concat(namespace, "-Header")
-  }, /*#__PURE__*/React.createElement(HeaderEmpty, {
-    ghost: ghost,
-    logoSource: logoSource
-  }, /*#__PURE__*/React.createElement("nav", {
-    className: "".concat(namespace, "-Header__NavLinks")
-  }, /*#__PURE__*/React.createElement("ul", {
-    className: "".concat(namespace, "-Header__LinksList")
-  }, linkList ? linkList.map(function (link, index) {
-    return /*#__PURE__*/React.createElement("li", {
-      className: "\n                    ".concat(namespace, "-Header__LinksItem \n                    ").concat(link.currentActive ? "".concat(namespace, "-Header__LinksItem--active") : ''),
-      key: index
-    }, /*#__PURE__*/React.createElement(Link, _extends({}, link, {
-      key: index
-    })));
-  }) : null)), /*#__PURE__*/React.createElement("nav", {
-    className: "".concat(namespace, "-Header__NavMenu")
-  }, isLoggedIn ? /*#__PURE__*/React.createElement("div", {
-    className: "".concat(namespace, "-Header__UserInfo"),
-    onClick: _handleUserClick
-  }, /*#__PURE__*/React.createElement(Avatar, _extends({}, avatar, {
-    size: "medium"
-  })), /*#__PURE__*/React.createElement(Typography, {
-    component: "caption"
-  }, "Ol\xE1, ", avatar.name, "!")) : null, /*#__PURE__*/React.createElement(OverflowMenu, {
-    menuList: menuList
-  })))));
-}
-
-Header.propTypes = {
-  ghost: PropTypes.bool,
-  isLoggedIn: PropTypes.bool,
-  logoSource: PropTypes.string,
-  avatar: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    imgUrl: PropTypes.string.isRequired,
-    imgAlt: PropTypes.string.isRequired,
-    hasNotification: PropTypes.bool
-  }),
-  menuList: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    tagLabel: PropTypes.string,
-    onClick: PropTypes.func
-  })),
-  linkList: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    target: PropTypes.string.isRequired,
-    disabled: PropTypes.bool,
-    currentActive: PropTypes.bool
-  }))
 };
 
 var InputPasswordStyleType = {
@@ -3636,6 +3706,446 @@ InputSearch.propTypes = {
   handleInputChange: PropTypes.func
 };
 
+var SelectStyleType = {
+  select: {
+    color: brandColorPrimaryPure,
+    fontSize: fontSizeXxs,
+    fontWeight: fontWeightBold,
+    fontFamily: fontFamilyHighlight,
+    margin: spacingSizeNano,
+    marginBottom: spacingSizeNano,
+    height: spacingSizeMd,
+    outlineWidth: borderWidthThin,
+    outlineColor: highlightColorPure,
+    borderRadius: borderRadiusSm,
+    borderWidth: borderWidthThin,
+    lineHeight: lineHeightDefault,
+    hover: neutralColorLowPure,
+    padding: spacingSizeXxxs,
+    opacity: opacityLevelSemitransparent
+  },
+  label: {
+    marginBottom: spacingSizeQuarck
+  },
+  input: {
+    color: neutralColorLowPure,
+    background: neutralColorHighLight,
+    opacity: opacityLevelSemiopaque
+  },
+  onColor: {
+    color: neutralColorHighPure,
+    colorInput: brandColorPrimaryMedium,
+    hover: neutralColorHighPure,
+    opacity: opacityLevelLight,
+    background: brandColorPrimaryPure,
+    error: {
+      backgroundColor: feedbackColorHelperDark,
+      borderColor: feedbackColorHelperPure
+    },
+    label: {
+      color: neutralColorHighPure
+    },
+    disabled: {
+      color: neutralColorHighPure,
+      opacity: opacityLevelMedium,
+      placeholder: {
+        color: neutralColorHighPure,
+        opacity: opacityLevelMedium
+      }
+    }
+  },
+  error: {
+    spacing: spacingSizeQuarck,
+    border: feedbackColorHelperPure,
+    background: feedbackColorHelperLight,
+    fontWeight: fontWeightRegular,
+    fontSize: fontSizeXxs
+  },
+  disabled: {
+    color: brandColorPrimaryLight,
+    onColor: neutralColorHighPure,
+    onColorOpacity: opacityLevelMedium,
+    borderColor: neutralColorLowPure,
+    opacity: opacityLevelMedium,
+    label: {
+      color: neutralColorLowPure,
+      opacity: opacityLevelMedium
+    },
+    placeholder: {
+      color: neutralColorLowPure,
+      opacity: opacityLevelMedium
+    }
+  },
+  list: {
+    background: neutralColorLowMedium,
+    borderRadius: borderRadiusSm,
+    paddingTop: spacingSizeXxxs,
+    paddingSide: spacingSizeXxs,
+    marginTop: spacingSizeQuarck
+  },
+  listItem: {
+    border: borderWidthThin,
+    borderColor: neutralColorLowLight,
+    fontSize: fontSizeXs,
+    hover: neutralColorLowPure,
+    opacity: opacityLevelIntense,
+    marginBottom: spacingSizeXxxs,
+    color: neutralColorHighPure
+  }
+};
+
+var _templateObject$c;
+var style$c = createGooberGetter(SelectStyleType)(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative; \n    font-family: ", "; \n    \n    &--focus{\n      border: ", " solid ", ";\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      } \n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n      &--disabled {\n        color:  ", ";\n      }\n    }\n    .", "-Select__trigger {\n      height: ", ";\n      background: transparent;\n      border-radius: ", ";\n      border: ", " solid ", " ;\n      font-size: ", ";\n      text-align: left;\n      padding: 0px ", ";\n      color: ", ";\n      display: flex;\n      align-items: center;\n      min-width: 320px;\n      justify-content: space-between;\n      margin-bottom: ", ";\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border:", " solid ", ";      \n      }\n      &[disabled]{\n        color: ", ";\n        border: ", " solid ", ";\n        pointer-events: none;\n      }\n    }\n\n    .", "-Select__option-list{\n      opacity: 0;\n      background-color: ", ";\n      width: 100%;\n      border-radius: ", ";\n      margin-top: ", ";\n      position: absolute;\n      visibility: hidden;\n      list-style-type: none;\n      padding: 0px;\n      margin-left: 0px;\n      margin-right: 0px;\n      &[aria-expanded=true]{\n        opacity: 1;\n        visibility: visible;\n      }\n      .", "-Select__option{\n        background-color: transparent;\n        color: ", ";\n        font-size: ", ";\n        border: none;\n        width: 100%;\n        padding: 16px;\n        text-align: left;\n        box-sizing: border-box;\n        &--current,\n        &:focus,\n        &:hover{\n          background-color: ", ";\n          opacity: ", ";\n          outline: transparent;\n          &:before,\n          &:after {\n            background-color: transparent;\n          }\n        }\n        &:before{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          top: -16px;\n          position: relative;\n        }\n        &:after{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          bottom: -16px;\n          position: relative;\n        }\n        &--last{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-bottom-right-radius: 8px;\n            border-bottom-left-radius: 8px;\n          }\n        }\n        &--first{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-top-right-radius: 8px;\n            border-top-left-radius: 8px;\n          }\n        }\n      }\n    }\n  }\n  &.", "-Select--onColor {\n    \n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n\n      &--disabled {\n        color: ", ";\n      }      \n    }\n\n    span {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__trigger {\n      border: ", " solid ", " ;\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color: ", ";\n        border: ", " solid ", ";\n        opacity: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", " solid ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n      }\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      } \n    }\n}\n"])), namespace, function (_ref) {
+  var select = _ref.select;
+  return select.fontFamily;
+}, function (_ref2) {
+  var select = _ref2.select;
+  return select.outlineWidth;
+}, function (_ref3) {
+  var select = _ref3.select;
+  return select.outlineColor;
+}, namespace, function (_ref4) {
+  var error = _ref4.error;
+  return error.spacing;
+}, function (_ref5) {
+  var select = _ref5.select;
+  return select.color;
+}, function (_ref6) {
+  var select = _ref6.select;
+  return select.fontFamily;
+}, function (_ref7) {
+  var error = _ref7.error;
+  return error.fontWeight;
+}, function (_ref8) {
+  var error = _ref8.error;
+  return error.fontSize;
+}, namespace, function (_ref9) {
+  var select = _ref9.select;
+  return select.color;
+}, namespace, function (_ref10) {
+  var select = _ref10.select;
+  return select.color;
+}, function (_ref11) {
+  var select = _ref11.select;
+  return select.fontSize;
+}, function (_ref12) {
+  var select = _ref12.select;
+  return select.fontWeight;
+}, function (_ref13) {
+  var select = _ref13.select;
+  return select.fontFamily;
+}, function (_ref14) {
+  var label = _ref14.label;
+  return label.marginBottom;
+}, function (_ref15) {
+  var select = _ref15.select;
+  return select.lineHeight;
+}, function (_ref16) {
+  var disabled = _ref16.disabled;
+  return hexToRGB(disabled.label.color, disabled.label.opacity);
+}, namespace, function (_ref17) {
+  var select = _ref17.select;
+  return select.height;
+}, function (_ref18) {
+  var select = _ref18.select;
+  return select.borderRadius;
+}, function (_ref19) {
+  var select = _ref19.select;
+  return select.borderWidth;
+}, function (_ref20) {
+  var select = _ref20.select;
+  return select.color;
+}, function (_ref21) {
+  var select = _ref21.select;
+  return select.fontSize;
+}, function (_ref22) {
+  var select = _ref22.select;
+  return select.padding;
+}, function (_ref23) {
+  var input = _ref23.input;
+  return hexToRGB(input.color, input.opacity);
+}, function (_ref24) {
+  var select = _ref24.select;
+  return select.marginBottom;
+}, function (_ref25) {
+  var select = _ref25.select;
+  return select.color;
+}, function (_ref26) {
+  var select = _ref26.select;
+  return hexToRGB(select.hover, select.opacity);
+}, function (_ref27) {
+  var select = _ref27.select;
+  return select.color;
+}, function (_ref28) {
+  var error = _ref28.error;
+  return error.background;
+}, function (_ref29) {
+  var select = _ref29.select;
+  return select.borderWidth;
+}, function (_ref30) {
+  var error = _ref30.error;
+  return error.border;
+}, function (_ref31) {
+  var disabled = _ref31.disabled;
+  return hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity);
+}, function (_ref32) {
+  var select = _ref32.select;
+  return select.borderWidth;
+}, function (_ref33) {
+  var disabled = _ref33.disabled;
+  return hexToRGB(disabled.borderColor, disabled.opacity);
+}, namespace, function (_ref34) {
+  var list = _ref34.list;
+  return list.background;
+}, function (_ref35) {
+  var list = _ref35.list;
+  return list.borderRadius;
+}, function (_ref36) {
+  var list = _ref36.list;
+  return list.marginTop;
+}, namespace, function (_ref37) {
+  var listItem = _ref37.listItem;
+  return listItem.color;
+}, function (_ref38) {
+  var listItem = _ref38.listItem;
+  return listItem.fontSize;
+}, function (_ref39) {
+  var listItem = _ref39.listItem;
+  return listItem.hover;
+}, function (_ref40) {
+  var listItem = _ref40.listItem;
+  return listItem.opacity;
+}, function (_ref41) {
+  var listItem = _ref41.listItem;
+  return listItem.borderColor;
+}, function (_ref42) {
+  var listItem = _ref42.listItem;
+  return listItem.borderColor;
+}, function (_ref43) {
+  var listItem = _ref43.listItem;
+  return listItem.hover;
+}, function (_ref44) {
+  var listItem = _ref44.listItem;
+  return listItem.hover;
+}, namespace, namespace, function (_ref45) {
+  var onColor = _ref45.onColor;
+  return onColor.label.color;
+}, function (_ref46) {
+  var onColor = _ref46.onColor;
+  return hexToRGB(onColor.label.color, onColor.disabled.opacity);
+}, function (_ref47) {
+  var onColor = _ref47.onColor;
+  return onColor.color;
+}, function (_ref48) {
+  var disabled = _ref48.disabled;
+  return disabled.onColorOpacity;
+}, namespace, function (_ref49) {
+  var select = _ref49.select;
+  return select.borderWidth;
+}, function (_ref50) {
+  var onColor = _ref50.onColor;
+  return onColor.color;
+}, function (_ref51) {
+  var onColor = _ref51.onColor;
+  return onColor.color;
+}, function (_ref52) {
+  var onColor = _ref52.onColor;
+  return onColor.color;
+}, function (_ref53) {
+  var onColor = _ref53.onColor;
+  return hexToRGB(onColor.hover, onColor.opacity);
+}, function (_ref54) {
+  var onColor = _ref54.onColor;
+  return hexToRGB(onColor.hover, onColor.opacity);
+}, function (_ref55) {
+  var onColor = _ref55.onColor;
+  return hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity);
+}, function (_ref56) {
+  var select = _ref56.select;
+  return select.borderWidth;
+}, function (_ref57) {
+  var onColor = _ref57.onColor;
+  return hexToRGB(onColor.disabled.color, onColor.disabled.opacity);
+}, function (_ref58) {
+  var disabled = _ref58.disabled;
+  return disabled.onColorOpacity;
+}, function (_ref59) {
+  var onColor = _ref59.onColor;
+  return onColor.color;
+}, function (_ref60) {
+  var onColor = _ref60.onColor;
+  return onColor.error.backgroundColor;
+}, function (_ref61) {
+  var select = _ref61.select;
+  return select.borderWidth;
+}, function (_ref62) {
+  var onColor = _ref62.onColor;
+  return onColor.error.borderColor;
+}, function (_ref63) {
+  var onColor = _ref63.onColor;
+  return onColor.error.backgroundColor;
+}, namespace, function (_ref64) {
+  var onColor = _ref64.onColor;
+  return onColor.color;
+});
+
+function Select(_ref) {
+  var label = _ref.label,
+      disabled = _ref.disabled,
+      error = _ref.error,
+      _ref$errorMsg = _ref.errorMsg,
+      errorMsg = _ref$errorMsg === void 0 ? 'error' : _ref$errorMsg,
+      placeholder = _ref.placeholder;
+      _ref.selected;
+      var onColor = _ref.onColor,
+      _ref$options = _ref.options,
+      options = _ref$options === void 0 ? ['label 1', 'label 2', 'label 3'] : _ref$options;
+
+  var _useState = useState({
+    open: false,
+    placeholder: placeholder ? placeholder : 'Select'
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      status = _useState2[0],
+      setStatus = _useState2[1];
+
+  var _useState3 = useState(-1),
+      _useState4 = _slicedToArray(_useState3, 2),
+      currentIndex = _useState4[0],
+      setCurrentIndex = _useState4[1];
+
+  var _useState5 = useState(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      keyboardFocus = _useState6[0],
+      setKeyboardFocus = _useState6[1];
+
+  var selectReference = useRef(null);
+  var optionsTriggerReference = useRef(null);
+
+  var _handleClick = function _handleClick() {
+    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+      open: !status.open
+    }));
+  };
+
+  var _selectOption = function _selectOption(item, index) {
+    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+      placeholder: item,
+      open: false
+    }));
+    setCurrentIndex(index);
+  };
+
+  var _handleKeyUp = function _handleKeyUp(e) {
+    if (e.code === "Space") {
+      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+        open: true
+      }));
+
+      if (currentIndex < 0) {
+        setCurrentIndex(0);
+      }
+    }
+
+    if (e.code === "Enter") {
+      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+        open: !status.open
+      }));
+      optionsTriggerReference.current.focus();
+
+      if (currentIndex < 0) {
+        setCurrentIndex(0);
+      }
+    }
+
+    if (e.code === 'ArrowDown') {
+      setCurrentIndex(currentIndex < options.length - 1 ? currentIndex + 1 : options.length - 1);
+    }
+
+    if (e.code === 'ArrowUp') {
+      setCurrentIndex(currentIndex - 1 < 0 ? 0 : currentIndex - 1);
+    }
+  };
+
+  var _handleTriggerKeyDown = function _handleTriggerKeyDown(e) {
+    if (e.code === "Tab" && status.open) {
+      e.preventDefault();
+      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+        open: false
+      }));
+      optionsTriggerReference.current.focus();
+    }
+  };
+
+  useEffect(function () {
+    if (currentIndex >= 0) {
+      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
+        placeholder: options[currentIndex]
+      }));
+    }
+  }, [currentIndex]);
+  return /*#__PURE__*/React.createElement(ContextElement, {
+    contextId: "".concat(namespace, "-Select"),
+    styles: style$c
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "\n          ".concat(namespace, "-Select\n          ").concat(onColor ? "".concat(namespace, "-Select--onColor") : '', "\n          ").concat(keyboardFocus ? "".concat(namespace, "-Select--focus") : '', "\n          ").concat(error ? "".concat(namespace, "-Select--error") : '', "\n          ").concat(onColor && error ? "".concat(namespace, "-Select--onColor--error") : '', "\n        "),
+    ref: selectReference,
+    id: "wrapper",
+    onKeyUp: _handleKeyUp
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "\n        ".concat(namespace, "-Select__label\n        ").concat(disabled ? "".concat(namespace, "-Select__label--disabled") : '')
+  }, label), /*#__PURE__*/React.createElement("button", {
+    onFocus: function onFocus() {
+      return setKeyboardFocus(!keyboardFocus);
+    },
+    onBlur: function onBlur() {
+      return setKeyboardFocus(false);
+    },
+    onKeyDown: function onKeyDown(e) {
+      return _handleTriggerKeyDown(e);
+    },
+    onMouseUp: _handleClick,
+    disabled: !!disabled,
+    "aria-haspopup": "true",
+    ref: optionsTriggerReference,
+    className: "".concat(namespace, "-Select__trigger\n          ").concat(error ? "".concat(namespace, "-Select__trigger--error") : '', "\n          ")
+  }, status.placeholder, /*#__PURE__*/React.createElement(Icon, {
+    icon: status.open ? "chevron-up" : "chevron-down"
+  })), /*#__PURE__*/React.createElement("ul", {
+    className: "".concat(namespace, "-Select__option-list"),
+    role: "listbox",
+    tabIndex: "-1",
+    "aria-expanded": !!status.open
+  }, options.map(function (item, index) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: index,
+      role: "option",
+      id: item.toLowerCase().replace(" ", "-"),
+      onMouseUp: function onMouseUp() {
+        return _selectOption(item, index);
+      },
+      onMouseOver: function onMouseOver() {
+        return setCurrentIndex(index);
+      },
+      "data-value": item,
+      "aria-label": item,
+      className: "\n                ".concat(namespace, "-Select__option\n                ").concat(index === currentIndex ? "".concat(namespace, "-Select__option--current") : '', "\n                ").concat(options.length - 1 === index ? "".concat(namespace, "-Select__option--last") : '', "\n                ").concat(index === 0 ? "".concat(namespace, "-Select__option--first") : '')
+    }, item);
+  })), /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": !error,
+    className: "".concat(namespace, "-Select__errorMsg")
+  }, errorMsg)));
+}
+
+Select.propTypes = {
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  errorMsg: PropTypes.string,
+  disabled: PropTypes.bool,
+  error: PropTypes.bool,
+  onColor: PropTypes.bool
+};
+
 var InputTextStyleType = {
   fontSize: fontSizeXs,
   fontWeight: fontWeightRegular,
@@ -3726,8 +4236,8 @@ var InputTextStyleType = {
   }
 };
 
-var _templateObject$c;
-var style$c = createGooberGetter(InputTextStyleType)(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-InputText {\n    display: flex;\n    flex-direction: column;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    border-radius: none;\n    min-width: 272px;\n    border: ", ";\n\n    input:-webkit-autofill,\n    input:-webkit-autofill:hover, \n    input:-webkit-autofill:focus {\n      -webkit-box-shadow: 0 0 0px 1000px transparent inset;\n      transition: background-color 400s ease-in-out 0s;\n    }\n\n    &:focus{\n      outline: transparent;\n    }\n\n    &--focus {\n      border: ", ";\n\n      .", "-InputText__input{\n        background-color: ", ";\n        &::placeholder {\n          color: ", ";\n          font-weight: ", ";\n          opacity: 1;\n        }\n      }\n    }\n\n    .", "-InputText__helperBox{\n      display: flex;\n      justify-content: space-between;\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    .", "-InputText__helperText{\n      color: ", ";\n      opacity: 0;\n    }\n\n    .", "-InputText__label{\n      font-weight: ", ";\n      margin-bottom: ", ";\n    }\n\n    .", "-InputText__input{\n      font-family: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      margin-bottom: ", ";\n      padding: ", ";\n      border-radius: ", ";\n      border: ", ";\n      background-color: ", ";\n      outline: transparent;\n      color: ", ";\n      resize: vertical;\n      transition-property: background-color;\n      height: ", ";\n      box-sizing: border-box;\n      ", ";\n\n      &:hover{\n        background-color: ", ";\n      }\n\n      &::placeholder {\n        color: ", ";\n        font-weight: ", ";\n        opacity: 1;\n      }\n    }\n\n    &--disabled{\n      opacity: ", ";\n      pointer-events: none;\n    }\n\n    &--error{\n      .", "-InputText__input{\n        color: ", ";\n        background-color: ", ";\n        border-color: ", ";\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      .", "-InputText__helperBox {\n        opacity: 1;\n      }      \n    }\n\n    &--onColor{\n      color: ", ";\n\n      .", "-InputText__input{\n        background-color: ", ";\n        border-color: ", ";\n        color:  ", ";\n        font-weight:  ", ";\n\n        &:hover{\n          background-color: ", ";\n        }\n\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      .", "-InputText__helperText{\n        color:  ", ";\n      }\n\n      &.", "-InputText--error {\n        .", "-InputText__input{\n          background-color: ", ";\n          border-color: ", ";\n        }\n\n        .", "-InputText__helperBox {\n          opacity: 1;\n        }\n\n      }\n    }\n  }\n"])), namespace, function (context) {
+var _templateObject$b;
+var style$b = createGooberGetter(InputTextStyleType)(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  &.", "-InputText {\n    display: flex;\n    flex-direction: column;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    border-radius: none;\n    min-width: 272px;\n    border: ", ";\n\n    input:-webkit-autofill,\n    input:-webkit-autofill:hover, \n    input:-webkit-autofill:focus {\n      -webkit-box-shadow: 0 0 0px 1000px transparent inset;\n      transition: background-color 400s ease-in-out 0s;\n    }\n\n    &:focus{\n      outline: transparent;\n    }\n\n    &--focus {\n      border: ", ";\n\n      .", "-InputText__input{\n        background-color: ", ";\n        &::placeholder {\n          color: ", ";\n          font-weight: ", ";\n          opacity: 1;\n        }\n      }\n    }\n\n    .", "-InputText__helperBox{\n      display: flex;\n      justify-content: space-between;\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    .", "-InputText__helperText{\n      color: ", ";\n      opacity: 0;\n    }\n\n    .", "-InputText__label{\n      font-weight: ", ";\n      margin-bottom: ", ";\n    }\n\n    .", "-InputText__input{\n      font-family: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      margin-bottom: ", ";\n      padding: ", ";\n      border-radius: ", ";\n      border: ", ";\n      background-color: ", ";\n      outline: transparent;\n      color: ", ";\n      resize: vertical;\n      transition-property: background-color;\n      height: ", ";\n      box-sizing: border-box;\n      ", ";\n\n      &:hover{\n        background-color: ", ";\n      }\n\n      &::placeholder {\n        color: ", ";\n        font-weight: ", ";\n        opacity: 1;\n      }\n    }\n\n    &--disabled{\n      opacity: ", ";\n      pointer-events: none;\n    }\n\n    &--error{\n      .", "-InputText__input{\n        color: ", ";\n        background-color: ", ";\n        border-color: ", ";\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      .", "-InputText__helperBox {\n        opacity: 1;\n      }      \n    }\n\n    &--onColor{\n      color: ", ";\n\n      .", "-InputText__input{\n        background-color: ", ";\n        border-color: ", ";\n        color:  ", ";\n        font-weight:  ", ";\n\n        &:hover{\n          background-color: ", ";\n        }\n\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      .", "-InputText__helperText{\n        color:  ", ";\n      }\n\n      &.", "-InputText--error {\n        .", "-InputText__input{\n          background-color: ", ";\n          border-color: ", ";\n        }\n\n        .", "-InputText__helperBox {\n          opacity: 1;\n        }\n\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontSize;
@@ -3918,7 +4428,7 @@ function InputText(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-InputText"),
-    styles: style$c
+    styles: style$b
   }, /*#__PURE__*/React.createElement("div", {
     className: "\n          ".concat(namespace, "-InputText\n          ").concat(_error ? "".concat(namespace, "-InputText--error") : '', "\n          ").concat(onColor ? "".concat(namespace, "-InputText--onColor") : '', "\n          ").concat(disabled ? "".concat(namespace, "-InputText--disabled") : '', "\n          ").concat(_keyboardFocus ? "".concat(namespace, "-InputText--focus") : '', "\n        "),
     onKeyUp: function onKeyUp(e) {
@@ -4038,8 +4548,8 @@ var inputTextareaStyleType = {
   }
 };
 
-var _templateObject$b;
-var style$b = createGooberGetter(inputTextareaStyleType)(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  &.", "-TextArea{\n    display: flex;\n    flex-direction: column;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    border-radius: 0px;\n    border: ", ";\n    min-width: 320px;\n\n    &:focus{\n      outline: transparent;\n    }\n\n    &--focus,\n    &:focus-visible:not(:active) {\n      border: ", ";\n\n      .", "-TextArea__textarea{\n        background-color: ", ";\n      }\n    }\n\n    .", "-TextArea__helperBox{\n      display: flex;\n      justify-content: flex-end;\n      font-size: ", ";\n    }\n\n    .", "-TextArea__label{\n      font-weight: ", ";\n      margin-bottom: ", ";\n    }\n\n    .", "-TextArea__textarea{\n      font-family: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      margin-bottom: ", ";\n      padding: ", ";\n      border-radius: ", ";\n      border: ", ";\n      background-color: ", ";\n      outline: transparent;\n      color: ", ";\n      resize: none;\n      transition-property: background-color;\n      height: 224px;\n      ", ";\n\n      &:hover{\n        background-color: ", ";\n      }\n\n      &::placeholder {\n        color: ", ";\n        font-weight: ", ";\n      }\n    }\n\n    .", "-TextArea__helperText{\n      flex: 1;\n    }\n\n    .", "-TextArea__counter{\n\n    }\n\n    &--disabled{\n      opacity: ", ";\n      pointer-events: none;\n\n      .", "-TextArea__helperBox{\n        opacity: 0;\n      }\n    }\n\n    &--error{\n      .", "-TextArea__textarea{\n        background-color: ", ";\n        border-color: ", ";\n      }\n    }\n\n    &--onColor{\n      color: ", ";\n\n      .", "-TextArea__textarea{\n        background-color: ", ";\n        border-color: ", ";\n        color:  ", ";\n\n        &:hover{\n          background-color: ", ";\n        }\n\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      &.", "-TextArea--error{\n        .", "-TextArea__textarea{\n          background-color: ", ";\n          border-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
+var _templateObject$a;
+var style$a = createGooberGetter(inputTextareaStyleType)(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  &.", "-TextArea{\n    display: flex;\n    flex-direction: column;\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    border-radius: 0px;\n    border: ", ";\n    min-width: 320px;\n\n    &:focus{\n      outline: transparent;\n    }\n\n    &--focus,\n    &:focus-visible:not(:active) {\n      border: ", ";\n\n      .", "-TextArea__textarea{\n        background-color: ", ";\n      }\n    }\n\n    .", "-TextArea__helperBox{\n      display: flex;\n      justify-content: flex-end;\n      font-size: ", ";\n    }\n\n    .", "-TextArea__label{\n      font-weight: ", ";\n      margin-bottom: ", ";\n    }\n\n    .", "-TextArea__textarea{\n      font-family: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      margin-bottom: ", ";\n      padding: ", ";\n      border-radius: ", ";\n      border: ", ";\n      background-color: ", ";\n      outline: transparent;\n      color: ", ";\n      resize: none;\n      transition-property: background-color;\n      height: 224px;\n      ", ";\n\n      &:hover{\n        background-color: ", ";\n      }\n\n      &::placeholder {\n        color: ", ";\n        font-weight: ", ";\n      }\n    }\n\n    .", "-TextArea__helperText{\n      flex: 1;\n    }\n\n    .", "-TextArea__counter{\n\n    }\n\n    &--disabled{\n      opacity: ", ";\n      pointer-events: none;\n\n      .", "-TextArea__helperBox{\n        opacity: 0;\n      }\n    }\n\n    &--error{\n      .", "-TextArea__textarea{\n        background-color: ", ";\n        border-color: ", ";\n      }\n    }\n\n    &--onColor{\n      color: ", ";\n\n      .", "-TextArea__textarea{\n        background-color: ", ";\n        border-color: ", ";\n        color:  ", ";\n\n        &:hover{\n          background-color: ", ";\n        }\n\n        &::placeholder {\n          color: ", ";\n          opacity: 1;\n        }\n      }\n\n      &.", "-TextArea--error{\n        .", "-TextArea__textarea{\n          background-color: ", ";\n          border-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontSize;
@@ -4157,7 +4667,8 @@ function InputTextarea(_ref) {
       _ref$disabled = _ref.disabled,
       disabled = _ref$disabled === void 0 ? false : _ref$disabled,
       _ref$showHelper = _ref.showHelper,
-      showHelper = _ref$showHelper === void 0 ? false : _ref$showHelper;
+      showHelper = _ref$showHelper === void 0 ? false : _ref$showHelper,
+      handleChange = _ref.handleChange;
 
   var _useState = useState(0),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4169,10 +4680,11 @@ function InputTextarea(_ref) {
       _value = _useState4[0],
       setValue = _useState4[1];
 
-  var handleChange = function handleChange(e) {
+  var _handleChange = function _handleChange(e) {
     var currentValue = e.target.value;
     setValue(currentValue);
     setCharactersCount(currentValue.length);
+    handleChange(e);
   };
 
   function formatNumber(number) {
@@ -4189,7 +4701,7 @@ function InputTextarea(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Textarea"),
-    styles: style$b
+    styles: style$a
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-TextArea \n        ").concat(error ? "".concat(namespace, "-TextArea--error") : '', " \n        ").concat(onColor ? "".concat(namespace, "-TextArea--onColor") : '', " \n        ").concat(disabled ? "".concat(namespace, "-TextArea--disabled") : ''),
     tabIndex: "0"
@@ -4202,7 +4714,7 @@ function InputTextarea(_ref) {
     value: _value,
     maxLength: maxLength,
     placeholder: placeholder,
-    onInput: handleChange
+    onInput: _handleChange
   }), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-TextArea__helperBox")
   }, showHelper && helperText ? /*#__PURE__*/React.createElement("span", {
@@ -4249,8 +4761,8 @@ var ModalStyleType = {
   }
 };
 
-var _templateObject$a;
-var style$a = createGooberGetter(ModalStyleType)(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  &.", "-Modal{\n    justify-content: center;\n    align-items: center;\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: ", ";\n\n    &--open{\n      display: flex;\n    }\n\n    .", "-ButtonIcon{\n      position: absolute;\n      top: ", ";\n      right: ", ";\n    }\n\n    .", "-Modal__shape {\n      background-color: ", ";\n      box-shadow: ", ";\n      width: 100vw;\n      height: 100vh;\n      box-sizing: border-box;\n      position: relative;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .", "-Modal__content{\n      flex: 1;\n      padding: ", ";\n    }\n\n    .", "-Modal__stackfix{\n      height: ", ";\n    }\n\n    .", "-Modal__nav{\n      display: flex;\n      justify-self: flex-end;\n      justify-content: center;\n      padding: ", ";\n      background-color: ", ";\n    }\n  }\n\n  @media screen and (min-width: 601px){\n    &.", "-Modal{\n      .", "-Modal__stackfix{\n        display: none;\n      }\n\n      .", "-Modal__nav {\n        justify-content: flex-end;\n        border-radius: 0px 0px ", " ", ";\n      }\n\n      .", "-Modal__shape{\n        width: 464px;\n        height: initial;\n        min-height: 450px;\n        border-radius: ", ";\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var _templateObject$9;
+var style$9 = createGooberGetter(ModalStyleType)(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  &.", "-Modal{\n    justify-content: center;\n    align-items: center;\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: ", ";\n\n    &--open{\n      display: flex;\n    }\n\n    .", "-ButtonIcon{\n      position: absolute;\n      top: ", ";\n      right: ", ";\n    }\n\n    .", "-Modal__shape {\n      background-color: ", ";\n      box-shadow: ", ";\n      width: 100vw;\n      height: 100vh;\n      box-sizing: border-box;\n      position: relative;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .", "-Modal__content{\n      flex: 1;\n      padding: ", ";\n    }\n\n    .", "-Modal__stackfix{\n      height: ", ";\n    }\n\n    .", "-Modal__nav{\n      display: flex;\n      justify-self: flex-end;\n      justify-content: center;\n      padding: ", ";\n      background-color: ", ";\n    }\n  }\n\n  @media screen and (min-width: 601px){\n    &.", "-Modal{\n      .", "-Modal__stackfix{\n        display: none;\n      }\n\n      .", "-Modal__nav {\n        justify-content: flex-end;\n        border-radius: 0px 0px ", " ", ";\n      }\n\n      .", "-Modal__shape{\n        width: 464px;\n        height: initial;\n        min-height: 450px;\n        border-radius: ", ";\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var overlay = _ref.overlay;
   return hexToRGB(overlay.backgroundColor, overlay.opacity);
 }, namespace, function (_ref2) {
@@ -4340,7 +4852,7 @@ function Modal(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Modal"),
-    styles: style$a
+    styles: style$9
   }, /*#__PURE__*/React.createElement("div", {
     className: "\n          ".concat(namespace, "-Modal\n          ").concat(_isOpen ? "".concat(namespace, "-Modal--open") : '', "\n        ")
   }, /*#__PURE__*/React.createElement("div", {
@@ -4407,8 +4919,8 @@ var NotificationStyleType = {
   }
 };
 
-var _templateObject$9;
-var style$9 = createGooberGetter(NotificationStyleType)(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  &.", "-Notification {\n    width: calc( 100vw - ", " );\n    height: calc( 100vh - 48px );\n    z-index: 999;\n\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    background-color: ", ";\n    padding: ", ";\n    \n    box-shadow: ", ";\n    -webkit-box-shadow: ", ";\n    -moz-box-shadow: ", ";    \n\n    display: none;\n\n    &--isOpen {\n      display: block;\n      animation: animation 1s;\n    }\n\n    .", "-Typography.Heading {\n      margin-bottom: ", ";\n      padding-top: ", ";\n      width: calc( 100% - 64px );\n    }\n\n    .", "-Typography.Paragraph {\n      margin-bottom: ", ";\n      height: 100%;\n    }\n\n    .", "-Notification__container {\n      position: relative;\n      height: 100%;\n    }\n\n    .", "-Notification__wrapper {\n      padding-right: ", ";\n      height: 100%;\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n\n      .", "-Button {\n        justify-self: flex-end;\n        flex-shrink: 0;\n        flex-grow: 0;\n      }\n    }\n\n    .", "-Notification__close {\n      position: absolute;\n      top: 0;\n      right: 0;\n    }\n\n    @media (min-width: 768px) {\n      width: initial;\n      height: initial;\n      max-width: 672px;\n      position: fixed;\n      padding: ", ";\n      border-radius: ", ";\n      bottom: ", ";\n      right: ", ";\n\n      .", "-Typography.Heading {\n        margin-bottom: ", ";\n        padding-top: 0;\n      }      \n    }\n\n    @keyframes animation {\n      from { \n        right: -672px; \n      }\n\n      to { \n        right: 20px; \n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var _templateObject$8;
+var style$8 = createGooberGetter(NotificationStyleType)(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  &.", "-Notification {\n    width: calc( 100vw - ", " );\n    height: calc( 100vh - 48px );\n    z-index: 999;\n\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    color: ", ";\n    background-color: ", ";\n    padding: ", ";\n    \n    box-shadow: ", ";\n    -webkit-box-shadow: ", ";\n    -moz-box-shadow: ", ";    \n\n    display: none;\n\n    &--isOpen {\n      display: block;\n      animation: animation 1s;\n    }\n\n    .", "-Typography.Heading {\n      margin-bottom: ", ";\n      padding-top: ", ";\n      width: calc( 100% - 64px );\n    }\n\n    .", "-Typography.Paragraph {\n      margin-bottom: ", ";\n      height: 100%;\n    }\n\n    .", "-Notification__container {\n      position: relative;\n      height: 100%;\n    }\n\n    .", "-Notification__wrapper {\n      padding-right: ", ";\n      height: 100%;\n      display: flex;\n      flex-direction: column;\n      justify-content: flex-start;\n      align-items: flex-start;\n\n      .", "-Button {\n        justify-self: flex-end;\n        flex-shrink: 0;\n        flex-grow: 0;\n      }\n    }\n\n    .", "-Notification__close {\n      position: absolute;\n      top: 0;\n      right: 0;\n    }\n\n    @media (min-width: 768px) {\n      width: initial;\n      height: initial;\n      max-width: 672px;\n      position: fixed;\n      padding: ", ";\n      border-radius: ", ";\n      bottom: ", ";\n      right: ", ";\n\n      .", "-Typography.Heading {\n        margin-bottom: ", ";\n        padding-top: 0;\n      }      \n    }\n\n    @keyframes animation {\n      from { \n        right: -672px; \n      }\n\n      to { \n        right: 20px; \n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var mobile = _ref.mobile;
   return "".concat(parseInt(mobile.padding) * 2, "px");
 }, function (context) {
@@ -4488,7 +5000,7 @@ function Notification(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Notification"),
-    styles: style$9
+    styles: style$8
   }, /*#__PURE__*/React.createElement("div", {
     className: "\n        ".concat(namespace, "-Notification\n        ").concat(_isOpen ? "".concat(namespace, "-Notification--isOpen") : '', " \n      "),
     tabIndex: "0",
@@ -4525,411 +5037,6 @@ Notification.propTypes = {
   handleClose: PropTypes.any
 };
 
-var SelectStyleType = {
-  select: {
-    color: brandColorPrimaryPure,
-    fontSize: fontSizeXxs,
-    fontWeight: fontWeightBold,
-    fontFamily: fontFamilyHighlight,
-    margin: spacingSizeNano,
-    marginBottom: spacingSizeNano,
-    height: spacingSizeMd,
-    outlineWidth: borderWidthThin,
-    outlineColor: highlightColorPure,
-    borderRadius: borderRadiusSm,
-    borderWidth: borderWidthThin,
-    lineHeight: lineHeightDefault,
-    hover: neutralColorLowPure,
-    padding: spacingSizeXxxs,
-    opacity: opacityLevelSemitransparent
-  },
-  label: {
-    marginBottom: spacingSizeQuarck
-  },
-  input: {
-    color: neutralColorLowPure,
-    background: neutralColorHighLight,
-    opacity: opacityLevelSemiopaque
-  },
-  onColor: {
-    color: neutralColorHighPure,
-    colorInput: brandColorPrimaryMedium,
-    errorBackground: feedbackColorHelperDark,
-    hover: neutralColorHighPure,
-    opacity: opacityLevelLight,
-    background: brandColorPrimaryPure,
-    errorBorder: feedbackColorHelperPure,
-    label: {
-      color: neutralColorHighPure
-    }
-  },
-  error: {
-    spacing: spacingSizeQuarck,
-    border: feedbackColorHelperPure,
-    background: feedbackColorHelperLight,
-    fontWeight: fontWeightRegular,
-    fontSize: fontSizeXxs
-  },
-  disabled: {
-    color: brandColorPrimaryLight,
-    onColor: neutralColorHighPure,
-    onColorOpacity: opacityLevelMedium
-  },
-  list: {
-    background: neutralColorLowMedium,
-    borderRadius: borderRadiusSm,
-    paddingTop: spacingSizeXxxs,
-    paddingSide: spacingSizeXxs,
-    marginTop: spacingSizeQuarck
-  },
-  listItem: {
-    border: borderWidthThin,
-    borderColor: neutralColorLowLight,
-    fontSize: fontSizeXs,
-    hover: neutralColorLowPure,
-    opacity: opacityLevelIntense,
-    marginBottom: spacingSizeXxxs,
-    color: neutralColorHighPure
-  }
-};
-
-var _templateObject$8;
-var style$8 = createGooberGetter(SelectStyleType)(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative; \n    font-family: ", "; \n    \n    &--focus{\n      border: ", " solid ", ";\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n      &--disabled {\n        color:  ", ";\n      }\n    }\n    .", "-Select__trigger {\n      height: ", ";\n      background: transparent;\n      border-radius: ", ";\n      border: ", " solid ", " ;\n      font-size: ", ";\n      text-align: left;\n      padding: 0px ", ";\n      color: ", ";\n      display: flex;\n      align-items: center;\n      min-width: 320px;\n      justify-content: space-between;\n      margin-bottom: ", ";\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border:", " solid ", ";      \n      }\n      &[disabled]{\n        border: ", " solid ", ";\n        pointer-events: none;\n      }\n    }\n\n    .", "-Select__option-list{\n      opacity: 0;\n      background-color: ", ";\n      width: 100%;\n      border-radius: ", ";\n      margin-top: ", ";\n      position: absolute;\n      visibility: hidden;\n      list-style-type: none;\n      padding: 0px;\n      margin-left: 0px;\n      margin-right: 0px;\n      &[aria-expanded=true]{\n        opacity: 1;\n        visibility: visible;\n      }\n      .", "-Select__option{\n        background-color: transparent;\n        color: ", ";\n        font-size: ", ";\n        border: none;\n        width: 100%;\n        padding: 16px;\n        text-align: left;\n        box-sizing: border-box;\n        &--current,\n        &:focus,\n        &:hover{\n          background-color: ", ";\n          opacity: ", ";\n          outline: transparent;\n          &:before,\n          &:after {\n            background-color: transparent;\n          }\n        }\n        &:before{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          top: -16px;\n          position: relative;\n        }\n        &:after{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          bottom: -16px;\n          position: relative;\n        }\n        &--last{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-bottom-right-radius: 8px;\n            border-bottom-left-radius: 8px;\n          }\n        }\n        &--first{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-top-right-radius: 8px;\n            border-top-left-radius: 8px;\n          }\n        }\n      }\n    }\n  }\n  &.", "-Select--onColor{\n    \n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n    }\n\n    span {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__trigger{\n      border: ", " solid ", " ;\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color:  ", ";\n        border: 2px solid ", ";\n        opacity: ", ";\n      }\n    }\n\n    .", "-Select__label--disabled {\n      color:  ", ";\n    }\n\n    .", "-trigger--error {\n      color: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n    }\n}\n"])), namespace, function (_ref) {
-  var select = _ref.select;
-  return select.fontFamily;
-}, function (_ref2) {
-  var select = _ref2.select;
-  return select.outlineWidth;
-}, function (_ref3) {
-  var select = _ref3.select;
-  return select.outlineColor;
-}, namespace, function (_ref4) {
-  var error = _ref4.error;
-  return error.spacing;
-}, function (_ref5) {
-  var select = _ref5.select;
-  return select.color;
-}, function (_ref6) {
-  var select = _ref6.select;
-  return select.fontFamily;
-}, function (_ref7) {
-  var error = _ref7.error;
-  return error.fontWeight;
-}, function (_ref8) {
-  var error = _ref8.error;
-  return error.fontSize;
-}, namespace, namespace, function (_ref9) {
-  var select = _ref9.select;
-  return select.color;
-}, function (_ref10) {
-  var select = _ref10.select;
-  return select.fontSize;
-}, function (_ref11) {
-  var select = _ref11.select;
-  return select.fontWeight;
-}, function (_ref12) {
-  var select = _ref12.select;
-  return select.fontFamily;
-}, function (_ref13) {
-  var label = _ref13.label;
-  return label.marginBottom;
-}, function (_ref14) {
-  var select = _ref14.select;
-  return select.lineHeight;
-}, function (_ref15) {
-  var disabled = _ref15.disabled;
-  return disabled.color;
-}, namespace, function (_ref16) {
-  var select = _ref16.select;
-  return select.height;
-}, function (_ref17) {
-  var select = _ref17.select;
-  return select.borderRadius;
-}, function (_ref18) {
-  var select = _ref18.select;
-  return select.borderWidth;
-}, function (_ref19) {
-  var select = _ref19.select;
-  return select.color;
-}, function (_ref20) {
-  var select = _ref20.select;
-  return select.fontSize;
-}, function (_ref21) {
-  var select = _ref21.select;
-  return select.padding;
-}, function (_ref22) {
-  var input = _ref22.input;
-  return hexToRGB(input.color, input.opacity);
-}, function (_ref23) {
-  var select = _ref23.select;
-  return select.marginBottom;
-}, function (_ref24) {
-  var select = _ref24.select;
-  return select.color;
-}, function (_ref25) {
-  var select = _ref25.select;
-  return hexToRGB(select.hover, select.opacity);
-}, function (_ref26) {
-  var select = _ref26.select;
-  return select.color;
-}, function (_ref27) {
-  var error = _ref27.error;
-  return error.background;
-}, function (_ref28) {
-  var select = _ref28.select;
-  return select.borderWidth;
-}, function (_ref29) {
-  var error = _ref29.error;
-  return error.border;
-}, function (_ref30) {
-  var select = _ref30.select;
-  return select.borderWidth;
-}, function (_ref31) {
-  var disabled = _ref31.disabled;
-  return disabled.color;
-}, namespace, function (_ref32) {
-  var list = _ref32.list;
-  return list.background;
-}, function (_ref33) {
-  var list = _ref33.list;
-  return list.borderRadius;
-}, function (_ref34) {
-  var list = _ref34.list;
-  return list.marginTop;
-}, namespace, function (_ref35) {
-  var listItem = _ref35.listItem;
-  return listItem.color;
-}, function (_ref36) {
-  var listItem = _ref36.listItem;
-  return listItem.fontSize;
-}, function (_ref37) {
-  var listItem = _ref37.listItem;
-  return listItem.hover;
-}, function (_ref38) {
-  var listItem = _ref38.listItem;
-  return listItem.opacity;
-}, function (_ref39) {
-  var listItem = _ref39.listItem;
-  return listItem.borderColor;
-}, function (_ref40) {
-  var listItem = _ref40.listItem;
-  return listItem.borderColor;
-}, function (_ref41) {
-  var listItem = _ref41.listItem;
-  return listItem.hover;
-}, function (_ref42) {
-  var listItem = _ref42.listItem;
-  return listItem.hover;
-}, namespace, namespace, function (_ref43) {
-  var onColor = _ref43.onColor;
-  return onColor.label.color;
-}, function (_ref44) {
-  var onColor = _ref44.onColor;
-  return onColor.color;
-}, function (_ref45) {
-  var disabled = _ref45.disabled;
-  return disabled.onColorOpacity;
-}, namespace, function (_ref46) {
-  var select = _ref46.select;
-  return select.borderWidth;
-}, function (_ref47) {
-  var onColor = _ref47.onColor;
-  return onColor.color;
-}, function (_ref48) {
-  var onColor = _ref48.onColor;
-  return onColor.color;
-}, function (_ref49) {
-  var onColor = _ref49.onColor;
-  return onColor.color;
-}, function (_ref50) {
-  var onColor = _ref50.onColor;
-  return hexToRGB(onColor.hover, onColor.opacity);
-}, function (_ref51) {
-  var onColor = _ref51.onColor;
-  return hexToRGB(onColor.hover, onColor.opacity);
-}, function (_ref52) {
-  var disabled = _ref52.disabled;
-  return disabled.onColor;
-}, function (_ref53) {
-  var disabled = _ref53.disabled;
-  return disabled.coloronColor;
-}, function (_ref54) {
-  var disabled = _ref54.disabled;
-  return disabled.onColorOpacity;
-}, namespace, function (_ref55) {
-  var disabled = _ref55.disabled;
-  return disabled.onColor;
-}, namespace, function (_ref56) {
-  var onColor = _ref56.onColor;
-  return onColor.color;
-}, function (_ref57) {
-  var onColor = _ref57.onColor;
-  return onColor.errorBackground;
-}, function (_ref58) {
-  var select = _ref58.select;
-  return select.borderWidth;
-}, function (_ref59) {
-  var onColor = _ref59.onColor;
-  return onColor.errorBorder;
-});
-
-function Select(_ref) {
-  var label = _ref.label,
-      disabled = _ref.disabled,
-      error = _ref.error,
-      _ref$errorMsg = _ref.errorMsg,
-      errorMsg = _ref$errorMsg === void 0 ? 'error' : _ref$errorMsg,
-      placeholder = _ref.placeholder;
-      _ref.selected;
-      var onColor = _ref.onColor,
-      _ref$options = _ref.options,
-      options = _ref$options === void 0 ? ['label 1', 'label 2', 'label 3'] : _ref$options;
-
-  var _useState = useState({
-    open: false,
-    placeholder: placeholder ? placeholder : 'Select'
-  }),
-      _useState2 = _slicedToArray(_useState, 2),
-      status = _useState2[0],
-      setStatus = _useState2[1];
-
-  var _useState3 = useState(-1),
-      _useState4 = _slicedToArray(_useState3, 2),
-      currentIndex = _useState4[0],
-      setCurrentIndex = _useState4[1];
-
-  var _useState5 = useState(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      keyboardFocus = _useState6[0],
-      setKeyboardFocus = _useState6[1];
-
-  var selectReference = useRef(null);
-  var optionsTriggerReference = useRef(null);
-
-  var _handleClick = function _handleClick() {
-    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-      open: !status.open
-    }));
-  };
-
-  var _selectOption = function _selectOption(item, index) {
-    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-      placeholder: item,
-      open: false
-    }));
-    setCurrentIndex(index);
-  };
-
-  var _handleKeyUp = function _handleKeyUp(e) {
-    if (e.code === "Space") {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: true
-      }));
-
-      if (currentIndex < 0) {
-        setCurrentIndex(0);
-      }
-    }
-
-    if (e.code === "Enter") {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: !status.open
-      }));
-      optionsTriggerReference.current.focus();
-
-      if (currentIndex < 0) {
-        setCurrentIndex(0);
-      }
-    }
-
-    if (e.code === 'ArrowDown') {
-      setCurrentIndex(currentIndex < options.length - 1 ? currentIndex + 1 : options.length - 1);
-    }
-
-    if (e.code === 'ArrowUp') {
-      setCurrentIndex(currentIndex - 1 < 0 ? 0 : currentIndex - 1);
-    }
-  };
-
-  var _handleTriggerKeyDown = function _handleTriggerKeyDown(e) {
-    if (e.code === "Tab" && status.open) {
-      e.preventDefault();
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: false
-      }));
-      optionsTriggerReference.current.focus();
-    }
-  };
-
-  useEffect(function () {
-    if (currentIndex >= 0) {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        placeholder: options[currentIndex]
-      }));
-    }
-  }, [currentIndex]);
-  return /*#__PURE__*/React.createElement(ContextElement, {
-    contextId: "".concat(namespace, "-Select"),
-    styles: style$8
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "\n          ".concat(namespace, "-Select\n          ").concat(onColor ? "".concat(namespace, "-Select--onColor") : '', "\n          ").concat(keyboardFocus ? "".concat(namespace, "-Select--focus") : '', "\n          ").concat(error ? "".concat(namespace, "-Select--error") : '', "\n        "),
-    ref: selectReference,
-    id: "wrapper",
-    onKeyUp: _handleKeyUp
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "\n        ".concat(namespace, "-Select__label\n        ").concat(disabled ? "".concat(namespace, "-Select__label--disabled") : '')
-  }, label), /*#__PURE__*/React.createElement("button", {
-    onFocus: function onFocus() {
-      return setKeyboardFocus(!keyboardFocus);
-    },
-    onBlur: function onBlur() {
-      return setKeyboardFocus(false);
-    },
-    onKeyDown: function onKeyDown(e) {
-      return _handleTriggerKeyDown(e);
-    },
-    onMouseUp: _handleClick,
-    disabled: !!disabled,
-    "aria-haspopup": "true",
-    ref: optionsTriggerReference,
-    className: "".concat(namespace, "-Select__trigger\n          ").concat(error ? "".concat(namespace, "-Select__trigger--error") : '', "\n          ")
-  }, status.placeholder, /*#__PURE__*/React.createElement(Icon, {
-    icon: status.open ? "chevron-up" : "chevron-down"
-  })), /*#__PURE__*/React.createElement("ul", {
-    className: "".concat(namespace, "-Select__option-list"),
-    role: "listbox",
-    tabIndex: "-1",
-    "aria-expanded": !!status.open
-  }, options.map(function (item, index) {
-    return /*#__PURE__*/React.createElement("li", {
-      key: index,
-      role: "option",
-      id: item.toLowerCase().replace(" ", "-"),
-      onMouseUp: function onMouseUp() {
-        return _selectOption(item, index);
-      },
-      onMouseOver: function onMouseOver() {
-        return setCurrentIndex(index);
-      },
-      "data-value": item,
-      "aria-label": item,
-      className: "\n                ".concat(namespace, "-Select__option\n                ").concat(index === currentIndex ? "".concat(namespace, "-Select__option--current") : '', "\n                ").concat(options.length - 1 === index ? "".concat(namespace, "-Select__option--last") : '', "\n                ").concat(index === 0 ? "".concat(namespace, "-Select__option--first") : '')
-    }, item);
-  })), /*#__PURE__*/React.createElement("span", {
-    "aria-hidden": !error,
-    className: "".concat(namespace, "-Select__errorMsg")
-  }, errorMsg)));
-}
-
-Select.propTypes = {
-  label: PropTypes.string,
-  placeholder: PropTypes.string,
-  errorMsg: PropTypes.string,
-  disabled: PropTypes.bool,
-  error: PropTypes.bool,
-  onColor: PropTypes.bool
-};
-
 var StepStyleType = {
   fontFamily: fontFamilyHighlight,
   fontSize: fontSizeXs,
@@ -4960,7 +5067,7 @@ var StepStyleType = {
 };
 
 var _templateObject$7;
-var style$7 = createGooberGetter(StepStyleType)(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  &.", "-Step {\n    font-family: ", ";\n    font-size: ", ";\n    height: 32px;\n    box-sizing: border-box;\n\n    span {\n      opacity: 0;\n      animation: opacity 0.3s ease-in-out 0.3s forwards;\n    }\n    \n    &--finish {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: ", ";\n      border-radius: ", ";\n    }\n    \n    &--current {\n      animation: animation 0.15s ease-in-out forwards;    \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      color: ", ";\n      padding: ", " ", ";\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    &--next {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;      \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      color: ", ";\n      border: 2px ", " solid;\n    }\n\n    .", "-Step__icon {   \n      color: ", ";\n    }\n\n    @keyframes animation {\n      from {\n        width: 32px;\n      }\n      to {\n        width: 150px;\n      }\n    }\n\n    @keyframes opacity {\n      from {\n        opacity: 0;\n      }\n      to {\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (context) {
+var style$7 = createGooberGetter(StepStyleType)(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  &.", "-Step {\n    font-family: ", ";\n    font-size: ", ";\n    height: 32px;\n    box-sizing: border-box;\n\n    span {\n      opacity: 0;\n      animation: opacity 0.3s ease-in-out 0.5s forwards;\n    }\n    \n    &--finish {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: ", ";\n      border-radius: ", ";\n    }\n    \n    &--current {\n      animation: animation 0.5s ease-in-out forwards;    \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      color: ", ";\n      padding: ", " ", ";\n      min-width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    &--next {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;      \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      color: ", ";\n      border: 2px ", " solid;\n    }\n\n    .", "-Step__icon {   \n      color: ", ";\n    }\n\n    @keyframes animation {\n      0% {\n        background-color: ", ";\n        width: 32px;\n      }\n      50% {\n        width: 32px;\n        background-color: ", ";\n      }\n\n      100% {\n        width: 150px;\n      }\n    }\n\n    @keyframes opacity {\n      from {\n        opacity: 0;\n      }\n      to {\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontSize;
@@ -5009,6 +5116,12 @@ var style$7 = createGooberGetter(StepStyleType)(_templateObject$7 || (_templateO
 }, namespace, function (_ref15) {
   var icon = _ref15.icon;
   return icon.color;
+}, function (_ref16) {
+  var current = _ref16.current;
+  return current.backgroundColor;
+}, function (_ref17) {
+  var finish = _ref17.finish;
+  return finish.backgroundColor;
 });
 
 function Step(_ref) {
@@ -5088,7 +5201,7 @@ var StepsStyleType = {
 };
 
 var _templateObject$6;
-var style$6 = createGooberGetter(StepsStyleType)(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  &.", "-Steps {\n    display: flex;\n    align-items: center;\n\n    .", "-Step {\n      position: relative;\n      margin-right: ", ";\n\n      &:last-child {\n        margin-right: 0px;\n        \n        &:after,\n        &:before {\n          display: none;\n        }\n      }\n\n      &:before,\n      &:after {\n        content: \"\";\n        position: absolute;  \n        height: ", ";\n        left: ", ";\n      }\n      \n      &:after {\n        width: ", ";\n        background: ", ";\n        z-index: 1;\n      }\n\n      &:before {\n        width: 0px;\n        background: ", ";\n        z-index: 2;\n      }\n\n      &--finish {        \n        &:before {\n          animation: lineAnimation 0.8s ease-in-out forwards;\n        }\n\n        &:after {\n          opacity: 0;\n        }\n      }\n    }\n\n    .", "-Steps__wrapper {\n      margin: 0;\n      padding: 0;\n      list-style-type: none;      \n      display: flex;\n      align-items: center;\n    }\n  }\n\n  @keyframes lineAnimation {\n    from {\n      width: 0px;\n    }\n\n    to {\n      width: ", ";\n    }\n  }\n"])), namespace, namespace, function (_ref) {
+var style$6 = createGooberGetter(StepsStyleType)(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  &.", "-Steps {\n    display: flex;\n    align-items: center;\n\n    .", "-Step {\n      position: relative;\n      margin-right: ", ";\n\n      &:last-child {\n        margin-right: 0px;\n        \n        &:after,\n        &:before {\n          display: none;\n        }\n      }\n\n      &:before,\n      &:after {\n        content: \"\";\n        position: absolute;  \n        height: ", ";\n        left: ", ";\n      }\n      \n      &:after {\n        width: ", ";\n        background: ", ";\n        z-index: 1;\n      }\n\n      &:before {\n        width: 0px;\n        background: ", ";\n        z-index: 2;\n      }\n\n      &--finish {        \n        &:before {\n          animation: lineAnimation 0.5s ease-in-out forwards;\n        }\n\n        &:after {\n          opacity: 0;\n        }\n      }\n    }\n\n    .", "-Steps__wrapper {\n      margin: 0;\n      padding: 0;\n      list-style-type: none;      \n      display: flex;\n      align-items: center;\n    }\n  }\n\n  @keyframes lineAnimation {\n    from {\n      width: 0px;\n    }\n\n    to {\n      width: ", ";\n    }\n  }\n"])), namespace, namespace, function (_ref) {
   var line = _ref.line;
   return "".concat(parseInt(line.left) * 2 + parseInt(line.width), "px");
 }, function (_ref2) {
@@ -5620,7 +5733,9 @@ function TagCategory(_ref) {
   var _ref$label = _ref.label,
       label = _ref$label === void 0 ? 'Tag category' : _ref$label,
       _ref$onColor = _ref.onColor,
-      onColor = _ref$onColor === void 0 ? false : _ref$onColor;
+      onColor = _ref$onColor === void 0 ? false : _ref$onColor,
+      _ref$icon = _ref.icon,
+      icon = _ref$icon === void 0 ? 'shapes' : _ref$icon;
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-TagCategory"),
     styles: style$2
@@ -5629,7 +5744,7 @@ function TagCategory(_ref) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-TagCategory__icon")
   }, /*#__PURE__*/React.createElement(Icon, {
-    icon: "shapes",
+    icon: icon,
     size: "small"
   })), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-TagCategory__label")
@@ -5638,7 +5753,8 @@ function TagCategory(_ref) {
 
 TagCategory.propTypes = {
   label: PropTypes.string,
-  onColor: PropTypes.bool
+  onColor: PropTypes.bool,
+  icon: PropTypes.string
 };
 
 var TagSelectStyleType = {
@@ -5972,4 +6088,4 @@ Tooltip.propTypes = {
   body: PropTypes.string
 };
 
-export { Accordion, Alert, Avatar, Banner, Brand, Button, ButtonGroup, ButtonIcon, Cardbase, Cardimage, Checkbox, Header, HeaderEmpty, Icon, IconShape, InputPassword, RadioButton as InputRadiobutton, InputSearch, InputText, InputTextarea, Link, Menu, Modal, Notification, OverflowMenu, Select, Step, Steps, Switch, TabGroup, TabItem, TagCategory, TagHighlight, TagSelect, Tooltip, Typography };
+export { Accordion, Alert, Avatar, Banner, Brand, Button, ButtonGroup, ButtonIcon, Cardbase, Cardimage, Header, HeaderEmpty, Icon, IconShape, Checkbox as InputCheckbox, InputPassword, RadioButton as InputRadiobutton, InputSearch, Select as InputSelect, InputText, InputTextarea, Link, Menu, Modal, Notification, OverflowMenu, Step, Steps, Switch, TabGroup, TabItem, TagCategory, TagHighlight, TagSelect, Tooltip, Typography };

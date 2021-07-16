@@ -12,7 +12,7 @@ export default css(StepStyleType)`
 
     span {
       opacity: 0;
-      animation: opacity 0.3s ease-in-out 0.3s forwards;
+      animation: opacity 0.3s ease-in-out 0.5s forwards;
     }
     
     &--finish {
@@ -25,14 +25,14 @@ export default css(StepStyleType)`
     }
     
     &--current {
-      animation: animation 0.15s ease-in-out forwards;    
+      animation: animation 0.5s ease-in-out forwards;    
       background-color: ${ ({ current }) => current.backgroundColor };
       border-radius: ${ ({ current }) => current.borderRadius };
       font-weight: ${ ({ current }) => current.fontWeight };
       line-height: ${ ({ current }) => current.lineHeight };
       color: ${ ({ current }) => current.color };
       padding: ${ ({ current }) => current.paddingVertical } ${ ({ current }) => current.paddingHorizontal };
-      width: 32px;
+      min-width: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -55,10 +55,16 @@ export default css(StepStyleType)`
     }
 
     @keyframes animation {
-      from {
+      0% {
+        background-color: ${ ({ current }) => current.backgroundColor };
         width: 32px;
       }
-      to {
+      50% {
+        width: 32px;
+        background-color: ${ ({ finish }) => finish.backgroundColor };
+      }
+
+      100% {
         width: 150px;
       }
     }

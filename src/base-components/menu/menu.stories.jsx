@@ -11,12 +11,6 @@ export default {
         category: 'Modifiers',
       },
     },
-    onColor: {
-      name: 'On Color',
-      table: {
-        category: 'Modifiers',
-      },
-    },
     menuListLength: {
       name: 'Menu List Length',
       table: {
@@ -26,6 +20,12 @@ export default {
         type: 'range',
         min: 0,
         max: 6,
+      },
+    },
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
   },

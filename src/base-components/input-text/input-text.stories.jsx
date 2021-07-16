@@ -6,20 +6,8 @@ import { namespace } from '../../utils/setup.js';
 export default {
   title: 'Core components react/Input Text',
   argTypes: {
-    onColor: {
-      name: 'On Color',
-      table: {
-        category: 'Modifiers',
-      },
-    },
     disabled: {
       name: 'Disabled',
-      table: {
-        category: 'Modifiers',
-      },
-    },
-    showHelper: {
-      name: 'Show Helper',
       table: {
         category: 'Modifiers',
       },
@@ -36,14 +24,27 @@ export default {
         category: 'Modifiers',
       },
     },
-    label: {
-      name: 'Label',
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    /*  showHelper: {
+      name: 'Show Helper',
+      table: {
+        category: 'Modifiers',
+      },
+    }, */
+
+    helperText: {
+      name: 'Helper Text',
       table: {
         category: 'Custom Inputs',
       },
     },
-    helperText: {
-      name: 'Helper Text',
+    label: {
+      name: 'Label',
       table: {
         category: 'Custom Inputs',
       },

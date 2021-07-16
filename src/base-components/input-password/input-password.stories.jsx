@@ -6,15 +6,6 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: 'Core components react/Input Password',
   argTypes: {
-    onColor: {
-      name: 'On Color',
-      description: 'Define se o input tem a cor invertida',
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
     disabled: {
       name: 'Disabled',
       description: 'Define se o input está ativo ou não',
@@ -42,6 +33,15 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
+    onColor: {
+      name: 'On Color',
+      description: 'Define se o input tem a cor invertida',
+      table: {
+        category: 'Modifiers',
+        type: { summary: 'boolean' },
+        defaultValue: { summary: 'false' },
+      },
+    },
     helperText: {
       name: 'Helper Text',
       description: 'Define o texto da mensagem do input',
@@ -51,15 +51,6 @@ export default {
         defaultValue: { summary: 'Helper text' },
       },
     },
-    placeholder: {
-      name: 'Placeholder',
-      description: 'Define o placeholder do input',
-      table: {
-        category: 'Custom Inputs',
-        type: { summary: 'string' },
-        defaultValue: { summary: 'Insira a sua senha' },
-      },
-    },
     label: {
       name: 'Label',
       description: 'Define a label do input',
@@ -67,6 +58,15 @@ export default {
         category: 'Custom Inputs',
         type: { summary: 'string' },
         defaultValue: { summary: 'Label' },
+      },
+    },
+    placeholder: {
+      name: 'Placeholder',
+      description: 'Define o placeholder do input',
+      table: {
+        category: 'Custom Inputs',
+        type: { summary: 'string' },
+        defaultValue: { summary: 'Insira a sua senha' },
       },
     },
   },

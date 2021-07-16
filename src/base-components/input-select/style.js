@@ -1,5 +1,5 @@
 import { createGooberGetter as css } from '@meiuca/context-element-react';
-import SelectStyleType from '../../styles/types/select/default.js';
+import SelectStyleType from '../../styles/types/input-select/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
@@ -25,8 +25,9 @@ export default css(SelectStyleType)`
 
     &--error {
       .${namespace}-Select__errorMsg {
+        color: ${({ select }) => select.color};
         opacity: 1;
-      }
+      } 
     }
 
     .${namespace}-Select__label {
@@ -38,7 +39,7 @@ export default css(SelectStyleType)`
       line-height: ${({ select }) => select.lineHeight};
       display: block;
       &--disabled {
-        color:  ${({ disabled }) => disabled.color};
+        color:  ${({ disabled }) => hexToRGB(disabled.label.color, disabled.label.opacity)};
       }
     }
     .${namespace}-Select__trigger {
@@ -67,7 +68,10 @@ export default css(SelectStyleType)`
         border:${({ select }) => select.borderWidth} solid ${({ error }) => error.border};      
       }
       &[disabled]{
-        border: ${({ select }) => select.borderWidth} solid ${({ disabled }) => disabled.color};
+        color: ${({ disabled }) =>
+          hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity)};
+        border: ${({ select }) => select.borderWidth} solid ${({ disabled }) =>
+  hexToRGB(disabled.borderColor, disabled.opacity)};
         pointer-events: none;
       }
     }
@@ -153,11 +157,15 @@ export default css(SelectStyleType)`
       }
     }
   }
-  &.${namespace}-Select--onColor{
+  &.${namespace}-Select--onColor {
     
     .${namespace}-Select__label {
       color: ${({ onColor }) => onColor.label.color};
       opacity: 1;
+
+      &--disabled {
+        color: ${({ onColor }) => hexToRGB(onColor.label.color, onColor.disabled.opacity)};
+      }      
     }
 
     span {
@@ -165,7 +173,7 @@ export default css(SelectStyleType)`
       opacity: ${({ disabled }) => disabled.onColorOpacity};
     }
 
-    .${namespace}-Select__trigger{
+    .${namespace}-Select__trigger {
       border: ${({ select }) => select.borderWidth} solid ${({ onColor }) => onColor.color} ;
       color: ${({ onColor }) => onColor.color};
 
@@ -178,20 +186,30 @@ export default css(SelectStyleType)`
         background-color: ${({ onColor }) => hexToRGB(onColor.hover, onColor.opacity)};
       }
       &[disabled] {
-        color:  ${({ disabled }) => disabled.onColor};
-        border: 2px solid ${({ disabled }) => disabled.coloronColor};
+        color: ${({ onColor }) =>
+          hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity)};
+        border: ${({ select }) => select.borderWidth} solid ${({ onColor }) =>
+  hexToRGB(onColor.disabled.color, onColor.disabled.opacity)};
         opacity: ${({ disabled }) => disabled.onColorOpacity};
+      }
+
+      &--error {
+        color: ${({ onColor }) => onColor.color};
+        background-color: ${({ onColor }) => onColor.error.backgroundColor};
+        border: ${({ select }) => select.borderWidth} solid ${({ onColor }) =>
+  onColor.error.borderColor};
+
+        &:hover {
+          background-color: ${({ onColor }) => onColor.error.backgroundColor};
+        }
       }
     }
 
-    .${namespace}-Select__label--disabled {
-      color:  ${({ disabled }) => disabled.onColor};
-    }
-
-    .${namespace}-trigger--error {
-      color: ${({ onColor }) => onColor.color};
-      background-color: ${({ onColor }) => onColor.errorBackground};
-      border: ${({ select }) => select.borderWidth} solid ${({ onColor }) => onColor.errorBorder};
+    &--error {
+      .${namespace}-Select__errorMsg {
+        color: ${({ onColor }) => onColor.color};
+        opacity: 1;
+      } 
     }
 }
 `;

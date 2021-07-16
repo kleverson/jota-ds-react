@@ -30,15 +30,28 @@ export default {
   onColor: {
     color: brandingTokens.neutralColorHighPure,
     colorInput: brandingTokens.brandColorPrimaryMedium,
-    errorBackground: brandingTokens.feedbackColorHelperDark,
     hover: brandingTokens.neutralColorHighPure,
     opacity: globalTokens.opacityLevelLight,
     background: brandingTokens.brandColorPrimaryPure,
-    errorBorder: brandingTokens.feedbackColorHelperPure,
+
+    error: {
+      backgroundColor: brandingTokens.feedbackColorHelperDark,
+      borderColor: brandingTokens.feedbackColorHelperPure      
+    },
 
     label: {
       color: brandingTokens.neutralColorHighPure
-    }    
+    },
+
+    disabled: {
+      color: brandingTokens.neutralColorHighPure,
+      opacity: globalTokens.opacityLevelMedium,
+
+      placeholder: {
+        color: brandingTokens.neutralColorHighPure,
+        opacity: globalTokens.opacityLevelMedium
+      }      
+    }
   },
   error :{
     spacing: globalTokens.spacingSizeQuarck,
@@ -50,7 +63,19 @@ export default {
   disabled: {
     color: brandingTokens.brandColorPrimaryLight,
     onColor: brandingTokens.neutralColorHighPure,
-    onColorOpacity: globalTokens.opacityLevelMedium
+    onColorOpacity: globalTokens.opacityLevelMedium,
+    borderColor: brandingTokens.neutralColorLowPure,
+    opacity: globalTokens.opacityLevelMedium,
+
+    label: {
+      color: brandingTokens.neutralColorLowPure,
+      opacity: globalTokens.opacityLevelMedium
+    },
+
+    placeholder: {
+      color: brandingTokens.neutralColorLowPure,
+      opacity: globalTokens.opacityLevelMedium
+    }
   },
   list: {
     background: brandingTokens.neutralColorLowMedium,

@@ -1,5 +1,5 @@
 import { createGooberGetter as css } from '@meiuca/context-element-react';
-import checkboxStyleType from '../../styles/types/checkbox/default.js';
+import checkboxStyleType from '../../styles/types/input-checkbox/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
@@ -23,7 +23,7 @@ export default css(checkboxStyleType)`
     }
 
     &:focus-visible {
-      outline: ${({ states })  => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
+      outline: ${({ states }) => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
     }
 
     &--disabled {
@@ -43,7 +43,7 @@ export default css(checkboxStyleType)`
       border-color: ${({ base }) => base.borderColor};
       margin-right: ${({ base }) => base.margin};
       border-style: solid;
-      border-radius: ${({ base}) => base.borderRadius};
+      border-radius: ${({ base }) => base.borderRadius};
       cursor: pointer;
       position: relative;
       z-index: 2;
@@ -66,7 +66,8 @@ export default css(checkboxStyleType)`
 
       &:hover {
         border-color: ${({ states }) => states.hover.borderColor};
-        background-color: ${({ states }) => hexToRGB(states.hover.backgroundColor, states.hover.opacity)};
+        background-color: ${({ states }) =>
+          hexToRGB(states.hover.backgroundColor, states.hover.opacity)};
         ${context => context.motion};
       }
 
@@ -129,7 +130,8 @@ export default css(checkboxStyleType)`
 
         &:disabled {
           pointer-events: none;
-          border-color: ${({ states }) => hexToRGB(states.disabled.onColor.borderColor, states.disabled.onColor.opacity)};
+          border-color: ${({ states }) =>
+            hexToRGB(states.disabled.onColor.borderColor, states.disabled.onColor.opacity)};
         }
 
         &:checked {
@@ -142,14 +144,16 @@ export default css(checkboxStyleType)`
 
           &:disabled {
             pointer-events: none;
-            border-color: ${({ states }) => hexToRGB(states.disabled.onColor.borderColor, states.disabled.onColor.opacity)};
+            border-color: ${({ states }) =>
+              hexToRGB(states.disabled.onColor.borderColor, states.disabled.onColor.opacity)};
             background-color: ${({ states }) => states.disabled.onColor.backgroundColor};
           }          
         }
 
         &:hover{
           border-color: ${({ states }) => states.hover.onColor.borderColor};
-          background-color: ${({ states }) => hexToRGB(states.hover.onColor.backgroundColor, states.hover.onColor.opacity)};
+          background-color: ${({ states }) =>
+            hexToRGB(states.hover.onColor.backgroundColor, states.hover.onColor.opacity)};
         }
       }
     }

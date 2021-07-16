@@ -43,7 +43,7 @@ export default css(StepsStyleType)`
 
       &--finish {        
         &:before {
-          animation: lineAnimation 0.8s ease-in-out forwards;
+          animation: lineAnimation 0.5s ease-in-out forwards;
         }
 
         &:after {

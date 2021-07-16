@@ -1,19 +1,18 @@
 import React from 'react';
-import InputSearchTag from './index.js';
-import { namespace } from '../../utils/setup.js';
 import { action } from '@storybook/addon-actions';
+import InputSearchTag from './index.js';
 
 export default {
   title: 'Core components react/Input Search',
   argTypes: {
-    onColor: {
-      name: 'On Color',
+    disabled: {
+      name: 'Disabled',
       table: {
         category: 'Modifiers',
       },
     },
-    disabled: {
-      name: 'Disabled',
+    onColor: {
+      name: 'On Color',
       table: {
         category: 'Modifiers',
       },
@@ -24,12 +23,6 @@ export default {
         category: 'Custom Inputs',
       },
     },
-    formName: { table: { disable: true } },
-    formID: { table: { disable: true } },
-    inputName: { table: { disable: true } },
-    inputID: { table: { disable: true } },
-    hasPreventDefault: { table: { disable: true } },
-    ariaLabel: { table: { disable: true } },
   },
 };
 
@@ -50,19 +43,19 @@ export function InputSearch(args) {
         {...args}
         handleSubmit={handleSubmit}
         handleInputChange={handleChange}
-      ></InputSearchTag>
+        formName="form-search"
+        formID="form-search"
+        inputName="input-search"
+        inputID="input-search"
+        ariaLabel="Search form"
+        hasPreventDefault
+      />
     </div>
   );
 }
 
 InputSearch.args = {
-  formName: 'form-search',
-  formID: 'form-search',
-  inputName: 'input-search',
-  inputID: 'input-search',
   placeholder: 'Search',
-  ariaLabel: 'Search form',
-  hasPreventDefault: true,
   onColor: false,
   disabled: false,
 };

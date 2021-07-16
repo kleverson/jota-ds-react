@@ -32,10 +32,8 @@ export default {
         category: 'Modifiers',
       },
     },
-    onColor: {
-      name: 'On Color',
-      description: 'Define o contexto do elemento',
-      defaultValue: false,
+    icon: {
+      name: 'Icon',
       table: {
         category: 'Modifiers',
       },
@@ -51,8 +49,10 @@ export default {
         options: IconList,
       },
     },
-    icon: {
-      name: 'Use Icon',
+    onColor: {
+      name: 'On Color',
+      description: 'Define o contexto do elemento',
+      defaultValue: false,
       table: {
         category: 'Modifiers',
       },

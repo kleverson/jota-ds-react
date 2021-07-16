@@ -4,15 +4,20 @@ import * as globalTokens from '../../tokens/global.js';
 
 export default {
   motion: injectMotion('switch-fast'),
+  menu: {
+    padding: `${globalTokens.spacingSizeXs} ${globalTokens.spacingSizeSm}`,
+    backgroundColor: brandingTokens.neutralColorHighPure
+  },
   links: {
     marginRight: globalTokens.spacingSizeXs,
     fontWeight: brandingTokens.fontWeightRegular,
+    marginBottom: globalTokens.spacingSizeXs,
 
     active: {
       fontWeight: brandingTokens.fontWeightBold
     }
   },
   user: {
-    marginRight: globalTokens.spacingSizeXxxs
+    margin: globalTokens.spacingSizeXxxs
   }
 };

@@ -5,14 +5,14 @@ import AccordionTag from './index.js';
 export default {
   title: 'Core components react/Accordion',
   argTypes: {
-    onColor: {
-      name: 'On Color',
+    opened: {
+      name: 'Content',
       table: {
         category: 'Modifiers',
       },
     },
-    opened: {
-      name: 'Opened',
+    onColor: {
+      name: 'On Color',
       table: {
         category: 'Modifiers',
       },
@@ -24,7 +24,7 @@ export default {
       },
     },
     accordionContent: {
-      name: 'Accordion Content',
+      name: 'Content',
       table: {
         category: 'Custom Inputs',
       },

@@ -1,17 +1,19 @@
 import React from 'react';
 import InputTextareaTag from './index.js';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Input Textarea',
   argTypes: {
-    onColor: {
-      name: 'On Color',
+    disabled: {
+      name: 'Disabled',
       table: {
         category: 'Modifiers',
       },
     },
-    disabled: {
-      name: 'Disabled',
+    maxLength: {
+      name: 'Max Length',
+      control: { max: 999 },
       table: {
         category: 'Modifiers',
       },
@@ -22,26 +24,26 @@ export default {
         category: 'Modifiers',
       },
     },
-    maxLength: {
-      name: 'Max Length',
-      table: {
-        category: 'Modifiers',
-      },
-    },
     error: {
       name: 'Error',
       table: {
         category: 'Modifiers',
       },
     },
-    label: {
-      name: 'Label',
+    onColor: {
+      name: 'On Color',
       table: {
-        category: 'Custom Inputs',
+        category: 'Modifiers',
       },
     },
     helperText: {
       name: 'Helper Text',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    label: {
+      name: 'Label',
       table: {
         category: 'Custom Inputs',
       },
@@ -56,7 +58,12 @@ export default {
 };
 
 export function InputTextarea(args) {
-  return <InputTextareaTag {...args}></InputTextareaTag>;
+
+  const handleChange = value => {
+    action('handleChange')({ value });
+  };
+  
+  return <InputTextareaTag {...args} handleChange={handleChange}></InputTextareaTag>;
 }
 
 InputTextarea.args = {

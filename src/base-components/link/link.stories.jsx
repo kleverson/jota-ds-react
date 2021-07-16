@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 import LinkTag from './index.js';
 
@@ -7,13 +8,6 @@ export default {
     disabled: {
       name: 'Disabled',
       description: 'Define se o link está ativo ou não',
-      table: {
-        category: 'Modifiers',
-      },
-    },
-    onColor: {
-      name: 'On Color',
-      description: 'Define se o link tem a cor invertida',
       table: {
         category: 'Modifiers',
       },
@@ -36,6 +30,13 @@ export default {
         type: 'select',
       },
     },
+    onColor: {
+      name: 'On Color',
+      description: 'Define se o link tem a cor invertida',
+      table: {
+        category: 'Modifiers',
+      },
+    },
     label: {
       name: 'Label',
       description: 'Digite a label do link',
@@ -53,7 +54,14 @@ export default {
 };
 
 export function Link(args) {
-  return <LinkTag {...args}></LinkTag>;
+  const handleClick = (e) => {
+    if(args.target === "_self"){
+      e.preventDefault();
+      action("handleClick")()
+    }
+  }
+
+  return <LinkTag {...args} handleClick={handleClick}></LinkTag>;
 }
 
 Link.args = {

@@ -14,14 +14,16 @@ function InputTextarea({
   onColor = false,
   disabled = false,
   showHelper = false,
+  handleChange
 }) {
   const [_charactersCount, setCharactersCount] = useState(0);
   const [_value, setValue] = useState('');
 
-  const handleChange = e => {
+  const _handleChange = e => {
     const currentValue = e.target.value;
     setValue(currentValue);
     setCharactersCount(currentValue.length);
+    handleChange(e);
   };
 
   function formatNumber(number) {
@@ -52,7 +54,7 @@ function InputTextarea({
           value={_value}
           maxLength={maxLength}
           placeholder={placeholder}
-          onInput={handleChange}
+          onInput={_handleChange}
         ></textarea>
         <div className={`${namespace}-TextArea__helperBox`}>
           {showHelper && helperText ? (

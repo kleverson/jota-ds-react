@@ -7,14 +7,14 @@ import IconList from '../../utils/icon-list.js';
 export default {
   title: 'Core components react/Icon Shape',
   argTypes: {
-    variant: {
-      name: 'Variant',
+    icon: {
+      name: 'Icon',
       table: {
         category: 'Modifiers',
       },
       control: {
         type: 'select',
-        options: ['default', 'warning', 'helper'],
+        options: IconList,
       },
     },
     size: {
@@ -27,14 +27,14 @@ export default {
         options: ['small', 'medium', 'large'],
       },
     },
-    icon: {
-      name: 'Icon',
+    variant: {
+      name: 'Variant',
       table: {
         category: 'Modifiers',
       },
       control: {
         type: 'select',
-        options: IconList,
+        options: ['default', 'warning', 'helper'],
       },
     },
   },

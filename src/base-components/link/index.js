@@ -5,8 +5,14 @@ import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import Icon from '../icon/index.js';
 
-function Link({ label, href, target, disabled, icon, onColor }) {
+function Link({ label, href, target, disabled, icon, onColor, handleClick }) {
   const refLink = useRef(null);
+
+  const _handleClick = e => {
+    if(handleClick){
+      handleClick(e)
+    }
+  }
 
   return (
     <ContextElement contextId={`${namespace}-Link`} styles={style}>
@@ -18,6 +24,7 @@ function Link({ label, href, target, disabled, icon, onColor }) {
         ${onColor ? `${namespace}-Link--onColor` : ''}
         ${icon ? `${namespace}-Link--icon` : ''}`}
         target={target}
+        onClick={(e) => _handleClick(e)}
       >
         {label}
         {icon ? <Icon icon="arrow-right"></Icon> : null}
@@ -34,6 +41,7 @@ Link.propTypes = {
   icon: PropTypes.bool,
   inverse: PropTypes.bool,
   onColor: PropTypes.bool,
+  handleClick: PropTypes.func
 };
 
 export default Link;

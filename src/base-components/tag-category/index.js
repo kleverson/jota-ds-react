@@ -5,30 +5,28 @@ import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import Icon from '../icon/index.js';
 
-function TagCategory({
-  label = 'Tag category',
-  onColor = false
-}){
+function TagCategory({ label = 'Tag category', onColor = false, icon = 'shapes' }) {
   return (
     <ContextElement contextId={`${namespace}-TagCategory`} styles={style}>
-      <button className={`
+      <button
+        className={`
          ${namespace}-TagCategory
-         ${ onColor ? `${namespace}-TagCategory--onColor` : ''}
-      `}>
+         ${onColor ? `${namespace}-TagCategory--onColor` : ''}
+      `}
+      >
         <div className={`${namespace}-TagCategory__icon`}>
-          <Icon icon="shapes" size="small"></Icon>
+          <Icon icon={icon} size="small"></Icon>
         </div>
-        <div className={`${namespace}-TagCategory__label`}>    
-          {label}
-        </div>
+        <div className={`${namespace}-TagCategory__label`}>{label}</div>
       </button>
     </ContextElement>
-  )
+  );
 }
 
 TagCategory.propTypes = {
   label: PropTypes.string,
-  onColor: PropTypes.bool
+  onColor: PropTypes.bool,
+  icon: PropTypes.string,
 };
 
 export default TagCategory;

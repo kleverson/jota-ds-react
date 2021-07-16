@@ -7,16 +7,6 @@ import { action } from '@storybook/addon-actions';
 export default {
   title: 'Core components react/Button Icon',
   argTypes: {
-    size: {
-      name: 'Size',
-      table: {
-        category: 'Modifiers',
-      },
-      control: {
-        type: 'select',
-        options: ['small', 'medium', 'large'],
-      },
-    },
     icon: {
       name: 'Icon',
       description: 'Selecione o ícone que deseja',
@@ -26,6 +16,16 @@ export default {
       control: {
         type: 'select',
         options: IconList,
+      },
+    },
+    size: {
+      name: 'Size',
+      table: {
+        category: 'Modifiers',
+      },
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
       },
     },
     onColor: {

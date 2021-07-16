@@ -5,10 +5,6 @@ import OverflowMenuTag from './index.js';
 export default {
   title: 'Core components react/Overflow Menu',
   argTypes: {
-    onColor: {
-      name: 'On Color',
-      table: { category: 'Modifiers' },
-    },
     menuListLength: {
       name: 'Menu List Length',
       control: {
@@ -19,6 +15,10 @@ export default {
       table: {
         category: 'Modifiers',
       },
+    },
+    onColor: {
+      name: 'On Color',
+      table: { category: 'Modifiers' },
     },
   },
 };

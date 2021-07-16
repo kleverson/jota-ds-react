@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ContextElement } from '@meiuca/context-element-react';
 import PropTypes from 'prop-types';
 import style from './style.js';
@@ -9,6 +9,7 @@ import Avatar from '../avatar/index.js';
 import Typography from '../typography/index.js';
 import Link from '../link/index.js';
 
+
 function Header({
   ghost = false,
   isLoggedIn = false,
@@ -18,17 +19,23 @@ function Header({
   avatar,
   handleUserClick
 }){
+  const [_mainMenuIsOpen, toggleMainMenu] = useState(false);
+
   const _handleUserClick = (e) => {
     if(handleUserClick){
       handleUserClick(e);
     }
   }
 
+  const _toggleMainLinksMenu = () => {
+    toggleMainMenu(!_mainMenuIsOpen);
+  }
+
   return (
     <ContextElement contextId={`${namespace}-Header`} styles={style}>
       <header className={`${namespace}-Header`}>
-        <HeaderEmpty ghost={ghost} logoSource={logoSource}>
-          <nav className={`${namespace}-Header__NavLinks`}>
+        <HeaderEmpty ghost={ghost} logoSource={logoSource} toggleMainLinksMenu={_toggleMainLinksMenu} mainMenuIsOpen={_mainMenuIsOpen} hasLinks={linkList ? linkList.length : false}>
+          <nav className={`${namespace}-Header__NavLinks ${_mainMenuIsOpen ? `${namespace}-Header__NavLinks--open`: ''}`}>
             <ul className={`${namespace}-Header__LinksList`}>
               {
                 linkList ? linkList.map((link, index) => (
@@ -51,7 +58,7 @@ function Header({
                 </div>
               ): null
             }
-            <OverflowMenu menuList={menuList}/>
+            <OverflowMenu menuList={menuList} toggleMenu={() => toggleMainMenu(false)}/>
           </nav>
         </HeaderEmpty>
       </header>

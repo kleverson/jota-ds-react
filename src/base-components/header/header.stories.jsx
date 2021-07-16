@@ -6,8 +6,6 @@ import jotaSymbol from '../../assets/images/jota-symbol.svg';
 import jotaLogotype from '../../assets/images/jota-logotype.svg';
 import avatarExample from '../../assets/images/avatar-example.png';
 
-
-
 export default {
   title: 'Core components react/Header',
   argTypes: {
@@ -54,25 +52,29 @@ export default {
     avatarHasNotification: {
       name: 'Notification',
       table: {
-        category: 'Avatar/Modifiers',
+        category: 'Avatar',
+        subcategory: 'Modifiers',
       },
     },
     avatarImgAlt: {
       name: 'Image Alt',
       table: {
-        category: 'Avatar/Custom Inputs',
+        category: 'Avatar',
+        subcategory: 'Custom Inputs',
       },
     },
     avatarName: {
       name: 'Name',
       table: {
-        category: 'Avatar/Custom Inputs',
+        category: 'Avatar',
+        subcategory: 'Custom Inputs',
       },
     },
     avatarImgUrl: {
       name: 'Image URL',
       table: {
-        category: 'Avatar/Custom Inputs',
+        category: 'Avatar',
+        subcategory: 'Custom Inputs',
       },
     },
   },

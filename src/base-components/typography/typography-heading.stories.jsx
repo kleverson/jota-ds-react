@@ -4,12 +4,6 @@ import Typography from './index.js';
 export default {
   title: 'Core components react/Typography/Heading',
   argTypes: {
-    onColor: {
-      name: 'On Color',
-      table: {
-        category: 'Modifiers',
-      },
-    },
     size: {
       name: 'Size',
       table: {
@@ -18,6 +12,12 @@ export default {
       control: {
         type: 'select',
         options: ['x-small', 'small', 'medium', 'large', 'x-large', 'display'],
+      },
+    },
+    onColor: {
+      name: 'On Color',
+      table: {
+        category: 'Modifiers',
       },
     },
     content: {
