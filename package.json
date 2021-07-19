@@ -18,7 +18,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook -s src",
     "build": "rollup -c"
   },
   "dependencies": {
