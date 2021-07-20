@@ -17,6 +17,10 @@ export default css(HeaderStyleType)`
       box-sizing: border-box;
       background-color: ${({menu}) => menu.backgroundColor};
 
+      &--ghost {
+        background-color: ${ ({ menu }) => menu.ghost.backgroundColor };
+      }
+
       &--open{
         display: block;
       }

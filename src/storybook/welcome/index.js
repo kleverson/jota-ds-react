@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContextElement } from '@meiuca/context-element-react';
 import style from './style.js';
-import { namespace, ds, version } from '../../utils/setup.js';
+import { namespace, ds } from '../../utils/setup.js';
 import IlustraWelcome from '../../assets/storybook/ilustra-welcome.svg';
 import MeiucaLogo from '../../assets/storybook/meiuca-logo.svg';
 
@@ -11,8 +11,10 @@ function Welcome() {
       <div className={`${namespace}-Welcome`}>
         <div className={`${namespace}-Welcome__textBox`}>
           <div className={`${namespace}-Welcome__upperTextBox`}>
-            <h1>{ds} Design System</h1>
-            <h2>React v{version}</h2>
+            <h1>
+              {ds} <br /> Design System
+            </h1>
+            <h2>React</h2>
           </div>
 
           <div className={`${namespace}-Welcome__bottomTextBox`}>

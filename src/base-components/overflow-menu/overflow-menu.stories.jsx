@@ -8,9 +8,8 @@ export default {
     menuListLength: {
       name: 'Menu List Length',
       control: {
-        type: 'range',
-        min: 1,
-        max: 6,
+        type: 'select',
+        options: [0, 1, 2, 3, 4, 5, 6],
       },
       table: {
         category: 'Modifiers',
@@ -30,26 +29,33 @@ export function OverflowMenu(args) {
     const currentMenuItem = {
       label: `Label ${i}`,
       handleClick: action(`item ${i} click`),
-      isCurrent: false
-    }
-    
-    if(i % 2 != 0){
+      isCurrent: false,
+    };
+
+    if (i % 2 != 0) {
       menuList.push(currentMenuItem);
     } else {
-      currentMenuItem.tagLabel = "Tag label";
+      currentMenuItem.tagLabel = 'Tag label';
       menuList.push(currentMenuItem);
     }
   }
 
   const toggleMenu = () => {
-    action('toggleMenu')
-  }
+    action('toggleMenu');
+  };
 
-  const getCurrentMenuItem = (item) => {
-    action('getCurrentMenuItem')(item)
-  }
+  const getCurrentMenuItem = item => {
+    action('getCurrentMenuItem')(item);
+  };
 
-  return <OverflowMenuTag {...args} menuList={menuList} toggleMenu={toggleMenu} getCurrentMenuItem={(item) => getCurrentMenuItem(item)}/>;
+  return (
+    <OverflowMenuTag
+      {...args}
+      menuList={menuList}
+      toggleMenu={toggleMenu}
+      getCurrentMenuItem={item => getCurrentMenuItem(item)}
+    />
+  );
 }
 
 OverflowMenu.args = {

@@ -7,9 +7,8 @@ export default {
     stepsLength: {
       name: 'Steps',
       control: {
-        type: 'range',
-        min: 2,
-        max: 6,
+        type: 'select',
+        options: [2, 3, 4, 5, 6],
       },
       table: {
         category: 'Modifiers',
@@ -18,9 +17,8 @@ export default {
     currentStep: {
       name: 'Current Step',
       control: {
-        type: 'range',
-        min: 1,
-        max: 6,
+        type: 'select',
+        options: [1, 2, 3, 4, 5, 6],
       },
       table: { category: 'Modifiers' },
     },

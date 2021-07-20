@@ -1,37 +1,24 @@
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-links'],
 
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/preset-create-react-app',
-  ],
+  core: {
+    builder: 'webpack5',
+  },
 
   webpackFinal: config => {
-    return {
-      ...config,
-      module: {
-        ...config.module,
-        rules: [
-          ...config.module.rules,
-          {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            enforce: 'pre',
-          },
-          {
-            test: /\.(png|jpg|gif|svg)$/i,
-            use: [
-              {
-                loader: 'url-loader',
-                options: {
-                  limit: 8192,
-                },
-              },
-            ],
-          },
-        ],
-      },
-    };
+    config.module.rules.push({
+      test: /\.(stories|story)\.[tj]s?$/,
+      loader: require.resolve('@storybook/source-loader'),
+      exclude: [/node_modules/],
+      enforce: 'pre',
+    });
+
+    config.module.rules.push({
+      test: /\.js$/,
+      loader: 'babel-loader'
+    });
+
+    return config;
   },
 };

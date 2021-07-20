@@ -6,7 +6,11 @@ export default {
   motion: injectMotion('switch-fast'),
   menu: {
     padding: `${globalTokens.spacingSizeXs} ${globalTokens.spacingSizeSm}`,
-    backgroundColor: brandingTokens.neutralColorHighPure
+    backgroundColor: brandingTokens.neutralColorHighPure,
+
+    ghost: {
+      backgroundColor: "transparent"
+    }
   },
   links: {
     marginRight: globalTokens.spacingSizeXs,

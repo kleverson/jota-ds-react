@@ -35,7 +35,11 @@ function Header({
     <ContextElement contextId={`${namespace}-Header`} styles={style}>
       <header className={`${namespace}-Header`}>
         <HeaderEmpty ghost={ghost} logoSource={logoSource} toggleMainLinksMenu={_toggleMainLinksMenu} mainMenuIsOpen={_mainMenuIsOpen} hasLinks={linkList ? linkList.length : false}>
-          <nav className={`${namespace}-Header__NavLinks ${_mainMenuIsOpen ? `${namespace}-Header__NavLinks--open`: ''}`}>
+          <nav className={`
+              ${namespace}-Header__NavLinks 
+              ${ghost ? `${namespace}-Header__NavLinks--ghost` : ''}
+              ${_mainMenuIsOpen ? `${namespace}-Header__NavLinks--open`: ''}
+            `}>
             <ul className={`${namespace}-Header__LinksList`}>
               {
                 linkList ? linkList.map((link, index) => (

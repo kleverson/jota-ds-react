@@ -13,7 +13,9 @@ function Select({
   placeholder, 
   selected,
   onColor, 
-  options = ['label 1', 'label 2', 'label 3']}){
+  options = ['label 1', 'label 2', 'label 3'],
+  handleChange
+}){
 
   const [status, setStatus] = useState({
     open: false,
@@ -33,6 +35,7 @@ function Select({
   const _selectOption = (item, index) => {
     setStatus({...status, placeholder : item, open : false});
     setCurrentIndex(index);
+    handleChange(item);
   }
 
   const _handleKeyUp = (e) => {

@@ -27,9 +27,8 @@ export default {
         category: 'Modifiers',
       },
       control: {
-        type: 'range',
-        min: 0,
-        max: 5,
+        type: 'select',
+        options: [0, 1, 2, 3, 4, 5],
       },
     },
     menuListLength: {
@@ -38,9 +37,8 @@ export default {
         category: 'Modifiers',
       },
       control: {
-        type: 'range',
-        min: 0,
-        max: 6,
+        type: 'select',
+        options: [0, 1, 2, 3, 4, 5, 6],
       },
     },
     logoSource: {
@@ -101,7 +99,7 @@ export function Header(args) {
       label: `Menu Item ${i}`,
       currentActive: i === 1,
       href: '#',
-      target: '_blank',
+      target: '_self',
     });
   }
 

@@ -17,9 +17,8 @@ export default {
         category: 'Modifiers',
       },
       control: {
-        type: 'range',
-        min: 0,
-        max: 6,
+        type: 'select',
+        options: [0, 1, 2, 3, 4, 5, 6],
       },
     },
     onColor: {
@@ -38,13 +37,13 @@ export function Menu(args) {
     const currentMenuItem = {
       label: `Label ${i}`,
       handleClick: action(`item ${i} click`),
-      isCurrent: false
-    }
-    
-    if(i % 2 != 0){
+      isCurrent: false,
+    };
+
+    if (i % 2 != 0) {
       menuList.push(currentMenuItem);
     } else {
-      currentMenuItem.tagLabel = "Tag label";
+      currentMenuItem.tagLabel = 'Tag label';
       menuList.push(currentMenuItem);
     }
   }

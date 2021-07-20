@@ -33,9 +33,9 @@ export default {
       name: 'Paragraph',
       table: {
         category: 'Custom Inputs',
-      },
-    },
-  },
+      }
+    }
+  }
 };
 
 export function Alert(args) {

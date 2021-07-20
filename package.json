@@ -17,7 +17,7 @@
     "access": "public"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006 -s public --no-manager-cache",
+    "storybook": "start-storybook -p 6006 -s src --no-manager-cache",
     "build-storybook": "build-storybook -s src",
     "build": "rollup -c"
   },
@@ -39,8 +39,10 @@
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
+    "@storybook/source-loader": "^6.3.4",
+    "@storybook/builder-webpack5": "^6.3.4",
+    "@storybook/manager-webpack5": "^6.3.4",
     "@storybook/addons": "^6.2.9",
-    "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "@testing-library/react": "^11.2.6",
     "babel-loader": "8.1.0",

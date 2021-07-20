@@ -13,12 +13,6 @@ export default {
       table: { category: 'Modifiers' },
       control: 'color',
     },
-    onColor: {
-      name: 'On Color',
-      table: {
-        category: 'Modifiers',
-      },
-    },
     title: {
       name: 'Title',
       table: {
@@ -75,7 +69,6 @@ Banner.args = {
   title: 'Heading Medium two lines',
   paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   bgColor: '#1474FF',
-  onColor: true,
   // image: imgBannerIlustraDesktop,
   imageAlt: 'Image of banner',
 };

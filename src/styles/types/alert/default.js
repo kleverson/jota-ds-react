@@ -24,5 +24,10 @@ export default {
     backgroundColor: brandingTokens.neutralColorHighPure,
     boxShadowLevel: globalTokens.shadowLevel1Stack,
     boxShadowColor: brandingTokens.neutralColorHighMedium,
+    bottom: globalTokens.spacingSizeMd,
+
+    mobile: {
+      bottom: globalTokens.spacingSizeXs
+    }
   }
 };

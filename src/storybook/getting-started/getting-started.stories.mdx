@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Getting Started" parameters={{ showPanel: false, isToolshown: false }} />
+
+# Jota Design System
+
+## Instalação do Jota DS
+
+### Instalação:
+
+```sh
+yarn install
+```
+
+### Storybook:
+
+Para rodar uma instância local do storybook, executar:
+
+```sh
+yarn storybook
+```
+
+### Configurações do projeto
+
+Para a maior parte das configurações, o arquivo de referêcia é o package.json, com a intenção de reduzir a quantidade de arquivos de configuração necessários ao projeto.
+Os arquivos de configuração do storybook estão na pasta raiz do projeto na pasta .storybook local
+
+<!-- ```sh
+yarn start:dotz
+``` -->
+
+<!-- ### Testando o projeto - Web Test Runner
+
+```sh
+yarn test
+``` -->
+
+## Consumo em React
+
+### Instalação
+
+Na raiz do seu projeto React, adicionar um arquivo com o nome .npmrc e o conteúdo à seguir:
+
+```properties
+//npm.pkg.github.com/:_authToken=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
+@meiuca:registry=https://npm.pkg.github.com
+```
+
+### Consumo do JotaDesignSystem
+
+Uma vez que as configurações acima tenham sido feitas, adicionar o DS como uma dependência do seu projeto, no package.json:
+
+```json
+"@meiuca/jota": "1.0.0"
+```
+
+Importe normalmente como um componente React:
+
+```javascript
+import { ButtonIcon } from '@meiuca/jota';
+```
+
+E usar:
+
+```jsx
+<ButtonIcon size="medium" icon="more-horizontal" handleClick={() => {}} />
+```

@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectTag from './index.js';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Input Select',
@@ -18,7 +19,7 @@ export default {
     },
     optionsLength: {
       name: 'Items',
-      control: { type: 'range', min: 1, max: 6 },
+      control: { type: 'select', options: [1, 2, 3, 4, 5, 6] },
       table: { category: 'Modifiers' },
     },
     onColor: {
@@ -55,7 +56,11 @@ export function InputSelect(args) {
     options.push(`item ${i}`);
   }
 
-  return <SelectTag {...args} options={options} />;
+  const _handleChange = value => {
+    action(`handleChange`)({ value });
+  };
+
+  return <SelectTag {...args} options={options} handleChange={_handleChange}/>;
 }
 
 InputSelect.args = {
