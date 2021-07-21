@@ -2,6 +2,7 @@ import { createGooberGetter as css } from '@meiuca/context-element-react';
 import TagSelectStyleType from '../../styles/types/tag-select/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
+import 'focus-visible/dist/focus-visible';
 
 export default css(TagSelectStyleType)`
   &.${namespace}-TagSelect {
@@ -14,6 +15,7 @@ export default css(TagSelectStyleType)`
     line-height: ${ context => context.lineHeight };
     padding-left: ${ context => context.paddingLeft };
     padding-right: ${ context => context.paddingRight };
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -24,6 +26,10 @@ export default css(TagSelectStyleType)`
       background-color: ${ ({ hover }) => hover.backgroundColor };
       color: ${ ({ hover }) => hover.color };
       ${context => context.motion};
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: 0;
     }
 
     &:focus-visible {
