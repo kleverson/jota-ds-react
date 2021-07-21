@@ -1,5 +1,5 @@
 {
-  "name": "jota-template-react",
+  "name": "jota-lib-react",
   "description": "Jota Design System",
   "version": "1.0.0",
   "license": "MIT",
@@ -8,10 +8,15 @@
   "module": "dist/index.esm.js",
   "source": "src/index.js",
   "files": [
-    "dist"
+    "dist",
+    "next.js"
   ],
+  "repository": {
+    "url": "https://github.com/Meiuca/jota-lib-react.git"
+  },
   "keywords": [
-    "jota-template"
+    "jota",
+    "meiuca"
   ],
   "publishConfig": {
     "access": "public"
@@ -70,5 +75,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "peerDependencies": {
+    "next": "^11"
   }
 }

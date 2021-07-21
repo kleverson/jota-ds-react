@@ -1979,8 +1979,7 @@ var OverflowMenuStyleType = {
 var _templateObject$k;
 var style$k = createGooberGetter(OverflowMenuStyleType)(_templateObject$k || (_templateObject$k = _taggedTemplateLiteral(["\n  &.", "-OverflowMenu{\n    position:relative;\n    \n    .", "-Icon{\n      transform: rotate(90deg);\n    }\n\n    .", "-Menu{\n      position: absolute;\n      right: calc(100% - 48px);\n      top: 56px;\n      z-index: 10;\n    }\n  }\n"])), namespace, namespace, namespace);
 
-var MenuStyleType = /** @type {import('@meiuca/zero-builder/types/components').StyleType} */
-{
+var MenuStyleType = {
   backgroundColor: neutralColorLowMedium,
   borderRadius: borderRadiusSm,
   paddingBottom: spacingSizeNano,
