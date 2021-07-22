@@ -34,7 +34,10 @@ export default css(buttonStyleType)`
         background-color: ${({ buttonPrimary }) =>
           hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground)};
       }
-      &:focus,
+      &:focus:not(:focus-visible) {
+        outline: transparent;
+      }
+      &:focus-visible,
       &:active {
         outline-offset: 1px;
         background-color: ${({ buttonPrimary }) =>
@@ -48,7 +51,10 @@ export default css(buttonStyleType)`
           background-color: ${({ buttonPrimaryOnColor }) =>
             hexToRGB(buttonPrimaryOnColor.backgroundHover, buttonPrimaryOnColor.opacityBackground)};
         }
-        &:focus,
+        &:focus:not(:focus-visible) {
+          outline: transparent;
+        }
+        &:focus-visible,
         &:active {
           outline-offset: 1px;
           outline-color: ${({ button }) => button.outlineColor};
@@ -64,7 +70,10 @@ export default css(buttonStyleType)`
           hexToRGB(buttonSecondary.backgroundHover, buttonSecondary.opacityBackground)};
         color: ${({ buttonSecondary }) => buttonSecondary.color};
       }
-      &:focus,
+      &:focus:not(:focus-visible) {
+        outline: transparent;
+      }
+      &:focus-visible,
       &:active {
         outline-color: ${({ button }) => button.outlineColor};
         outline-offset: 1px;

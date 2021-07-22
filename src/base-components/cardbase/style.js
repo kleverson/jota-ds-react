@@ -19,8 +19,11 @@ export default css(cardbaseStyleType)`
     -webkit-box-shadow: ${context => `inset 0px 0px 0px ${context.borderWidth} ${hexToRGB(context.stroke.color, context.stroke.opacity)}`};
     -moz-box-shadow: ${context => `inset 0px 0px 0px ${context.borderWidth} ${hexToRGB(context.stroke.color, context.stroke.opacity)}`};
     box-shadow: ${context => `inset 0px 0px 0px ${context.borderWidth} ${hexToRGB(context.stroke.color, context.stroke.opacity)}`};
-
-    &:focus {
+    
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+    &:focus-visible {
       outline: ${context => `${context.outlineWidth} solid ${context.outlineColor}`};
     }
 

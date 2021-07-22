@@ -20,8 +20,11 @@ export default css(ButtonGroupStyleType)`
      &:hover{
       background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverBackground, tertiary.hoverOpacity)};
     } 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
     &:active,
-    &:focus{
+    &:focus-visible{
       background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverBackground, tertiary.hoverOpacity)};
       outline-offset: 1px;
       outline-color: ${({ tertiary }) => tertiary.outline};
@@ -41,8 +44,11 @@ export default css(ButtonGroupStyleType)`
       &:hover{
         background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverBackground, tertiary.onColorOpacity)};
       } 
+      &:focus:not(:focus-visible) {
+        outline: transparent;
+      }
       &:active,
-      &:focus{
+      &:focus-visible{
         background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverBackground, tertiary.hoverOpacity)};
         outline-offset: 1px;
         outline-color: ${({ tertiary }) => tertiary.outline};

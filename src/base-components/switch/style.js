@@ -80,6 +80,10 @@ export default css(SwitchStyleType)`
       }
     }
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+
     &:focus-visible {
       outline-style: solid;
       outline-width: ${context => context.states.focus.outlineWidth};

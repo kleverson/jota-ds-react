@@ -22,6 +22,10 @@ export default css(checkboxStyleType)`
       ${context => context.motion};
     }
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+    
     &:focus-visible {
       outline: ${({ states }) => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
     }

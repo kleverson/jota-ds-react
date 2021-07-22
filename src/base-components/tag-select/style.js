@@ -2,7 +2,6 @@ import { createGooberGetter as css } from '@meiuca/context-element-react';
 import TagSelectStyleType from '../../styles/types/tag-select/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
-import 'focus-visible/dist/focus-visible';
 
 export default css(TagSelectStyleType)`
   &.${namespace}-TagSelect {

@@ -37,7 +37,7 @@ export default css(AccordionStyleType)`
       }
 
       &:focus-visible {
-        outline: none;
+        outline: transparent;
       }
     }
     .${namespace}-Accordion__Content{

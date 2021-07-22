@@ -21,6 +21,9 @@ export default css(InputPasswordStyleType)`
       transition: background-color 400s ease-in-out 0s;
     }
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
     &:focus {
       outline: none;
     }

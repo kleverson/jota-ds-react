@@ -33,6 +33,10 @@ export default css(linkStyleType)`
       ${context => context.motion};
     }
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+    
     &:focus-visible:not(:active) {
       border: ${({focus}) => `${focus.borderWidth} solid ${focus.borderColor}`};
       color: ${({focus}) => focus.color};

@@ -51,6 +51,10 @@ export default css(TabGroupStyleType)`
         }
       }
 
+      &:focus:not(:focus-visible) {
+        outline: transparent;
+      }
+      
       &:focus-visible {
         background: ${ context => hexToRGB(context.states.hover.fill, context.states.hover.opacity)};
         &::after {

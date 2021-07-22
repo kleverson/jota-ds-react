@@ -101,8 +101,13 @@ export default css(SelectStyleType)`
         padding: 16px;
         text-align: left;
         box-sizing: border-box;
+        
+        &:focus:not(:focus-visible) {
+          outline: transparent;
+        }
+
         &--current,
-        &:focus,
+        &:focus-visible,
         &:hover{
           background-color: ${({ listItem }) => listItem.hover};
           opacity: ${({ listItem }) => listItem.opacity};
@@ -133,7 +138,10 @@ export default css(SelectStyleType)`
           &:before{
             display: none;
           }
-          &:focus,
+          &:focus:not(:focus-visible) {
+            outline: transparent;
+          }
+          &:focus-visible,
           &:hover{
             background-color: ${({ listItem }) => listItem.hover};
             outline: transparent;
@@ -182,7 +190,10 @@ export default css(SelectStyleType)`
         color: ${({ onColor }) => onColor.color};
         background-color: ${({ onColor }) => hexToRGB(onColor.hover, onColor.opacity)};
       }
-      &:focus {
+      &:focus:not(:focus-visible) {
+        outline: transparent;
+      }
+      &:focus-visible {
         background-color: ${({ onColor }) => hexToRGB(onColor.hover, onColor.opacity)};
       }
       &[disabled] {

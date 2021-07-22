@@ -15,6 +15,9 @@ export default css(ButtonIconStyleType)`
     box-sizing: border-box;
     cursor: pointer;
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
     &:focus-visible {
       outline: ${({ states })  => `${states.focus.outlineWidth} solid ${states.focus.outlineColor}`};
     }

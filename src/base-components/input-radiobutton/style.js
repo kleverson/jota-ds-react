@@ -27,6 +27,10 @@ export default css(radiobuttonStyleType)`
       color: ${({ states }) => states.hover.color};
     }
 
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+
     &:focus-visible{
       outline-style: solid;
       outline-color: ${({ states }) => states.focus.outlineColor};
