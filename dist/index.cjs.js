@@ -5631,7 +5631,8 @@ function TabGroup(_ref) {
       onColor = _ref$onColor === void 0 ? false : _ref$onColor,
       _ref$ariaLabel = _ref.ariaLabel,
       ariaLabel = _ref$ariaLabel === void 0 ? '' : _ref$ariaLabel,
-      children = _ref.children;
+      children = _ref.children,
+      handleTabClick = _ref.handleTabClick;
 
   var _useState = React.useState(0),
       _useState2 = _slicedToArray(_useState, 2),
@@ -5640,6 +5641,12 @@ function TabGroup(_ref) {
 
   var handleActiveTab = function handleActiveTab(index) {
     setActiveTab(index);
+
+    if (handleTabClick) {
+      handleTabClick({
+        currentTab: index
+      });
+    }
   };
 
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {

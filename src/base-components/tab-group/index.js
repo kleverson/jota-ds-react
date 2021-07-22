@@ -7,13 +7,18 @@ import { namespace } from '../../utils/setup.js';
 function TabGroup({
   onColor = false,
   ariaLabel = '',
-  children
+  children,
+  handleTabClick
 }){
 
   const [activeTab, setActiveTab] = useState(0);
 
   const handleActiveTab = (index) => {
     setActiveTab(index);
+
+    if(handleTabClick){
+      handleTabClick({currentTab: index});
+    }
   }
 
   return (

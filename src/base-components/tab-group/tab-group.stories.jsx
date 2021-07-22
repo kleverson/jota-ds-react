@@ -1,6 +1,7 @@
 import React from 'react';
 import TabGroupTag from './index.js';
 import TabItemTag from '../tab-item/index.js';
+import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Core components react/Tab',
@@ -16,8 +17,12 @@ export default {
 };
 
 export function Tab(args) {
+  const handleTabClick = (currentTab) => {
+    action("handleTabClick")(currentTab)
+  }
+
   return (
-    <TabGroupTag {...args}>
+    <TabGroupTag {...args} handleTabClick={handleTabClick}>
       <TabItemTag label="Label 1"></TabItemTag>
       <TabItemTag label="Label 2"></TabItemTag>
       <TabItemTag label="Label 3"></TabItemTag>
