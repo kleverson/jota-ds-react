@@ -50,7 +50,13 @@ export function TagSelect(args) {
     action(`handleChange`)({ value });
   };
 
-  return <TagSelectTag {...args} handleChange={handleChange}></TagSelectTag>;
+  return (
+    <div>
+      <span style={{marginRight: '10px'}}><TagSelectTag {...args} handleChange={handleChange}></TagSelectTag></span>
+      <span style={{marginRight: '10px'}}><TagSelectTag {...args} handleChange={handleChange}></TagSelectTag></span>
+      <span style={{marginRight: '10px'}}><TagSelectTag {...args} handleChange={handleChange}></TagSelectTag></span>
+  </div>
+  );
 }
 
 TagSelect.args = {

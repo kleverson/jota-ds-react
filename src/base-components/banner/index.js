@@ -10,11 +10,10 @@ function Banner({
   headingVariant = 'h2',
   paragraph,
   bgColor,
-  onColor = false,
-  children,
-  handleClick
-}){
-
+  highTypography = true,
+  image,
+  handleClick,
+}) {
   function _handleClick() {
     if (typeof handleClick === 'function') {
       handleClick(true);
@@ -26,15 +25,17 @@ function Banner({
       <div
         className={`
           ${namespace}-Banner
-          ${onColor ? `${namespace}-Banner--onColor` : ''}
+          ${/* onColor ? `${namespace}-Banner--onColor` : '' */ ''}
         `}
-        style={{backgroundColor: bgColor}}
+        style={{ backgroundColor: bgColor }}
         onClick={_handleClick}
       >
         <div className={`${namespace}-Banner__Image`}>
-          {children}
-          {/* <img src={image} alt={imageAlt} /> */}
-
+          <picture>
+            <source media="(max-width: 560px)" srcSet={image.small} />
+            <source media="(min-width: 1024px)" srcSet={image.large} />
+            <img src={image.default} alt="Image of Banner" />
+          </picture>
         </div>
 
         <div className={`${namespace}-Banner__Content`}>
@@ -43,25 +44,21 @@ function Banner({
               component="heading"
               variant={headingVariant}
               size="medium"
-              onColor={onColor}
+              onColor={highTypography}
             >
               {title}
             </Typography>
           </div>
 
           <div className={`${namespace}-Banner__Paragraph`}>
-            <Typography
-              component="paragraph"
-              size="small"
-              onColor={onColor}
-            >
+            <Typography component="paragraph" size="small" onColor={highTypography}>
               {paragraph}
             </Typography>
           </div>
         </div>
       </div>
     </ContextElement>
-  )
+  );
 }
 
 Banner.propTypes = {
@@ -69,8 +66,13 @@ Banner.propTypes = {
   headingVariant: PropTypes.string,
   paragraph: PropTypes.string,
   bgColor: PropTypes.string,
-  onColor: PropTypes.bool,
-  handleClick: PropTypes.func
+  highTypography: PropTypes.bool,
+  handleClick: PropTypes.func,
+  image: PropTypes.shape({
+    default: PropTypes.string,
+    large: PropTypes.string,
+    small: PropTypes.string,
+  }).isRequired,
 };
 
 export default Banner;

@@ -20,12 +20,14 @@ export default {
     onColor: brandingTokens.neutralColorHighPure,
     backgroundOnColor: brandingTokens.neutralColorHighPure,
     onColorOpacity: globalTokens.opacityLevelLight,
-    disabledOpacity: globalTokens.opacityLevelMedium
+    disabledOpacity: globalTokens.opacityLevelMedium,
+
+    hoverOnColorBackground: brandingTokens.neutralColorHighPure,
   },
   disabled: {
-    color: brandingTokens.neutralColorLowLight
+    color: brandingTokens.neutralColorLowLight,
   },
   responsive: {
-    margin: globalTokens.spacingSizeNano
-  }
+    margin: globalTokens.spacingSizeNano,
+  },
 };

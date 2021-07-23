@@ -5,15 +5,6 @@ import IconList from '../../utils/icon-list.js';
 export default {
   title: 'Core components react/Button',
   argTypes: {
-    // CÓDIGO NÃO INCLUI ESCOLHA DE TAMANHO
-    /* size: {
-      title: 'Size',
-      description: 'Define o tamanho do botão',
-      control: {
-        type: 'select',
-        options: ['small', 'medium', 'large'],
-      },
-    }, */
     type: {
       name: 'Type',
       description: 'Define o tipo do botão',
@@ -28,6 +19,12 @@ export default {
     disabled: {
       name: 'Disabled',
       description: 'Define se o botão está ativo ou não',
+      table: {
+        category: 'Modifiers',
+      },
+    },
+    loading: {
+      name: 'Loading',
       table: {
         category: 'Modifiers',
       },
@@ -79,4 +76,5 @@ Button.args = {
   onColor: false,
   type: 'primary',
   icon: false,
+  loading: false,
 };

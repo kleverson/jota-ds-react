@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { createGooberGetter, ContextElement } from '@meiuca/context-element-react';
 import PropTypes from 'prop-types';
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import classMap from '@meiuca/context-element-react/directives/class-map.js';
+import classMap from '@meiuca/context-element-react/directives/class-map';
+import classMap$1 from '@meiuca/context-element-react/directives/class-map.js';
 
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);
@@ -662,14 +663,18 @@ if (!document.head.querySelector('#jota-icons')) {
 }
 
 function Icon(_ref) {
+  var _classTable;
+
   var icon = _ref.icon,
       _ref$size = _ref.size,
-      size = _ref$size === void 0 ? "small" : _ref$size;
+      size = _ref$size === void 0 ? 'small' : _ref$size,
+      className = _ref.className;
+  var classTable = (_classTable = {}, _defineProperty(_classTable, "".concat(namespace, "-Icon"), true), _defineProperty(_classTable, "".concat(namespace, "-Icon-").concat(icon), true), _defineProperty(_classTable, "".concat(namespace, "-Icon--").concat(size), true), _defineProperty(_classTable, "".concat(className), className), _classTable);
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Icon"),
     styles: style$x
   }, /*#__PURE__*/React.createElement("i", {
-    className: "".concat(namespace, "-Icon ").concat(namespace, "-Icon-").concat(icon, " ").concat(namespace, "-Icon--").concat(size)
+    className: classMap(classTable)
   }));
 }
 
@@ -798,7 +803,8 @@ var AlertStyleType = {
 };
 
 var _templateObject$w;
-var style$w = createGooberGetter(AlertStyleType)(_templateObject$w || (_templateObject$w = _taggedTemplateLiteral(["\n  &.", "-Alert{\n    font-family: ", ";\n    font-weight: ", ";\n    position:relative;\n    display: none;\n\n    &--isOpen{\n      display: block;\n\n      &.", "-Alert__modal {\n        animation: animationMobile 1s;\n      }      \n    }\n\n    &__modal {\n      width: calc( 100% - ", "px);\n      min-height: 152px;\n      border-radius: ", ";\n      padding: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n      right: 16px;\n      bottom: ", ";\n      position: fixed;\n      word-break: break-word;\n      box-sizing: border-box;\n      box-shadow: ", ";\n      ", ";\n\n      .", "-Alert__content {\n        display: flex;\n\n        .", "-Alert__text-side {\n          margin-left: ", ";\n\n          .", "-Alert__text-title {\n            height: ", ";\n            display: flex;\n            flex-direction: row;\n            align-items: center;\n          }\n        }\n      }\n\n      .", "-ButtonIcon{\n        position: absolute;\n        right: 0px;\n        margin-right: ", ";\n      }\n    }\n\n    @media (min-width: 1024px) {\n      width: 400px;\n      min-height: 100px;\n      right: 36px;\n      bottom: ", ";\n      \n      &--isOpen{\n        &.", "-Alert__modal{\n          animation: animationDesktop 1s;\n        }\n      }      \n    }\n\n    @keyframes animationMobile {\n      from {right: -450px;}\n      to {right: 16px;}\n    }\n  \n    @keyframes animationDesktop {\n      from {right: -450px;}\n      to {right: 36px;}\n    }\n  }\n"])), namespace, function (context) {
+var css$6 = createGooberGetter(AlertStyleType);
+var style$w = css$6(_templateObject$w || (_templateObject$w = _taggedTemplateLiteral(["\n  &.", "-Alert {\n    font-family: ", ";\n    font-weight: ", ";\n    position: relative;\n    display: none;\n\n    &--isOpen {\n      display: block;\n\n      &.", "-Alert__modal {\n        animation: animationMobile 1s;\n      }\n    }\n\n    &__modal {\n      width: calc(100% - ", "px);\n      min-height: 152px;\n      border-radius: ", ";\n      padding: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n      right: 16px;\n      bottom: ", ";\n      position: fixed;\n      word-break: break-word;\n      box-sizing: border-box;\n      box-shadow: ", ";\n      ", ";\n\n      .", "-Alert__content {\n        display: flex;\n\n        .", "-Alert__text-side {\n          margin-left: ", ";\n\n          .", "-Alert__text-title {\n            height: ", ";\n            display: flex;\n            flex-direction: row;\n            align-items: center;\n          }\n        }\n      }\n\n      .", "-ButtonIcon {\n        position: absolute;\n        right: 0px;\n        margin-right: ", ";\n      }\n    }\n\n    @media (min-width: 450px) {\n      width: 400px;\n      min-height: 100px;\n      right: 36px;\n      bottom: ", ";\n\n      &--isOpen {\n        &.", "-Alert__modal {\n          animation: animationDesktop 1s;\n        }\n      }\n    }\n\n    @keyframes animationMobile {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 16px;\n      }\n    }\n\n    @keyframes animationDesktop {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 36px;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontWeight;
@@ -1045,11 +1051,12 @@ ButtonIcon.propTypes = {
 
 function Alert(_ref) {
   var title = _ref.title,
-      icon = _ref.icon,
+      type = _ref.type,
       text = _ref.text,
       _ref$isOpen = _ref.isOpen,
       isOpen = _ref$isOpen === void 0 ? false : _ref$isOpen,
       handleClose = _ref.handleClose;
+  var icon = type === 'helper' ? 'check' : type === 'warning' ? 'exclamation' : 'check';
 
   var _useState = useState(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -1081,7 +1088,7 @@ function Alert(_ref) {
   }, /*#__PURE__*/React.createElement(IconShape, {
     size: "medium",
     icon: icon,
-    variant: icon === 'check' ? 'warning' : 'helper'
+    variant: type === 'warning' ? 'warning' : 'helper'
   })), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Alert__text-side")
   }, /*#__PURE__*/React.createElement("div", {
@@ -1207,7 +1214,8 @@ var BannerStyleType = {
 };
 
 var _templateObject$s;
-var style$s = createGooberGetter(BannerStyleType)(_templateObject$s || (_templateObject$s = _taggedTemplateLiteral(["\n  &.", "-Banner{\n    width: 100%;\n    border-radius: ", ";\n    display: flex;\n    flex-direction: column;\n    cursor: pointer;\n\n    padding: ", ";\n\n    .", "-Banner__Image {\n      display: flex;\n      justify-content: flex-end;\n      margin: ", ";\n    }\n\n    .", "-Banner__Content{\n\n      .", "-Banner__Heading{\n        padding-bottom: ", ";\n        .", "-Typography.Heading{\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 2; /* number of lines to show */\n          -webkit-box-orient: vertical;\n        }\n      }\n      .", "-Banner__Paragraph{\n        .", "-Typography.Paragraph{\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 2; /* number of lines to show */\n          -webkit-box-orient: vertical;\n          line-height: ", ";\n        }\n      }\n    }\n\n    @media (min-width: 1024px){\n      ", "\n      flex-direction: row-reverse;\n\n      padding: ", ";\n\n      &:hover {\n        box-shadow: ", ";\n      }\n\n      .", "-Banner__Image {\n        margin: -40px -40px -40px 0;\n      }\n\n      .", "-Banner__Content{\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$5 = createGooberGetter(BannerStyleType);
+var style$s = css$5(_templateObject$s || (_templateObject$s = _taggedTemplateLiteral(["\n  &.", "-Banner {\n    width: 100%;\n    border-radius: ", ";\n    display: flex;\n    flex-direction: column;\n    cursor: pointer;\n\n    padding: ", ";\n\n    .", "-Banner__Image {\n      display: flex;\n      justify-content: flex-end;\n      margin: ", ";\n    }\n\n    .", "-Banner__Content {\n      .", "-Banner__Heading {\n        padding-bottom: ", ";\n        .", "-Typography.Heading {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n        }\n      }\n      .", "-Banner__Paragraph {\n        .", "-Typography.Paragraph {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n          line-height: ", ";\n        }\n      }\n    }\n\n    @media (min-width: 560px) {\n      & {\n        ", "\n        flex-direction: row-reverse;\n        padding: ", ";\n      }\n\n      &:hover {\n        box-shadow: ", ";\n      }\n\n      .", "-Banner__Image {\n        margin: -40px -40px -40px 0;\n      }\n\n      .", "-Banner__Content {\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.borderRadius;
 }, function (context) {
   return "".concat(context.paddingHMobile, " ").concat(context.paddingVMobile);
@@ -1231,9 +1239,9 @@ function Banner(_ref) {
       headingVariant = _ref$headingVariant === void 0 ? 'h2' : _ref$headingVariant,
       paragraph = _ref.paragraph,
       bgColor = _ref.bgColor,
-      _ref$onColor = _ref.onColor,
-      onColor = _ref$onColor === void 0 ? false : _ref$onColor,
-      children = _ref.children,
+      _ref$highTypography = _ref.highTypography,
+      highTypography = _ref$highTypography === void 0 ? true : _ref$highTypography,
+      image = _ref.image,
       handleClick = _ref.handleClick;
 
   function _handleClick() {
@@ -1246,14 +1254,23 @@ function Banner(_ref) {
     contextId: "".concat(namespace, "-Banner"),
     styles: style$s
   }, /*#__PURE__*/React.createElement("div", {
-    className: "\n          ".concat(namespace, "-Banner\n          ").concat(onColor ? "".concat(namespace, "-Banner--onColor") : '', "\n        "),
+    className: "\n          ".concat(namespace, "-Banner\n          ", "\n        "),
     style: {
       backgroundColor: bgColor
     },
     onClick: _handleClick
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Banner__Image")
-  }, children), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("picture", null, /*#__PURE__*/React.createElement("source", {
+    media: "(max-width: 560px)",
+    srcSet: image.small
+  }), /*#__PURE__*/React.createElement("source", {
+    media: "(min-width: 1024px)",
+    srcSet: image.large
+  }), /*#__PURE__*/React.createElement("img", {
+    src: image.default,
+    alt: "Image of Banner"
+  }))), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Banner__Content")
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Banner__Heading")
@@ -1261,13 +1278,13 @@ function Banner(_ref) {
     component: "heading",
     variant: headingVariant,
     size: "medium",
-    onColor: onColor
+    onColor: highTypography
   }, title)), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Banner__Paragraph")
   }, /*#__PURE__*/React.createElement(Typography, {
     component: "paragraph",
     size: "small",
-    onColor: onColor
+    onColor: highTypography
   }, paragraph)))));
 }
 
@@ -1276,8 +1293,13 @@ Banner.propTypes = {
   headingVariant: PropTypes.string,
   paragraph: PropTypes.string,
   bgColor: PropTypes.string,
-  onColor: PropTypes.bool,
-  handleClick: PropTypes.func
+  highTypography: PropTypes.bool,
+  handleClick: PropTypes.func,
+  image: PropTypes.shape({
+    default: PropTypes.string,
+    large: PropTypes.string,
+    small: PropTypes.string
+  }).isRequired
 };
 
 var BrandStyleType = {
@@ -1424,6 +1446,9 @@ var buttonStyleType = {
   icon: {
     padding: spacingSizeNano
   },
+  loading: {
+    backgroundColor: neutralColorHighPure
+  },
   disabled: {
     backgroundColor: neutralColorLowPure,
     opacityBackground: opacityLevelSemitransparent,
@@ -1453,7 +1478,8 @@ var buttonStyleType = {
 };
 
 var _templateObject$q;
-var style$q = createGooberGetter(buttonStyleType)(_templateObject$q || (_templateObject$q = _taggedTemplateLiteral(["\n  &.", "-Button {\n    height: ", ";\n    padding: 0 ", ";\n    border-radius: ", ";\n    font-size: ", ";\n    font-family: ", ";\n    border: 0;\n    min-width: 160px;\n    font-weight: ", ";\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    display: flex;\n    .", "-Icon {\n      margin-right: ", ";\n    }\n    &[aria-disabled='true'] {\n      background-color: ", ";\n      color: ", ";\n      pointer-events: none;\n      border: transparent;\n    }\n    &--primary {\n      background-color: ", ";\n      color: ", ";\n      &:hover {\n        background-color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible,\n      &:active {\n        outline-offset: 1px;\n        background-color: ", ";\n        outline-color: ", ";\n      }\n      &-onColor {\n        background-color: ", ";\n        color: ", ";\n        &:hover {\n          background-color: ", ";\n        }\n        &:focus:not(:focus-visible) {\n          outline: transparent;\n        }\n        &:focus-visible,\n        &:active {\n          outline-offset: 1px;\n          outline-color: ", ";\n        }\n      }\n    }\n    &--secondary {\n      background-color: transparent;\n      color: ", ";\n      border: ", " ", " solid;\n      &:hover {\n        background-color: ", ";\n        color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible,\n      &:active {\n        outline-color: ", ";\n        outline-offset: 1px;\n      }\n      &[aria-disabled='true'] {\n        background-color: ", ";\n        color: $", ";\n        pointer-events: none;\n        border: transparent;\n      }\n      &-onColor {\n        background-color: transparent;\n        color: ", ";\n        border-color: ", ";\n        &:hover {\n          background-color: ", ";\n          color: ", ";\n        }\n        &[aria-disabled='true'] {\n          background-color: ", ";\n          color: ", ";\n          pointer-events: none;\n          border: transparent;\n          ", "-icon {\n            color: ", ";\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var css$4 = createGooberGetter(buttonStyleType);
+var style$q = css$4(_templateObject$q || (_templateObject$q = _taggedTemplateLiteral(["\n  &.", "-Button {\n    height: ", ";\n    padding: 0 ", ";\n    border-radius: ", ";\n    font-size: ", ";\n    font-family: ", ";\n    border: 0;\n    min-width: 160px;\n    font-weight: ", ";\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    display: flex;\n\n    .", "-Icon {\n      margin-right: ", ";\n    }\n\n    .", "-Button__loading {\n      height: 2px;\n      width: 10px;\n      background-color: ", ";\n    }\n\n    &[aria-disabled='true'] {\n      background-color: ", ";\n      color: ", ";\n      pointer-events: none;\n      border: transparent;\n    }\n\n    &--primary {\n      background-color: ", ";\n      color: ", ";\n\n      &:hover {\n        background-color: ", ";\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-offset: 1px;\n        background-color: ", ";\n        outline-color: ", ";\n      }\n\n      &-onColor {\n        background-color: ", ";\n        color: ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n\n        &:focus:not(:focus-visible) {\n          outline: transparent;\n        }\n\n        &:focus-visible,\n        &:active {\n          outline-offset: 1px;\n          outline-color: ", ";\n        }\n      }\n    }\n\n    &--secondary {\n      background-color: transparent;\n      color: ", ";\n      border: ", "\n        ", " solid;\n\n      &:hover {\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-color: ", ";\n        outline-offset: 1px;\n      }\n\n      &[aria-disabled='true'] {\n        background-color: ", ";\n        color: ", ";\n        pointer-events: none;\n        border: transparent;\n      }\n\n      &-onColor {\n        background-color: transparent;\n        color: ", ";\n        border-color: ", ";\n        &:hover {\n          background-color: ", ";\n          color: ", ";\n        }\n\n        &[aria-disabled='true'] {\n          background-color: ", ";\n          color: ", ";\n          pointer-events: none;\n          border: transparent;\n          ", "-icon {\n            color: ", ";\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var button = _ref.button;
   return button.height;
 }, function (_ref2) {
@@ -1474,87 +1500,92 @@ var style$q = createGooberGetter(buttonStyleType)(_templateObject$q || (_templat
 }, namespace, function (_ref7) {
   var icon = _ref7.icon;
   return icon.padding;
-}, function (_ref8) {
-  var disabled = _ref8.disabled;
-  return hexToRGB(disabled.backgroundColor, disabled.opacityBackground);
+}, namespace, function (_ref8) {
+  var loading = _ref8.loading;
+  return loading.backgroundColor;
 }, function (_ref9) {
   var disabled = _ref9.disabled;
-  return hexToRGB(disabled.color, disabled.opacityColor);
+  return hexToRGB(disabled.backgroundColor, disabled.opacityBackground);
 }, function (_ref10) {
-  var buttonPrimary = _ref10.buttonPrimary;
-  return buttonPrimary.background;
+  var disabled = _ref10.disabled;
+  return hexToRGB(disabled.color, disabled.opacityColor);
 }, function (_ref11) {
   var buttonPrimary = _ref11.buttonPrimary;
-  return buttonPrimary.color;
+  return buttonPrimary.background;
 }, function (_ref12) {
   var buttonPrimary = _ref12.buttonPrimary;
-  return hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground);
+  return buttonPrimary.color;
 }, function (_ref13) {
   var buttonPrimary = _ref13.buttonPrimary;
   return hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground);
 }, function (_ref14) {
-  var button = _ref14.button;
-  return button.outlineColor;
+  var buttonPrimary = _ref14.buttonPrimary;
+  return hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground);
 }, function (_ref15) {
-  var buttonPrimaryOnColor = _ref15.buttonPrimaryOnColor;
-  return buttonPrimaryOnColor.background;
+  var button = _ref15.button;
+  return button.outlineColor;
 }, function (_ref16) {
   var buttonPrimaryOnColor = _ref16.buttonPrimaryOnColor;
-  return buttonPrimaryOnColor.color;
+  return buttonPrimaryOnColor.background;
 }, function (_ref17) {
   var buttonPrimaryOnColor = _ref17.buttonPrimaryOnColor;
-  return hexToRGB(buttonPrimaryOnColor.backgroundHover, buttonPrimaryOnColor.opacityBackground);
+  return buttonPrimaryOnColor.color;
 }, function (_ref18) {
-  var button = _ref18.button;
-  return button.outlineColor;
+  var buttonPrimaryOnColor = _ref18.buttonPrimaryOnColor;
+  return hexToRGB(buttonPrimaryOnColor.backgroundHover, buttonPrimaryOnColor.opacityBackground);
 }, function (_ref19) {
-  var buttonSecondary = _ref19.buttonSecondary;
-  return buttonSecondary.color;
+  var button = _ref19.button;
+  return button.outlineColor;
 }, function (_ref20) {
   var buttonSecondary = _ref20.buttonSecondary;
-  return buttonSecondary.borderColor;
+  return buttonSecondary.color;
 }, function (_ref21) {
   var buttonSecondary = _ref21.buttonSecondary;
-  return buttonSecondary.borderWidth;
+  return buttonSecondary.borderColor;
 }, function (_ref22) {
   var buttonSecondary = _ref22.buttonSecondary;
-  return hexToRGB(buttonSecondary.backgroundHover, buttonSecondary.opacityBackground);
+  return buttonSecondary.borderWidth;
 }, function (_ref23) {
   var buttonSecondary = _ref23.buttonSecondary;
-  return buttonSecondary.color;
+  return hexToRGB(buttonSecondary.backgroundHover, buttonSecondary.opacityBackground);
 }, function (_ref24) {
-  var button = _ref24.button;
-  return button.outlineColor;
+  var buttonSecondary = _ref24.buttonSecondary;
+  return buttonSecondary.color;
 }, function (_ref25) {
-  var disabledSecondary = _ref25.disabledSecondary;
-  return hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground);
+  var button = _ref25.button;
+  return button.outlineColor;
 }, function (_ref26) {
   var disabledSecondary = _ref26.disabledSecondary;
-  return hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor);
+  return hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground);
 }, function (_ref27) {
-  var buttonSecondaryOnColor = _ref27.buttonSecondaryOnColor;
-  return buttonSecondaryOnColor.color;
+  var disabledSecondary = _ref27.disabledSecondary;
+  return hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor);
 }, function (_ref28) {
   var buttonSecondaryOnColor = _ref28.buttonSecondaryOnColor;
   return buttonSecondaryOnColor.color;
 }, function (_ref29) {
   var buttonSecondaryOnColor = _ref29.buttonSecondaryOnColor;
-  return hexToRGB(buttonSecondaryOnColor.backgroundHover, buttonSecondaryOnColor.opacityBackground);
+  return buttonSecondaryOnColor.color;
 }, function (_ref30) {
   var buttonSecondaryOnColor = _ref30.buttonSecondaryOnColor;
-  return buttonSecondaryOnColor.color;
+  return hexToRGB(buttonSecondaryOnColor.backgroundHover, buttonSecondaryOnColor.opacityBackground);
 }, function (_ref31) {
-  var disabledSecondaryOnColor = _ref31.disabledSecondaryOnColor;
-  return hexToRGB(disabledSecondaryOnColor.backgroundColor, disabledSecondaryOnColor.opacityBackground);
+  var buttonSecondaryOnColor = _ref31.buttonSecondaryOnColor;
+  return buttonSecondaryOnColor.color;
 }, function (_ref32) {
   var disabledSecondaryOnColor = _ref32.disabledSecondaryOnColor;
-  return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
-}, namespace, function (_ref33) {
+  return hexToRGB(disabledSecondaryOnColor.backgroundColor, disabledSecondaryOnColor.opacityBackground);
+}, function (_ref33) {
   var disabledSecondaryOnColor = _ref33.disabledSecondaryOnColor;
+  return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
+}, namespace, function (_ref34) {
+  var disabledSecondaryOnColor = _ref34.disabledSecondaryOnColor;
   return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
 });
 
 function Button(_ref) {
+  var _classTable;
+
   var label = _ref.label,
       icon = _ref.icon,
       iconType = _ref.iconType,
@@ -1562,19 +1593,23 @@ function Button(_ref) {
       type = _ref$type === void 0 ? 'primary' : _ref$type,
       disabled = _ref.disabled,
       onColor = _ref.onColor,
-      handleClick = _ref.handleClick;
+      handleClick = _ref.handleClick,
+      loading = _ref.loading;
+  var classTable = (_classTable = {}, _defineProperty(_classTable, "".concat(namespace, "-Button ").concat(namespace, "-Button--").concat(type), true), _defineProperty(_classTable, "".concat(namespace, "-Button--").concat(type, "-onColor"), onColor), _defineProperty(_classTable, "".concat(namespace, "-Button--icon"), icon), _classTable);
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-button"),
     styles: style$q
   }, /*#__PURE__*/React.createElement("button", {
     part: "button",
-    className: "".concat(namespace, "-Button ").concat(namespace, "-Button--").concat(type, " \n        ").concat(onColor ? "".concat(namespace, "-Button--").concat(type, "-onColor") : '', "\n        ").concat(namespace, "-Button--icon"),
+    className: classMap(classTable),
     "aria-disabled": !!disabled,
     onClick: handleClick
   }, icon ? /*#__PURE__*/React.createElement(Icon, {
     icon: iconType,
     size: "medium"
-  }) : undefined, label));
+  }) : undefined, loading ? /*#__PURE__*/React.createElement("div", {
+    className: "".concat(namespace, "-Button__loading")
+  }) : label));
 }
 
 Button.propTypes = {
@@ -1584,7 +1619,8 @@ Button.propTypes = {
   iconType: PropTypes.string,
   disabled: PropTypes.bool,
   onColor: PropTypes.bool,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  loading: PropTypes.bool
 };
 
 var ButtonGroupStyleType = {
@@ -1604,7 +1640,8 @@ var ButtonGroupStyleType = {
     onColor: neutralColorHighPure,
     backgroundOnColor: neutralColorHighPure,
     onColorOpacity: opacityLevelLight,
-    disabledOpacity: opacityLevelMedium
+    disabledOpacity: opacityLevelMedium,
+    hoverOnColorBackground: neutralColorHighPure
   },
   disabled: {
     color: neutralColorLowLight
@@ -1647,7 +1684,7 @@ var style$p = createGooberGetter(ButtonGroupStyleType)(_templateObject$p || (_te
   return context.tertiary.border;
 }, function (_ref5) {
   var tertiary = _ref5.tertiary;
-  return hexToRGB(tertiary.hoverBackground, tertiary.onColorOpacity);
+  return hexToRGB(tertiary.hoverOnColorBackground, tertiary.onColorOpacity);
 }, function (_ref6) {
   var tertiary = _ref6.tertiary;
   return hexToRGB(tertiary.hoverBackground, tertiary.hoverOpacity);
@@ -2010,7 +2047,7 @@ var _templateObject$j;
 /** @type {import('@meiuca/zero-builder/types/components').StyleType} */
 
 var x = MenuStyleType;
-var style$j = createGooberGetter(x)(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n\n        .", "-TagHighlight {\n          min-width: 55px;\n          overflow: hidden;\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var style$j = createGooberGetter(x)(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n        &-label{\n          width: 50%; \n          display: -webkit-box;\n          -webkit-line-clamp: 2;\n          -webkit-box-orient: vertical;  \n          overflow: hidden;\n        }\n        &-tag{\n          width: 50%; \n          .", "-TagHighlight {\n            min-width: 55px;\n            max-width: 100%;\n            text-overflow: ellipsis;\n            overflow: hidden;\n            white-space: nowrap;\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var backgroundColor = _ref.backgroundColor;
   return backgroundColor;
 }, function (_ref2) {
@@ -2074,13 +2111,14 @@ var TagHighlightStyleType = {
   fontWeight: fontWeightMedium,
   fontSize: fontSizeXxs,
   lineHeight: lineHeightXs,
-  paddingLeft: spacingSizeXxxs,
-  paddingRight: spacingSizeXxxs,
+  paddingHorizontal: spacingSizeXxxs,
+  paddingVertical: spacingSizeQuarck,
   motion: injectMotion('switch-slow')
 };
 
 var _templateObject$i;
-var style$i = createGooberGetter(TagHighlightStyleType)(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";    \n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    padding-left: ", ";\n    padding-right: ", ";\n    display: inline-flex;\n    align-items: center;\n    height: 24px;    \n  }\n"])), namespace, function (context) {
+var css$3 = createGooberGetter(TagHighlightStyleType);
+var style$i = css$3(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    /* line-height: ", "; */\n    padding: ", " ", ";\n  }\n"])), namespace, function (context) {
   return context.backgroundColor;
 }, function (context) {
   return context.borderRadius;
@@ -2099,9 +2137,9 @@ var style$i = createGooberGetter(TagHighlightStyleType)(_templateObject$i || (_t
 }, function (context) {
   return context.lineHeight;
 }, function (context) {
-  return context.paddingLeft;
+  return context.paddingVertical;
 }, function (context) {
-  return context.paddingRight;
+  return context.paddingHorizontal;
 });
 
 function TagHighlight(_ref) {
@@ -2130,7 +2168,7 @@ function MenuItem(_ref) {
 
   var item = _ref.item;
   return item.label ? /*#__PURE__*/React.createElement("li", {
-    className: classMap((_classMap = {}, _defineProperty(_classMap, "".concat(namespace, "-Menu__Item"), true), _defineProperty(_classMap, "".concat(namespace, "-Menu__Item--current"), item.isCurrent), _classMap)),
+    className: classMap$1((_classMap = {}, _defineProperty(_classMap, "".concat(namespace, "-Menu__Item"), true), _defineProperty(_classMap, "".concat(namespace, "-Menu__Item--current"), item.isCurrent), _classMap)),
     role: "none"
   }, /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-Menu__ItemContent"),
@@ -2140,11 +2178,15 @@ function MenuItem(_ref) {
     onClick: function onClick() {
       return item.handleClick(item);
     }
-  }, item.label, item.tagLabel ? /*#__PURE__*/React.createElement(TagHighlight, {
+  }, /*#__PURE__*/React.createElement("span", {
+    class: "".concat(namespace, "-Menu__ItemContent-label")
+  }, item.label), item.tagLabel ? /*#__PURE__*/React.createElement("span", {
+    class: "".concat(namespace, "-Menu__ItemContent-tag")
+  }, /*#__PURE__*/React.createElement(TagHighlight, {
     label: item.tagLabel,
     role: "note",
     tabIndex: -1
-  }) : null)) : null;
+  }), " ") : null)) : null;
 }
 
 function MenuItemList(_ref2) {
@@ -2176,7 +2218,7 @@ function Menu(_ref3) {
     contextId: "".concat(namespace, "-Menu"),
     styles: style$j
   }, /*#__PURE__*/React.createElement("nav", {
-    className: classMap((_classMap2 = {}, _defineProperty(_classMap2, "".concat(namespace, "-Menu"), true), _defineProperty(_classMap2, "".concat(namespace, "-Menu--open"), isOpen), _classMap2)),
+    className: classMap$1((_classMap2 = {}, _defineProperty(_classMap2, "".concat(namespace, "-Menu"), true), _defineProperty(_classMap2, "".concat(namespace, "-Menu--open"), isOpen), _classMap2)),
     "aria-label": ariaLabel
   }, /*#__PURE__*/React.createElement(MenuItemList, {
     menuList: menuList,
@@ -2353,13 +2395,14 @@ var linkStyleType = {
   icon: {
     marginLeft: spacingSizeQuarck,
     hover: {
-      marginLeft: spacingSizeNano
+      translateX: spacingSizeNano
     }
   }
 };
 
 var _templateObject$h;
-var style$h = createGooberGetter(linkStyleType)(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin:0;\n    padding:0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after{\n      content: \"\";\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: transparent;\n    }\n    \n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline:0;\n      text-decoration: none;\n\n      &::after{\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n    \n    &:hover {\n      text-decoration: ", ";\n      \n      &::after{\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor:default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after{\n        width: 100%;\n      }\n    }\n\n    &--onColor{\n      color: ", ";\n\n      &::after{\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active){\n        color: ", ";\n      }\n    }\n\n    &--icon{\n      &::after{\n        display: none;\n      }\n\n      .", "-Icon{\n        margin-left: ", ";\n        transition-property: margin;\n        ", ";\n      }\n\n      &:hover{\n        .", "-Icon{\n          margin-left: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$2 = createGooberGetter(linkStyleType);
+var style$h = css$2(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin: 0;\n    padding: 0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after {\n      content: '';\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: transparent;\n    }\n\n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline: 0;\n      text-decoration: none;\n\n      &::after {\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n\n    &:hover {\n      text-decoration: ", ";\n\n      &::after {\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor: default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after {\n        width: 100%;\n      }\n    }\n\n    &--onColor {\n      color: ", ";\n\n      &::after {\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active) {\n        color: ", ";\n      }\n    }\n\n    &--icon {\n      &::after {\n        display: none;\n      }\n\n      .", "-Icon {\n        position: relative;\n        margin-left: ", ";\n\n        ", ";\n      }\n\n      &:hover {\n        .", "-Icon {\n          transform: translateX(", ");\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.color;
 }, function (context) {
   return context.fontFamily;
@@ -2413,7 +2456,7 @@ var style$h = createGooberGetter(linkStyleType)(_templateObject$h || (_templateO
   return context.motion;
 }, namespace, function (_ref9) {
   var icon = _ref9.icon;
-  return icon.hover.marginLeft;
+  return icon.hover.translateX;
 });
 
 function Link(_ref) {
@@ -5086,7 +5129,7 @@ var StepStyleType = {
 };
 
 var _templateObject$7;
-var style$7 = createGooberGetter(StepStyleType)(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  &.", "-Step {\n    font-family: ", ";\n    font-size: ", ";\n    height: 32px;\n    box-sizing: border-box;\n\n    span {\n      opacity: 0;\n      animation: opacity 0.3s ease-in-out 0.5s forwards;\n    }\n    \n    &--finish {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: ", ";\n      border-radius: ", ";\n    }\n    \n    &--current {\n      animation: animation 0.5s ease-in-out forwards;    \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      color: ", ";\n      padding: ", " ", ";\n      min-width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    &--next {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;      \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      color: ", ";\n      border: 2px ", " solid;\n    }\n\n    .", "-Step__icon {   \n      color: ", ";\n    }\n\n    @keyframes animation {\n      0% {\n        background-color: ", ";\n        width: 32px;\n      }\n      50% {\n        width: 32px;\n        background-color: ", ";\n      }\n\n      100% {\n        width: 150px;\n      }\n    }\n\n    @keyframes opacity {\n      from {\n        opacity: 0;\n      }\n      to {\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (context) {
+var style$7 = createGooberGetter(StepStyleType)(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  &.", "-Step {\n    font-family: ", ";\n    font-size: ", ";\n    height: 32px;\n    box-sizing: border-box;\n\n    span {\n      opacity: 0;\n      animation: opacity 0.3s ease-in-out 0.5s forwards;\n      white-space: nowrap;\n      height: 100%;\n      overflow: hidden;\n      text-overflow: ellipsis;\n    }\n    \n    &--finish {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      background-color: ", ";\n      border-radius: ", ";\n    }\n    \n    &--current {\n      animation: animation 0.5s ease-in-out forwards;    \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      line-height: ", ";\n      color: ", ";\n      padding: ", " ", ";\n      min-width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    &--next {\n      width: 32px;\n      display: flex;\n      align-items: center;\n      justify-content: center;      \n      background-color: ", ";\n      border-radius: ", ";\n      font-weight: ", ";\n      color: ", ";\n      border: 2px ", " solid;\n    }\n\n    .", "-Step__icon {   \n      color: ", ";\n    }\n\n    @keyframes animation {\n      0% {\n        background-color: ", ";\n        width: 32px;\n      }\n      50% {\n        width: 32px;\n        background-color: ", ";\n      }\n\n      100% {\n        width: 150px;\n      }\n    }\n\n    @keyframes opacity {\n      from {\n        opacity: 0;\n      }\n      to {\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontSize;
@@ -5727,7 +5770,8 @@ var TagCategoryStyleType = {
 };
 
 var _templateObject$2;
-var style$2 = createGooberGetter(TagCategoryStyleType)(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  &.", "-TagCategory {\n    background-color: transparent;\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    color: ", ";\n    opacity: ", ";\n    height: 16px;\n    display: inline-flex;\n    align-items: center;\n    border: 0;\n\n    .", "-TagCategory__label {\n      padding-left: ", ";\n    }\n\n    .", "-TagCategory__icon {\n      color: ", ";\n    }\n\n    &--onColor {\n      .", "-TagCategory__label {\n        padding-left: ", ";\n        color: ", ";\n      }\n\n      .", "-TagCategory__icon {\n        color: ", ";\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$1 = createGooberGetter(TagCategoryStyleType);
+var style$2 = css$1(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  &.", "-TagCategory {\n    background-color: transparent;\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    /* line-height: ", "; */\n    color: ", ";\n    opacity: ", ";\n    display: inline-flex;\n    align-items: center;\n    border: 0;\n\n    .", "-TagCategory__label {\n      padding-left: ", ";\n    }\n\n    .", "-TagCategory__icon {\n      color: ", ";\n      display: initial;\n      padding: 0;\n    }\n\n    &--onColor {\n      .", "-TagCategory__label {\n        color: ", ";\n      }\n\n      .", "-TagCategory__icon {\n        color: ", ";\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontWeight;
@@ -5745,13 +5789,10 @@ var style$2 = createGooberGetter(TagCategoryStyleType)(_templateObject$2 || (_te
 }, namespace, function (context) {
   return context.color;
 }, namespace, function (_ref2) {
-  var label = _ref2.label;
-  return label.paddingLeft;
-}, function (_ref3) {
-  var onColor = _ref3.onColor;
+  var onColor = _ref2.onColor;
   return onColor.color;
-}, namespace, function (_ref4) {
-  var onColor = _ref4.onColor;
+}, namespace, function (_ref3) {
+  var onColor = _ref3.onColor;
   return onColor.color;
 });
 
@@ -5767,12 +5808,11 @@ function TagCategory(_ref) {
     styles: style$2
   }, /*#__PURE__*/React.createElement("button", {
     className: "\n         ".concat(namespace, "-TagCategory\n         ").concat(onColor ? "".concat(namespace, "-TagCategory--onColor") : '', "\n      ")
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "".concat(namespace, "-TagCategory__icon")
   }, /*#__PURE__*/React.createElement(Icon, {
+    className: "".concat(namespace, "-TagCategory__icon"),
     icon: icon,
     size: "small"
-  })), /*#__PURE__*/React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "".concat(namespace, "-TagCategory__label")
   }, label)));
 }
@@ -5786,8 +5826,8 @@ TagCategory.propTypes = {
 var TagSelectStyleType = {
   borderRadius: borderRadiusPill,
   borderWidth: borderWidthThin,
-  paddingLeft: spacingSizeXxxs,
-  paddingRight: spacingSizeXxxs,
+  paddingHorizontal: spacingSizeXxxs,
+  paddingVertical: spacingSizeNano,
   color: neutralColorLowPure,
   fontFamily: fontFamilyHighlight,
   fontWeight: fontWeightMedium,
@@ -5839,7 +5879,8 @@ var TagSelectStyleType = {
 };
 
 var _templateObject$1;
-var style$1 = createGooberGetter(TagSelectStyleType)(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  &.", "-TagSelect {\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";\n    line-height: ", ";\n    padding-left: ", ";\n    padding-right: ", ";\n    background-color: transparent;\n    display: inline-flex;\n    align-items: center;\n    cursor: pointer;\n    height: 32px;\n\n    &:hover {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: 0;\n    }\n\n    &:focus-visible {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      outline-color: ", ";\n      outline-style: solid;\n      outline-width: 2px;\n      ", ";\n    }\n\n    &:active {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";\n    }\n\n    &--disabled {\n      border: transparent ", " solid;\n      background-color: ", ";\n      color: ", ";\n      pointer-events: none;\n      cursor: default;\n    }\n\n    &--active {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";      \n    }\n\n    &--onColor {\n      border: ", " ", " solid;\n      color: ", ";\n      background: transparent;\n\n      &:hover {\n        border: ", " ", " solid;\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &:focus-visible:not(:active) {\n        border-radius: ", ";\n        border: ", " ", " solid;\n        background-color: ", ";\n        color: ", ";\n        outline-color: ", ";\n        outline-style: solid;\n        outline-width: ", ";\n      }\n\n      &:active {\n        border: ", " ", " solid;\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &--disabled {\n        border: transparent ", " solid;\n        background-color: ", ";\n        color: ", ";\n        pointer-events: none;\n        cursor: default;\n      }\n\n      &--active {\n        border: ", " ", " solid;\n        background-color: ", ";\n        color: ", ";\n      }      \n    }\n  }\n"])), namespace, function (context) {
+var css = createGooberGetter(TagSelectStyleType);
+var style$1 = css(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  &.", "-TagSelect {\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";\n    /* line-height: ", "; */\n    padding: ", " ", ";\n    background-color: transparent;\n    cursor: pointer;\n\n    &:hover {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: 0;\n    }\n\n    &:focus-visible {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      outline-color: ", ";\n      outline-style: solid;\n      outline-width: 2px;\n      ", ";\n    }\n\n    &:active {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";\n    }\n\n    &--disabled {\n      border: transparent ", " solid;\n      background-color: ", ";\n      color: ", ";\n      pointer-events: none;\n      cursor: default;\n    }\n\n    &--active {\n      border: ", " ", " solid;\n      background-color: ", ";\n      color: ", ";\n      ", ";\n    }\n\n    &--onColor {\n      border: ", " ", " solid;\n      color: ", ";\n      background: transparent;\n\n      &:hover {\n        border: ", " ", "\n          solid;\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &:focus-visible:not(:active) {\n        border-radius: ", ";\n        border: ", " ", "\n          solid;\n        background-color: ", ";\n        color: ", ";\n        outline-color: ", ";\n        outline-style: solid;\n        outline-width: ", ";\n      }\n\n      &:active {\n        border: ", " ", "\n          solid;\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &--disabled {\n        border: transparent ", " solid;\n        background-color: ", ";\n        color: ", ";\n        pointer-events: none;\n        cursor: default;\n      }\n\n      &--active {\n        border: ", " ", "\n          solid;\n        background-color: ", ";\n        color: ", ";\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontWeight;
@@ -5856,9 +5897,9 @@ var style$1 = createGooberGetter(TagSelectStyleType)(_templateObject$1 || (_temp
 }, function (context) {
   return context.lineHeight;
 }, function (context) {
-  return context.paddingLeft;
+  return context.paddingVertical;
 }, function (context) {
-  return context.paddingRight;
+  return context.paddingHorizontal;
 }, function (_ref) {
   var hover = _ref.hover;
   return hover.backgroundColor;

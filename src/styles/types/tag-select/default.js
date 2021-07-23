@@ -5,8 +5,8 @@ import * as globalTokens from '../../tokens/global.js';
 export default {
   borderRadius: globalTokens.borderRadiusPill,
   borderWidth: globalTokens.borderWidthThin,
-  paddingLeft: globalTokens.spacingSizeXxxs,
-  paddingRight: globalTokens.spacingSizeXxxs,
+  paddingHorizontal: globalTokens.spacingSizeXxxs,
+  paddingVertical: globalTokens.spacingSizeNano,
   color: brandingTokens.neutralColorLowPure,
   fontFamily: brandingTokens.fontFamilyHighlight,
   fontWeight: brandingTokens.fontWeightMedium,
@@ -16,26 +16,26 @@ export default {
 
   hover: {
     backgroundColor: brandingTokens.brandColorSecondaryPure,
-    color: brandingTokens.neutralColorHighPure
+    color: brandingTokens.neutralColorHighPure,
   },
 
   focus: {
     backgroundColor: brandingTokens.brandColorSecondaryPure,
     color: brandingTokens.neutralColorHighPure,
     outlineColor: brandingTokens.highlightColorPure,
-    borderWidth: globalTokens.borderWidthThin
+    borderWidth: globalTokens.borderWidthThin,
   },
 
   active: {
     backgroundColor: brandingTokens.brandColorSecondaryPure,
-    color: brandingTokens.neutralColorHighPure
+    color: brandingTokens.neutralColorHighPure,
   },
 
   disabled: {
     background: brandingTokens.neutralColorLowPure,
     opacityBorder: globalTokens.opacityLevelSemitransparent,
     opacityText: globalTokens.opacityLevelMedium,
-    color: brandingTokens.neutralColorLowPure
+    color: brandingTokens.neutralColorLowPure,
   },
 
   onColor: {
@@ -44,22 +44,21 @@ export default {
 
     hover: {
       backgroundColor: brandingTokens.neutralColorHighPure,
-      color: brandingTokens.brandColorSecondaryPure
+      color: brandingTokens.brandColorSecondaryPure,
     },
     focus: {
       backgroundColor: brandingTokens.neutralColorHighPure,
       color: brandingTokens.brandColorSecondaryPure,
-      outlineColor: brandingTokens.highlightColorPure
+      outlineColor: brandingTokens.highlightColorPure,
     },
     active: {
       backgroundColor: brandingTokens.neutralColorHighPure,
-      color: brandingTokens.brandColorSecondaryPure
+      color: brandingTokens.brandColorSecondaryPure,
     },
     disabled: {
       backgroundColor: brandingTokens.neutralColorHighPure,
       color: brandingTokens.brandColorSecondaryPure,
-      opacity: globalTokens.opacityLevelMedium
-    }
-  }
-}
-
+      opacity: globalTokens.opacityLevelMedium,
+    },
+  },
+};

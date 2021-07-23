@@ -13,6 +13,15 @@ export default {
       table: { category: 'Modifiers' },
       control: 'color',
     },
+    highTypography: {
+      name: 'Type',
+      table: { category: 'Modifiers' },
+      mapping: { 'High Typography': true, 'Low Typography': false },
+      options: ['High Typography', 'Low Typography'],
+      control: {
+        type: 'select',
+      },
+    },
     title: {
       name: 'Title',
       table: {
@@ -55,13 +64,15 @@ export function Banner(args) {
   }
 
   return (
-    <BannerTag {...args} handleClick={handleClick} onColor={true}>
-      <picture>
-        <source media="(max-width: 1023px)" srcSet={imgBannerIlustraMobile} />
-        <source media="(min-width: 1024px)" srcSet={imgBannerIlustraDesktop} />
-        <img src={imgBannerIlustraDesktop} alt="Image of Banner" />
-      </picture>
-    </BannerTag>
+    <BannerTag
+      {...args}
+      handleClick={handleClick}
+      image={{
+        default: imgBannerIlustraDesktop,
+        large: imgBannerIlustraDesktop,
+        small: imgBannerIlustraMobile,
+      }}
+    />
   );
 }
 
@@ -69,6 +80,6 @@ Banner.args = {
   title: 'Heading Medium two lines',
   paragraph: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   bgColor: '#1474FF',
-  // image: imgBannerIlustraDesktop,
   imageAlt: 'Image of banner',
+  highTypography: 'High Typography',
 };

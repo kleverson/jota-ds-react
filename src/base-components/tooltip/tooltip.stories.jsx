@@ -13,7 +13,7 @@ export default {
         type: { summary: 'boolean' },
         defaultValue: { summary: 'false' },
       },
-    },    
+    },
     position: {
       name: 'Position',
       description: 'Posição do tooltip.',
@@ -50,16 +50,11 @@ export function Tooltip(args) {
   return (
     <div>
       <Typography component="paragraph" onColor={args.onColor}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vestibulum purus at
-        massa lacinia vestibulum. Mauris feugiat,
+        Se não for sobre fazer a diferença, é sobre o quê? <br />
         <TooltipTag {...args}>
           <strong> Passe o mouse aqui para ver o tooltip.</strong>
         </TooltipTag>
-        Nam nec vehicula augue. Donec et feugiat odio. Nam tempus velit sed nisl accumsan placerat.
-        Morbi porta, mi ut condimentum rutrum, nunc arcu lobortis orci, sit amet finibus nulla nibh
-        quis eros. Aliquam congue volutpat iaculis. Aenean sed est sed ipsum posuere cursus vel ac
-        nibh.
-      </Typography>     
+      </Typography>
     </div>
   );
 }
@@ -67,5 +62,5 @@ export function Tooltip(args) {
 Tooltip.args = {
   position: 'top',
   body: 'Hello there, this is a tooltip message.',
-  onColor: false
+  onColor: false,
 };

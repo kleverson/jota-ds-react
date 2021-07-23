@@ -1,5 +1,6 @@
 import React from 'react';
 import HeaderTag from './index.js';
+import HeaderEmpty from '../header-empty/index.js';
 import { namespace } from '../../utils/setup.js';
 import { action } from '@storybook/addon-actions';
 import jotaSymbol from '../../assets/images/jota-symbol.svg';
@@ -9,6 +10,12 @@ import avatarExample from '../../assets/images/avatar-example.png';
 export default {
   title: 'Core components react/Header',
   argTypes: {
+    menu: {
+      name: 'Menu',
+      table: {
+        category: 'Modifiers',
+      },
+    },
     ghost: {
       name: 'Ghost',
       table: {
@@ -115,7 +122,7 @@ export function Header(args) {
     });
   }
 
-  return (
+  return args.menu ? (
     <div style={{ width: '100vw', position: 'absolute', top: '0px' }}>
       <HeaderTag
         {...args}
@@ -125,6 +132,10 @@ export function Header(args) {
         linkList={linkList}
         menuList={menuList}
       ></HeaderTag>
+    </div>
+  ) : (
+    <div style={{ width: '100vw', position: 'absolute', top: '0px' }}>
+      <HeaderEmpty logoSource={currentLogo} />
     </div>
   );
 }
@@ -136,6 +147,7 @@ Header.args = {
   linkListLength: 4,
   menuListLength: 3,
   avatarImgAlt: 'Avatar alt',
+  menu: true,
   avatarHasNotification: false,
   avatarName: 'Aurélio',
   avatarImgUrl: '',

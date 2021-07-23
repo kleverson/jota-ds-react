@@ -79,10 +79,22 @@ export default css(x)`
         cursor: pointer;
         outline: none;
         ${({ motion }) => motion};
-
-        .${namespace}-TagHighlight {
-          min-width: 55px;
+        &-label{
+          width: 50%; 
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;  
           overflow: hidden;
+        }
+        &-tag{
+          width: 50%; 
+          .${namespace}-TagHighlight {
+            min-width: 55px;
+            max-width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
         }
       }
     }

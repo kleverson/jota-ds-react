@@ -13,6 +13,10 @@ export default css(StepStyleType)`
     span {
       opacity: 0;
       animation: opacity 0.3s ease-in-out 0.5s forwards;
+      white-space: nowrap;
+      height: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     
     &--finish {

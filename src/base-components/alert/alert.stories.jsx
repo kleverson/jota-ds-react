@@ -7,11 +7,12 @@ import { namespace } from '../../utils/setup.js';
 export default {
   title: 'Core components react/Alert',
   argTypes: {
-    icon: {
-      name: 'Icon',
+    type: {
+      name: 'Type',
       control: {
         type: 'select',
-        options: ['check', 'exclamation'],
+        // options: ['check', 'exclamation'],
+        options: ['helper', 'warning'],
       },
       table: {
         category: 'Modifiers',
@@ -33,9 +34,9 @@ export default {
       name: 'Paragraph',
       table: {
         category: 'Custom Inputs',
-      }
-    }
-  }
+      },
+    },
+  },
 };
 
 export function Alert(args) {
@@ -53,7 +54,7 @@ export function Alert(args) {
 }
 
 Alert.args = {
-  icon: 'check',
+  type: 'helper',
   isOpen: true,
   text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
   title: 'Heading X-small',

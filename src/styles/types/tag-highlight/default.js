@@ -11,7 +11,7 @@ export default {
   fontWeight: brandingTokens.fontWeightMedium,
   fontSize: globalTokens.fontSizeXxs,
   lineHeight: globalTokens.lineHeightXs,
-  paddingLeft: globalTokens.spacingSizeXxxs,
-  paddingRight: globalTokens.spacingSizeXxxs,
+  paddingHorizontal: globalTokens.spacingSizeXxxs,
+  paddingVertical: globalTokens.spacingSizeQuarck,
   motion: injectMotion('switch-slow'),
 };

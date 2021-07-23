@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { ContextElement } from '@meiuca/context-element-react';
 import PropTypes from 'prop-types';
 import style from './style.js';
@@ -7,17 +7,19 @@ import IconShape from '../icon-shape/index.js';
 import Typography from '../typography/index.js';
 import ButtonIcon from '../button-icon/index.js';
 
-function Alert({title, icon, text, isOpen = false, handleClose }){
+function Alert({ title, type, text, isOpen = false, handleClose }) {
+  const icon = type === 'helper' ? 'check' : type === 'warning' ? 'exclamation' : 'check';
+
   const [_isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsOpen(isOpen);
   }, [isOpen]);
 
-  const _handleClose = (e) => {
+  const _handleClose = e => {
     setIsOpen(!_isOpen);
     handleClose(!_isOpen);
-  }
+  };
 
   return (
     <ContextElement contextId={`${namespace}-Alert`} styles={style}>
@@ -25,22 +27,32 @@ function Alert({title, icon, text, isOpen = false, handleClose }){
         className={`
           ${namespace}-Alert
           ${namespace}-Alert__modal
-          ${ _isOpen ? `${namespace}-Alert--isOpen` : '' }
-        `} 
+          ${_isOpen ? `${namespace}-Alert--isOpen` : ''}
+        `}
       >
         <ButtonIcon icon="close" size="small" handleClick={_handleClose}></ButtonIcon>
         <div className={`${namespace}-Alert__content`}>
           <div className={`${namespace}-Alert__icon-side`}>
-            <IconShape size="medium" icon={icon} variant={icon === 'check' ? 'warning' : 'helper'}></IconShape>
+            <IconShape
+              size="medium"
+              icon={icon}
+              variant={type === 'warning' ? 'warning' : 'helper'}
+            ></IconShape>
           </div>
           <div className={`${namespace}-Alert__text-side`}>
-            <div className={`${namespace}-Alert__text-title`}><Typography component="heading" size="x-small" variant="h6">{title}</Typography></div>
-            <Typography  component="paragraph" size="small">{text}</Typography>
+            <div className={`${namespace}-Alert__text-title`}>
+              <Typography component="heading" size="x-small" variant="h6">
+                {title}
+              </Typography>
+            </div>
+            <Typography component="paragraph" size="small">
+              {text}
+            </Typography>
           </div>
         </div>
       </div>
     </ContextElement>
-  )
+  );
 }
 
 Alert.propTypes = {
@@ -48,7 +60,7 @@ Alert.propTypes = {
   icon: PropTypes.string,
   text: PropTypes.string,
   isOpen: PropTypes.bool,
-  handleClose: PropTypes.func
+  handleClose: PropTypes.func,
 };
 
 export default Alert;

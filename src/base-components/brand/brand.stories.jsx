@@ -1,6 +1,7 @@
 import React from 'react';
 import BrandTag from './index.js';
 import jotaSymbol from '../../assets/images/jota-symbol.svg';
+import jotaSymbolOnColor from '../../assets/images/jota-symbol-oncolor.svg';
 import jotaLogotype from '../../assets/images/jota-logotype.svg';
 import jotaLogotypeOnColor from '../../assets/images/jota-logotype-oncolor.svg';
 

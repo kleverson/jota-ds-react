@@ -1,10 +1,11 @@
-import { createGooberGetter as css } from '@meiuca/context-element-react';
+import { createGooberGetter } from '@meiuca/context-element-react';
 import buttonStyleType from '../../styles/types/button/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
+const css = createGooberGetter(buttonStyleType);
 
-export default css(buttonStyleType)`
+export default css`
   &.${namespace}-Button {
     height: ${({ button }) => button.height};
     padding: 0 ${({ button }) => button.sidePadding};
@@ -18,25 +19,38 @@ export default css(buttonStyleType)`
     align-items: center;
     cursor: pointer;
     display: flex;
+
     .${namespace}-Icon {
       margin-right: ${({ icon }) => icon.padding};
     }
+
+    .${namespace}-Button__loading {
+      height: 2px;
+      width: 10px;
+      background-color: ${({ loading }) => loading.backgroundColor};
+    }
+
     &[aria-disabled='true'] {
-      background-color: ${({ disabled }) => hexToRGB(disabled.backgroundColor, disabled.opacityBackground)};
+      background-color: ${({ disabled }) =>
+        hexToRGB(disabled.backgroundColor, disabled.opacityBackground)};
       color: ${({ disabled }) => hexToRGB(disabled.color, disabled.opacityColor)};
       pointer-events: none;
       border: transparent;
     }
+
     &--primary {
       background-color: ${({ buttonPrimary }) => buttonPrimary.background};
       color: ${({ buttonPrimary }) => buttonPrimary.color};
+
       &:hover {
         background-color: ${({ buttonPrimary }) =>
           hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground)};
       }
+
       &:focus:not(:focus-visible) {
         outline: transparent;
       }
+
       &:focus-visible,
       &:active {
         outline-offset: 1px;
@@ -44,16 +58,20 @@ export default css(buttonStyleType)`
           hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground)};
         outline-color: ${({ button }) => button.outlineColor};
       }
+
       &-onColor {
         background-color: ${({ buttonPrimaryOnColor }) => buttonPrimaryOnColor.background};
         color: ${({ buttonPrimaryOnColor }) => buttonPrimaryOnColor.color};
+
         &:hover {
           background-color: ${({ buttonPrimaryOnColor }) =>
             hexToRGB(buttonPrimaryOnColor.backgroundHover, buttonPrimaryOnColor.opacityBackground)};
         }
+
         &:focus:not(:focus-visible) {
           outline: transparent;
         }
+
         &:focus-visible,
         &:active {
           outline-offset: 1px;
@@ -61,29 +79,38 @@ export default css(buttonStyleType)`
         }
       }
     }
+
     &--secondary {
       background-color: transparent;
       color: ${({ buttonSecondary }) => buttonSecondary.color};
-      border: ${({ buttonSecondary }) => buttonSecondary.borderColor} ${({ buttonSecondary }) => buttonSecondary.borderWidth} solid;
+      border: ${({ buttonSecondary }) => buttonSecondary.borderColor}
+        ${({ buttonSecondary }) => buttonSecondary.borderWidth} solid;
+
       &:hover {
         background-color: ${({ buttonSecondary }) =>
           hexToRGB(buttonSecondary.backgroundHover, buttonSecondary.opacityBackground)};
         color: ${({ buttonSecondary }) => buttonSecondary.color};
       }
+
       &:focus:not(:focus-visible) {
         outline: transparent;
       }
+
       &:focus-visible,
       &:active {
         outline-color: ${({ button }) => button.outlineColor};
         outline-offset: 1px;
       }
+
       &[aria-disabled='true'] {
-        background-color: ${({ disabledSecondary }) => hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground)};
-        color: $${({ disabledSecondary }) => hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor)};
+        background-color: ${({ disabledSecondary }) =>
+          hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground)};
+        color: ${({ disabledSecondary }) =>
+          hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor)};
         pointer-events: none;
         border: transparent;
       }
+
       &-onColor {
         background-color: transparent;
         color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
@@ -96,16 +123,20 @@ export default css(buttonStyleType)`
             )};
           color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
         }
+
         &[aria-disabled='true'] {
           background-color: ${({ disabledSecondaryOnColor }) =>
-            hexToRGB(disabledSecondaryOnColor.backgroundColor, disabledSecondaryOnColor.opacityBackground)};
+            hexToRGB(
+              disabledSecondaryOnColor.backgroundColor,
+              disabledSecondaryOnColor.opacityBackground,
+            )};
           color: ${({ disabledSecondaryOnColor }) =>
-          hexToRGB( disabledSecondaryOnColor.shapeColor , disabledSecondaryOnColor.shapeOpacity)};
+            hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity)};
           pointer-events: none;
           border: transparent;
           ${namespace}-icon {
             color: ${({ disabledSecondaryOnColor }) =>
-            hexToRGB( disabledSecondaryOnColor.shapeColor , disabledSecondaryOnColor.shapeOpacity)};
+              hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity)};
           }
         }
       }

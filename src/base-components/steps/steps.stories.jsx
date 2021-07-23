@@ -22,6 +22,10 @@ export default {
       },
       table: { category: 'Modifiers' },
     },
+    label: {
+      name: 'Label',
+      table: { category: 'Custom Inputs'},
+    },
   },
 };
 
@@ -31,7 +35,7 @@ export function Step(args) {
   for (let i = 1; i <= args.stepsLength; i += 1) {
     steps.push({
       type: i === args.currentStep ? 'current' : i < args.currentStep ? 'finish' : 'next',
-      title: `Label ${i}`,
+      title: `${args.label}`,
     });
   }
 
@@ -43,6 +47,7 @@ export function Step(args) {
 }
 
 Step.args = {
+  label: 'Label',
   stepsLength: 6,
   currentStep: 1,
 };

@@ -28,9 +28,11 @@ function MenuItem({item}) {
         role="menuitem"
         onClick={() => item.handleClick(item)}
       >
-        {item.label}
-        {item.tagLabel ? 
-          <TagHighlight label={item.tagLabel} role="note" tabIndex={-1}/> : null}
+        <span class={`${namespace}-Menu__ItemContent-label`}>
+          {item.label}
+        </span>
+        {item.tagLabel ? <span class={`${namespace}-Menu__ItemContent-tag`}>
+          <TagHighlight label={item.tagLabel} role="note" tabIndex={-1}/> </span> : null}
       </div>
     </li>
   ) : null;

@@ -23,7 +23,7 @@ export default {
   },
   active: {
     color: brandingTokens.neutralColorLowMedium,
-    textDecoration: 'none'
+    textDecoration: 'none',
   },
   onColor: {
     color: brandingTokens.neutralColorHighPure,
@@ -36,13 +36,13 @@ export default {
 
   disabled: {
     color: brandingTokens.neutralColorHighDark,
-    opacity: globalTokens.opacityLevelMedium
+    opacity: globalTokens.opacityLevelMedium,
   },
 
   icon: {
     marginLeft: globalTokens.spacingSizeQuarck,
     hover: {
-      marginLeft: globalTokens.spacingSizeNano
-    }
-  }
-}
+      translateX: globalTokens.spacingSizeNano,
+    },
+  },
+};

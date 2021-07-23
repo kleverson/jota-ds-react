@@ -1,18 +1,20 @@
-import { createGooberGetter as css } from '@meiuca/context-element-react';
+import { createGooberGetter } from '@meiuca/context-element-react';
 import linkStyleType from '../../styles/types/link/default.js';
 import { namespace } from '../../utils/setup.js';
 
-export default css(linkStyleType)`
+const css = createGooberGetter(linkStyleType);
+
+export default css`
   &.${namespace}-Link {
-    margin:0;
-    padding:0;
-    color: ${ context => context.color};
-    font-family: ${ context => context.fontFamily};
-    font-size: ${ context => context.fontSize};
-    font-weight: ${ context => context.fontWeight};
-    line-height: ${ context => context.lineHeight};
+    margin: 0;
+    padding: 0;
+    color: ${context => context.color};
+    font-family: ${context => context.fontFamily};
+    font-size: ${context => context.fontSize};
+    font-weight: ${context => context.fontWeight};
+    line-height: ${context => context.lineHeight};
     position: relative;
-    text-decoration: ${ context => context.textDecoration};
+    text-decoration: ${context => context.textDecoration};
     border: ${context => `${context.borderWidth} solid transparent`};
     padding-top: ${context => context.paddingTop};
     padding-bottom: ${context => context.paddingBottom};
@@ -21,8 +23,8 @@ export default css(linkStyleType)`
     width: fit-content;
     align-items: center;
 
-    &::after{
-      content: "";
+    &::after {
+      content: '';
       position: absolute;
       right: 0px;
       bottom: 0px;
@@ -36,65 +38,66 @@ export default css(linkStyleType)`
     &:focus:not(:focus-visible) {
       outline: transparent;
     }
-    
+
     &:focus-visible:not(:active) {
-      border: ${({focus}) => `${focus.borderWidth} solid ${focus.borderColor}`};
-      color: ${({focus}) => focus.color};
-      outline:0;
+      border: ${({ focus }) => `${focus.borderWidth} solid ${focus.borderColor}`};
+      color: ${({ focus }) => focus.color};
+      outline: 0;
       text-decoration: none;
 
-      &::after{
+      &::after {
         transition-property: width;
         width: 100%;
         ${context => context.motion};
       }
     }
-    
+
     &:hover {
-      text-decoration: ${({hover}) => hover.textDecoration};
-      
-      &::after{
+      text-decoration: ${({ hover }) => hover.textDecoration};
+
+      &::after {
         width: 50%;
       }
     }
 
     &--disabled {
       pointer-events: none;
-      cursor:default;
+      cursor: default;
       text-decoration: none;
-      opacity: ${({disabled}) => disabled.opacity};
+      opacity: ${({ disabled }) => disabled.opacity};
 
-      &::after{
+      &::after {
         width: 100%;
       }
     }
 
-    &--onColor{
-      color: ${({onColor}) => onColor.color};
+    &--onColor {
+      color: ${({ onColor }) => onColor.color};
 
-      &::after{
-        background-color: ${({onColor}) => onColor.color};
+      &::after {
+        background-color: ${({ onColor }) => onColor.color};
       }
 
-      &:focus-visible:not(:active){
-        color: ${({onColor}) => onColor.color};
+      &:focus-visible:not(:active) {
+        color: ${({ onColor }) => onColor.color};
       }
     }
 
-    &--icon{
-      &::after{
+    &--icon {
+      &::after {
         display: none;
       }
 
-      .${namespace}-Icon{
-        margin-left: ${({icon}) => icon.marginLeft};
-        transition-property: margin;
+      .${namespace}-Icon {
+        position: relative;
+        margin-left: ${({ icon }) => icon.marginLeft};
+
         ${context => context.motion};
       }
 
-      &:hover{
-        .${namespace}-Icon{
-          margin-left: ${({icon}) => icon.hover.marginLeft};
+      &:hover {
+        .${namespace}-Icon {
+          transform: translateX(${({ icon }) => icon.hover.translateX});
         }
       }
     }

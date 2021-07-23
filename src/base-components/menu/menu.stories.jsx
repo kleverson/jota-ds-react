@@ -5,6 +5,18 @@ import MenuTag from './index.js';
 export default {
   title: 'Core components react/Menu',
   argTypes: {
+    label: {
+      name: 'Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
+    taglabel: {
+      name: 'Tag Label',
+      table: {
+        category: 'Custom Inputs',
+      },
+    },
     isOpen: {
       name: 'Open',
       table: {
@@ -35,7 +47,7 @@ export function Menu(args) {
 
   for (let i = 1; i <= args.menuListLength; i++) {
     const currentMenuItem = {
-      label: `Label ${i}`,
+      label: `${args.label} ${i}`,
       handleClick: action(`item ${i} click`),
       isCurrent: false,
     };
@@ -43,7 +55,7 @@ export function Menu(args) {
     if (i % 2 != 0) {
       menuList.push(currentMenuItem);
     } else {
-      currentMenuItem.tagLabel = 'Tag label';
+      currentMenuItem.tagLabel = `${args.taglabel}`;
       menuList.push(currentMenuItem);
     }
   }
@@ -59,6 +71,8 @@ Menu.args = {
   isOpen: true,
   onColor: false,
   menuListLength: 3,
+  label: 'Label',
+  taglabel: 'tag label'
 };
 
 Menu.argTypes = {

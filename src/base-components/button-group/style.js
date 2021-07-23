@@ -42,7 +42,7 @@ export default css(ButtonGroupStyleType)`
       padding: 0 ${ context => context.tertiary.sidePadding};
       border-radius: ${ context => context.tertiary.border};
       &:hover{
-        background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverBackground, tertiary.onColorOpacity)};
+        background-color: ${({ tertiary }) => hexToRGB( tertiary.hoverOnColorBackground, tertiary.onColorOpacity)};
       } 
       &:focus:not(:focus-visible) {
         outline: transparent;

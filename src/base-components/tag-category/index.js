@@ -14,9 +14,8 @@ function TagCategory({ label = 'Tag category', onColor = false, icon = 'shapes' 
          ${onColor ? `${namespace}-TagCategory--onColor` : ''}
       `}
       >
-        <div className={`${namespace}-TagCategory__icon`}>
-          <Icon icon={icon} size="small"></Icon>
-        </div>
+        <Icon className={`${namespace}-TagCategory__icon`} icon={icon} size="small"></Icon>
+
         <div className={`${namespace}-TagCategory__label`}>{label}</div>
       </button>
     </ContextElement>
