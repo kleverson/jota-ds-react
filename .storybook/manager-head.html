@@ -5,11 +5,30 @@
   .search-field input::placeholder,
   .search-result-item,
   .search-result-item span,
-  .search-result-recentlyOpened {
+  .search-result-recentlyOpened,
+  .search-result-back *,
+  .search-result-clearHistory *,
+  #storybook-explorer-menu * {
     color: #fff !important;
   }
 
-  /* .docblock-argstable-body tr td {
-    background-color: #fff !important;
-  } */
+  #root [role='main'] {
+    border: 1px solid rgba(0, 51, 122, 40%);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 </style>
+
+<script>
+  /* verificar um jeito melhor de mudar o target do link do header */
+  window.onload = () =>
+    setInterval(() => {
+      const headerAnchor = document.body.querySelector('.sidebar-header a[title="Jota"]');
+
+      if (headerAnchor) {
+        headerAnchor.target = '_self';
+      }
+    }, 500);
+</script>
+
+<link rel="shortcut icon" href="favicon.ico" />

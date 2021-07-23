@@ -16,7 +16,7 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.js$/,
-      loader: 'babel-loader'
+      loader: 'babel-loader',
     });
 
     return config;
