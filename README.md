@@ -6,7 +6,7 @@ Below we have all the instructions for you to use Jota DS as a dependency and wo
 
 ## Playground
 
-Acess the component playground, in storybook, to know how to use our Open Source Design System [Storybook](https://storybook.jota.meiuca.co//)
+Acess the component playground, in storybook, to know how to use our Open Source Design System [Storybook](https://storybook.jota.meiuca.co/)
 
 ## Components
 
