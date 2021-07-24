@@ -9,6 +9,11 @@
   "source": "src/index.js",
   "files": [
     "dist",
+    "src",
+    "babel.config.json",
+    "rollup.config.js",
+    "theme-replace.js",
+    "package.json",
     "next.js"
   ],
   "repository": {
