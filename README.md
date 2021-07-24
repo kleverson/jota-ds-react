@@ -2,14 +2,51 @@
 
 This is the Open Source Design System from [Meiuca](https://meiuca.co/)
 
-Below we have all the instructions for you to use Jota DS as a dependency and work on building your product from it. Too easy. Use it to understand how your day to day would work with a Design System, to show the advantages to your stakeholders or simply to focus on your studies
+Below we have all the instructions for you to use Jota DS as a dependency and work on building your product from it. Too easy. Use it to understand how your day to day would work with a Design System, to show the advantages to your stakeholders or simply to focus on your studies.
 
-### Components
+## Playground
 
-| Component
+Acess the component playground, in storybook, to know how to use our Open Source Design System [Storybook](https://storybook.jota.meiuca.co//)
+
+## Components
+
+| Component Tag
 | ----------
-| [`<Typography>`]
-| [`<Button>`]
+| [`Accordion`]
+| [`Alert`]
+| [`Avatar`]
+| [`Banner`]
+| [`Brand`]
+| [`Button`]
+| [`ButtonGroup`]
+| [`ButtonIcon`]
+| [`Cardbase`]
+| [`Cardimage`]
+| [`InputCheckbox`]
+| [`Header`]
+| [`HeaderEmpty`]
+| [`Icon`]
+| [`IconShape`]
+| [`InputPassword`]
+| [`InputRadiobutton`]
+| [`InputSearch`]
+| [`InputText`]
+| [`InputTextarea`]
+| [`Link`]
+| [`Menu`]
+| [`Modal`]
+| [`Notification`]
+| [`OverflowMenu`]
+| [`InputSelect`]
+| [`Steps`]
+| [`Switch`]
+| [`TabGroup`]
+| [`TabItem`]
+| [`TagCategory`]
+| [`TagHighlight`]
+| [`TagSelect`]
+| [`Tooltip`]
+| [`Typography`]
 
 ## Quick start
 
