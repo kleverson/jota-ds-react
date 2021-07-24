@@ -72,3 +72,27 @@ Sample usage of button component.
 ```
 <Button label="Label" type="primary" />
 ```
+
+## NextJS
+
+Our library can be consumed in your NextJS app. Follow the instructions below:
+
+#### 1) Install
+
+```sh
+yarn add @jota-ds/lib-react
+```
+
+#### 2) Import a component
+
+Sample usage of a button component in NextJS.
+
+```
+import {DynamicButton} from "@jota-ds/lib-react/next"
+```
+
+Then:
+
+```
+<DynamicButton label="Label" type="primary" />
+```
