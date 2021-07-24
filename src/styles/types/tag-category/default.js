@@ -1,5 +1,5 @@
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import * as brandingTokens from '../../tokens/branding.js';
+import brandingTokens from '../../tokens/branding.js';
 import * as globalTokens from '../../tokens/global.js';
 
 export default {
@@ -7,15 +7,15 @@ export default {
   opacity: globalTokens.opacityLevelSemiopaque,
   fontFamily: brandingTokens.fontFamilyHighlight,
   fontSize: globalTokens.fontSizeXxs,
-  fontWeight: brandingTokens.fontWeightMedium,
+  fontWeight: brandingTokens.fontWeightRegular,
   lineHeight: globalTokens.lineHeightXs,
   motion: injectMotion('switch-slow'),
 
   onColor: {
-    color: brandingTokens.neutralColorHighPure
+    color: brandingTokens.neutralColorHighPure,
   },
 
   label: {
-    paddingLeft: globalTokens.spacingSizeQuarck
-  }
+    paddingLeft: globalTokens.spacingSizeQuarck,
+  },
 };

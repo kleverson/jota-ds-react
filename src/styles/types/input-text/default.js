@@ -1,5 +1,5 @@
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import * as brandingTokens from '../../tokens/branding.js';
+import brandingTokens from '../../tokens/branding.js';
 import * as globalTokens from '../../tokens/global.js';
 
 export default {
@@ -16,33 +16,33 @@ export default {
     borderWidth: globalTokens.borderWidthThin,
     borderColor: brandingTokens.neutralColorLowPure,
     lineHeight: globalTokens.lineHeightDefault,
-    fontWeight: brandingTokens.fontWeightMedium,
-    backgroundColor: "transparent",
+    fontWeight: brandingTokens.fontWeightRegular,
+    backgroundColor: 'transparent',
     height: '48px',
     placeholder: {
       color: brandingTokens.neutralColorLowPure,
       opacity: globalTokens.opacityLevelSemiopaque,
-      fontWeight: brandingTokens.fontWeightRegular
+      fontWeight: brandingTokens.fontWeightRegular,
     },
     text: {
       color: brandingTokens.neutralColorLowPure,
-      opacity: globalTokens.opacityLevelSemiopaque
-    }
+      opacity: globalTokens.opacityLevelSemiopaque,
+    },
   },
   label: {
     fontWeight: brandingTokens.fontWeightBold,
-    marginBottom: globalTokens.spacingSizeQuarck
+    marginBottom: globalTokens.spacingSizeQuarck,
   },
   helper: {
     fontSize: globalTokens.fontSizeXxs,
-    color: brandingTokens.neutralColorLowPure
+    color: brandingTokens.neutralColorLowPure,
   },
   error: {
     input: {
       color: brandingTokens.neutralColorLowPure,
       backgroundColor: brandingTokens.feedbackColorHelperLight,
       borderColor: brandingTokens.feedbackColorHelperPure,
-    }
+    },
   },
   onColor: {
     color: brandingTokens.neutralColorHighPure,
@@ -51,34 +51,34 @@ export default {
       color: brandingTokens.neutralColorHighPure,
       fontWeight: brandingTokens.fontWeightMedium,
       placeHolderColor: brandingTokens.neutralColorHighPure,
-      placeHolderOpacity: globalTokens.opacityLevelSemiopaque
+      placeHolderOpacity: globalTokens.opacityLevelSemiopaque,
     },
     error: {
       input: {
         color: brandingTokens.neutralColorLowPure,
         backgroundColor: brandingTokens.feedbackColorHelperDark,
-        borderColor: brandingTokens.feedbackColorHelperPure
+        borderColor: brandingTokens.feedbackColorHelperPure,
       },
     },
     helper: {
       color: brandingTokens.neutralColorHighPure,
-    }
+    },
   },
   states: {
     hover: {
       input: {
         backgroundColor: brandingTokens.neutralColorLowPure,
-        opacity: globalTokens.opacityLevelSemitransparent
+        opacity: globalTokens.opacityLevelSemitransparent,
       },
       onColor: {
         input: {
           backgroundColor: brandingTokens.neutralColorHighPure,
-          opacity: globalTokens.opacityLevelLight
-        }
-      }
+          opacity: globalTokens.opacityLevelLight,
+        },
+      },
     },
     disabled: {
-      opacity: globalTokens.opacityLevelMedium
+      opacity: globalTokens.opacityLevelMedium,
     },
     focus: {
       borderColor: brandingTokens.highlightColorPure,
@@ -87,8 +87,8 @@ export default {
         fontWeight: brandingTokens.fontWeightMedium,
         color: brandingTokens.neutralColorLowPure,
         backgroundColor: brandingTokens.neutralColorLowPure,
-        opacity: globalTokens.opacityLevelSemitransparent
-      }
-    }
-  }
+        opacity: globalTokens.opacityLevelSemitransparent,
+      },
+    },
+  },
 };

@@ -13,10 +13,14 @@ export default {
       },
     },
     icon: {
-      name: 'Icon',
-      description: 'Define se o link tem ícone ou não',
+      name: 'Type',
       table: {
         category: 'Modifiers',
+      },
+      options: ['Link', 'Link Arrow'],
+      mapping: { Link: false, 'Link Arrow': true },
+      control: {
+        type: 'select',
       },
     },
     target: {
@@ -54,12 +58,12 @@ export default {
 };
 
 export function Link(args) {
-  const handleClick = (e) => {
-    if(args.target === "_self"){
+  const handleClick = e => {
+    if (args.target === '_self') {
       e.preventDefault();
-      action("handleClick")()
+      action('handleClick')();
     }
-  }
+  };
 
   return <LinkTag {...args} handleClick={handleClick}></LinkTag>;
 }
@@ -67,7 +71,7 @@ export function Link(args) {
 Link.args = {
   label: 'Link',
   disabled: false,
-  icon: false,
+  icon: 'Link',
   onColor: false,
   href: '/',
   target: 'New Tab',

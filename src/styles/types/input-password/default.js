@@ -1,5 +1,5 @@
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import * as brandingTokens from '../../tokens/branding.js';
+import brandingTokens from '../../tokens/branding.js';
 import * as globalTokens from '../../tokens/global.js';
 
 export default {
@@ -7,17 +7,17 @@ export default {
   fontFamily: brandingTokens.fontFamilyHighlight,
   fontSize: globalTokens.fontSizeXs,
   fontWeight: brandingTokens.fontWeightRegular,
-  lineHeight: globalTokens.lineHeightDefault,  
+  lineHeight: globalTokens.lineHeightDefault,
 
   input: {
-    fontWeight: brandingTokens.fontWeightMedium,
+    fontWeight: brandingTokens.fontWeightRegular,
     marginBottom: globalTokens.spacingSizeNano,
     borderColor: brandingTokens.neutralColorLowPure,
     borderRadius: globalTokens.borderRadiusSm,
     borderWidth: globalTokens.borderWidthThin,
     padding: globalTokens.spacingInsetSizeXsStack,
     lineHeight: globalTokens.lineHeightDefault,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
 
     placeholder: {
       color: brandingTokens.neutralColorLowPure,
@@ -27,7 +27,7 @@ export default {
 
     text: {
       color: brandingTokens.neutralColorLowPure,
-      opacity: globalTokens.opacityLevelSemiopaque
+      opacity: globalTokens.opacityLevelSemiopaque,
     },
 
     hover: {
@@ -36,8 +36,8 @@ export default {
       motion: injectMotion('switch-slow'),
 
       text: {
-        color: brandingTokens.neutralColorLowPure
-      }
+        color: brandingTokens.neutralColorLowPure,
+      },
     },
 
     focus: {
@@ -47,20 +47,20 @@ export default {
       borderWidth: globalTokens.borderWidthThin,
 
       text: {
-        color: brandingTokens.neutralColorLowPure
-      }
+        color: brandingTokens.neutralColorLowPure,
+      },
     },
-    
+
     icon: {
       top: globalTokens.spacingInsetSizeXsV,
-      right: globalTokens.spacingInsetSizeXsH
-    }
+      right: globalTokens.spacingInsetSizeXsH,
+    },
   },
 
   label: {
     fontWeight: brandingTokens.fontWeightBold,
-    marginBottom: globalTokens.spacingSizeQuarck,    
-    lineHeight: globalTokens.lineHeightDefault
+    marginBottom: globalTokens.spacingSizeQuarck,
+    lineHeight: globalTokens.lineHeightDefault,
   },
 
   helper: {
@@ -72,12 +72,12 @@ export default {
     input: {
       backgroundColor: brandingTokens.feedbackColorHelperLight,
       borderColor: brandingTokens.feedbackColorHelperPure,
-    }
+    },
   },
 
   disabled: {
     color: brandingTokens.neutralColorLowPure,
-    opacity: globalTokens.opacityLevelMedium
+    opacity: globalTokens.opacityLevelMedium,
   },
 
   onColor: {
@@ -89,34 +89,34 @@ export default {
 
       hover: {
         backgroundColor: brandingTokens.neutralColorHighPure,
-        opacity: globalTokens.opacityLevelLight
-      }
+        opacity: globalTokens.opacityLevelLight,
+      },
     },
 
     error: {
       input: {
         backgroundColor: brandingTokens.feedbackColorHelperDark,
-        borderColor: brandingTokens.feedbackColorHelperPure
-      }
+        borderColor: brandingTokens.feedbackColorHelperPure,
+      },
     },
 
     hover: {
       opacity: globalTokens.opacityLevelLight,
-      backgroundColor: brandingTokens.neutralColorHighPure
+      backgroundColor: brandingTokens.neutralColorHighPure,
     },
 
     focus: {
       opacity: globalTokens.opacityLevelLight,
-      backgroundColor: brandingTokens.neutralColorHighPure
+      backgroundColor: brandingTokens.neutralColorHighPure,
     },
-    
+
     disabled: {
       label: {
-        opacity: globalTokens.opacityLevelMedium
+        opacity: globalTokens.opacityLevelMedium,
       },
       text: {
-        opacity: globalTokens.opacityLevelMedium
-      }
-    }
-  }
+        opacity: globalTokens.opacityLevelMedium,
+      },
+    },
+  },
 };

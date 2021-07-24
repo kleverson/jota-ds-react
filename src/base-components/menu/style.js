@@ -1,12 +1,11 @@
-import { createGooberGetter as css } from '@meiuca/context-element-react';
+import { createGooberGetter } from '@meiuca/context-element-react';
 import MenuStyleType from '../../styles/types/menu/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
-/** @type {import('@meiuca/zero-builder/types/components').StyleType} */
-const x = MenuStyleType;
+const css = createGooberGetter(MenuStyleType);
 
-export default css(x)`
+export default css`
   &.${namespace}-Menu {
     visibility: hidden;
     opacity: 0;
@@ -79,15 +78,17 @@ export default css(x)`
         cursor: pointer;
         outline: none;
         ${({ motion }) => motion};
-        &-label{
-          width: 50%; 
+        &-label {
+          width: 60%;
           display: -webkit-box;
           -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;  
+          -webkit-box-orient: vertical;
           overflow: hidden;
         }
-        &-tag{
-          width: 50%; 
+        &-tag {
+          width: 40%;
+          display: inline-flex;
+          justify-content: flex-end;
           .${namespace}-TagHighlight {
             min-width: 55px;
             max-width: 100%;

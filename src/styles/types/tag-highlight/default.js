@@ -1,5 +1,5 @@
 import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import * as brandingTokens from '../../tokens/branding.js';
+import brandingTokens from '../../tokens/branding.js';
 import * as globalTokens from '../../tokens/global.js';
 
 export default {
@@ -8,7 +8,7 @@ export default {
   borderWidth: globalTokens.borderRadiusNone,
   color: brandingTokens.neutralColorLowPure,
   fontFamily: brandingTokens.fontFamilyHighlight,
-  fontWeight: brandingTokens.fontWeightMedium,
+  fontWeight: brandingTokens.fontWeightRegular,
   fontSize: globalTokens.fontSizeXxs,
   lineHeight: globalTokens.lineHeightXs,
   paddingHorizontal: globalTokens.spacingSizeXxxs,

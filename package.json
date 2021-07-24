@@ -1,7 +1,7 @@
 {
   "name": "@meiuca/jota-lib-react",
   "description": "Jota Design System",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Meiuca <meiuca@meiuca.design>",
   "main": "dist/index.cjs.js",
@@ -12,7 +12,7 @@
     "next.js"
   ],
   "repository": {
-    "url": "https://github.com/Meiuca/jota-lib-react.git"
+    "url": "https://github.com/Meiuca/jota-ds-react.git"
   },
   "keywords": [
     "jota",
@@ -29,8 +29,6 @@
   "dependencies": {
     "@meiuca/context-element-react": "^1.0.3",
     "@meiuca/motion-tokens": "0.4.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
@@ -78,6 +76,8 @@
     ]
   },
   "peerDependencies": {
-    "next": "^11"
+    "next": "^11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

@@ -1,5 +1,5 @@
 import * as globalTokens from '../../tokens/global.js';
-import * as brandingTokens from '../../tokens/branding.js';
+import brandingTokens from '../../tokens/branding.js';
 
 export default {
   fontFamily: brandingTokens.fontFamilyHighlight,

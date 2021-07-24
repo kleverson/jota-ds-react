@@ -6,7 +6,7 @@ import style from './style.js';
 import { namespace } from '../../utils/setup.js';
 import '../../mixins/use-icons.js';
 
-function Icon({ icon, size = 'small', className }) {
+function Icon({ icon, size = 'small', className, id }) {
   const classTable = {
     [`${namespace}-Icon`]: true,
     [`${namespace}-Icon-${icon}`]: true,
@@ -16,7 +16,7 @@ function Icon({ icon, size = 'small', className }) {
 
   return (
     <ContextElement contextId={`${namespace}-Icon`} styles={style}>
-      <i className={classMap(classTable)}></i>
+      <i className={classMap(classTable)} id={id}></i>
     </ContextElement>
   );
 }
