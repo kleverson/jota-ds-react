@@ -10,7 +10,7 @@ Acess the component playground, in storybook, to know how to use our Open Source
 
 ## Components
 
-| Component Tag
+| Component
 | ----------
 | [`Accordion`]
 | [`Alert`]
