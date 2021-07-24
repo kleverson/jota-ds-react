@@ -1,4 +1,4 @@
-import { createGooberGetter } from '@meiuca/context-element-react';
+import { createGooberGetter } from '@meiuca_design/context-element-react';
 import MenuStyleType from '../../styles/types/menu/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';

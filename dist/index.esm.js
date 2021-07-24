@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { createGooberGetter, ContextElement } from '@meiuca/context-element-react';
+import { createGooberGetter, ContextElement } from '@meiuca_design/context-element-react';
 import PropTypes from 'prop-types';
-import { injectMotion } from '@meiuca/motion-tokens/helpers';
-import classMap from '@meiuca/context-element-react/directives/class-map';
-import classMap$1 from '@meiuca/context-element-react/directives/class-map.js';
+import { injectMotion } from '@meiuca_design/motion-tokens/helpers';
+import classMap from '@meiuca_design/context-element-react/directives/class-map';
+import classMap$1 from '@meiuca_design/context-element-react/directives/class-map.js';
 
 function ownKeys(object, enumerableOnly) {
   var keys = Object.keys(object);

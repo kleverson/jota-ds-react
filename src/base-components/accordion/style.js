@@ -1,4 +1,4 @@
-import { createGooberGetter as css } from '@meiuca/context-element-react';
+import { createGooberGetter as css } from '@meiuca_design/context-element-react';
 import AccordionStyleType from '../../styles/types/accordion/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';

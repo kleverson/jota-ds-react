@@ -4,8 +4,8 @@
 */
 
 import React, { useState } from 'react';
-import { ContextElement } from '@meiuca/context-element-react';
-import classMap from '@meiuca/context-element-react/directives/class-map.js';
+import { ContextElement } from '@meiuca_design/context-element-react';
+import classMap from '@meiuca_design/context-element-react/directives/class-map.js';
 import PropTypes from 'prop-types';
 import style from './style.js';
 import { namespace } from '../../utils/setup.js';

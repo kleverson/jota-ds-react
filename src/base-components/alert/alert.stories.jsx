@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { clearContext, setContext } from '@meiuca/context-element-react';
+import { clearContext, setContext } from '@meiuca_design/context-element-react';
 import AlertTag from './index.js';
 import { namespace } from '../../utils/setup.js';
 

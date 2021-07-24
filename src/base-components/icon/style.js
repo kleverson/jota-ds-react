@@ -1,4 +1,4 @@
-import { createGooberGetter as css } from '@meiuca/context-element-react';
+import { createGooberGetter as css } from '@meiuca_design/context-element-react';
 import iconStyleType from '../../styles/types/icon/default.js';
 import { namespace } from '../../utils/setup.js';
 

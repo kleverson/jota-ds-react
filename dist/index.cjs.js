@@ -3,11 +3,11 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var React = require('react');
-var contextElementReact = require('@meiuca/context-element-react');
+var contextElementReact = require('@meiuca_design/context-element-react');
 var PropTypes = require('prop-types');
-var helpers = require('@meiuca/motion-tokens/helpers');
-var classMap = require('@meiuca/context-element-react/directives/class-map');
-var classMap$1 = require('@meiuca/context-element-react/directives/class-map.js');
+var helpers = require('@meiuca_design/motion-tokens/helpers');
+var classMap = require('@meiuca_design/context-element-react/directives/class-map');
+var classMap$1 = require('@meiuca_design/context-element-react/directives/class-map.js');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 

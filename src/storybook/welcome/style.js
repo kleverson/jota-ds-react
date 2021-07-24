@@ -1,4 +1,4 @@
-import { createGooberGetter } from '@meiuca/context-element-react';
+import { createGooberGetter } from '@meiuca_design/context-element-react';
 import WelcomeStyleType from './style-type.js';
 import { namespace } from '../../utils/setup.js';
 

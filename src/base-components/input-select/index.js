@@ -1,5 +1,5 @@
 import React , { useState, useRef, useEffect }  from 'react';
-import { ContextElement } from '@meiuca/context-element-react';
+import { ContextElement } from '@meiuca_design/context-element-react';
 import PropTypes, { func } from 'prop-types';
 import style from './style.js';
 import { namespace } from '../../utils/setup.js';
