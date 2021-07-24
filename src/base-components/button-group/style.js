@@ -1,4 +1,4 @@
-import { createGooberGetter as css } from '@meiuca_design/context-element-react';
+import { createGooberGetter as css } from '@jota-ds/context-element-react';
 import ButtonGroupStyleType from '../../styles/types/button-group/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';

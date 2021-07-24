@@ -1,8 +1,8 @@
-import { injectMotion } from '@meiuca_design/motion-tokens/helpers';
+import { injectMotion } from '@jota-ds/motion-tokens/helpers';
 import brandingTokens from '../../tokens/branding.js';
 import * as globalTokens from '../../tokens/global.js';
 
-export default /** @type {import('@meiuca_design/zero-builder/types/components').StyleType} */ ({
+export default /** @type {import('@jota-ds/zero-builder/types/components').StyleType} */ ({
   backgroundColor: brandingTokens.neutralColorLowMedium,
 
   borderRadius: globalTokens.borderRadiusSm,

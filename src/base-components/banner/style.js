@@ -1,4 +1,4 @@
-import { createGooberGetter } from '@meiuca_design/context-element-react';
+import { createGooberGetter } from '@jota-ds/context-element-react';
 import BannerStyleType from '../../styles/types/banner/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';

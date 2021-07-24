@@ -1,4 +1,4 @@
-import { createGooberGetter } from '@meiuca_design/context-element-react';
+import { createGooberGetter } from '@jota-ds/context-element-react';
 import TagSelectStyleType from '../../styles/types/tag-select/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';

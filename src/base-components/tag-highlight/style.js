@@ -1,4 +1,4 @@
-import { createGooberGetter } from '@meiuca_design/context-element-react';
+import { createGooberGetter } from '@jota-ds/context-element-react';
 import TagHighlightStyleType from '../../styles/types/tag-highlight/default.js';
 import { namespace } from '../../utils/setup.js';
 

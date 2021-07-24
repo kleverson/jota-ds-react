@@ -1,4 +1,4 @@
-import { createGooberGetter as css } from '@meiuca_design/context-element-react';
+import { createGooberGetter as css } from '@jota-ds/context-element-react';
 import cardimageStyleType from '../../styles/types/cardimage/default.js';
 import { namespace } from '../../utils/setup.js';
 

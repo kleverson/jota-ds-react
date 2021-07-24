@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContextElement } from '@meiuca_design/context-element-react';
+import { ContextElement } from '@jota-ds/context-element-react';
 import style from './style.js';
 import { namespace, ds } from '../../utils/setup.js';
 import IlustraWelcome from '../../assets/storybook/ilustra-welcome.svg';

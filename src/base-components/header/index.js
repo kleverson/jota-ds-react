@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { ContextElement } from '@meiuca_design/context-element-react';
+import { ContextElement } from '@jota-ds/context-element-react';
 import PropTypes from 'prop-types';
 import style from './style.js';
 import { namespace } from '../../utils/setup.js';
