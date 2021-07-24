@@ -48,7 +48,7 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`Tooltip`]
 | [`Typography`]
 
-## Quick start
+## Quick start - React
 
 #### 1) Install
 
