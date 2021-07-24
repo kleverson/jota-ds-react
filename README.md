@@ -73,7 +73,7 @@ Sample usage of button component.
 <Button label="Label" type="primary" />
 ```
 
-## NextJS
+## Quick start - NextJS
 
 Our library can be consumed in your NextJS app. Follow the instructions below:
 
