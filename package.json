@@ -1,5 +1,5 @@
 {
-  "name": "@meiuca/jota-lib-react",
+  "name": "@meiuca_design/jota-ds-react",
   "description": "Jota Design System",
   "version": "1.0.0",
   "license": "MIT",
@@ -27,8 +27,8 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@meiuca/context-element-react": "^1.0.3",
-    "@meiuca/motion-tokens": "0.4.2",
+    "@meiuca_design/context-element-react": "1.0.0",
+    "@meiuca_design/motion-tokens": "1.0.0",
     "focus-visible": "^5.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
