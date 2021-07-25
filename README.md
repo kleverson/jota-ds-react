@@ -73,6 +73,22 @@ Sample usage of button component.
 <Button label="Label" type="primary" />
 ```
 
+#### 3) Import DS default fonts
+
+In your index.html, in the <head> tag, import:
+
+```
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
 ## Quick start - NextJS
 
 Our library can be consumed in your NextJS app. Follow the instructions below:
@@ -95,4 +111,20 @@ Then:
 
 ```
 <DynamicButton label="Label" type="primary" />
+```
+
+#### 3) Import DS default fonts
+
+In your index.html, in the <head> tag, import:
+
+```
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
 ```
