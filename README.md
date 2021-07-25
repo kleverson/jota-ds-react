@@ -130,6 +130,6 @@ In your index.html, in the \<head> tag, import:
 
 ## CodeSandbox
 
-Still have doubts? View our example in the CodeSandbox:
+Still have doubts? View our example on CodeSandbox:
 
 [![Edit stupefied-cannon-cjttc](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/stupefied-cannon-cjttc?fontsize=14&hidenavigation=1&theme=dark)
