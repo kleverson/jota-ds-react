@@ -23,8 +23,8 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`Cardbase`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`noPadding`={true \| false}
 | [`Cardimage`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`image`='your image path'
 | [`InputCheckbox`]  | `value`='checkbox text' <br>`name`='Label and input name' | `disabled`={true \| false} <br>`onColor`={true \| false} <br>`handleChange`={function}
-| [`Header`] 
-| [`HeaderEmpty`]
+| [`Header`] | `logoSource`='your-image.jpg \| your-image.svg \| your-image.png'<br> `linkList`={[{label: '', href: '', target: '', disabled: { true \| false }, currentActive: { true \| false }}]} <br> `menuList`={[{label: 'Your string', tagLabel:'Your string', handleClick:function}]} | `isLoggedIn`={true \| false}<br> `hasLinks`={true \| false} <br> `mainMenuIsOpen`={true \| false} <br> `ghost`={true \| false} <br><br> If `isLoggedIn` is set to true, `avatar`={{name: 'Your string', imgUrl: 'your-image.jpg \| your-image.svg \| your-image.png', imgAlt: 'Your string', hasNotification: true \| false}}
+| [`HeaderEmpty`] | `logoSource`='your-image.jpg \| your-image.svg \| your-image.png'<br> | `children`={React.Component} <br> `hasLinks`={true \| false} <br> `mainMenuIsOpen`={true \| false} <br> `ghost`={true \| false}
 | [`Icon`]  | `icon`='any icon from our icon list' <br> `size`='small \| medium \| large' | `className`='name for icon class' <br>`id`='your-icon-id'
 | [`IconShape`]  | `icon`='any icon from our icon list' <br> `size`='small \| medium \| large' | `variant`='default \| warning \| helper' 
 | [`InputPassword`]  | `label`='Your string' <br>`id`='your-input-id'<br>`placeHolder`="Your placeholder" <br>`maxLength`={number} <br>`handleChange`={function} <br> `helperText`='Warning helper text in case of error' | <br>`error`={true\|false} <br>`onColor`={true\|false} <br>`disabled`={true\|false} 
@@ -40,12 +40,12 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`InputSelect`] | `label`='Your string' <br>`options`]=['your option', 'your option']} <br>`handleChange`={function} | `disabled`={true\|false} <br>`error`={true\|false} `errorMsg`='Your string' <br>`placeholder`='Your string' <br>`onColor`={true\|false}
 | [`Steps`] | `ariaLabel`='' <br>`steps`]=[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
 | [`Switch`] | `label`="Your string" <br>`checked`={true\|false} <br>`handleChange`={function} | `disabled`={true\|false} <br>`onColor`={true\|false}
-| [`TabGroup`] | `ariaLabel`="Your string" <br>`children`]=\<TabItem label={'Your string'}\/>} <br>`handleTabClick`={function} | onColor={true\|false}
+| [`TabGroup`] | `ariaLabel`="Your string" <br>`children`]=\<TabItem label={'Your string'}\/>} <br>`handleTabClick`={function} | `onColor`={true\|false}
 | [`TagCategory`] | `label`="Your string" <br>`icon`='shapes' | `onColor`={true\|false}
 | [`TagHighlight`] | `label`="Your string" <br>`tabIndex`={number} | 
 | [`TagSelect`] | `label`="Your string" <br>`handleChange`={function} | `disabled`={true\|false} <br>`onColor`={true\|false} <br>`active`={true\|false}
 | [`Tooltip`] | `position`='bottom-end'\|'bottom-start'\|'bottom'\|'left-end'\|'left-start'\|'left'\|'right-end'\|'right-start'\|'right'\|'top-end'\|'top-start'\|'top' <br>`body`='Your string' <br>`children`={React.Component} | `onColor`={true\|false}
-| [`Typography`] | `component`='heading\|subtitle\|paragraph\|caption' |  If component attribute is 'heading', variant='h1\|h2\|h3\|h4\|h5\|h6' <br><br>If component attribute is 'heading', size='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br>If component attribute is 'subtitle', size='small'\|'large' <br><br>If component attribute is 'paragraph', size='small'\|'large' <br><br>`onColor`={true\|false}
+| [`Typography`] | `component`='heading\|subtitle\|paragraph\|caption' |  If component attribute is `heading`, `variant`='h1\|h2\|h3\|h4\|h5\|h6' <br><br>If component attribute is `heading`, `size`='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br>If component attribute is `subtitle`, `size`='small'\|'large' <br><br>If component attribute is `paragraph`, `size`='small'\|'large' <br><br>`onColor`={true\|false}
 
 ## Quick start - React
 
