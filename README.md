@@ -35,7 +35,7 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`Link`] | `label`='Your string' <br>`href`='/your-link' <br>`target`='_blank\|_self' | `onColor`={true\|false} <br>`disabled`={true\|false} <br>`icon`={true\|false} <br>`handleClick`={function}
 | [`Menu`] | `ariaLabel`='Your string' <br>`menuList`={[{label: 'Your string', tagLabel: 'Your string', isCurrent:true\|false, handleClick: function}]} | `isOpen`={true\|false}
 | [`Modal`] | `isOpen`={true\|false} <br>`isDoubleAction`={true\|false} <br>`firstActionLabel`='Your string' <br>`secondActionLabel`='Your string' <br>`handleConfirm`={function} <br>`handleClose`={function} | `isCloseDisabled`={true\|false} <br>`handleCancel`={function}
-| [`Notification`] | title="Your string" <br>`content`="Your string" <br>`buttonText`="Your string" <br>`handleConfirm`={function} <br>`handleClose`={function} | `isOpen`={true\|false} <br>
+| [`Notification`] | `title`="Your string" <br>`content`="Your string" <br>`buttonText`="Your string" <br>`handleConfirm`={function} <br>`handleClose`={function} | `isOpen`={true\|false} <br>
 |[`OverflowMenu`] | `menuList`={[{label: 'Your string', tagLabel:'Your string', handleClick:function}]} | `isOpen`={true\|false} <br>`onColor`={true\|false} <br>`toggleMenu`={function} <br>`getCurrentMenuItem`={function}
 | [`InputSelect`] | `label`='Your string' <br>`options`]=['your option', 'your option']} <br>`handleChange`={function} | `disabled`={true\|false} <br>`error`={true\|false} `errorMsg`='Your string' <br>`placeholder`='Your string' <br>`onColor`={true\|false}
 | [`Steps`] | `ariaLabel`='' <br>`steps`]=[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
