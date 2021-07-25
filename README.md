@@ -45,7 +45,7 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`TagHighlight`] | label="Your string" <br> tabIndex={number} | 
 | [`TagSelect`] | label="Your string" <br> handleChange={function} | disabled={true\|false} <br> onColor={true\|false} <br> active={true\|false}
 | [`Tooltip`] | position='bottom-end'\|'bottom-start'\|'bottom'\|'left-end'\|'left-start'\|'left'\|'right-end'\|'right-start'\|'right'\|'top-end'\|'top-start'\|'top' <br> body='Your string' <br> children={React.Component} | onColor={true\|false}
-| [`Typography`] | component='heading\|subtitle\|paragraph\|caption' |  If component attribute is 'heading', variant='h1\|h2\|h3\|h4\|h5\|h6' <br><br> If component attribute is 'heading', size='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br> If component attribute is 'subtitle', size='small'\|'large' <br><br> If component attribute is 'paragraph', size='small'\|'large'
+| [`Typography`] | component='heading\|subtitle\|paragraph\|caption' |  If component attribute is 'heading', variant='h1\|h2\|h3\|h4\|h5\|h6' <br><br> If component attribute is 'heading', size='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br> If component attribute is 'subtitle', size='small'\|'large' <br><br> If component attribute is 'paragraph', size='small'\|'large' <br><br> onColor={true\|false}
 
 ## Quick start - React
 
