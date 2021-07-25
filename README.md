@@ -12,24 +12,24 @@ Acess the component playground, in storybook, to know how to use our Open Source
 
 | Component    | Must have properties  | optional properties
 | ----------    |  ------  |  ------
-| [`Accordion`]  | `label`='Your string' <br>`id`='yourAccordionId'<br>`children`=[string \| image \| others] |  `onColor`='true \| false' <br>`labelHeadingVariant`='h2 \| h3 \| h4' <br>`opened`="true \| false" 
-| [`Alert`]   | `title`='Your Title string' <br>`text`='Your alert text'<br>`type`='helper \| warning ' |  `isOpen`='true \| false' 
-| [`Avatar`] | `imgAlt`='Your alt text' | `size`='small \| medium \| large' <br>`onColor`='true \| false' <br>`hasNotification`='true \| false' <br>`imgUrl`='www.yourUrl'
-| [`Banner`]
-| [`Brand`]
-| [`Button`]
-| [`ButtonGroup`]
-| [`ButtonIcon`]
-| [`Cardbase`]
-| [`Cardimage`]
-| [`InputCheckbox`]
-| [`Header`]
+| [`Accordion`]  | `label`='Your string' <br>`id`='your-accordion-id'<br>`children`=[string \| image \| others] |  `onColor`={true \| false} <br>`labelHeadingVariant`='h2 \| h3 \| h4' <br>`opened`="true \| false" 
+| [`Alert`]   | `title`='Your Title string' <br>`text`='Your alert text'<br>`type`='helper \| warning ' |  `isOpen`={true \| false} 
+| [`Avatar`] | `imgAlt`='Your alt text' | `size`='small \| medium \| large' <br>`onColor`={true \| false} <br>`hasNotification`={true \| false} <br>`imgUrl`='www.yourUrl'
+| [`Banner`] | `Title`='Your title' <br> `bgColor`='#hexaColor'<br>  `image`='Your image path' | `headingVariant `='h2 \| h3 \| h4' <br>`paragraph`='Your paragraph text' <br>`highTypography`={true \| false} <br>`handleClick`={function}
+| [`Brand`] | `externalUrl`='Your brand link' <br>`size`='small \| medium \| large' |  `type`='symbol \| logotype' <br> `alt`='alt text for brand'
+| [`Button`] | `label`='button label' <br> `type`='primary \| secondary' | `icon`={true \| false} <br>`iconType`='any icon from our icon list' <br>`onColor`={true \| false}<br>`disabled`={true \| false} <br>`handleClick`={function}
+| [`ButtonGroup`] | `primaryLabel`='first button label' <br> `tertiaryLabel`='second button label | `primaryDisabled`={true \| false} <br> `tertiaryDisabled`={true \| false} <br>`onColor`={true \| false}<br>`handleCancel`={function}<br>`handleConfirm`={function}
+| [`ButtonIcon`] | `size`='small \| medium \| large' <br> `icon`='any icon from our icon list' | `onColor`={true \| false}<br>`handleClick`={function}<br>`handleBlur`={function}
+| [`Cardbase`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`noPadding`={true \| false}
+| [`Cardimage`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`image`='your image path'
+| [`InputCheckbox`]  | `value`='checkbox text' <br>`name`='Label and input name' | `disabled`={true \| false} <br>`onColor`={true \| false} <br>`handleChange`={function}
+| [`Header`] 
 | [`HeaderEmpty`]
-| [`Icon`]
-| [`IconShape`]
-| [`InputPassword`]
-| [`InputRadiobutton`]
-| [`InputSearch`]
+| [`Icon`]  | `icon`='any icon from our icon list' <br> `size`='small \| medium \| large' | `className`='name for icon class' <br>`id`='your-icon-id'
+| [`IconShape`]  | `icon`='any icon from our icon list' <br> `size`='small \| medium \| large' | `variant`='default \| warning \| helper' 
+| [`InputPassword`]  | `label`='Your string' <br>`id`='your-input-id'<br>`placeHolder`="Your placeholder" <br>`maxLength`={number} <br>`handleChange`={function} <br> `helperText`='Warning helper text in case of error' | <br>`error`={true\|false} <br>`onColor`={true\|false} <br>`disabled`={true\|false} 
+| [`InputRadiobutton`] | `label`='your input label' <br> `value`='your input text' | `checked`={true\|false} <br>`disabled`={true\|false}
+| [`InputSearch`] | `formID`='your-form-id' <br>`formName `='your form name'<br>`inputID `="your-input-id" <br>`inputName`='your input name' <br>`placeholder`='search bar placeholder' | `ariaLabel`='text for your aria label' <br>`hasPreventDefault `={true\|false} <br>`onColor`={true\|false} <br>`disabled`={true\|false} <br>`handleSubmit`={function} <br>`handleInputChange`={function}
 | [`InputText`] | `label`='Your string' <br>`id`='your-input-id'<br>`placeHolder`="Your placeholder" <br>`handleChange`={function} <br>`handleFocus`={function} | `maxLength`={number} <br>`error`={true\|false} <br>`onColor`={true\|false} <br>`disabled`={true\|false}
 | [`InputTextarea`] | `label`='Your string' <br>`id`='your-input-id'<br>`placeHolder`="Your placeholder" <br>`maxLength`={number} <br>`handleChange`={function} | <br>`error`={true\|false} <br>`onColor`={true\|false} <br>`disabled`={true\|false} <br>`showHelper`={true\|false}
 | [`Link`] | `label`='Your string' <br>`href`='/your-link' <br>`target`='_blank\|_self' | `onColor`={true\|false} <br>`disabled`={true\|false} <br>`icon`={true\|false} <br>`handleClick`={function}
