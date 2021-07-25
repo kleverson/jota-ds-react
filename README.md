@@ -37,16 +37,15 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`Modal`] | isOpen={true\|false} <br> isDoubleAction={true\|false} <br> firstActionLabel='Your string' <br> secondActionLabel='Your string' <br> handleConfirm={function} <br> handleClose={function} | isCloseDisabled={true\|false} <br> handleCancel={function}
 | [`Notification`] | title="Your string" <br> content="Your string" <br> buttonText="Your string" <br> handleConfirm={function} <br> handleClose={function} | isOpen={true\|false} <br>
 | [`OverflowMenu`] | menuList={[{label: 'Your string', tagLabel:'Your string', handleClick:function}]} | isOpen={true\|false} <br> onColor={true\|false} <br> toggleMenu={function} <br> getCurrentMenuItem={function}
-| [`InputSelect`] | label="Your string" <br> options={['your option', 'your option']} <br> handleChange={function} | disabled={true\|false} <br> error={true\|false} errorMsg="Your string" <br> placeholder="Your string" <br> onColor={true\|false}
-| [`Steps`] | ariaLabel="" <br> steps={[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
-| [`Switch`]
-| [`TabGroup`]
-| [`TabItem`]
-| [`TagCategory`]
-| [`TagHighlight`]
-| [`TagSelect`]
-| [`Tooltip`]
-| [`Typography`]
+| [`InputSelect`] | label='Your string' <br> options={['your option', 'your option']} <br> handleChange={function} | disabled={true\|false} <br> error={true\|false} errorMsg='Your string' <br> placeholder='Your string' <br> onColor={true\|false}
+| [`Steps`] | ariaLabel='' <br> steps={[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
+| [`Switch`] | label="Your string" <br> checked={true\|false} <br> handleChange={function} | disabled={true\|false} <br> onColor={true\|false}
+| [`TabGroup`] | ariaLabel="Your string" <br> children={\<TabItem label={'Your string'}\/>} <br> handleTabClick={function} | onColor={true\|false}
+| [`TagCategory`] | label="Your string" <br> icon='shapes' | onColor={true\|false}
+| [`TagHighlight`] | label="Your string" <br> tabIndex={number} | 
+| [`TagSelect`] | label="Your string" <br> handleChange={function} | disabled={true\|false} <br> onColor={true\|false} <br> active={true\|false}
+| [`Tooltip`] | position='bottom-end'\|'bottom-start'\|'bottom'\|'left-end'\|'left-start'\|'left'\|'right-end'\|'right-start'\|'right'\|'top-end'\|'top-start'\|'top' <br> body='Your string' <br> children={React.Component} | onColor={true\|false}
+| [`Typography`] | component='heading\|subtitle\|paragraph\|caption' |  If component attribute is 'heading', variant='h1\|h2\|h3\|h4\|h5\|h6' <br><br> If component attribute is 'heading', size='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br> If component attribute is 'subtitle', size='small'\|'large' <br><br> If component attribute is 'paragraph', size='small'\|'large'
 
 ## Quick start - React
 
@@ -75,7 +74,7 @@ Sample usage of button component.
 
 #### 3) Import DS default fonts
 
-In your index.html, in the <head> tag, import:
+In your index.html, in the \<head> tag, import:
 
 ```
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -115,7 +114,7 @@ Then:
 
 #### 3) Import DS default fonts
 
-In your index.html, in the <head> tag, import:
+In your index.html, in the \<head> tag, import:
 
 ```
 <link rel="preconnect" href="https://fonts.gstatic.com" />
