@@ -10,11 +10,11 @@ Acess the component playground, in storybook, to know how to use our Open Source
 
 ## Components
 
-| Component
-| ----------
-| [`Accordion`]
-| [`Alert`]
-| [`Avatar`]
+| Component    | Must have properties  | optional properties
+| ----------    |  ------  |  ------
+| [`Accordion`]  | label='Your string' <br>id='yourAccordionId'<br> children=[string \| image \| others] |  onColor='true \| false' <br> labelHeadingVariant='h2 \| h3 \| h4' <br> opened="true \| false" 
+| [`Alert`]   | title='Your Title string' <br>text='Your alert text'<br> type='helper \| warning ' |  isOpen='true \| false' 
+| [`Avatar`] | imgAlt='Your alt text' |  size='small \| medium \| large' <br> onColor='true \| false' <br> hasNotification='true \| false' <br> imgUrl='www.yourUrl'
 | [`Banner`]
 | [`Brand`]
 | [`Button`]
