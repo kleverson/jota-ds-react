@@ -19,19 +19,6 @@ export default {
         defaultValue: { summary: 'false' },
       },
     },
-    useLocalImage: {
-      name: 'Local Image',
-      description: 'Define se a imagem do avatar será uma imagem local',
-      defaultValue: false,
-      control: {
-        type: 'boolean',
-      },
-      table: {
-        category: 'Modifiers',
-        type: { summary: 'boolean' },
-        defaultValue: { summary: 'false' },
-      },
-    },
     size: {
       name: 'Size',
       description: 'Define o tamanho do avatar',
@@ -101,22 +88,15 @@ export default {
 };
 
 export function Avatar(args) {
-  const src =
-    args.useLocalImage && args.useImage
-      ? avatarExample
-      : !args.useLocalImage && args.useImage
-      ? args.imgUrl
-      : '';
-
+  const src = args.useImage ? args.imgUrl : '';
   return <AvatarTag {...args} imgUrl={src}></AvatarTag>;
 }
 
 Avatar.args = {
   size: 'small',
-  imgUrl: '',
+  imgUrl: avatarExample,
   imgAlt: 'Avatar',
   onColor: false,
-  useLocalImage: true,
   useImage: true,
   hasNotification: false,
 };

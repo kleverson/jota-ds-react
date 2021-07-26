@@ -10,14 +10,15 @@ export const DynamicButtonGroup = dynamic(() => import("./dist/index.esm.js").th
 export const DynamicButtonIcon = dynamic(() => import("./dist/index.esm.js").then(m => m.ButtonIcon), { ssr: false });
 export const DynamicCardbase = dynamic(() => import("./dist/index.esm.js").then(m => m.Cardbase), { ssr: false });
 export const DynamicCardimage = dynamic(() => import("./dist/index.esm.js").then(m => m.Cardimage), { ssr: false });
-export const DynamicInputCheckbox = dynamic(() => import("./dist/index.esm.js").then(m => m.InputCheckbox), { ssr: false });
 export const DynamicHeader = dynamic(() => import("./dist/index.esm.js").then(m => m.Header), { ssr: false });
 export const DynamicHeaderEmpty = dynamic(() => import("./dist/index.esm.js").then(m => m.HeaderEmpty), { ssr: false });
 export const DynamicIcon = dynamic(() => import("./dist/index.esm.js").then(m => m.Icon), { ssr: false });
 export const DynamicIconShape = dynamic(() => import("./dist/index.esm.js").then(m => m.IconShape), { ssr: false });
+export const DynamicInputCheckbox = dynamic(() => import("./dist/index.esm.js").then(m => m.InputCheckbox), { ssr: false });
 export const DynamicInputPassword = dynamic(() => import("./dist/index.esm.js").then(m => m.InputPassword), { ssr: false });
 export const DynamicInputRadiobutton = dynamic(() => import("./dist/index.esm.js").then(m => m.InputRadiobutton), { ssr: false });
 export const DynamicInputSearch = dynamic(() => import("./dist/index.esm.js").then(m => m.InputSearch), { ssr: false });
+export const DynamicInputSelect = dynamic(() => import("./dist/index.esm.js").then(m => m.InputSelect), { ssr: false });
 export const DynamicInputText = dynamic(() => import("./dist/index.esm.js").then(m => m.InputText), { ssr: false });
 export const DynamicInputTextarea = dynamic(() => import("./dist/index.esm.js").then(m => m.InputTextarea), { ssr: false });
 export const DynamicLink = dynamic(() => import("./dist/index.esm.js").then(m => m.Link), { ssr: false });
@@ -25,7 +26,6 @@ export const DynamicMenu = dynamic(() => import("./dist/index.esm.js").then(m =>
 export const DynamicModal = dynamic(() => import("./dist/index.esm.js").then(m => m.Modal), { ssr: false });
 export const DynamicNotification = dynamic(() => import("./dist/index.esm.js").then(m => m.Notification), { ssr: false });
 export const DynamicOverflowMenu = dynamic(() => import("./dist/index.esm.js").then(m => m.OverflowMenu), { ssr: false });
-export const DynamicInputSelect = dynamic(() => import("./dist/index.esm.js").then(m => m.InputSelect), { ssr: false });
 export const DynamicStep = dynamic(() => import("./dist/index.esm.js").then(m => m.Step), { ssr: false });
 export const DynamicSteps = dynamic(() => import("./dist/index.esm.js").then(m => m.Steps), { ssr: false });
 export const DynamicSwitch = dynamic(() => import("./dist/index.esm.js").then(m => m.Switch), { ssr: false });

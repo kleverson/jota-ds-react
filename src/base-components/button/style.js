@@ -83,8 +83,7 @@ export default css`
     &--secondary {
       background-color: transparent;
       color: ${({ buttonSecondary }) => buttonSecondary.color};
-      border: ${({ buttonSecondary }) => buttonSecondary.borderColor}
-        ${({ buttonSecondary }) => buttonSecondary.borderWidth} solid;
+      border: ${({ buttonSecondary }) => `${buttonSecondary.borderWidth} solid ${buttonSecondary.borderColor}`};
 
       &:hover {
         background-color: ${({ buttonSecondary }) =>

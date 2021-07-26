@@ -1,3 +1,8 @@
+/**
+ * Do not edit directly
+ * Generated on Tue, 18 May 2021 13:26:26 GMT
+ */
+
 export const lineHeightDefault = "100%";
 export const lineHeightXs = "115%";
 export const lineHeightSm = "120%";

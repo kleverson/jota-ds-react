@@ -13,7 +13,6 @@ export default css`
     border-radius: ${context => context.borderRadius};
     border: ${context => context.color} ${context => context.borderWidth} solid;
     color: ${context => context.color};
-    /* line-height: ${context => context.lineHeight}; */
     padding: ${context => context.paddingVertical} ${context => context.paddingHorizontal};
     background-color: transparent;
     cursor: pointer;

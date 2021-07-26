@@ -31,3 +31,4 @@ export const feedbackColorHelperPure = "#FF8A00";
 export const feedbackColorHelperLight = "#FFE3C2";
 export const feedbackColorHelperMedium = "#CC6E00";
 export const feedbackColorHelperDark = "#7A4200";
+

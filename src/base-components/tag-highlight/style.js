@@ -13,7 +13,6 @@ export default css`
     font-family: ${context => context.fontFamily};
     font-weight: ${context => context.fontWeight};
     font-size: ${context => context.fontSize};
-    /* line-height: ${context => context.lineHeight}; */
     padding: ${context => context.paddingVertical} ${context => context.paddingHorizontal};
   }
 `;

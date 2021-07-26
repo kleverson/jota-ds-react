@@ -52,7 +52,7 @@ export function Tooltip(args) {
       <Typography component="paragraph" onColor={args.onColor}>
         Se não for sobre fazer a diferença, é sobre o quê? <br />
         <TooltipTag {...args}>
-          <strong> Passe o mouse aqui para ver o tooltip.</strong>
+          <strong>Passe o mouse aqui para ver o tooltip.</strong>
         </TooltipTag>
       </Typography>
     </div>
@@ -61,6 +61,6 @@ export function Tooltip(args) {
 
 Tooltip.args = {
   position: 'top',
-  body: 'Hello there, this is a tooltip message.',
+  body: 'O Design System open source da Meiuca',
   onColor: false,
 };

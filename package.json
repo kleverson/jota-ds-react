@@ -1,7 +1,7 @@
 {
   "name": "@jota-ds/lib-react",
   "description": "Jota Design System",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "author": "Meiuca <meiuca@meiuca.design>",
   "main": "dist/index.cjs.js",
@@ -32,11 +32,9 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@jota-ds/context-element-react": "*",
-    "@jota-ds/motion-tokens": "*",
-    "focus-visible": "^5.2.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@jota-ds/context-element-react": "^1.0.0",
+    "@jota-ds/motion-tokens": "^1.0.4",
+    "focus-visible": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",
@@ -68,7 +66,9 @@
     "react-scripts": "^4.0.3",
     "sinon": ">=4.0.0 <11.0.0",
     "url-loader": "^4.1.1",
-    "@rollup/plugin-node-resolve": "*"
+    "@rollup/plugin-node-resolve": "*",
+    "react": ">=16.14",
+    "react-dom": ">=16.14"
   },
   "browserslist": {
     "production": [
@@ -83,6 +83,8 @@
     ]
   },
   "peerDependencies": {
-    "next": "^11"
+    "next": "^11",
+    "react": ">=16.14",
+    "react-dom": ">=16.14"
   }
 }

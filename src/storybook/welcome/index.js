@@ -11,15 +11,13 @@ function Welcome() {
       <div className={`${namespace}-Welcome`}>
         <div className={`${namespace}-Welcome__textBox`}>
           <div className={`${namespace}-Welcome__upperTextBox`}>
-            <h1>
-              {ds} <br /> Design System
-            </h1>
+            <h1>{ds} DS</h1>
             <h2>React</h2>
           </div>
 
           <div className={`${namespace}-Welcome__bottomTextBox`}>
             <caption>
-              O Design System <br /> Open Source da Meiuca
+              O Design System <br /> open source da Meiuca
             </caption>
 
             <img src={MeiucaLogo} alt="logo meiuca" />
