@@ -13,11 +13,20 @@ function Switch({ label, checked = false, disabled = false, onColor = false, han
     setCheckedIpt(checked);
   }, [checked]);
 
-  function _handleSwitch(){
+  const _handleSwitch = () =>{
     if (typeof handleChange === 'function') {
       handleChange(!checkedIpt);
     }
     setCheckedIpt(!checkedIpt);
+  }
+
+  const _handleKeyUp = e => {
+    if(e.code === 'Enter' || e.code === 'Space'){
+      if (typeof handleChange === 'function') {
+        handleChange(!checkedIpt);
+      }
+      setCheckedIpt(!checkedIpt);
+    }
   }
 
   return (
@@ -30,7 +39,7 @@ function Switch({ label, checked = false, disabled = false, onColor = false, han
           ${onColor ? `${namespace}-Switch--onColor` : ''}
         `}
         tabIndex="0"
-        onKeyUp={(e) => console.log(e)}
+        onKeyUp={(e) => _handleKeyUp(e)}
       >
         <button
           className={`${namespace}-Switch__Selector targetFocused`}

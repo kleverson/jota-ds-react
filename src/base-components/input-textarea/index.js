@@ -51,6 +51,7 @@ function InputTextarea({
         <textarea
           className={`${namespace}-TextArea__textarea`}
           id={id}
+          name={id}
           value={_value}
           maxLength={maxLength}
           placeholder={placeholder}

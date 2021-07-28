@@ -16,16 +16,17 @@ export default {
     borderWidth: globalTokens.borderWidthThin,
     lineHeight: globalTokens.lineHeightDefault,
     hover: brandingTokens.neutralColorLowPure,
-    padding: globalTokens.spacingSizeXxxs,
-    opacity: globalTokens.opacityLevelSemitransparent
+    paddingLeft: globalTokens.spacingSizeXxxs,
+    paddingRight: globalTokens.spacingSizeMd,
+    opacity: globalTokens.opacityLevelSemitransparent,
   },
   label: {
-    marginBottom: globalTokens.spacingSizeQuarck
+    marginBottom: globalTokens.spacingSizeQuarck,
   },
   input: {
     color: brandingTokens.neutralColorLowPure,
     background: brandingTokens.neutralColorHighLight,
-    opacity: globalTokens.opacityLevelSemiopaque
+    opacity: globalTokens.opacityLevelSemiopaque,
   },
   onColor: {
     color: brandingTokens.neutralColorHighPure,
@@ -36,11 +37,11 @@ export default {
 
     error: {
       backgroundColor: brandingTokens.feedbackColorHelperDark,
-      borderColor: brandingTokens.feedbackColorHelperPure      
+      borderColor: brandingTokens.feedbackColorHelperPure,
     },
 
     label: {
-      color: brandingTokens.neutralColorHighPure
+      color: brandingTokens.neutralColorHighPure,
     },
 
     disabled: {
@@ -49,16 +50,16 @@ export default {
 
       placeholder: {
         color: brandingTokens.neutralColorHighPure,
-        opacity: globalTokens.opacityLevelMedium
-      }      
-    }
+        opacity: globalTokens.opacityLevelMedium,
+      },
+    },
   },
-  error :{
+  error: {
     spacing: globalTokens.spacingSizeQuarck,
     border: brandingTokens.feedbackColorHelperPure,
     background: brandingTokens.feedbackColorHelperLight,
     fontWeight: brandingTokens.fontWeightRegular,
-    fontSize: globalTokens.fontSizeXxs
+    fontSize: globalTokens.fontSizeXxs,
   },
   disabled: {
     color: brandingTokens.brandColorPrimaryLight,
@@ -69,28 +70,28 @@ export default {
 
     label: {
       color: brandingTokens.neutralColorLowPure,
-      opacity: globalTokens.opacityLevelMedium
+      opacity: globalTokens.opacityLevelMedium,
     },
 
     placeholder: {
       color: brandingTokens.neutralColorLowPure,
-      opacity: globalTokens.opacityLevelMedium
-    }
+      opacity: globalTokens.opacityLevelMedium,
+    },
   },
   list: {
     background: brandingTokens.neutralColorLowMedium,
     borderRadius: globalTokens.borderRadiusSm,
     paddingTop: globalTokens.spacingSizeXxxs,
     paddingSide: globalTokens.spacingSizeXxs,
-    marginTop: globalTokens.spacingSizeQuarck
+    marginTop: globalTokens.spacingSizeQuarck,
   },
   listItem: {
     border: globalTokens.borderWidthThin,
     borderColor: brandingTokens.neutralColorLowLight,
     fontSize: globalTokens.fontSizeXs,
-    hover:  brandingTokens.neutralColorLowPure,
+    hover: brandingTokens.neutralColorLowPure,
     opacity: globalTokens.opacityLevelIntense,
     marginBottom: globalTokens.spacingSizeXxxs,
-    color: brandingTokens.neutralColorHighPure
-  }
+    color: brandingTokens.neutralColorHighPure,
+  },
 };

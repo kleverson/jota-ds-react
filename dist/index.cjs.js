@@ -16,44 +16,6 @@ var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 var classMap__default = /*#__PURE__*/_interopDefaultLegacy(classMap);
 var classMap__default$1 = /*#__PURE__*/_interopDefaultLegacy(classMap$1);
 
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-
-    if (enumerableOnly) {
-      symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
-    }
-
-    keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(Object(source), true).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(Object(source)).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
-}
-
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -85,6 +47,42 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
 }
 
 function _taggedTemplateLiteral(strings, raw) {
@@ -860,8 +858,8 @@ var AlertStyleType = {
 };
 
 var _templateObject$w;
-var css$7 = contextElementReact.createGooberGetter(AlertStyleType);
-var style$w = css$7(_templateObject$w || (_templateObject$w = _taggedTemplateLiteral(["\n  &.", "-Alert {\n    font-family: ", ";\n    font-weight: ", ";\n    position: relative;\n    display: none;\n\n    &--isOpen {\n      display: block;\n\n      &.", "-Alert__modal {\n        animation: animationMobile 1s;\n      }\n    }\n\n    &__modal {\n      width: calc(100% - ", "px);\n      min-height: 152px;\n      border-radius: ", ";\n      padding: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n      right: 16px;\n      bottom: ", ";\n      position: fixed;\n      word-break: break-word;\n      box-sizing: border-box;\n      box-shadow: ", ";\n      ", ";\n\n      .", "-Alert__content {\n        display: flex;\n\n        .", "-Alert__text-side {\n          margin-left: ", ";\n\n          .", "-Alert__text-title {\n            height: ", ";\n            display: flex;\n            flex-direction: row;\n            align-items: center;\n          }\n        }\n      }\n\n      .", "-ButtonIcon {\n        position: absolute;\n        right: 0px;\n        margin-right: ", ";\n      }\n    }\n\n    @media (min-width: 450px) {\n      width: 400px;\n      min-height: 100px;\n      right: 36px;\n      bottom: ", ";\n\n      &--isOpen {\n        &.", "-Alert__modal {\n          animation: animationDesktop 1s;\n        }\n      }\n    }\n\n    @keyframes animationMobile {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 16px;\n      }\n    }\n\n    @keyframes animationDesktop {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 36px;\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$8 = contextElementReact.createGooberGetter(AlertStyleType);
+var style$w = css$8(_templateObject$w || (_templateObject$w = _taggedTemplateLiteral(["\n  &.", "-Alert {\n    font-family: ", ";\n    font-weight: ", ";\n    position: relative;\n    display: none;\n\n    &--isOpen {\n      display: block;\n\n      &.", "-Alert__modal {\n        animation: animationMobile 1s;\n      }\n    }\n\n    &__modal {\n      width: calc(100% - ", "px);\n      min-height: 152px;\n      border-radius: ", ";\n      padding: ", ";\n      background-color: ", ";\n      border: ", " solid ", ";\n      right: 16px;\n      bottom: ", ";\n      position: fixed;\n      word-break: break-word;\n      box-sizing: border-box;\n      box-shadow: ", ";\n      ", ";\n\n      .", "-Alert__content {\n        display: flex;\n\n        .", "-Alert__text-side {\n          margin-left: ", ";\n\n          .", "-Alert__text-title {\n            height: ", ";\n            display: flex;\n            flex-direction: row;\n            align-items: center;\n          }\n        }\n      }\n\n      .", "-ButtonIcon {\n        position: absolute;\n        right: 0px;\n        margin-right: ", ";\n      }\n    }\n\n    @media (min-width: 450px) {\n      width: 400px;\n      min-height: 100px;\n      right: 36px;\n      bottom: ", ";\n\n      &--isOpen {\n        &.", "-Alert__modal {\n          animation: animationDesktop 1s;\n        }\n      }\n    }\n\n    @keyframes animationMobile {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 16px;\n      }\n    }\n\n    @keyframes animationDesktop {\n      from {\n        right: -450px;\n      }\n      to {\n        right: 36px;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.fontFamily;
 }, function (context) {
   return context.fontWeight;
@@ -1271,8 +1269,8 @@ var BannerStyleType = {
 };
 
 var _templateObject$s;
-var css$6 = contextElementReact.createGooberGetter(BannerStyleType);
-var style$s = css$6(_templateObject$s || (_templateObject$s = _taggedTemplateLiteral(["\n  &.", "-Banner {\n    width: 100%;\n    border-radius: ", ";\n    display: flex;\n    flex-direction: column;\n    cursor: pointer;\n\n    padding: ", ";\n\n    .", "-Banner__Image {\n      display: flex;\n      justify-content: flex-end;\n      margin: ", ";\n    }\n\n    .", "-Banner__Content {\n      .", "-Banner__Heading {\n        padding-bottom: ", ";\n        .", "-Typography.Heading {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n        }\n      }\n      .", "-Banner__Paragraph {\n        .", "-Typography.Paragraph {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n          line-height: ", ";\n        }\n      }\n    }\n\n    @media (min-width: 560px) {\n      & {\n        ", "\n        flex-direction: row-reverse;\n        padding: ", ";\n      }\n\n      &:hover {\n        box-shadow: ", ";\n      }\n\n      .", "-Banner__Image {\n        margin: -40px -40px -40px 0;\n      }\n\n      .", "-Banner__Content {\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$7 = contextElementReact.createGooberGetter(BannerStyleType);
+var style$s = css$7(_templateObject$s || (_templateObject$s = _taggedTemplateLiteral(["\n  &.", "-Banner {\n    width: 100%;\n    border-radius: ", ";\n    display: flex;\n    flex-direction: column;\n    cursor: pointer;\n\n    padding: ", ";\n\n    .", "-Banner__Image {\n      display: flex;\n      justify-content: flex-end;\n      margin: ", ";\n    }\n\n    .", "-Banner__Content {\n      .", "-Banner__Heading {\n        padding-bottom: ", ";\n        .", "-Typography.Heading {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n        }\n      }\n      .", "-Banner__Paragraph {\n        .", "-Typography.Paragraph {\n          overflow: hidden;\n          text-overflow: ellipsis;\n          display: -webkit-box;\n          -webkit-line-clamp: 3; /* number of lines to show */\n          -webkit-box-orient: vertical;\n          line-height: ", ";\n        }\n      }\n    }\n\n    @media (min-width: 560px) {\n      & {\n        ", "\n        flex-direction: row-reverse;\n        padding: ", ";\n      }\n\n      &:hover {\n        box-shadow: ", ";\n      }\n\n      .", "-Banner__Image {\n        margin: -40px -40px -40px 0;\n      }\n\n      .", "-Banner__Content {\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.borderRadius;
 }, function (context) {
   return "".concat(context.paddingHMobile, " ").concat(context.paddingVMobile);
@@ -1535,8 +1533,8 @@ var buttonStyleType = {
 };
 
 var _templateObject$q;
-var css$5 = contextElementReact.createGooberGetter(buttonStyleType);
-var style$q = css$5(_templateObject$q || (_templateObject$q = _taggedTemplateLiteral(["\n  &.", "-Button {\n    height: ", ";\n    padding: 0 ", ";\n    border-radius: ", ";\n    font-size: ", ";\n    font-family: ", ";\n    border: 0;\n    min-width: 160px;\n    font-weight: ", ";\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    display: flex;\n\n    .", "-Icon {\n      margin-right: ", ";\n    }\n\n    .", "-Button__loading {\n      height: 2px;\n      width: 10px;\n      background-color: ", ";\n    }\n\n    &[aria-disabled='true'] {\n      background-color: ", ";\n      color: ", ";\n      pointer-events: none;\n      border: transparent;\n    }\n\n    &--primary {\n      background-color: ", ";\n      color: ", ";\n\n      &:hover {\n        background-color: ", ";\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-offset: 1px;\n        background-color: ", ";\n        outline-color: ", ";\n      }\n\n      &-onColor {\n        background-color: ", ";\n        color: ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n\n        &:focus:not(:focus-visible) {\n          outline: transparent;\n        }\n\n        &:focus-visible,\n        &:active {\n          outline-offset: 1px;\n          outline-color: ", ";\n        }\n      }\n    }\n\n    &--secondary {\n      background-color: transparent;\n      color: ", ";\n      border: ", ";\n\n      &:hover {\n        background-color: ", ";\n        color: ", ";\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-color: ", ";\n        outline-offset: 1px;\n      }\n\n      &[aria-disabled='true'] {\n        background-color: ", ";\n        color: ", ";\n        pointer-events: none;\n        border: transparent;\n      }\n\n      &-onColor {\n        background-color: transparent;\n        color: ", ";\n        border-color: ", ";\n        &:hover {\n          background-color: ", ";\n          color: ", ";\n        }\n\n        &[aria-disabled='true'] {\n          background-color: ", ";\n          color: ", ";\n          pointer-events: none;\n          border: transparent;\n          ", "-icon {\n            color: ", ";\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var css$6 = contextElementReact.createGooberGetter(buttonStyleType);
+var style$q = css$6(_templateObject$q || (_templateObject$q = _taggedTemplateLiteral(["\n  &.", "-Button {\n    height: ", ";\n    padding: 0 ", ";\n    border-radius: ", ";\n    font-size: ", ";\n    font-family: ", ";\n    border: 0;\n    min-width: 160px;\n    font-weight: ", ";\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    display: flex;\n\n    .", "-Icon {\n      margin-right: ", ";\n    }\n\n    .", "-Button__loading {\n      height: 2px;\n      width: 10px;\n      background-color: var(--font-color, ", ");\n    }\n\n    &[aria-disabled='true'] {\n      --font-color: ", ";\n\n      background-color: ", ";\n      color: var(--font-color);\n      pointer-events: none;\n      border: transparent;\n    }\n\n    &--primary {\n      --font-color: ", ";\n\n      background-color: ", ";\n      color: var(--font-color);\n\n      &:hover {\n        background-color: ", ";\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-offset: 1px;\n        background-color: ", ";\n        outline-color: ", ";\n      }\n\n      &-onColor {\n        --font-color: ", ";\n\n        background-color: ", ";\n        color: var(--font-color);\n\n        &:hover {\n          background-color: ", ";\n        }\n\n        &:focus:not(:focus-visible) {\n          outline: transparent;\n        }\n\n        &:focus-visible,\n        &:active {\n          outline-offset: 1px;\n          outline-color: ", ";\n        }\n      }\n    }\n\n    &--secondary {\n      --font-color: ", ";\n\n      background-color: transparent;\n      color: var(--font-color);\n      border: ", ";\n\n      &:hover {\n        background-color: ", ";\n        /* color: ", "; */\n      }\n\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n\n      &:focus-visible,\n      &:active {\n        outline-color: ", ";\n        outline-offset: 1px;\n      }\n\n      &[aria-disabled='true'] {\n        --font-color: ", ";\n\n        background-color: ", ";\n        color: var(--font-color);\n        pointer-events: none;\n        border: transparent;\n      }\n\n      &-onColor {\n        --font-color: ", ";\n\n        background-color: transparent;\n        color: var(--font-color);\n        border-color: ", ";\n        &:hover {\n          background-color: ", ";\n          /* color: ", "; */\n        }\n\n        &[aria-disabled='true'] {\n          --font-color: ", ";\n\n          background-color: ", ";\n          color: var(--font-color);\n          pointer-events: none;\n          border: transparent;\n          ", "-icon {\n            color: ", ";\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var button = _ref.button;
   return button.height;
 }, function (_ref2) {
@@ -1562,16 +1560,16 @@ var style$q = css$5(_templateObject$q || (_templateObject$q = _taggedTemplateLit
   return loading.backgroundColor;
 }, function (_ref9) {
   var disabled = _ref9.disabled;
-  return hexToRGB(disabled.backgroundColor, disabled.opacityBackground);
+  return hexToRGB(disabled.color, disabled.opacityColor);
 }, function (_ref10) {
   var disabled = _ref10.disabled;
-  return hexToRGB(disabled.color, disabled.opacityColor);
+  return hexToRGB(disabled.backgroundColor, disabled.opacityBackground);
 }, function (_ref11) {
   var buttonPrimary = _ref11.buttonPrimary;
-  return buttonPrimary.background;
+  return buttonPrimary.color;
 }, function (_ref12) {
   var buttonPrimary = _ref12.buttonPrimary;
-  return buttonPrimary.color;
+  return buttonPrimary.background;
 }, function (_ref13) {
   var buttonPrimary = _ref13.buttonPrimary;
   return hexToRGB(buttonPrimary.backgroundHover, buttonPrimary.opacityBackground);
@@ -1583,10 +1581,10 @@ var style$q = css$5(_templateObject$q || (_templateObject$q = _taggedTemplateLit
   return button.outlineColor;
 }, function (_ref16) {
   var buttonPrimaryOnColor = _ref16.buttonPrimaryOnColor;
-  return buttonPrimaryOnColor.background;
+  return buttonPrimaryOnColor.color;
 }, function (_ref17) {
   var buttonPrimaryOnColor = _ref17.buttonPrimaryOnColor;
-  return buttonPrimaryOnColor.color;
+  return buttonPrimaryOnColor.background;
 }, function (_ref18) {
   var buttonPrimaryOnColor = _ref18.buttonPrimaryOnColor;
   return hexToRGB(buttonPrimaryOnColor.backgroundHover, buttonPrimaryOnColor.opacityBackground);
@@ -1610,10 +1608,10 @@ var style$q = css$5(_templateObject$q || (_templateObject$q = _taggedTemplateLit
   return button.outlineColor;
 }, function (_ref25) {
   var disabledSecondary = _ref25.disabledSecondary;
-  return hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground);
+  return hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor);
 }, function (_ref26) {
   var disabledSecondary = _ref26.disabledSecondary;
-  return hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor);
+  return hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground);
 }, function (_ref27) {
   var buttonSecondaryOnColor = _ref27.buttonSecondaryOnColor;
   return buttonSecondaryOnColor.color;
@@ -1628,10 +1626,10 @@ var style$q = css$5(_templateObject$q || (_templateObject$q = _taggedTemplateLit
   return buttonSecondaryOnColor.color;
 }, function (_ref31) {
   var disabledSecondaryOnColor = _ref31.disabledSecondaryOnColor;
-  return hexToRGB(disabledSecondaryOnColor.backgroundColor, disabledSecondaryOnColor.opacityBackground);
+  return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
 }, function (_ref32) {
   var disabledSecondaryOnColor = _ref32.disabledSecondaryOnColor;
-  return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
+  return hexToRGB(disabledSecondaryOnColor.backgroundColor, disabledSecondaryOnColor.opacityBackground);
 }, namespace, function (_ref33) {
   var disabledSecondaryOnColor = _ref33.disabledSecondaryOnColor;
   return hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity);
@@ -1654,7 +1652,6 @@ function Button(_ref) {
     contextId: "".concat(namespace, "-button"),
     styles: style$q
   }, /*#__PURE__*/React__default['default'].createElement("button", {
-    part: "button",
     className: classMap__default['default'](classTable),
     "aria-disabled": !!disabled,
     onClick: handleClick
@@ -2098,8 +2095,8 @@ var MenuStyleType = {
 };
 
 var _templateObject$j;
-var css$4 = contextElementReact.createGooberGetter(MenuStyleType);
-var style$j = css$4(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n        &-label {\n          width: 60%;\n          display: -webkit-box;\n          -webkit-line-clamp: 2;\n          -webkit-box-orient: vertical;\n          overflow: hidden;\n        }\n        &-tag {\n          width: 40%;\n          display: inline-flex;\n          justify-content: flex-end;\n          .", "-TagHighlight {\n            min-width: 55px;\n            max-width: 100%;\n            text-overflow: ellipsis;\n            overflow: hidden;\n            white-space: nowrap;\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var css$5 = contextElementReact.createGooberGetter(MenuStyleType);
+var style$j = css$5(_templateObject$j || (_templateObject$j = _taggedTemplateLiteral(["\n  &.", "-Menu {\n    visibility: hidden;\n    opacity: 0;\n    width: 100%;\n    min-width: 240px;\n    background-color: ", ";\n    border-radius: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    box-shadow: ", ";\n\n    &--open {\n      opacity: 1;\n      visibility: visible;\n    }\n\n    .", "-Menu__ItemList {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .", "-Menu__Item {\n      height: ", ";\n      box-sizing: border-box;\n      padding-right: ", ";\n      padding-left: ", ";\n      position: relative;\n      ", ";\n\n      &:hover,\n      &--current {\n        background-color: ", ";\n      }\n\n      &:not(:first-of-type) {\n        .", "-Menu__ItemContent {\n          border-top: ", ";\n        }\n      }\n\n      &:hover,\n      &.", "-Menu__Item--current {\n        .", "-Menu__ItemContent {\n          border-top-color: transparent;\n        }\n\n        & + * {\n          .", "-Menu__ItemContent {\n            border-top-color: transparent;\n          }\n        }\n      }\n\n      .", "-Menu__ItemContent {\n        width: 100%;\n        height: 100%;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        background-color: transparent;\n        border: 0;\n        padding: 0;\n        font-family: ", ";\n        font-weight: ", ";\n        font-size: ", ";\n        line-height: ", ";\n        color: ", ";\n        cursor: pointer;\n        outline: none;\n        ", ";\n        &-label {\n          width: 60%;\n          display: -webkit-box;\n          -webkit-line-clamp: 2;\n          -webkit-box-orient: vertical;\n          overflow: hidden;\n        }\n        &-tag {\n          width: 40%;\n          display: inline-flex;\n          justify-content: flex-end;\n          .", "-TagHighlight {\n            min-width: 55px;\n            max-width: 100%;\n            text-overflow: ellipsis;\n            overflow: hidden;\n            white-space: nowrap;\n          }\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var backgroundColor = _ref.backgroundColor;
   return backgroundColor;
 }, function (_ref2) {
@@ -2169,8 +2166,8 @@ var TagHighlightStyleType = {
 };
 
 var _templateObject$i;
-var css$3 = contextElementReact.createGooberGetter(TagHighlightStyleType);
-var style$i = css$3(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    padding: ", " ", ";\n  }\n"])), namespace, function (context) {
+var css$4 = contextElementReact.createGooberGetter(TagHighlightStyleType);
+var style$i = css$4(_templateObject$i || (_templateObject$i = _taggedTemplateLiteral(["\n  &.", "-TagHighlight {\n    background-color: ", ";\n    border-radius: ", ";\n    border: ", " ", " solid;\n    color: ", ";\n    font-family: ", ";\n    font-weight: ", ";\n    font-size: ", ";\n    padding: ", " ", ";\n  }\n"])), namespace, function (context) {
   return context.backgroundColor;
 }, function (context) {
   return context.borderRadius;
@@ -2229,9 +2226,9 @@ function MenuItem(_ref) {
       return item.handleClick(item);
     }
   }, /*#__PURE__*/React__default['default'].createElement("span", {
-    class: "".concat(namespace, "-Menu__ItemContent-label")
+    className: "".concat(namespace, "-Menu__ItemContent-label")
   }, item.label), item.tagLabel ? /*#__PURE__*/React__default['default'].createElement("span", {
-    class: "".concat(namespace, "-Menu__ItemContent-tag")
+    className: "".concat(namespace, "-Menu__ItemContent-tag")
   }, /*#__PURE__*/React__default['default'].createElement(TagHighlight, {
     label: item.tagLabel,
     role: "note",
@@ -2451,8 +2448,8 @@ var linkStyleType = {
 };
 
 var _templateObject$h;
-var css$2 = contextElementReact.createGooberGetter(linkStyleType);
-var style$h = css$2(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin: 0;\n    padding: 0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after {\n      content: '';\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: transparent;\n    }\n\n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline: 0;\n      text-decoration: none;\n\n      &::after {\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n\n    &:hover {\n      text-decoration: ", ";\n\n      &::after {\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor: default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after {\n        width: 100%;\n      }\n    }\n\n    &--onColor {\n      color: ", ";\n\n      &::after {\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active) {\n        color: ", ";\n      }\n    }\n\n    &--icon {\n      &::after {\n        display: none;\n      }\n\n      .", "-Icon {\n        position: relative;\n        margin-left: ", ";\n\n        ", ";\n      }\n\n      &:hover {\n        .", "-Icon {\n          transform: translateX(", ");\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
+var css$3 = contextElementReact.createGooberGetter(linkStyleType);
+var style$h = css$3(_templateObject$h || (_templateObject$h = _taggedTemplateLiteral(["\n  &.", "-Link {\n    margin: 0;\n    padding: 0;\n    color: ", ";\n    font-family: ", ";\n    font-size: ", ";\n    font-weight: ", ";\n    line-height: ", ";\n    position: relative;\n    text-decoration: ", ";\n    border: ", ";\n    padding-top: ", ";\n    padding-bottom: ", ";\n    display: flex;\n    box-sizing: border-box;\n    width: fit-content;\n    align-items: center;\n\n    &::after {\n      content: '';\n      position: absolute;\n      right: 0px;\n      bottom: 0px;\n      height: ", ";\n      background-color: ", ";\n      transition-property: width;\n      width: 100%;\n      ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: transparent;\n    }\n\n    &:focus-visible:not(:active) {\n      border: ", ";\n      color: ", ";\n      outline: 0;\n      text-decoration: none;\n\n      &::after {\n        transition-property: width;\n        width: 100%;\n        ", ";\n      }\n    }\n\n    &:hover {\n      text-decoration: ", ";\n\n      &::after {\n        width: 50%;\n      }\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor: default;\n      text-decoration: none;\n      opacity: ", ";\n\n      &::after {\n        width: 100%;\n      }\n    }\n\n    &--onColor {\n      color: ", ";\n\n      &::after {\n        background-color: ", ";\n      }\n\n      &:focus-visible:not(:active) {\n        color: ", ";\n      }\n    }\n\n    &--icon {\n      &::after {\n        display: none;\n      }\n\n      .", "-Icon {\n        position: relative;\n        margin-left: ", ";\n\n        ", ";\n      }\n\n      &:hover {\n        .", "-Icon {\n          transform: translateX(", ");\n        }\n      }\n    }\n  }\n"])), namespace, function (context) {
   return context.color;
 }, function (context) {
   return context.fontFamily;
@@ -2857,10 +2854,17 @@ function Checkbox(_ref) {
     setCheckedIpt(checked);
   }, [checked]);
 
-  function _handleChange() {
+  var _handleChange = function _handleChange() {
     handleChange(!checkedIpt);
     setCheckedIpt(!checkedIpt);
-  }
+  };
+
+  var _handleKeyUp = function _handleKeyUp(e) {
+    if (e.code === 'Enter' || e.code === 'Space') {
+      handleChange(!checkedIpt);
+      setCheckedIpt(!checkedIpt);
+    }
+  };
 
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: "".concat(namespace, "-Checkbox"),
@@ -2869,7 +2873,10 @@ function Checkbox(_ref) {
     className: "\n          ".concat(namespace, "-Checkbox-label\n          ").concat(disabled ? "".concat(namespace, "-Checkbox-label--disabled") : '', "\n          ").concat(onColor ? "".concat(namespace, "-Checkbox-label--onColor") : '', "\n          ").concat(onColor && disabled ? "".concat(namespace, "-Checkbox-label--onColor--disabled") : '', "\n        "),
     htmlFor: name,
     "aria-checked": checked,
-    tabIndex: "0"
+    tabIndex: "0",
+    onKeyUp: function onKeyUp(e) {
+      return _handleKeyUp(e);
+    }
   }, /*#__PURE__*/React__default['default'].createElement("input", {
     className: "".concat(namespace, "-Checkbox"),
     type: "checkbox",
@@ -2878,8 +2885,9 @@ function Checkbox(_ref) {
     checked: checkedIpt,
     disabled: disabled,
     value: value,
-    onChange: _handleChange
-  }), /*#__PURE__*/React__default['default'].createElement("slot", null, value)));
+    onChange: _handleChange,
+    tabIndex: -1
+  }), value));
 }
 
 Checkbox.propTypes = {
@@ -3277,6 +3285,7 @@ function InputPassword(_ref) {
     ref: inputElementRef,
     className: "".concat(namespace, "-InputPassword__input"),
     id: id,
+    name: id,
     value: _value,
     maxLength: maxLength,
     placeholder: placeholder,
@@ -3298,7 +3307,7 @@ function InputPassword(_ref) {
 }
 
 InputPassword.propTypes = {
-  id: PropTypes__default['default'].string,
+  id: PropTypes__default['default'].string.isRequired,
   label: PropTypes__default['default'].string,
   helperText: PropTypes__default['default'].string,
   placeholder: PropTypes__default['default'].string,
@@ -3508,14 +3517,25 @@ function RadioButton(_ref) {
       checkedOpt = _useState2[0],
       setCheckedOpt = _useState2[1];
 
-  function _handleChange(index, disabled) {
+  var _handleChange = function _handleChange(index, disabled) {
     if (disabled) return;
     setCheckedOpt(index);
 
     if (typeof handleChange === 'function') {
       handleChange(listData[index]);
     }
-  }
+  };
+
+  var _handleKeyUp = function _handleKeyUp(e, index, disabled) {
+    if (e.code === 'Enter' || e.code === 'Space') {
+      if (disabled) return;
+      setCheckedOpt(index);
+
+      if (typeof handleChange === 'function') {
+        handleChange(listData[index]);
+      }
+    }
+  };
 
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: "".concat(namespace, "-Radiobutton"),
@@ -3529,15 +3549,19 @@ function RadioButton(_ref) {
       tabIndex: "0",
       onClick: function onClick() {
         return _handleChange(index, item.disabled);
+      },
+      onKeyUp: function onKeyUp(e) {
+        return _handleKeyUp(e, index, item.disabled);
       }
     }, /*#__PURE__*/React__default['default'].createElement("input", {
       className: "".concat(namespace, "-Radiobutton"),
       type: "radio",
-      id: item.value,
+      id: name,
       name: name,
       checked: checkedOpt === index,
       disabled: item.disabled,
       value: item.value,
+      tabIndex: -1,
       onChange: function onChange() {
         return _handleChange(index, item.disabled);
       }
@@ -3699,16 +3723,12 @@ var style$d = contextElementReact.createGooberGetter(InputSearchStyleType)(_temp
 });
 
 function InputSearch(_ref) {
-  var _React$createElement;
-
   var _ref$formID = _ref.formID,
       formID = _ref$formID === void 0 ? 'form-search' : _ref$formID,
       _ref$formName = _ref.formName,
       formName = _ref$formName === void 0 ? 'form-search' : _ref$formName,
       _ref$inputID = _ref.inputID,
       inputID = _ref$inputID === void 0 ? 'input-search' : _ref$inputID,
-      _ref$inputName = _ref.inputName,
-      inputName = _ref$inputName === void 0 ? 'input-search' : _ref$inputName,
       _ref$value = _ref.value,
       value = _ref$value === void 0 ? '' : _ref$value,
       _ref$placeholder = _ref.placeholder,
@@ -3786,13 +3806,17 @@ function InputSearch(_ref) {
   }, /*#__PURE__*/React__default['default'].createElement(Icon, {
     icon: "search",
     size: "medium"
-  }), /*#__PURE__*/React__default['default'].createElement("input", (_React$createElement = {
+  }), /*#__PURE__*/React__default['default'].createElement("input", {
     className: "\n          ".concat(namespace, "-InputSearch__input"),
     ref: inputSearchRef,
     value: _value,
     placeholder: placeholder,
-    type: "text"
-  }, _defineProperty(_React$createElement, "type", "search"), _defineProperty(_React$createElement, "name", inputName), _defineProperty(_React$createElement, "id", inputID), _defineProperty(_React$createElement, "aria-label", ariaLabel), _defineProperty(_React$createElement, "onInput", _handleInputChange), _React$createElement)), _value ? /*#__PURE__*/React__default['default'].createElement("div", {
+    type: "search",
+    name: inputID,
+    id: inputID,
+    "aria-label": ariaLabel,
+    onInput: _handleInputChange
+  }), _value ? /*#__PURE__*/React__default['default'].createElement("div", {
     className: "".concat(namespace, "-InputSearch__clear"),
     onClick: _clearSearch
   }, /*#__PURE__*/React__default['default'].createElement(Icon, {
@@ -3804,7 +3828,6 @@ function InputSearch(_ref) {
 InputSearch.propTypes = {
   formName: PropTypes__default['default'].string.isRequired,
   formID: PropTypes__default['default'].string.isRequired,
-  inputName: PropTypes__default['default'].string.isRequired,
   inputID: PropTypes__default['default'].string.isRequired,
   value: PropTypes__default['default'].string,
   placeholder: PropTypes__default['default'].string,
@@ -3831,7 +3854,8 @@ var SelectStyleType = {
     borderWidth: borderWidthThin,
     lineHeight: lineHeightDefault,
     hover: brandingTokens.neutralColorLowPure,
-    padding: spacingSizeXxxs,
+    paddingLeft: spacingSizeXxxs,
+    paddingRight: spacingSizeMd,
     opacity: opacityLevelSemitransparent
   },
   label: {
@@ -3905,346 +3929,266 @@ var SelectStyleType = {
 };
 
 var _templateObject$c;
-var style$c = contextElementReact.createGooberGetter(SelectStyleType)(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative; \n    font-family: ", "; \n    \n    &--focus{\n      border: ", " solid ", ";\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      } \n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n      &--disabled {\n        color:  ", ";\n      }\n    }\n    .", "-Select__trigger {\n      height: ", ";\n      background: transparent;\n      border-radius: ", ";\n      border: ", " solid ", " ;\n      font-size: ", ";\n      text-align: left;\n      padding: 0px ", ";\n      color: ", ";\n      display: flex;\n      align-items: center;\n      min-width: 320px;\n      justify-content: space-between;\n      margin-bottom: ", ";\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border:", " solid ", ";      \n      }\n      &[disabled]{\n        color: ", ";\n        border: ", " solid ", ";\n        pointer-events: none;\n      }\n    }\n\n    .", "-Select__option-list{\n      opacity: 0;\n      background-color: ", ";\n      width: 100%;\n      border-radius: ", ";\n      margin-top: ", ";\n      position: absolute;\n      visibility: hidden;\n      list-style-type: none;\n      padding: 0px;\n      margin-left: 0px;\n      margin-right: 0px;\n      &[aria-expanded=true]{\n        opacity: 1;\n        visibility: visible;\n      }\n      .", "-Select__option{\n        background-color: transparent;\n        color: ", ";\n        font-size: ", ";\n        border: none;\n        width: 100%;\n        padding: 16px;\n        text-align: left;\n        box-sizing: border-box;\n        \n        &:focus:not(:focus-visible) {\n          outline: transparent;\n        }\n\n        &--current,\n        &:focus-visible,\n        &:hover{\n          background-color: ", ";\n          opacity: ", ";\n          outline: transparent;\n          &:before,\n          &:after {\n            background-color: transparent;\n          }\n        }\n        &:before{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          top: -16px;\n          position: relative;\n        }\n        &:after{\n          content: \"\";\n          height: 1px;\n          background-color: ", ";;\n          display: block;\n          bottom: -16px;\n          position: relative;\n        }\n        &--last{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus:not(:focus-visible) {\n            outline: transparent;\n          }\n          &:focus-visible,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-bottom-right-radius: 8px;\n            border-bottom-left-radius: 8px;\n          }\n        }\n        &--first{\n          &:after,\n          &:before{\n            display: none;\n          }\n          &:focus,\n          &:hover{\n            background-color: ", ";\n            outline: transparent;\n            border-top-right-radius: 8px;\n            border-top-left-radius: 8px;\n          }\n        }\n      }\n    }\n  }\n  &.", "-Select--onColor {\n    \n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n\n      &--disabled {\n        color: ", ";\n      }      \n    }\n\n    span {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__trigger {\n      border: ", " solid ", " ;\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color: ", ";\n        border: ", " solid ", ";\n        opacity: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", " solid ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n      }\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      } \n    }\n}\n"])), namespace, function (_ref) {
+var css$2 = contextElementReact.createGooberGetter(SelectStyleType);
+var style$c = css$2(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative;\n    font-family: ", ";\n\n    &--focus {\n      border: ", ";\n    }\n\n    .", "-Select__icon {\n      position: absolute;\n      bottom: 41%;\n      right: 20px;\n      color: ", ";\n\n      &--select-active,\n      &--error {\n        color: ", ";\n      }\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      position: relative;\n      height: ", ";\n      background: transparent;\n      appearance: none;\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      border-radius: ", ";\n      border: ", ";\n      font-size: ", ";\n      font-family: ", ";\n      padding-left: ", ";\n      padding-right: ", ";\n      color: ", ";\n      box-sizing: border-box;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      min-width: 320px;\n      margin-bottom: ", ";\n      outline: none;\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n      }\n\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        pointer-events: none;\n      }\n    }\n  }\n\n  &.", "-Select--onColor {\n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    span,\n    label {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__icon {\n      color: ", ";\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      border: ", ";\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        opacity: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n      }\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var select = _ref.select;
   return select.fontFamily;
 }, function (_ref2) {
   var select = _ref2.select;
-  return select.outlineWidth;
-}, function (_ref3) {
-  var select = _ref3.select;
-  return select.outlineColor;
-}, namespace, function (_ref4) {
-  var error = _ref4.error;
-  return error.spacing;
+  return "".concat(select.outlineWidth, " solid ").concat(select.outlineColor);
+}, namespace, function (_ref3) {
+  var input = _ref3.input;
+  return hexToRGB(input.color, input.opacity);
+}, function (_ref4) {
+  var select = _ref4.select;
+  return select.color;
 }, function (_ref5) {
-  var select = _ref5.select;
-  return select.color;
-}, function (_ref6) {
-  var select = _ref6.select;
-  return select.fontFamily;
+  var disabled = _ref5.disabled;
+  return hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity);
+}, namespace, function (_ref6) {
+  var error = _ref6.error;
+  return error.spacing;
 }, function (_ref7) {
-  var error = _ref7.error;
-  return error.fontWeight;
+  var select = _ref7.select;
+  return select.color;
 }, function (_ref8) {
-  var error = _ref8.error;
+  var select = _ref8.select;
+  return select.fontFamily;
+}, function (_ref9) {
+  var error = _ref9.error;
+  return error.fontWeight;
+}, function (_ref10) {
+  var error = _ref10.error;
   return error.fontSize;
-}, namespace, function (_ref9) {
-  var select = _ref9.select;
-  return select.color;
-}, namespace, function (_ref10) {
-  var select = _ref10.select;
-  return select.color;
-}, function (_ref11) {
+}, namespace, function (_ref11) {
   var select = _ref11.select;
-  return select.fontSize;
-}, function (_ref12) {
+  return select.color;
+}, namespace, function (_ref12) {
   var select = _ref12.select;
-  return select.fontWeight;
+  return select.color;
 }, function (_ref13) {
   var select = _ref13.select;
-  return select.fontFamily;
+  return select.fontSize;
 }, function (_ref14) {
-  var label = _ref14.label;
-  return label.marginBottom;
+  var select = _ref14.select;
+  return select.fontWeight;
 }, function (_ref15) {
   var select = _ref15.select;
-  return select.lineHeight;
+  return select.fontFamily;
 }, function (_ref16) {
-  var disabled = _ref16.disabled;
-  return hexToRGB(disabled.label.color, disabled.label.opacity);
-}, namespace, function (_ref17) {
+  var label = _ref16.label;
+  return label.marginBottom;
+}, function (_ref17) {
   var select = _ref17.select;
-  return select.height;
+  return select.lineHeight;
 }, function (_ref18) {
-  var select = _ref18.select;
-  return select.borderRadius;
-}, function (_ref19) {
+  var disabled = _ref18.disabled;
+  return hexToRGB(disabled.label.color, disabled.label.opacity);
+}, namespace, function (_ref19) {
   var select = _ref19.select;
-  return select.borderWidth;
+  return select.height;
 }, function (_ref20) {
   var select = _ref20.select;
-  return select.color;
+  return select.borderRadius;
 }, function (_ref21) {
   var select = _ref21.select;
-  return select.fontSize;
+  return "".concat(select.borderWidth, " solid ").concat(select.color);
 }, function (_ref22) {
   var select = _ref22.select;
-  return select.padding;
+  return select.fontSize;
 }, function (_ref23) {
-  var input = _ref23.input;
-  return hexToRGB(input.color, input.opacity);
+  var select = _ref23.select;
+  return select.fontFamily;
 }, function (_ref24) {
   var select = _ref24.select;
-  return select.marginBottom;
+  return select.paddingLeft;
 }, function (_ref25) {
   var select = _ref25.select;
-  return select.color;
+  return select.paddingRight;
 }, function (_ref26) {
-  var select = _ref26.select;
-  return hexToRGB(select.hover, select.opacity);
+  var input = _ref26.input;
+  return hexToRGB(input.color, input.opacity);
 }, function (_ref27) {
   var select = _ref27.select;
-  return select.color;
+  return select.marginBottom;
 }, function (_ref28) {
-  var error = _ref28.error;
-  return error.background;
+  var select = _ref28.select;
+  return select.color;
 }, function (_ref29) {
   var select = _ref29.select;
-  return select.borderWidth;
+  return hexToRGB(select.hover, select.opacity);
 }, function (_ref30) {
-  var error = _ref30.error;
-  return error.border;
+  var select = _ref30.select;
+  return select.color;
 }, function (_ref31) {
-  var disabled = _ref31.disabled;
-  return hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity);
+  var error = _ref31.error;
+  return error.background;
 }, function (_ref32) {
-  var select = _ref32.select;
-  return select.borderWidth;
+  var select = _ref32.select,
+      error = _ref32.error;
+  return "".concat(select.borderWidth, " solid ").concat(error.border);
 }, function (_ref33) {
   var disabled = _ref33.disabled;
-  return hexToRGB(disabled.borderColor, disabled.opacity);
-}, namespace, function (_ref34) {
-  var list = _ref34.list;
-  return list.background;
-}, function (_ref35) {
-  var list = _ref35.list;
-  return list.borderRadius;
-}, function (_ref36) {
-  var list = _ref36.list;
-  return list.marginTop;
-}, namespace, function (_ref37) {
-  var listItem = _ref37.listItem;
-  return listItem.color;
-}, function (_ref38) {
-  var listItem = _ref38.listItem;
-  return listItem.fontSize;
-}, function (_ref39) {
-  var listItem = _ref39.listItem;
-  return listItem.hover;
-}, function (_ref40) {
-  var listItem = _ref40.listItem;
-  return listItem.opacity;
-}, function (_ref41) {
-  var listItem = _ref41.listItem;
-  return listItem.borderColor;
-}, function (_ref42) {
-  var listItem = _ref42.listItem;
-  return listItem.borderColor;
-}, function (_ref43) {
-  var listItem = _ref43.listItem;
-  return listItem.hover;
-}, function (_ref44) {
-  var listItem = _ref44.listItem;
-  return listItem.hover;
-}, namespace, namespace, function (_ref45) {
-  var onColor = _ref45.onColor;
+  return hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity);
+}, function (_ref34) {
+  var select = _ref34.select,
+      disabled = _ref34.disabled;
+  return "".concat(select.borderWidth, " solid ").concat(hexToRGB(disabled.borderColor, disabled.opacity));
+}, namespace, namespace, function (_ref35) {
+  var onColor = _ref35.onColor;
   return onColor.label.color;
+}, function (_ref36) {
+  var onColor = _ref36.onColor;
+  return hexToRGB(onColor.label.color, onColor.disabled.opacity);
+}, function (_ref37) {
+  var onColor = _ref37.onColor;
+  return onColor.color;
+}, function (_ref38) {
+  var disabled = _ref38.disabled;
+  return disabled.onColorOpacity;
+}, namespace, function (_ref39) {
+  var onColor = _ref39.onColor;
+  return onColor.color;
+}, function (_ref40) {
+  var onColor = _ref40.onColor;
+  return hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity);
+}, namespace, function (_ref41) {
+  var select = _ref41.select,
+      onColor = _ref41.onColor;
+  return "".concat(select.borderWidth, " solid ").concat(onColor.color);
+}, function (_ref42) {
+  var onColor = _ref42.onColor;
+  return onColor.color;
+}, function (_ref43) {
+  var onColor = _ref43.onColor;
+  return onColor.color;
+}, function (_ref44) {
+  var onColor = _ref44.onColor;
+  return hexToRGB(onColor.hover, onColor.opacity);
+}, function (_ref45) {
+  var onColor = _ref45.onColor;
+  return hexToRGB(onColor.hover, onColor.opacity);
 }, function (_ref46) {
   var onColor = _ref46.onColor;
-  return hexToRGB(onColor.label.color, onColor.disabled.opacity);
+  return hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity);
 }, function (_ref47) {
-  var onColor = _ref47.onColor;
-  return onColor.color;
+  var select = _ref47.select,
+      onColor = _ref47.onColor;
+  return "".concat(select.borderWidth, " solid ").concat(hexToRGB(onColor.disabled.color, onColor.disabled.opacity));
 }, function (_ref48) {
   var disabled = _ref48.disabled;
   return disabled.onColorOpacity;
-}, namespace, function (_ref49) {
-  var select = _ref49.select;
-  return select.borderWidth;
+}, function (_ref49) {
+  var onColor = _ref49.onColor;
+  return onColor.color;
 }, function (_ref50) {
   var onColor = _ref50.onColor;
-  return onColor.color;
+  return onColor.error.backgroundColor;
 }, function (_ref51) {
-  var onColor = _ref51.onColor;
-  return onColor.color;
+  var select = _ref51.select,
+      onColor = _ref51.onColor;
+  return "".concat(select.borderWidth, " solid ").concat(onColor.error.borderColor);
 }, function (_ref52) {
   var onColor = _ref52.onColor;
-  return onColor.color;
-}, function (_ref53) {
+  return onColor.error.backgroundColor;
+}, namespace, function (_ref53) {
   var onColor = _ref53.onColor;
-  return hexToRGB(onColor.hover, onColor.opacity);
-}, function (_ref54) {
-  var onColor = _ref54.onColor;
-  return hexToRGB(onColor.hover, onColor.opacity);
-}, function (_ref55) {
-  var onColor = _ref55.onColor;
-  return hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity);
-}, function (_ref56) {
-  var select = _ref56.select;
-  return select.borderWidth;
-}, function (_ref57) {
-  var onColor = _ref57.onColor;
-  return hexToRGB(onColor.disabled.color, onColor.disabled.opacity);
-}, function (_ref58) {
-  var disabled = _ref58.disabled;
-  return disabled.onColorOpacity;
-}, function (_ref59) {
-  var onColor = _ref59.onColor;
-  return onColor.color;
-}, function (_ref60) {
-  var onColor = _ref60.onColor;
-  return onColor.error.backgroundColor;
-}, function (_ref61) {
-  var select = _ref61.select;
-  return select.borderWidth;
-}, function (_ref62) {
-  var onColor = _ref62.onColor;
-  return onColor.error.borderColor;
-}, function (_ref63) {
-  var onColor = _ref63.onColor;
-  return onColor.error.backgroundColor;
-}, namespace, function (_ref64) {
-  var onColor = _ref64.onColor;
   return onColor.color;
 });
 
+var _excluded = ["errorMsg", "options"];
+
 function Select(_ref) {
-  var label = _ref.label,
-      disabled = _ref.disabled,
-      error = _ref.error,
-      _ref$errorMsg = _ref.errorMsg,
+  var _classMap, _classMap2, _classMap3, _classMap4;
+
+  var _ref$errorMsg = _ref.errorMsg,
       errorMsg = _ref$errorMsg === void 0 ? 'error' : _ref$errorMsg,
-      placeholder = _ref.placeholder;
-      _ref.selected;
-      var onColor = _ref.onColor,
       _ref$options = _ref.options,
-      options = _ref$options === void 0 ? ['label 1', 'label 2', 'label 3'] : _ref$options,
-      handleChange = _ref.handleChange;
+      options = _ref$options === void 0 ? [] : _ref$options,
+      props = _objectWithoutProperties(_ref, _excluded);
 
-  var _useState = React.useState({
-    open: false,
-    placeholder: placeholder ? placeholder : 'Select'
-  }),
+  var _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
-      status = _useState2[0],
-      setStatus = _useState2[1];
+      _open = _useState2[0],
+      setOpen = _useState2[1];
 
-  var _useState3 = React.useState(-1),
+  var _useState3 = React.useState(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      currentIndex = _useState4[0],
-      setCurrentIndex = _useState4[1];
-
-  var _useState5 = React.useState(false),
-      _useState6 = _slicedToArray(_useState5, 2),
-      keyboardFocus = _useState6[0],
-      setKeyboardFocus = _useState6[1];
-
-  var selectReference = React.useRef(null);
-  var optionsTriggerReference = React.useRef(null);
-
-  var _handleClick = function _handleClick() {
-    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-      open: !status.open
-    }));
-  };
-
-  var _selectOption = function _selectOption(item, index) {
-    setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-      placeholder: item,
-      open: false
-    }));
-    setCurrentIndex(index);
-    handleChange(item);
-  };
+      focus = _useState4[0],
+      setFocus = _useState4[1];
 
   var _handleKeyUp = function _handleKeyUp(e) {
-    if (e.code === "Space") {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: true
-      }));
-
-      if (currentIndex < 0) {
-        setCurrentIndex(0);
-      }
-    }
-
-    if (e.code === "Enter") {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: !status.open
-      }));
-      optionsTriggerReference.current.focus();
-
-      if (currentIndex < 0) {
-        setCurrentIndex(0);
-      }
-    }
-
-    if (e.code === 'ArrowDown') {
-      setCurrentIndex(currentIndex < options.length - 1 ? currentIndex + 1 : options.length - 1);
-    }
-
-    if (e.code === 'ArrowUp') {
-      setCurrentIndex(currentIndex - 1 < 0 ? 0 : currentIndex - 1);
+    if (e.code === 'Tab') {
+      setOpen(false);
+      setFocus(true);
     }
   };
 
-  var _handleTriggerKeyDown = function _handleTriggerKeyDown(e) {
-    if (e.code === "Tab" && status.open) {
-      e.preventDefault();
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        open: false
-      }));
-      optionsTriggerReference.current.focus();
+  var _handleKeyDown = function _handleKeyDown(e) {
+    if (e.code === 'Enter') {
+      setOpen(true);
     }
   };
 
-  React.useEffect(function () {
-    if (currentIndex >= 0) {
-      setStatus(_objectSpread2(_objectSpread2({}, status), {}, {
-        placeholder: options[currentIndex]
-      }));
+  var _handleBlur = function _handleBlur() {
+    setOpen(false);
+    setFocus(false);
+  };
+
+  var _handleChange = function _handleChange(e) {
+    props.handleChange(e.target.value);
+    setOpen(false);
+  };
+
+  var _handleClick = function _handleClick(e) {
+    //trigger from mouse
+    if (e.screenX !== 0 && e.screenY !== 0) {
+      setOpen(!_open);
     }
-  }, [currentIndex]);
+  };
+
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: "".concat(namespace, "-Select"),
     styles: style$c
   }, /*#__PURE__*/React__default['default'].createElement("div", {
-    className: "\n          ".concat(namespace, "-Select\n          ").concat(onColor ? "".concat(namespace, "-Select--onColor") : '', "\n          ").concat(keyboardFocus ? "".concat(namespace, "-Select--focus") : '', "\n          ").concat(error ? "".concat(namespace, "-Select--error") : '', "\n          ").concat(onColor && error ? "".concat(namespace, "-Select--onColor--error") : '', "\n        "),
-    ref: selectReference,
-    id: "wrapper",
-    onKeyUp: _handleKeyUp
-  }, /*#__PURE__*/React__default['default'].createElement("span", {
-    className: "\n        ".concat(namespace, "-Select__label\n        ").concat(disabled ? "".concat(namespace, "-Select__label--disabled") : '')
-  }, label), /*#__PURE__*/React__default['default'].createElement("button", {
-    onFocus: function onFocus() {
-      return setKeyboardFocus(!keyboardFocus);
+    className: classMap__default['default']((_classMap = {}, _defineProperty(_classMap, "".concat(namespace, "-Select"), true), _defineProperty(_classMap, "".concat(namespace, "-Select--onColor"), props.onColor), _defineProperty(_classMap, "".concat(namespace, "-Select--focus"), focus), _defineProperty(_classMap, "".concat(namespace, "-Select--error"), props.error), _defineProperty(_classMap, "".concat(namespace, "-Select--onColor--error"), props.onColor && props.error), _classMap))
+  }, /*#__PURE__*/React__default['default'].createElement("label", {
+    className: classMap__default['default']((_classMap2 = {}, _defineProperty(_classMap2, "".concat(namespace, "-Select__label"), true), _defineProperty(_classMap2, "".concat(namespace, "-Select__label--disabled"), props.disabled), _classMap2)),
+    htmlFor: "".concat(namespace, "-select-").concat(props.name)
+  }, props.label), /*#__PURE__*/React__default['default'].createElement("select", {
+    className: classMap__default['default']((_classMap3 = {}, _defineProperty(_classMap3, "".concat(namespace, "-Select__tag"), true), _defineProperty(_classMap3, "".concat(namespace, "-Select__tag--error"), props.error), _classMap3)),
+    onKeyUp: function onKeyUp(e) {
+      return _handleKeyUp(e);
     },
-    onBlur: function onBlur() {
-      return setKeyboardFocus(false);
+    onClick: function onClick(e) {
+      return _handleClick(e);
     },
     onKeyDown: function onKeyDown(e) {
-      return _handleTriggerKeyDown(e);
+      return _handleKeyDown(e);
     },
-    onMouseUp: _handleClick,
-    disabled: !!disabled,
-    "aria-haspopup": "true",
-    ref: optionsTriggerReference,
-    className: "".concat(namespace, "-Select__trigger\n          ").concat(error ? "".concat(namespace, "-Select__trigger--error") : '', "\n          ")
-  }, status.placeholder, /*#__PURE__*/React__default['default'].createElement(Icon, {
-    icon: status.open ? "chevron-up" : "chevron-down"
-  })), /*#__PURE__*/React__default['default'].createElement("ul", {
-    className: "".concat(namespace, "-Select__option-list"),
-    role: "listbox",
-    tabIndex: "-1",
-    "aria-expanded": !!status.open
-  }, options.map(function (item, index) {
-    return /*#__PURE__*/React__default['default'].createElement("li", {
+    onBlur: _handleBlur,
+    onChange: function onChange(e) {
+      return _handleChange(e);
+    },
+    disabled: props.disabled,
+    "aria-disabled": props.disabled,
+    id: props.id,
+    name: props.id
+  }, /*#__PURE__*/React__default['default'].createElement("option", {
+    hidden: true,
+    value: ""
+  }, props.placeholder), options.map(function (item, index) {
+    return /*#__PURE__*/React__default['default'].createElement("option", {
       key: index,
-      role: "option",
-      id: item.toLowerCase().replace(" ", "-"),
-      onMouseUp: function onMouseUp() {
-        return _selectOption(item, index);
-      },
-      onMouseOver: function onMouseOver() {
-        return setCurrentIndex(index);
-      },
-      "data-value": item,
+      value: item,
       "aria-label": item,
-      className: "\n                ".concat(namespace, "-Select__option\n                ").concat(index === currentIndex ? "".concat(namespace, "-Select__option--current") : '', "\n                ").concat(options.length - 1 === index ? "".concat(namespace, "-Select__option--last") : '', "\n                ").concat(index === 0 ? "".concat(namespace, "-Select__option--first") : '')
+      className: "".concat(namespace, "-Select__option")
     }, item);
-  })), /*#__PURE__*/React__default['default'].createElement("span", {
-    "aria-hidden": !error,
+  })), /*#__PURE__*/React__default['default'].createElement(Icon, {
+    icon: _open ? 'chevron-up' : 'chevron-down',
+    className: classMap__default['default']((_classMap4 = {}, _defineProperty(_classMap4, "".concat(namespace, "-Select__icon"), true), _defineProperty(_classMap4, "".concat(namespace, "-Select__icon--error"), props.error), _defineProperty(_classMap4, "".concat(namespace, "-Select__icon--disabled"), props.disabled), _classMap4))
+  }), /*#__PURE__*/React__default['default'].createElement("span", {
+    "aria-hidden": !props.error,
     className: "".concat(namespace, "-Select__errorMsg")
   }, errorMsg)));
 }
@@ -4255,7 +4199,10 @@ Select.propTypes = {
   errorMsg: PropTypes__default['default'].string,
   disabled: PropTypes__default['default'].bool,
   error: PropTypes__default['default'].bool,
-  onColor: PropTypes__default['default'].bool
+  onColor: PropTypes__default['default'].bool,
+  handleChange: PropTypes__default['default'].func.isRequired,
+  options: PropTypes__default['default'].arrayOf(PropTypes__default['default'].string),
+  id: PropTypes__default['default'].string.isRequired
 };
 
 var InputTextStyleType = {
@@ -4491,7 +4438,8 @@ function InputText(_ref) {
       _ref$disabled = _ref.disabled,
       disabled = _ref$disabled === void 0 ? false : _ref$disabled,
       handleChange = _ref.handleChange,
-      handleFocus = _ref.handleFocus;
+      handleFocus = _ref.handleFocus,
+      handleBlur = _ref.handleBlur;
 
   var _useState = React.useState(""),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4514,7 +4462,9 @@ function InputText(_ref) {
   }, [error]);
 
   var _handleFocus = function _handleFocus(e) {
-    handleFocus(e);
+    if (handleFocus) {
+      handleFocus(e);
+    }
   };
 
   var _handleChange = function _handleChange(e) {
@@ -4525,6 +4475,10 @@ function InputText(_ref) {
 
   var _handleBlur = function _handleBlur(e) {
     setKeyboardFocus(false);
+
+    if (handleBlur) {
+      handleBlur(e);
+    }
   };
 
   var inputFocus = function inputFocus() {
@@ -4553,6 +4507,7 @@ function InputText(_ref) {
     ref: refInput,
     className: "".concat(namespace, "-InputText__input"),
     id: id,
+    name: id,
     value: _value,
     maxLength: maxLength,
     placeholder: placeholder,
@@ -4574,8 +4529,9 @@ InputText.propTypes = {
   error: PropTypes__default['default'].bool,
   onColor: PropTypes__default['default'].bool,
   disabled: PropTypes__default['default'].bool,
-  handleChange: PropTypes__default['default'].func,
-  handleFocus: PropTypes__default['default'].func
+  handleChange: PropTypes__default['default'].func.isRequired,
+  handleFocus: PropTypes__default['default'].func,
+  handleBlur: PropTypes__default['default'].func
 };
 
 var inputTextareaStyleType = {
@@ -4823,6 +4779,7 @@ function InputTextarea(_ref) {
   }, label), /*#__PURE__*/React__default['default'].createElement("textarea", {
     className: "".concat(namespace, "-TextArea__textarea"),
     id: id,
+    name: id,
     value: _value,
     maxLength: maxLength,
     placeholder: placeholder,
@@ -4995,8 +4952,8 @@ Modal.propTypes = {
   isOpen: PropTypes__default['default'].bool.isRequired,
   isCloseDisabled: PropTypes__default['default'].bool,
   isDoubleAction: PropTypes__default['default'].bool.isRequired,
-  firstActionLabel: PropTypes__default['default'].bool,
-  secondActionLabel: PropTypes__default['default'].bool,
+  firstActionLabel: PropTypes__default['default'].string,
+  secondActionLabel: PropTypes__default['default'].string,
   handleConfirm: PropTypes__default['default'].func.isRequired,
   handleClose: PropTypes__default['default'].func.isRequired,
   handleCancel: PropTypes__default['default'].func
@@ -5559,13 +5516,23 @@ function Switch(_ref) {
     setCheckedIpt(checked);
   }, [checked]);
 
-  function _handleSwitch() {
+  var _handleSwitch = function _handleSwitch() {
     if (typeof handleChange === 'function') {
       handleChange(!checkedIpt);
     }
 
     setCheckedIpt(!checkedIpt);
-  }
+  };
+
+  var _handleKeyUp = function _handleKeyUp(e) {
+    if (e.code === 'Enter' || e.code === 'Space') {
+      if (typeof handleChange === 'function') {
+        handleChange(!checkedIpt);
+      }
+
+      setCheckedIpt(!checkedIpt);
+    }
+  };
 
   return /*#__PURE__*/React__default['default'].createElement(contextElementReact.ContextElement, {
     contextId: "".concat(namespace, "-Switch"),
@@ -5574,7 +5541,7 @@ function Switch(_ref) {
     className: "\n          ".concat(namespace, "-Switch\n          ").concat(checkedIpt ? "".concat(namespace, "-Switch--checked") : '', "\n          ").concat(disabled ? "".concat(namespace, "-Switch--disabled") : '', "\n          ").concat(onColor ? "".concat(namespace, "-Switch--onColor") : '', "\n        "),
     tabIndex: "0",
     onKeyUp: function onKeyUp(e) {
-      return console.log(e);
+      return _handleKeyUp(e);
     }
   }, /*#__PURE__*/React__default['default'].createElement("button", {
     className: "".concat(namespace, "-Switch__Selector targetFocused"),

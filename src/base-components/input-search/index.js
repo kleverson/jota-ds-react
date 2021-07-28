@@ -10,7 +10,6 @@ function InputSearch({
   formID = 'form-search',
   formName = 'form-search',
   inputID = 'input-search',
-  inputName = 'input-search',
   value= '',
   placeholder = 'Search',
   ariaLabel = "Search form field",
@@ -70,7 +69,7 @@ function InputSearch({
         <div className={`${namespace}-InputSearch__wrapper`}>
           <Icon icon='search' size='medium'></Icon>
           <input className={`
-          ${namespace}-InputSearch__input`} ref={inputSearchRef} value={_value} placeholder={placeholder} type="text" type="search" name={inputName} id={inputID} aria-label={ariaLabel} onInput={_handleInputChange}/>
+          ${namespace}-InputSearch__input`} ref={inputSearchRef} value={_value} placeholder={placeholder} type="search" name={inputID} id={inputID} aria-label={ariaLabel} onInput={_handleInputChange}/>
           
           {
             _value ? 
@@ -88,7 +87,6 @@ function InputSearch({
 InputSearch.propTypes = {
   formName: PropTypes.string.isRequired,
   formID: PropTypes.string.isRequired,
-  inputName: PropTypes.string.isRequired,
   inputID: PropTypes.string.isRequired,
   value: PropTypes.string,
   placeholder: PropTypes.string,

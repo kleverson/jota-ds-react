@@ -1,15 +1,33 @@
-import { createGooberGetter as css } from '@jota-ds/context-element-react';
+import { createGooberGetter } from '@jota-ds/context-element-react';
 import SelectStyleType from '../../styles/types/input-select/default.js';
 import { namespace } from '../../utils/setup.js';
 import { hexToRGB } from '../../utils/colors.js';
 
-export default css(SelectStyleType)`
+const css = createGooberGetter(SelectStyleType);
+
+export default css`
   &.${namespace}-Select {
-    position: relative; 
-    font-family: ${({ select }) => select.fontFamily}; 
-    
-    &--focus{
-      border: ${({ select }) => select.outlineWidth} solid ${({ select }) => select.outlineColor};
+    position: relative;
+    font-family: ${({ select }) => select.fontFamily};
+
+    &--focus {
+      border: ${({ select }) => `${select.outlineWidth} solid ${select.outlineColor}`};
+    }
+
+    .${namespace}-Select__icon {
+      position: absolute;
+      bottom: 41%;
+      right: 20px;
+      color: ${({ input }) => hexToRGB(input.color, input.opacity)};
+
+      &--select-active,
+      &--error {
+        color: ${({ select }) => select.color};
+      }
+
+      &--disabled {
+        color: ${({ disabled }) => hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity)};
+      }
     }
 
     .${namespace}-Select__errorMsg {
@@ -27,7 +45,7 @@ export default css(SelectStyleType)`
       .${namespace}-Select__errorMsg {
         color: ${({ select }) => select.color};
         opacity: 1;
-      } 
+      }
     }
 
     .${namespace}-Select__label {
@@ -38,24 +56,34 @@ export default css(SelectStyleType)`
       margin-bottom: ${({ label }) => label.marginBottom};
       line-height: ${({ select }) => select.lineHeight};
       display: block;
+
       &--disabled {
-        color:  ${({ disabled }) => hexToRGB(disabled.label.color, disabled.label.opacity)};
+        color: ${({ disabled }) => hexToRGB(disabled.label.color, disabled.label.opacity)};
       }
     }
-    .${namespace}-Select__trigger {
+
+    .${namespace}-Select__tag {
+      position: relative;
       height: ${({ select }) => select.height};
       background: transparent;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
       border-radius: ${({ select }) => select.borderRadius};
-      border: ${({ select }) => select.borderWidth} solid ${({ select }) => select.color} ;
+      border: ${({ select }) => `${select.borderWidth} solid ${select.color}`};
       font-size: ${({ select }) => select.fontSize};
-      text-align: left;
-      padding: 0px ${({ select }) => select.padding};
+      font-family: ${({ select }) => select.fontFamily};
+      padding-left: ${({ select }) => select.paddingLeft};
+      padding-right: ${({ select }) => select.paddingRight};
       color: ${({ input }) => hexToRGB(input.color, input.opacity)};
+      box-sizing: border-box;
       display: flex;
       align-items: center;
+      justify-content: center;
       min-width: 320px;
-      justify-content: space-between;
       margin-bottom: ${({ select }) => select.marginBottom};
+      outline: none;
+
       &:hover,
       &:active {
         color: ${({ select }) => select.color};
@@ -65,124 +93,43 @@ export default css(SelectStyleType)`
       &--error {
         color: ${({ select }) => select.color};
         background-color: ${({ error }) => error.background};
-        border:${({ select }) => select.borderWidth} solid ${({ error }) => error.border};      
+        border: ${({ select, error }) => `${select.borderWidth} solid ${error.border}`};
       }
-      &[disabled]{
-        color: ${({ disabled }) =>
-          hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity)};
-        border: ${({ select }) => select.borderWidth} solid ${({ disabled }) =>
-  hexToRGB(disabled.borderColor, disabled.opacity)};
+
+      &[disabled] {
+        color: ${({ disabled }) => hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity)};
+        border: ${({ select, disabled }) => `${select.borderWidth} solid ${hexToRGB(disabled.borderColor, disabled.opacity)}`};
         pointer-events: none;
       }
     }
-
-    .${namespace}-Select__option-list{
-      opacity: 0;
-      background-color: ${({ list }) => list.background};
-      width: 100%;
-      border-radius: ${({ list }) => list.borderRadius};
-      margin-top: ${({ list }) => list.marginTop};
-      position: absolute;
-      visibility: hidden;
-      list-style-type: none;
-      padding: 0px;
-      margin-left: 0px;
-      margin-right: 0px;
-      &[aria-expanded=true]{
-        opacity: 1;
-        visibility: visible;
-      }
-      .${namespace}-Select__option{
-        background-color: transparent;
-        color: ${({ listItem }) => listItem.color};
-        font-size: ${({ listItem }) => listItem.fontSize};
-        border: none;
-        width: 100%;
-        padding: 16px;
-        text-align: left;
-        box-sizing: border-box;
-        
-        &:focus:not(:focus-visible) {
-          outline: transparent;
-        }
-
-        &--current,
-        &:focus-visible,
-        &:hover{
-          background-color: ${({ listItem }) => listItem.hover};
-          opacity: ${({ listItem }) => listItem.opacity};
-          outline: transparent;
-          &:before,
-          &:after {
-            background-color: transparent;
-          }
-        }
-        &:before{
-          content: "";
-          height: 1px;
-          background-color: ${({ listItem }) => listItem.borderColor};;
-          display: block;
-          top: -16px;
-          position: relative;
-        }
-        &:after{
-          content: "";
-          height: 1px;
-          background-color: ${({ listItem }) => listItem.borderColor};;
-          display: block;
-          bottom: -16px;
-          position: relative;
-        }
-        &--last{
-          &:after,
-          &:before{
-            display: none;
-          }
-          &:focus:not(:focus-visible) {
-            outline: transparent;
-          }
-          &:focus-visible,
-          &:hover{
-            background-color: ${({ listItem }) => listItem.hover};
-            outline: transparent;
-            border-bottom-right-radius: 8px;
-            border-bottom-left-radius: 8px;
-          }
-        }
-        &--first{
-          &:after,
-          &:before{
-            display: none;
-          }
-          &:focus,
-          &:hover{
-            background-color: ${({ listItem }) => listItem.hover};
-            outline: transparent;
-            border-top-right-radius: 8px;
-            border-top-left-radius: 8px;
-          }
-        }
-      }
-    }
   }
+
   &.${namespace}-Select--onColor {
-    
     .${namespace}-Select__label {
       color: ${({ onColor }) => onColor.label.color};
       opacity: 1;
 
       &--disabled {
         color: ${({ onColor }) => hexToRGB(onColor.label.color, onColor.disabled.opacity)};
-      }      
+      }
     }
 
-    span {
+    span,
+    label {
       color: ${({ onColor }) => onColor.color};
       opacity: ${({ disabled }) => disabled.onColorOpacity};
     }
 
-    .${namespace}-Select__trigger {
-      border: ${({ select }) => select.borderWidth} solid ${({ onColor }) => onColor.color} ;
+    .${namespace}-Select__icon {
+      color: ${({ onColor }) => onColor.color};
+
+      &--disabled {
+        color: ${({ onColor }) => hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity)};
+      }
+    }
+
+    .${namespace}-Select__tag {
+      border: ${({ select, onColor }) => `${select.borderWidth} solid ${onColor.color}`};
       color: ${({ onColor }) => onColor.color};
 
       &:hover,
@@ -197,18 +144,15 @@ export default css(SelectStyleType)`
         background-color: ${({ onColor }) => hexToRGB(onColor.hover, onColor.opacity)};
       }
       &[disabled] {
-        color: ${({ onColor }) =>
-          hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity)};
-        border: ${({ select }) => select.borderWidth} solid ${({ onColor }) =>
-  hexToRGB(onColor.disabled.color, onColor.disabled.opacity)};
+        color: ${({ onColor }) => hexToRGB(onColor.disabled.placeholder.color, onColor.disabled.placeholder.opacity)};
+        border: ${({ select, onColor }) => `${select.borderWidth} solid ${hexToRGB(onColor.disabled.color, onColor.disabled.opacity)}`};
         opacity: ${({ disabled }) => disabled.onColorOpacity};
       }
 
       &--error {
         color: ${({ onColor }) => onColor.color};
         background-color: ${({ onColor }) => onColor.error.backgroundColor};
-        border: ${({ select }) => select.borderWidth} solid ${({ onColor }) =>
-  onColor.error.borderColor};
+        border: ${({ select, onColor }) => `${select.borderWidth} solid ${onColor.error.borderColor}`};
 
         &:hover {
           background-color: ${({ onColor }) => onColor.error.backgroundColor};
@@ -220,7 +164,7 @@ export default css(SelectStyleType)`
       .${namespace}-Select__errorMsg {
         color: ${({ onColor }) => onColor.color};
         opacity: 1;
-      } 
+      }
     }
-}
+  }
 `;

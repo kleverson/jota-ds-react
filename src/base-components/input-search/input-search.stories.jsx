@@ -45,7 +45,6 @@ export function InputSearch(args) {
         handleInputChange={handleChange}
         formName="form-search"
         formID="form-search"
-        inputName="input-search"
         inputID="input-search"
         ariaLabel="Search form"
         hasPreventDefault

@@ -78,6 +78,7 @@ function InputPassword({
               <input ref={inputElementRef} 
                 className={`${namespace}-InputPassword__input`} 
                 id={id} 
+                name={id}
                 value={_value} 
                 maxLength={maxLength} 
                 placeholder={placeholder}
@@ -102,7 +103,7 @@ function InputPassword({
 }
 
 InputPassword.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.string.isRequired,
   label: PropTypes.string,
   helperText: PropTypes.string,
   placeholder: PropTypes.string,

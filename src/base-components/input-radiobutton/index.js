@@ -23,12 +23,23 @@ function RadioButton({
 
   const [checkedOpt, setCheckedOpt] = useState(findChecked);
 
-  function _handleChange(index, disabled) {
+  const _handleChange = (index, disabled) => {
     if(disabled) return
 
     setCheckedOpt(index);
     if (typeof handleChange === 'function') {
       handleChange(listData[index]);
+    }
+  }
+
+  const _handleKeyUp = (e, index, disabled) => {
+    if(e.code === 'Enter' || e.code === 'Space'){
+      if(disabled) return
+
+      setCheckedOpt(index);
+      if (typeof handleChange === 'function') {
+        handleChange(listData[index]);
+      }
     }
   }
 
@@ -46,15 +57,17 @@ function RadioButton({
           aria-checked={item.checked}
           tabIndex="0"
           onClick={() => _handleChange(index, item.disabled)}
+          onKeyUp={e => _handleKeyUp(e, index, item.disabled)}
         >
           <input
             className={`${namespace}-Radiobutton`}
             type="radio"
-            id={item.value}
+            id={name}
             name={name}
             checked={checkedOpt === index}
             disabled={item.disabled}
             value={item.value}
+            tabIndex={-1}
             onChange={() => _handleChange(index, item.disabled)}
           />
 

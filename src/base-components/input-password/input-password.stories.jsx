@@ -102,6 +102,7 @@ InputPassword.args = {
   label: 'Label',
   helperText: 'Helper text',
   placeholder: 'Type here...',
+  id: 'input-password',
   maxLength: 16,
   error: false,
   onColor: false,

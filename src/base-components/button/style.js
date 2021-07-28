@@ -27,20 +27,24 @@ export default css`
     .${namespace}-Button__loading {
       height: 2px;
       width: 10px;
-      background-color: ${({ loading }) => loading.backgroundColor};
+      background-color: var(--font-color, ${({ loading }) => loading.backgroundColor});
     }
 
     &[aria-disabled='true'] {
+      --font-color: ${({ disabled }) => hexToRGB(disabled.color, disabled.opacityColor)};
+
       background-color: ${({ disabled }) =>
         hexToRGB(disabled.backgroundColor, disabled.opacityBackground)};
-      color: ${({ disabled }) => hexToRGB(disabled.color, disabled.opacityColor)};
+      color: var(--font-color);
       pointer-events: none;
       border: transparent;
     }
 
     &--primary {
+      --font-color: ${({ buttonPrimary }) => buttonPrimary.color};
+
       background-color: ${({ buttonPrimary }) => buttonPrimary.background};
-      color: ${({ buttonPrimary }) => buttonPrimary.color};
+      color: var(--font-color);
 
       &:hover {
         background-color: ${({ buttonPrimary }) =>
@@ -60,8 +64,10 @@ export default css`
       }
 
       &-onColor {
+        --font-color: ${({ buttonPrimaryOnColor }) => buttonPrimaryOnColor.color};
+
         background-color: ${({ buttonPrimaryOnColor }) => buttonPrimaryOnColor.background};
-        color: ${({ buttonPrimaryOnColor }) => buttonPrimaryOnColor.color};
+        color: var(--font-color);
 
         &:hover {
           background-color: ${({ buttonPrimaryOnColor }) =>
@@ -81,14 +87,17 @@ export default css`
     }
 
     &--secondary {
+      --font-color: ${({ buttonSecondary }) => buttonSecondary.color};
+
       background-color: transparent;
-      color: ${({ buttonSecondary }) => buttonSecondary.color};
-      border: ${({ buttonSecondary }) => `${buttonSecondary.borderWidth} solid ${buttonSecondary.borderColor}`};
+      color: var(--font-color);
+      border: ${({ buttonSecondary }) =>
+        `${buttonSecondary.borderWidth} solid ${buttonSecondary.borderColor}`};
 
       &:hover {
         background-color: ${({ buttonSecondary }) =>
           hexToRGB(buttonSecondary.backgroundHover, buttonSecondary.opacityBackground)};
-        color: ${({ buttonSecondary }) => buttonSecondary.color};
+        /* color: ${({ buttonSecondary }) => buttonSecondary.color}; */
       }
 
       &:focus:not(:focus-visible) {
@@ -102,17 +111,21 @@ export default css`
       }
 
       &[aria-disabled='true'] {
+        --font-color: ${({ disabledSecondary }) =>
+          hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor)};
+
         background-color: ${({ disabledSecondary }) =>
           hexToRGB(disabledSecondary.backgroundColor, disabledSecondary.opacityBackground)};
-        color: ${({ disabledSecondary }) =>
-          hexToRGB(disabledSecondary.color, disabledSecondary.opacityColor)};
+        color: var(--font-color);
         pointer-events: none;
         border: transparent;
       }
 
       &-onColor {
+        --font-color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
+
         background-color: transparent;
-        color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
+        color: var(--font-color);
         border-color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
         &:hover {
           background-color: ${({ buttonSecondaryOnColor }) =>
@@ -120,17 +133,19 @@ export default css`
               buttonSecondaryOnColor.backgroundHover,
               buttonSecondaryOnColor.opacityBackground,
             )};
-          color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color};
+          /* color: ${({ buttonSecondaryOnColor }) => buttonSecondaryOnColor.color}; */
         }
 
         &[aria-disabled='true'] {
+          --font-color: ${({ disabledSecondaryOnColor }) =>
+            hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity)};
+
           background-color: ${({ disabledSecondaryOnColor }) =>
             hexToRGB(
               disabledSecondaryOnColor.backgroundColor,
               disabledSecondaryOnColor.opacityBackground,
             )};
-          color: ${({ disabledSecondaryOnColor }) =>
-            hexToRGB(disabledSecondaryOnColor.shapeColor, disabledSecondaryOnColor.shapeOpacity)};
+          color: var(--font-color);
           pointer-events: none;
           border: transparent;
           ${namespace}-icon {

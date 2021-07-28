@@ -11,9 +11,16 @@ function Checkbox({ value, name, checked, disabled, onColor, handleChange }) {
     setCheckedIpt(checked);
   }, [checked]);
 
-  function _handleChange() {
+  const _handleChange = () => {
     handleChange(!checkedIpt);
     setCheckedIpt(!checkedIpt);
+  }
+
+  const _handleKeyUp = (e) => {
+    if(e.code === 'Enter' || e.code === 'Space'){
+      handleChange(!checkedIpt);
+      setCheckedIpt(!checkedIpt);
+    }
   }
 
   return (
@@ -28,6 +35,7 @@ function Checkbox({ value, name, checked, disabled, onColor, handleChange }) {
         htmlFor={name}
         aria-checked={checked}
         tabIndex="0"
+        onKeyUp={(e) => _handleKeyUp(e)}
       >
         <input
           className={`${namespace}-Checkbox`}
@@ -38,9 +46,9 @@ function Checkbox({ value, name, checked, disabled, onColor, handleChange }) {
           disabled={disabled}
           value={value}
           onChange={_handleChange}
+          tabIndex={-1}
         />
-
-        <slot>{value}</slot>
+        {value}
       </label>
     </ContextElement>
   );

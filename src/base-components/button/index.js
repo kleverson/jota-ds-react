@@ -25,7 +25,6 @@ function Button({
   return (
     <ContextElement contextId={`${namespace}-button`} styles={style}>
       <button
-        part="button"
         className={classMap(classTable)}
         aria-disabled={!!disabled}
         onClick={handleClick}

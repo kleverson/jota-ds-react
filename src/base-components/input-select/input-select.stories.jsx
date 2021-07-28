@@ -1,6 +1,6 @@
 import React from 'react';
-import SelectTag from './index.js';
 import { action } from '@storybook/addon-actions';
+import SelectTag from './index.js';
 
 export default {
   title: 'Core components react/Input Select',
@@ -60,7 +60,7 @@ export function InputSelect(args) {
     action(`handleChange`)({ value });
   };
 
-  return <SelectTag {...args} options={options} handleChange={_handleChange}/>;
+  return <SelectTag {...args} options={options} handleChange={_handleChange} />;
 }
 
 InputSelect.args = {
@@ -71,4 +71,5 @@ InputSelect.args = {
   error: false,
   onColor: false,
   optionsLength: 4,
+  id: 'my-select'
 };

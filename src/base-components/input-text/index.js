@@ -14,7 +14,8 @@ function InputText({
   onColor = false,
   disabled = false,
   handleChange,
-  handleFocus
+  handleFocus,
+  handleBlur
 }){
   const [_value, setValue] = useState("");
   const [_keyboardFocus, setKeyboardFocus] = useState(false);
@@ -26,7 +27,9 @@ function InputText({
   },[error]);
 
   const _handleFocus = (e) => {
-    handleFocus(e);
+    if(handleFocus){
+      handleFocus(e);
+    }
   }
 
   const _handleChange = (e) => {
@@ -37,6 +40,9 @@ function InputText({
 
   const _handleBlur = (e) => {
     setKeyboardFocus(false);
+    if(handleBlur){
+      handleBlur(e)
+    }
   }
 
   const inputFocus = () => {
@@ -66,6 +72,7 @@ function InputText({
           ref={refInput} 
           className={`${namespace}-InputText__input`} 
           id={id} 
+          name={id}
           value={_value} 
           maxLength={maxLength} 
           placeholder={placeholder} 
@@ -91,8 +98,9 @@ InputText.propTypes = {
   error: PropTypes.bool,
   onColor: PropTypes.bool,
   disabled: PropTypes.bool,
-  handleChange: PropTypes.func,
+  handleChange: PropTypes.func.isRequired,
   handleFocus: PropTypes.func,
+  handleBlur: PropTypes.func,
 };
 
 export default InputText;

@@ -69,7 +69,7 @@ export function Button(args) {
 }
 
 Button.args = {
-  label: 'Button',
+  label: 'Label',
   // size: 'large',
   disabled: false,
   iconType: 'comment',
