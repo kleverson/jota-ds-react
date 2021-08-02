@@ -19,16 +19,4 @@
   }
 </style>
 
-<script>
-  /* verificar um jeito melhor de mudar o target do link do header */
-  window.onload = () =>
-    setInterval(() => {
-      const headerAnchor = document.body.querySelector('.sidebar-header a[title="Jota"]');
-
-      if (headerAnchor) {
-        headerAnchor.target = '_self';
-      }
-    }, 500);
-</script>
-
 <link rel="shortcut icon" href="favicon.ico" />

@@ -1698,7 +1698,7 @@ var ButtonGroupStyleType = {
     color: brandingTokens.neutralColorLowLight
   },
   responsive: {
-    margin: spacingSizeNano
+    margin: spacingSizeXxxs
   }
 };
 

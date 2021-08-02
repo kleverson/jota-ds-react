@@ -28,6 +28,6 @@ export default {
     color: brandingTokens.neutralColorLowLight,
   },
   responsive: {
-    margin: globalTokens.spacingSizeNano,
+    margin: globalTokens.spacingSizeXxxs,
   },
 };
