@@ -10,12 +10,8 @@ export default css`
     position: relative;
     font-family: ${({ select }) => select.fontFamily};
 
-    &--focus {
-      border: ${({ select }) => `${select.outlineWidth} solid ${select.outlineColor}`};
-    }
-
     .${namespace}-Select__icon {
-      position: absolute;
+      position: absolute; 
       bottom: 41%;
       right: 20px;
       color: ${({ input }) => hexToRGB(input.color, input.opacity)};
@@ -89,6 +85,11 @@ export default css`
         color: ${({ select }) => select.color};
         background-color: ${({ select }) => hexToRGB(select.hover, select.opacity)};
       }
+
+      &:focus {
+      outline: ${({ select }) => `${select.outlineWidth} solid ${select.outlineColor}`};
+      outline-offset: 2px;
+    }
 
       &--error {
         color: ${({ select }) => select.color};

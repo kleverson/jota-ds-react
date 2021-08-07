@@ -2861,11 +2861,12 @@ function Checkbox(_ref) {
   }, /*#__PURE__*/React.createElement("label", {
     className: "\n          ".concat(namespace, "-Checkbox-label\n          ").concat(disabled ? "".concat(namespace, "-Checkbox-label--disabled") : '', "\n          ").concat(onColor ? "".concat(namespace, "-Checkbox-label--onColor") : '', "\n          ").concat(onColor && disabled ? "".concat(namespace, "-Checkbox-label--onColor--disabled") : '', "\n        "),
     htmlFor: name,
-    "aria-checked": checked,
+    "aria-checked": checkedIpt,
     tabIndex: "0",
     onKeyUp: function onKeyUp(e) {
       return _handleKeyUp(e);
-    }
+    },
+    role: "checkbox"
   }, /*#__PURE__*/React.createElement("input", {
     className: "".concat(namespace, "-Checkbox"),
     type: "checkbox",
@@ -3382,7 +3383,7 @@ var radiobuttonStyleType = {
 };
 
 var _templateObject$e;
-var style$e = createGooberGetter(radiobuttonStyleType)(_templateObject$e || (_templateObject$e = _taggedTemplateLiteral(["\n  &.", "-Radiobutton-label {\n    display: flex;\n    align-items: center;\n\n    cursor: pointer;\n    display: flex;\n    font-family: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    font-weight: ", ";\n    position: relative;\n    user-select: none;\n    color: #000;\n    ", ";\n\n    & + .", "-Radiobutton-label {\n      margin-top: ", ";\n    }\n\n    &:hover {\n      color: ", ";\n    }\n\n    &:focus:not(:focus-visible) {\n      outline: transparent;\n    }\n\n    &:focus-visible{\n      outline-style: solid;\n      outline-color: ", ";\n      outline-width: ", ";\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor: not-allowed;\n      color: ", ";\n    }\n\n    input {\n      appearance: none;\n\n      width: ", ";\n      height: ", ";\n\n      border-width: ", ";\n      border-color: ", ";\n      border-style: solid;\n\n      background-color: transparent;\n      cursor: pointer;\n      margin: 0;\n      margin-right: ", ";\n      top: -2px;\n      z-index: 2;\n      border-radius: 50%;\n      ", ";\n\n      &:hover {\n        border-color: ", ";\n        background: ", ";\n      }\n\n      &:disabled {\n        pointer-events: none;\n        cursor: not-allowed;\n        border-color: ", ";\n      }\n\n      &:checked {\n        border-width: 5px;\n        border-color: ", ";\n\n        &:hover {\n          border-color: ", ";\n          background: ", ";\n        }\n\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n          background: ", ";\n        }\n      }\n    }\n    &--onColor {\n      color: ", ";\n\n      &:hover {\n        color: ", ";\n      }\n\n      &.", "-Radiobutton-label--disabled {\n        color: ", ";\n      }\n\n      input {\n        border-color: ", ";\n\n        &:checked {\n          border-color: ", ";\n          &:hover {\n            border-color: ", ";\n          }\n        }\n\n        &:hover{\n          border-color: ", ";\n          background-color: ", ";\n        }\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var style$e = createGooberGetter(radiobuttonStyleType)(_templateObject$e || (_templateObject$e = _taggedTemplateLiteral(["\n  &.", "-Radiobutton-label {\n    display: flex;\n    align-items: center;\n\n    cursor: pointer;\n    display: flex;\n    font-family: ", ";\n    font-size: ", ";\n    line-height: ", ";\n    font-weight: ", ";\n    position: relative;\n    user-select: none;\n    color: #000;\n    ", ";\n\n    & + .", "-Radiobutton-label {\n      margin-top: ", ";\n    }\n\n    &:hover {\n      color: ", ";\n    }\n\n    &--disabled {\n      pointer-events: none;\n      cursor: not-allowed;\n      color: ", ";\n    }\n\n    input {\n      appearance: none;\n\n      width: ", ";\n      height: ", ";\n\n      border-width: ", ";\n      border-color: ", ";\n      border-style: solid;\n\n      background-color: transparent;\n      cursor: pointer;\n      margin: 0;\n      margin-right: ", ";\n      top: -2px;\n      z-index: 2;\n      border-radius: 50%;\n      ", ";\n\n      &:hover {\n        border-color: ", ";\n        background: ", ";\n      }\n\n      &:focus-visible{\n        outline-color: ", ";\n        outline-width: ", ";\n      }\n\n      &:disabled {\n        pointer-events: none;\n        cursor: not-allowed;\n        border-color: ", ";\n      }\n\n      &:checked {\n        border-width: 5px;\n        border-color: ", ";\n\n        &:hover {\n          border-color: ", ";\n          background: ", ";\n        }\n\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n          background: ", ";\n        }\n      }\n    }\n    &--onColor {\n      color: ", ";\n\n      &:hover {\n        color: ", ";\n      }\n\n      &.", "-Radiobutton-label--disabled {\n        color: ", ";\n      }\n\n      input {\n        border-color: ", ";\n\n        &:checked {\n          border-color: ", ";\n          &:hover {\n            border-color: ", ";\n          }\n        }\n\n        &:hover{\n          border-color: ", ";\n          background-color: ", ";\n        }\n        &:disabled {\n          pointer-events: none;\n          border-color: ", ";\n        }\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var label = _ref.label;
   return label.fontFamily;
 }, function (_ref2) {
@@ -3404,36 +3405,36 @@ var style$e = createGooberGetter(radiobuttonStyleType)(_templateObject$e || (_te
   return states.hover.color;
 }, function (_ref7) {
   var states = _ref7.states;
-  return states.focus.outlineColor;
-}, function (_ref8) {
-  var states = _ref8.states;
-  return states.focus.outlineWidth;
-}, function (_ref9) {
-  var states = _ref9.states;
   return hexToRGB(states.disabled.color, states.disabled.opacity);
+}, function (_ref8) {
+  var base = _ref8.base;
+  return base.width;
+}, function (_ref9) {
+  var base = _ref9.base;
+  return base.height;
 }, function (_ref10) {
   var base = _ref10.base;
-  return base.width;
+  return base.borderWidth;
 }, function (_ref11) {
   var base = _ref11.base;
-  return base.height;
+  return base.borderColor;
 }, function (_ref12) {
   var base = _ref12.base;
-  return base.borderWidth;
-}, function (_ref13) {
-  var base = _ref13.base;
-  return base.borderColor;
-}, function (_ref14) {
-  var base = _ref14.base;
   return base.margin;
 }, function (context) {
   return context.motion;
+}, function (_ref13) {
+  var states = _ref13.states;
+  return states.hover.icon.borderColor;
+}, function (_ref14) {
+  var states = _ref14.states;
+  return hexToRGB(states.hover.icon.fill, states.hover.icon.opacity);
 }, function (_ref15) {
   var states = _ref15.states;
-  return states.hover.icon.borderColor;
+  return states.focus.outlineColor;
 }, function (_ref16) {
   var states = _ref16.states;
-  return hexToRGB(states.hover.icon.fill, states.hover.icon.opacity);
+  return states.focus.outlineWidth;
 }, function (_ref17) {
   var states = _ref17.states;
   return hexToRGB(states.disabled.icon.borderColor, states.disabled.icon.opacity);
@@ -3528,14 +3529,14 @@ function RadioButton(_ref) {
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Radiobutton"),
-    styles: style$e
+    styles: style$e,
+    role: "radiogroup"
   }, listData.map(function (item, index) {
     return /*#__PURE__*/React.createElement("label", {
       key: index,
       className: "\n            ".concat(namespace, "-Radiobutton-label\n            ").concat(item.disabled ? "".concat(namespace, "-Radiobutton-label--disabled") : '', "\n            ").concat(onColor ? "".concat(namespace, "-Radiobutton-label--onColor") : '', "\n          "),
       htmlFor: name,
       "aria-checked": item.checked,
-      tabIndex: "0",
       onClick: function onClick() {
         return _handleChange(index, item.disabled);
       },
@@ -3550,7 +3551,6 @@ function RadioButton(_ref) {
       checked: checkedOpt === index,
       disabled: item.disabled,
       value: item.value,
-      tabIndex: -1,
       onChange: function onChange() {
         return _handleChange(index, item.disabled);
       }
@@ -3919,93 +3919,93 @@ var SelectStyleType = {
 
 var _templateObject$c;
 var css$2 = createGooberGetter(SelectStyleType);
-var style$c = css$2(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative;\n    font-family: ", ";\n\n    &--focus {\n      border: ", ";\n    }\n\n    .", "-Select__icon {\n      position: absolute;\n      bottom: 41%;\n      right: 20px;\n      color: ", ";\n\n      &--select-active,\n      &--error {\n        color: ", ";\n      }\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      position: relative;\n      height: ", ";\n      background: transparent;\n      appearance: none;\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      border-radius: ", ";\n      border: ", ";\n      font-size: ", ";\n      font-family: ", ";\n      padding-left: ", ";\n      padding-right: ", ";\n      color: ", ";\n      box-sizing: border-box;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      min-width: 320px;\n      margin-bottom: ", ";\n      outline: none;\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n      }\n\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        pointer-events: none;\n      }\n    }\n  }\n\n  &.", "-Select--onColor {\n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    span,\n    label {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__icon {\n      color: ", ";\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      border: ", ";\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        opacity: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n      }\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (_ref) {
+var style$c = css$2(_templateObject$c || (_templateObject$c = _taggedTemplateLiteral(["\n  &.", "-Select {\n    position: relative;\n    font-family: ", ";\n\n    .", "-Select__icon {\n      position: absolute; \n      bottom: 41%;\n      right: 20px;\n      color: ", ";\n\n      &--select-active,\n      &--error {\n        color: ", ";\n      }\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__errorMsg {\n      display: flex;\n      justify-content: space-between;\n      margin-top: ", ";\n      color: ", ";\n      font-family: ", ";\n      font-weight: ", ";\n      font-size: ", ";\n      opacity: 0;\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n\n    .", "-Select__label {\n      color: ", ";\n      font-size: ", ";\n      font-weight: ", ";\n      font-family: ", ";\n      margin-bottom: ", ";\n      line-height: ", ";\n      display: block;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      position: relative;\n      height: ", ";\n      background: transparent;\n      appearance: none;\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      border-radius: ", ";\n      border: ", ";\n      font-size: ", ";\n      font-family: ", ";\n      padding-left: ", ";\n      padding-right: ", ";\n      color: ", ";\n      box-sizing: border-box;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      min-width: 320px;\n      margin-bottom: ", ";\n      outline: none;\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n\n      &:focus {\n      outline: ", ";\n      outline-offset: 2px;\n    }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n      }\n\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        pointer-events: none;\n      }\n    }\n  }\n\n  &.", "-Select--onColor {\n    .", "-Select__label {\n      color: ", ";\n      opacity: 1;\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    span,\n    label {\n      color: ", ";\n      opacity: ", ";\n    }\n\n    .", "-Select__icon {\n      color: ", ";\n\n      &--disabled {\n        color: ", ";\n      }\n    }\n\n    .", "-Select__tag {\n      border: ", ";\n      color: ", ";\n\n      &:hover,\n      &:active {\n        color: ", ";\n        background-color: ", ";\n      }\n      &:focus:not(:focus-visible) {\n        outline: transparent;\n      }\n      &:focus-visible {\n        background-color: ", ";\n      }\n      &[disabled] {\n        color: ", ";\n        border: ", ";\n        opacity: ", ";\n      }\n\n      &--error {\n        color: ", ";\n        background-color: ", ";\n        border: ", ";\n\n        &:hover {\n          background-color: ", ";\n        }\n      }\n    }\n\n    &--error {\n      .", "-Select__errorMsg {\n        color: ", ";\n        opacity: 1;\n      }\n    }\n  }\n"])), namespace, function (_ref) {
   var select = _ref.select;
   return select.fontFamily;
-}, function (_ref2) {
-  var select = _ref2.select;
-  return "".concat(select.outlineWidth, " solid ").concat(select.outlineColor);
-}, namespace, function (_ref3) {
-  var input = _ref3.input;
+}, namespace, function (_ref2) {
+  var input = _ref2.input;
   return hexToRGB(input.color, input.opacity);
-}, function (_ref4) {
-  var select = _ref4.select;
+}, function (_ref3) {
+  var select = _ref3.select;
   return select.color;
-}, function (_ref5) {
-  var disabled = _ref5.disabled;
+}, function (_ref4) {
+  var disabled = _ref4.disabled;
   return hexToRGB(disabled.placeholder.color, disabled.placeholder.opacity);
-}, namespace, function (_ref6) {
-  var error = _ref6.error;
+}, namespace, function (_ref5) {
+  var error = _ref5.error;
   return error.spacing;
+}, function (_ref6) {
+  var select = _ref6.select;
+  return select.color;
 }, function (_ref7) {
   var select = _ref7.select;
-  return select.color;
-}, function (_ref8) {
-  var select = _ref8.select;
   return select.fontFamily;
+}, function (_ref8) {
+  var error = _ref8.error;
+  return error.fontWeight;
 }, function (_ref9) {
   var error = _ref9.error;
-  return error.fontWeight;
-}, function (_ref10) {
-  var error = _ref10.error;
   return error.fontSize;
+}, namespace, function (_ref10) {
+  var select = _ref10.select;
+  return select.color;
 }, namespace, function (_ref11) {
   var select = _ref11.select;
   return select.color;
-}, namespace, function (_ref12) {
+}, function (_ref12) {
   var select = _ref12.select;
-  return select.color;
+  return select.fontSize;
 }, function (_ref13) {
   var select = _ref13.select;
-  return select.fontSize;
+  return select.fontWeight;
 }, function (_ref14) {
   var select = _ref14.select;
-  return select.fontWeight;
-}, function (_ref15) {
-  var select = _ref15.select;
   return select.fontFamily;
-}, function (_ref16) {
-  var label = _ref16.label;
+}, function (_ref15) {
+  var label = _ref15.label;
   return label.marginBottom;
-}, function (_ref17) {
-  var select = _ref17.select;
+}, function (_ref16) {
+  var select = _ref16.select;
   return select.lineHeight;
-}, function (_ref18) {
-  var disabled = _ref18.disabled;
+}, function (_ref17) {
+  var disabled = _ref17.disabled;
   return hexToRGB(disabled.label.color, disabled.label.opacity);
-}, namespace, function (_ref19) {
-  var select = _ref19.select;
+}, namespace, function (_ref18) {
+  var select = _ref18.select;
   return select.height;
+}, function (_ref19) {
+  var select = _ref19.select;
+  return select.borderRadius;
 }, function (_ref20) {
   var select = _ref20.select;
-  return select.borderRadius;
+  return "".concat(select.borderWidth, " solid ").concat(select.color);
 }, function (_ref21) {
   var select = _ref21.select;
-  return "".concat(select.borderWidth, " solid ").concat(select.color);
+  return select.fontSize;
 }, function (_ref22) {
   var select = _ref22.select;
-  return select.fontSize;
+  return select.fontFamily;
 }, function (_ref23) {
   var select = _ref23.select;
-  return select.fontFamily;
+  return select.paddingLeft;
 }, function (_ref24) {
   var select = _ref24.select;
-  return select.paddingLeft;
-}, function (_ref25) {
-  var select = _ref25.select;
   return select.paddingRight;
-}, function (_ref26) {
-  var input = _ref26.input;
+}, function (_ref25) {
+  var input = _ref25.input;
   return hexToRGB(input.color, input.opacity);
+}, function (_ref26) {
+  var select = _ref26.select;
+  return select.marginBottom;
 }, function (_ref27) {
   var select = _ref27.select;
-  return select.marginBottom;
+  return select.color;
 }, function (_ref28) {
   var select = _ref28.select;
-  return select.color;
+  return hexToRGB(select.hover, select.opacity);
 }, function (_ref29) {
   var select = _ref29.select;
-  return hexToRGB(select.hover, select.opacity);
+  return "".concat(select.outlineWidth, " solid ").concat(select.outlineColor);
 }, function (_ref30) {
   var select = _ref30.select;
   return select.color;
@@ -4098,43 +4098,13 @@ function Select(_ref) {
 
   var _useState = useState(false),
       _useState2 = _slicedToArray(_useState, 2),
-      _open = _useState2[0],
-      setOpen = _useState2[1];
+      _open = _useState2[0];
+      _useState2[1];
 
   var _useState3 = useState(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      focus = _useState4[0],
-      setFocus = _useState4[1];
-
-  var _handleKeyUp = function _handleKeyUp(e) {
-    if (e.code === 'Tab') {
-      setOpen(false);
-      setFocus(true);
-    }
-  };
-
-  var _handleKeyDown = function _handleKeyDown(e) {
-    if (e.code === 'Enter') {
-      setOpen(true);
-    }
-  };
-
-  var _handleBlur = function _handleBlur() {
-    setOpen(false);
-    setFocus(false);
-  };
-
-  var _handleChange = function _handleChange(e) {
-    props.handleChange(e.target.value);
-    setOpen(false);
-  };
-
-  var _handleClick = function _handleClick(e) {
-    //trigger from mouse
-    if (e.screenX !== 0 && e.screenY !== 0) {
-      setOpen(!_open);
-    }
-  };
+      focus = _useState4[0];
+      _useState4[1];
 
   return /*#__PURE__*/React.createElement(ContextElement, {
     contextId: "".concat(namespace, "-Select"),
@@ -4146,27 +4116,11 @@ function Select(_ref) {
     htmlFor: "".concat(namespace, "-select-").concat(props.name)
   }, props.label), /*#__PURE__*/React.createElement("select", {
     className: classMap((_classMap3 = {}, _defineProperty(_classMap3, "".concat(namespace, "-Select__tag"), true), _defineProperty(_classMap3, "".concat(namespace, "-Select__tag--error"), props.error), _classMap3)),
-    onKeyUp: function onKeyUp(e) {
-      return _handleKeyUp(e);
-    },
-    onClick: function onClick(e) {
-      return _handleClick(e);
-    },
-    onKeyDown: function onKeyDown(e) {
-      return _handleKeyDown(e);
-    },
-    onBlur: _handleBlur,
-    onChange: function onChange(e) {
-      return _handleChange(e);
-    },
     disabled: props.disabled,
     "aria-disabled": props.disabled,
     id: props.id,
     name: props.id
-  }, /*#__PURE__*/React.createElement("option", {
-    hidden: true,
-    value: ""
-  }, props.placeholder), options.map(function (item, index) {
+  }, options.map(function (item, index) {
     return /*#__PURE__*/React.createElement("option", {
       key: index,
       value: item,

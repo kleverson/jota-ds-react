@@ -44,7 +44,7 @@ function RadioButton({
   }
 
   return (
-    <ContextElement contextId={`${namespace}-Radiobutton`} styles={style}>
+    <ContextElement contextId={`${namespace}-Radiobutton`} styles={style} role="radiogroup">
       {listData.map((item, index) => (
         <label
           key={index}
@@ -55,7 +55,6 @@ function RadioButton({
           `}
           htmlFor={name}
           aria-checked={item.checked}
-          tabIndex="0"
           onClick={() => _handleChange(index, item.disabled)}
           onKeyUp={e => _handleKeyUp(e, index, item.disabled)}
         >
@@ -67,7 +66,6 @@ function RadioButton({
             checked={checkedOpt === index}
             disabled={item.disabled}
             value={item.value}
-            tabIndex={-1}
             onChange={() => _handleChange(index, item.disabled)}
           />
 

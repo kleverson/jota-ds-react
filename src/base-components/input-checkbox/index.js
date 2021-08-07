@@ -33,9 +33,10 @@ function Checkbox({ value, name, checked, disabled, onColor, handleChange }) {
           ${onColor && disabled ? `${namespace}-Checkbox-label--onColor--disabled` : ''}
         `}
         htmlFor={name}
-        aria-checked={checked}
+        aria-checked={checkedIpt}
         tabIndex="0"
         onKeyUp={(e) => _handleKeyUp(e)}
+        role="checkbox"
       >
         <input
           className={`${namespace}-Checkbox`}

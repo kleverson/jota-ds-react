@@ -27,16 +27,6 @@ export default css(radiobuttonStyleType)`
       color: ${({ states }) => states.hover.color};
     }
 
-    &:focus:not(:focus-visible) {
-      outline: transparent;
-    }
-
-    &:focus-visible{
-      outline-style: solid;
-      outline-color: ${({ states }) => states.focus.outlineColor};
-      outline-width: ${({ states }) => states.focus.outlineWidth};
-    }
-
     &--disabled {
       pointer-events: none;
       cursor: not-allowed;
@@ -65,6 +55,11 @@ export default css(radiobuttonStyleType)`
       &:hover {
         border-color: ${({ states }) => states.hover.icon.borderColor};
         background: ${({ states }) => hexToRGB(states.hover.icon.fill, states.hover.icon.opacity)};
+      }
+
+      &:focus-visible{
+        outline-color: ${({ states }) => states.focus.outlineColor};
+        outline-width: ${({ states }) => states.focus.outlineWidth};
       }
 
       &:disabled {

@@ -10,36 +10,6 @@ function Select({ errorMsg = 'error', options = [], ...props }) {
   const [_open, setOpen] = useState(false);
   const [focus, setFocus] = useState(false);
 
-  const _handleKeyUp = (e) => {
-    if(e.code === 'Tab'){
-      setOpen(false);
-      setFocus(true);
-    }
-  };
-
-  const _handleKeyDown = (e) => {
-    if(e.code === 'Enter'){
-      setOpen(true);
-    }
-  }
-
-  const _handleBlur = () => {
-    setOpen(false);
-    setFocus(false);
-  };
-
-  const _handleChange = (e) => {
-    props.handleChange(e.target.value);
-    setOpen(false);
-  }
-
-  const _handleClick = (e) => {
-    //trigger from mouse
-    if(e.screenX !== 0 && e.screenY !== 0){
-      setOpen(!_open);
-    } 
-  }
-
   return (
     <ContextElement contextId={`${namespace}-Select`} styles={style}>
       <div
@@ -51,7 +21,7 @@ function Select({ errorMsg = 'error', options = [], ...props }) {
           [`${namespace}-Select--onColor--error`]: props.onColor && props.error,
         })}
       >
-        <label
+      <label
           className={classMap({
             [`${namespace}-Select__label`]: true,
             [`${namespace}-Select__label--disabled`]: props.disabled,
@@ -59,35 +29,24 @@ function Select({ errorMsg = 'error', options = [], ...props }) {
           htmlFor={`${namespace}-select-${props.name}`}
         >
           {props.label}
-        </label>
-
-        <select
+      </label>
+      <select
           className={classMap({
             [`${namespace}-Select__tag`]: true,
             [`${namespace}-Select__tag--error`]: props.error,
           })}
-          onKeyUp={(e) => _handleKeyUp(e)}
-          onClick={(e) => _handleClick(e)}
-          onKeyDown={(e) => _handleKeyDown(e)}
-          onBlur={_handleBlur}
-          onChange={(e) => _handleChange(e)}
           disabled={props.disabled}
           aria-disabled={props.disabled}
           id={props.id}
           name={props.id}
         >
-          <option hidden value="">
-            {props.placeholder}
-          </option>
-
           {options.map((item, index) => (
             <option key={index} value={item} aria-label={item} className={`${namespace}-Select__option`}>
               {item}
             </option>
           ))}
-        </select>
-
-        <Icon
+      </select>
+      <Icon
           icon={_open ? 'chevron-up' : 'chevron-down'}
           className={classMap({
             [`${namespace}-Select__icon`]: true,
@@ -95,11 +54,11 @@ function Select({ errorMsg = 'error', options = [], ...props }) {
             [`${namespace}-Select__icon--disabled`]: props.disabled,
           })}
         ></Icon>
-
         <span aria-hidden={!props.error} className={`${namespace}-Select__errorMsg`}>
           {errorMsg}
         </span>
-      </div>
+    </div>
+
     </ContextElement>
   );
 }
