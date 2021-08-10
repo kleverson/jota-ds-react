@@ -10,6 +10,8 @@ Acess the component playground, in storybook, to know how to use our Open Source
 
 ## Components
 
+The components with a * have a small explanation for its use after the table since it can be a little tricky
+
 | Component    | Must have properties  | optional properties
 | ----------    |  ------  |  ------
 | [`Accordion`]  | `label`='Your string' <br>`id`='your-accordion-id'<br>`children`=[string \| image \| others] |  `onColor`={true \| false} <br>`labelHeadingVariant`='h2 \| h3 \| h4' <br>`opened`="true \| false" 
@@ -22,7 +24,7 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`ButtonIcon`] | `size`='small \| medium \| large' <br> `icon`='any icon from our icon list' | `onColor`={true \| false}<br>`handleClick`={function}<br>`handleBlur`={function}
 | [`Cardbase`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`noPadding`={true \| false}
 | [`Cardimage`] | `children`='card content' | `onColor`={true \| false}<br>`handleClick`={function}<br>`image`='your image path'
-| [`InputCheckbox`]  | `value`='checkbox text' <br>`name`='Label and input name' | `disabled`={true \| false} <br>`onColor`={true \| false} <br>`handleChange`={function}
+| [`InputCheckbox`]  | `value`='checkbox text' <br>`name`='Label and input name' | `disabled`={true \| false} <br>`onColor`={true \| false} <br>`handleChange`={function} <br> `checked`={true \| false}
 | [`Header`] | `logoSource`='your-image.jpg \| your-image.svg \| your-image.png'<br> `linkList`={[{label: '', href: '', target: '', disabled: { true \| false }, currentActive: { true \| false }}]} <br> `menuList`={[{label: 'Your string', tagLabel:'Your string', handleClick:function}]} | `isLoggedIn`={true \| false}<br> `hasLinks`={true \| false} <br> `mainMenuIsOpen`={true \| false} <br> `ghost`={true \| false} <br><br> If `isLoggedIn` is set to true, `avatar`={{name: 'Your string', imgUrl: 'your-image.jpg \| your-image.svg \| your-image.png', imgAlt: 'Your string', hasNotification: true \| false}}
 | [`HeaderEmpty`] | `logoSource`='your-image.jpg \| your-image.svg \| your-image.png'<br> | `children`={React.Component} <br> `hasLinks`={true \| false} <br> `mainMenuIsOpen`={true \| false} <br> `ghost`={true \| false}
 | [`Icon`]  | `icon`='any icon from our icon list' <br> `size`='small \| medium \| large' | `className`='name for icon class' <br>`id`='your-icon-id'
@@ -37,16 +39,36 @@ Acess the component playground, in storybook, to know how to use our Open Source
 | [`Modal`] | `isOpen`={true\|false} <br>`isDoubleAction`={true\|false} <br>`firstActionLabel`='Your string' <br>`secondActionLabel`='Your string' <br>`handleConfirm`={function} <br>`handleClose`={function} | `isCloseDisabled`={true\|false} <br>`handleCancel`={function}
 | [`Notification`] | `title`="Your string" <br>`content`="Your string" <br>`buttonText`="Your string" <br>`handleConfirm`={function} <br>`handleClose`={function} | `isOpen`={true\|false} <br>
 |[`OverflowMenu`] | `menuList`={[{label: 'Your string', tagLabel:'Your string', handleClick:function}]} | `isOpen`={true\|false} <br>`onColor`={true\|false} <br>`toggleMenu`={function} <br>`getCurrentMenuItem`={function}
-| [`InputSelect`] | `label`='Your string' <br>`options`]=['your option', 'your option']} <br>`handleChange`={function} | `disabled`={true\|false} <br>`error`={true\|false} `errorMsg`='Your string' <br>`placeholder`='Your string' <br>`onColor`={true\|false}
-| [`Steps`] | `ariaLabel`='' <br>`steps`]=[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
+| [`InputSelect`] | `label`='Your string' <br>`options`=['your option', 'your option']} <br>`handleChange`={function} | `disabled`={true\|false} <br>`error`={true\|false} `errorMsg`='Your string' <br>`placeholder`='Your string' <br>`onColor`={true\|false}
+| [`Steps`] | `ariaLabel`='Acessible label' <br>`steps`=[{type: 'current'\|'finish'\|'next',title: 'Your string'}]} | 
 | [`Switch`] | `label`="Your string" <br>`checked`={true\|false} <br>`handleChange`={function} | `disabled`={true\|false} <br>`onColor`={true\|false}
-| [`TabGroup`] | `ariaLabel`="Your string" <br>`children`]=\<TabItem label={'Your string'}\/>} <br>`handleTabClick`={function} | `onColor`={true\|false}
+| [`TabGroup`]* | `ariaLabel`="Your string" | `onColor`={true\|false} <br>`handleTabClick`={function}
+| [`TabItem`]* | `label`="Tab Label" 
 | [`TagCategory`] | `label`="Your string" <br>`icon`='shapes' | `onColor`={true\|false}
 | [`TagHighlight`] | `label`="Your string" <br>`tabIndex`={number} | 
 | [`TagSelect`] | `label`="Your string" <br>`handleChange`={function} | `disabled`={true\|false} <br>`onColor`={true\|false} <br>`active`={true\|false}
-| [`Tooltip`] | `position`='bottom-end'\|'bottom-start'\|'bottom'\|'left-end'\|'left-start'\|'left'\|'right-end'\|'right-start'\|'right'\|'top-end'\|'top-start'\|'top' <br>`body`='Your string' <br>`children`={React.Component} | `onColor`={true\|false}
+| [`Tooltip`]* | `position`='bottom-end'\|'bottom-start'\|'bottom'\|'left-end'\|'left-start'\|'left'\|'right-end'\|'right-start'\|'right'\|'top-end'\|'top-start'\|'top' <br>`body`='Your string' <br>`children`={React.Component} | `onColor`={true\|false}
 | [`Typography`] | `component`='heading\|subtitle\|paragraph\|caption' |  If component attribute is `heading`, `variant`='h1\|h2\|h3\|h4\|h5\|h6' <br><br>If component attribute is `heading`, `size`='x-small'\|'small'\|'medium'\|'large'\|'x-large'\|'display' <br><br>If component attribute is `subtitle`, `size`='small'\|'large' <br><br>If component attribute is `paragraph`, `size`='small'\|'large' <br><br>`onColor`={true\|false}
 
+
+
+*The tab group and tab item are used together, the tab group needs to wrap the tab item component, each tab item component will be one tab. 
+Example:
+```
+<TabGroupTag>
+  <TabItemTag label='label 1'></TabItemTag>
+  <TabItemTag label='label 2'></TabItemTag>
+  <TabItemTag label='label 3'></TabItemTag>
+</TabGroupTag>
+```
+
+*The tooltip component works when you pass the content that you want to trigger the tooltip inside it as a children, the content that will be triggered will be passed as the body prop.
+Example:
+```
+<TooltipTag position="top" body="this is my text inside the tooltip">
+  <strong>Here is my text that is always visible and will trigger the tooltip on mouse hover</strong>
+</TooltipTag>
+```
 ## Quick start - React
 
 #### 1) Install
